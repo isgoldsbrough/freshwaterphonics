@@ -737,24 +737,28 @@
     review(pm, g) {
       let deck = g.deck, i = 0, timer = null, left = 0, count = 0;
       const stopTimer = () => { if (timer) { clearInterval(timer); timer = null; } };
-      function show() {
-        pm.progress(i, deck.length);
-        pm.draw(`<div class="word" style="font-size:6rem;" aria-live="polite">${esc(deck[i])}</div>${timer ? `<div class="word sky" id="clock" style="font-size:1.6rem;font-family:var(--display);">${left}s · ${count} said</div>` : ""}<div class="pm-actions"><button class="btn secondary" id="prev">← back</button><button class="btn" id="next">next →</button></div>${timer ? "" : `<p class="quiet"><button class="btn secondary" id="timed" style="font-size:1rem;">⏱ 30-second round</button></p>`}`);
-        $("next").addEventListener("click", () => { i = (i + 1) % deck.length; if (timer) { count++; show(); } else if (i === 0) pm.finish("All the sounds reviewed!", () => show()); else show(); });
+      // drawn once; only the card's text changes, so there is no page-turn on every tap
+      function layout() {
+        pm.draw(`<div class="word" id="rv-card" style="font-size:6rem;" aria-live="polite"></div><div class="word sky" id="rv-clock" style="font-size:1.6rem;font-family:var(--display);" hidden></div><div class="pm-actions"><button class="btn secondary" id="prev">← back</button><button class="btn" id="next">next →</button></div><p class="quiet" id="rv-timed-row"><button class="btn secondary" id="timed" style="font-size:1rem;">⏱ 30-second round</button></p>`);
+        $("next").addEventListener("click", () => { i = (i + 1) % deck.length; if (timer) { count++; show(); } else if (i === 0) pm.finish("All the sounds reviewed!", () => { layout(); show(); }); else show(); });
         $("prev").addEventListener("click", () => { i = (i + deck.length - 1) % deck.length; show(); });
-        const t = $("timed");
-        if (t) t.addEventListener("click", () => {
+        $("timed").addEventListener("click", () => {
           deck = shuffle(g.deck); i = 0; count = 0; left = 30; SFX.tap();
+          $("rv-timed-row").hidden = true; $("rv-clock").hidden = false;
           timer = setInterval(() => {
-            left--;
-            const c = $("clock"); if (c) c.textContent = `${left}s · ${count} said`;
-            if (left <= 0) { stopTimer(); pm.finish(`${count} sounds in 30 seconds`, () => { timer = null; i = 0; show(); }); }
+            left--; show();
+            if (left <= 0) { stopTimer(); pm.finish(`${count} sounds in 30 seconds`, () => { timer = null; i = 0; layout(); show(); }); }
           }, 1000);
           show();
         });
       }
+      function show() {
+        pm.progress(i, deck.length);
+        $("rv-card").textContent = deck[i];
+        if (timer) $("rv-clock").textContent = `${left}s · ${count} said`;
+      }
       pm.onClose = stopTimer;
-      show();
+      layout(); show();
     }
   };
 
