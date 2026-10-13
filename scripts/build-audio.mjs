@@ -20,6 +20,10 @@ const add = t => { if (t && t.trim()) lines.add(t.trim()); };
 
 // Fixed phrases the page uses for feedback
 [
+  "Which row is a pattern?",
+  "Match the letter to a picture that starts with that sound.",
+  "Which one rhymes with this?",
+  "Say each sound. Tap next when you are ready. No timer.",
   "Well done.",
   "Not that one. Listen again.",
   "Try again.",
@@ -65,7 +69,7 @@ for (const d of Object.values(week.maths.days)) {
     });
   }
 }
-Object.keys(week.tiles).forEach(t => { if (t !== "?") add(t); });
+
 
 let made = 0, kept = 0;
 const manifest = {};

@@ -2,336 +2,262 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Freshwater Phonics</title>
-<meta name="description" content="This week's phonics sounds and maths topic for Reception, with a 15-minute home routine, run by a parent.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<meta name="description" content="This week's phonics sounds and maths topic for one Reception class, with a 15-minute home routine. Made by a parent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Fredoka:wght@400;500;600&display=swap">
 <style>
-  /* Layout: one 620px column of cards; parent cards are dense, child game cards are big and sparse. */
+  /* Calm picture book, laptop first. Paper ground, two columns: the parent reads left, the child looks right. */
   :root {
-    --ink: #1c2541;
-    --ink-soft: #4b5471;
-    --paper: #eef0f6;
-    --card: #ffffff;
-    --rule: #dde1ea;
-    --amber: #9a5a0f;
-    --amber-soft: #f7e6cf;
-    --teal: #1a6b5f;
-    --teal-soft: #dcefec;
-    --brick: #a84a3f;
-    --brick-soft: #f3ded9;
-    --shadow: 0 1px 2px rgba(28,37,65,0.06), 0 8px 24px -16px rgba(28,37,65,0.35);
-    --display: 'Baloo 2', 'Figtree', -apple-system, sans-serif;
-    --body: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --paper: #f6f1e7; --panel: #fdfaf3; --rule: #e6dfd2; --ink: #2d2a32; --ink-soft: #6b6472;
+    --moss: #4f7a5a; --moss-soft: #dfe9dc; --sky: #4a7294; --sky-soft: #dbe6ef;
+    --apricot: #d8955c; --apricot-soft: #f6e3cf; --plum: #7f5a86; --plum-soft: #ece0ee;
+    --display: 'Fredoka', 'ABeeZee', sans-serif; --body: 'ABeeZee', 'Trebuchet MS', sans-serif;
+    --r: 20px;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ink: #e9ebf3; --ink-soft: #b4bad0; --paper: #10152a; --card: #1a2140; --rule: #2b3358;
-      --amber: #f3b86e; --amber-soft: #3a2f1c; --teal: #6fcdbb; --teal-soft: #1a3632;
-      --brick: #e0897c; --brick-soft: #3a2320;
-      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -16px rgba(0,0,0,0.6);
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --ink: #e9ebf3; --ink-soft: #b4bad0; --paper: #10152a; --card: #1a2140; --rule: #2b3358;
-    --amber: #f3b86e; --amber-soft: #3a2f1c; --teal: #6fcdbb; --teal-soft: #1a3632;
-    --brick: #e0897c; --brick-soft: #3a2320;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -16px rgba(0,0,0,0.6);
-    color-scheme: dark;
-  }
-
   * { box-sizing: border-box; }
   html, body { margin: 0; }
-  body {
-    background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.5;
-    padding-block: 16px 64px; padding-inline: 16px;
-  }
-  .wrap { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.2; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.05rem; line-height: 1.55; padding-block: 24px 64px; padding-inline: 32px; }
+  @media (max-width: 600px) { body { padding-inline: 20px; } }
+  .frame { max-width: 1100px; margin: 0 auto; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.15; text-wrap: balance; }
   p { margin: 0; }
-  button { font-family: inherit; font-size: inherit; color: inherit; cursor: pointer; }
-  button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  button { font-family: var(--display); font-size: 1.05rem; font-weight: 500; cursor: pointer; color: var(--ink); }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+  a { color: var(--moss); }
   [hidden] { display: none !important; }
+  .quiet { color: var(--ink-soft); font-size: 0.95rem; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  img.pic { display: block; }
 
-  header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  header.top .brand h1 { font-size: 1.4rem; }
-  header.top .brand .class { font-size: 0.85rem; color: var(--ink-soft); }
-  .mute { border: 1px solid var(--rule); background: var(--card); border-radius: 999px; width: 44px; height: 44px; font-size: 1.2rem; }
+  header { display: flex; justify-content: space-between; align-items: center; }
+  header .mark { font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+  header .mark span { color: var(--sky); }
+  .mute { width: 44px; height: 44px; border-radius: 999px; border: none; background: var(--panel); font-size: 1.1rem; }
 
-  .weekline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 0.9rem; color: var(--ink-soft); }
-  .weekline b { color: var(--ink); }
-  .chip { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; }
-  .chip.expected { background: var(--amber-soft); color: var(--amber); }
-  .chip.confirmed { background: var(--teal-soft); color: var(--teal); }
+  .weekstrip { display: flex; align-items: flex-end; gap: 32px; margin-top: 8px; position: relative; min-height: 120px; }
+  .weekstrip .letters { font-family: var(--body); font-size: 7rem; line-height: 1; color: var(--sky); letter-spacing: 0.06em; white-space: nowrap; }
+  .weekstrip .meta { padding-bottom: 14px; }
+  .weekstrip .meta b { font-family: var(--display); font-weight: 500; font-size: 1.2rem; display: block; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: var(--apricot); margin-right: 6px; vertical-align: 1px; }
+  .dot.moss { background: var(--moss); }
+  .frieze { position: absolute; right: 0; bottom: 0; width: 380px; height: 120px; pointer-events: none; }
+  @media (max-width: 900px) { .frieze { display: none; } .weekstrip .letters { font-size: 4.5rem; } }
+  .banner { margin-top: 12px; background: var(--plum-soft); border-radius: var(--r); padding: 14px 20px; }
+  .banner b { color: var(--plum); font-family: var(--display); font-weight: 500; }
 
-  .banner { background: var(--brick-soft); color: var(--ink); border-radius: 14px; padding: 12px 16px; font-size: 0.92rem; line-height: 1.45; }
-  .banner b { color: var(--brick); }
+  nav.tabs { display: flex; gap: 28px; margin-top: 20px; border-bottom: 1px solid var(--rule); }
+  nav.tabs button { background: none; border: none; font-size: 1.15rem; color: var(--ink-soft); padding: 10px 2px 12px; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+  nav.tabs button[aria-selected="true"] { color: var(--sky); border-color: var(--sky); }
 
-  .tabbar { display: flex; gap: 6px; }
-  .tab-btn {
-    flex: 1; background: var(--card); border: 1px solid var(--rule); border-radius: 12px; min-height: 48px;
-    padding: 8px 4px; font-family: var(--display); font-weight: 700; font-size: 0.95rem; color: var(--ink-soft);
-  }
-  .tab-btn[aria-selected="true"] { background: var(--amber-soft); color: var(--amber); border-color: var(--amber); }
-  .panel { display: flex; flex-direction: column; gap: 16px; }
+  .ribbon { display: flex; gap: 10px; margin-top: 24px; overflow-x: auto; }
+  .day { width: 64px; height: 72px; flex-shrink: 0; border-radius: 16px; background: var(--panel); border: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; position: relative; }
+  .day .l { font-family: var(--body); font-size: 1.9rem; line-height: 1; color: var(--ink); }
+  .day .l img { width: 32px; height: 32px; }
+  .day .d { font-size: 0.8rem; color: var(--ink-soft); font-family: var(--body); }
+  .day[aria-selected="true"] { background: var(--sky-soft); }
+  .day[aria-selected="true"] .l { color: var(--sky); }
+  .day.today::after { content: ""; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 999px; background: var(--apricot); }
 
-  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }
-  .eyebrow { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
-  h2.section-title { font-size: 1.05rem; margin-bottom: 10px; }
+  .cols { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 48px; margin-top: 32px; align-items: start; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
 
-  .daypick { display: flex; gap: 6px; }
-  .day-btn {
-    flex: 1; min-height: 52px; border-radius: 12px; border: 1px solid var(--rule); background: var(--card);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 4px 2px;
-  }
-  .day-btn .d { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); }
-  .day-btn .s { font-family: var(--display); font-size: 1.25rem; font-weight: 700; color: var(--ink); line-height: 1; }
-  .day-btn[aria-selected="true"] { background: var(--amber-soft); border-color: var(--amber); }
-  .day-btn[aria-selected="true"] .d, .day-btn[aria-selected="true"] .s { color: var(--amber); }
-  .day-btn.is-today { border-style: dashed; }
+  .script h2 { font-size: 1.4rem; }
+  .script ol { margin: 20px 0 0; padding-left: 1.5em; display: flex; flex-direction: column; gap: 18px; }
+  .script li::marker { color: var(--moss); font-family: var(--display); font-weight: 600; }
+  .say { display: block; margin-top: 6px; padding-left: 14px; border-left: 3px solid var(--sky); font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
+  .tricky { margin-top: 28px; }
+  .tricky .w { font-family: var(--body); font-size: 1.8rem; margin-right: 18px; }
+  .tricky .tp { color: var(--plum); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  .stems { margin-top: 20px; }
 
-  .routine h2 { font-size: 1.3rem; }
-  .routine .sub { color: var(--ink-soft); font-size: 0.9rem; margin-top: 2px; }
-  ol.steps { margin: 12px 0 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 10px; }
-  ol.steps li::marker { color: var(--amber); font-weight: 700; }
+  .hero { background: var(--panel); border-radius: var(--r); padding: 28px 32px; display: flex; gap: 28px; align-items: center; }
+  .hero .big { font-family: var(--body); font-size: 7rem; line-height: 1; color: var(--sky); min-width: 120px; text-align: center; }
+  .hero .big.word { font-size: 4.5rem; }
+  .hero .big .tp { color: var(--plum); }
+  .hero .cue { font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
+  .hero .prow { justify-content: flex-start; }
 
-  .sound-card { display: flex; gap: 14px; align-items: flex-start; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
-  .sound-card .glyph {
-    font-family: var(--display); font-size: 2.6rem; line-height: 1; color: var(--amber); background: var(--amber-soft);
-    border-radius: 14px; min-width: 64px; height: 64px; padding: 0 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  .sound-card p { font-size: 0.95rem; }
-  .sound-card a { color: var(--teal); font-weight: 600; }
+  .launch { background: var(--panel); border-radius: var(--r); padding: 20px 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; margin-top: 16px; position: relative; }
+  .launch.stretch { background: var(--apricot-soft); }
+  .launch .pics { display: flex; }
+  .launch .pics img { width: 56px; height: 56px; margin-right: -14px; background: var(--paper); border-radius: 999px; padding: 6px; }
+  .launch h3 { font-size: 1.2rem; }
+  .launch .tag { font-size: 0.9rem; color: var(--ink-soft); }
+  .launch .got { position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 1.3rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 4px var(--paper); }
+  .play { border: none; background: var(--moss); color: #fff; border-radius: 999px; padding: 12px 28px; font-size: 1.15rem; }
+  .play.small { padding: 10px 22px; font-size: 1.05rem; background: var(--ink); }
+  .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .more button { background: var(--panel); border: none; border-radius: var(--r); padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1rem; }
+  .more img { width: 44px; height: 44px; }
 
-  .tricky-list { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .tricky-chip { font-family: var(--display); font-size: 1.5rem; font-weight: 700; background: var(--teal-soft); color: var(--teal); border-radius: 10px; padding: 2px 14px; }
-  .tricky-chip .tp { text-decoration: underline wavy var(--brick); text-underline-offset: 4px; }
+  section.block { margin-top: 48px; }
+  section.block h2 { font-size: 1.4rem; margin-bottom: 12px; }
+  .list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; }
+  .list li::marker { color: var(--moss); }
+  b { font-family: var(--display); font-weight: 500; }
+  .links { display: flex; flex-direction: column; gap: 10px; max-width: 60ch; }
+  .link { display: block; text-decoration: none; color: var(--ink); }
+  .link .n { font-family: var(--display); font-weight: 500; color: var(--moss); }
+  .link .d { font-size: 0.92rem; color: var(--ink-soft); }
 
-  /* child screens */
-  .game { display: flex; flex-direction: column; gap: 14px; }
-  .game .task { font-family: var(--display); font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; gap: 10px; }
-  .say-btn { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px; width: 44px; height: 44px; font-size: 1.2rem; flex-shrink: 0; }
-  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .tile {
-    min-height: 96px; border: 3px solid var(--rule); border-radius: 18px; background: var(--paper); padding: 10px 6px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  }
-  .tile .pic { font-size: 2.6rem; line-height: 1; }
-  .tile .lbl { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
-  .tile.right { border-color: var(--teal); background: var(--teal-soft); }
-  .tile.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
-  .tile.hint { animation: pulse 0.8s 2; }
-  @keyframes dip { 50% { transform: translateY(4px); } }
-  @keyframes pulse { 50% { transform: scale(1.06); border-color: var(--teal); } }
-  @media (prefers-reduced-motion: reduce) { .tile.wrong, .tile.hint { animation: none; } }
+  .tt { max-width: 700px; }
+  .tt-row { display: grid; grid-template-columns: 3rem 3rem 1fr 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: center; position: relative; }
+  .tt-row .d { color: var(--ink-soft); }
+  .tt-row .l { font-family: var(--body); font-size: 1.6rem; color: var(--sky); line-height: 1; }
+  .tt-row.today .d::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 999px; background: var(--apricot); margin-right: 6px; }
+  .tt-row small { display: block; color: var(--ink-soft); font-size: 0.88rem; }
+  .asks { max-width: 60ch; display: flex; flex-direction: column; gap: 10px; }
+  .ask small { display: block; color: var(--ink-soft); font-size: 0.88rem; }
+  .stamps { display: flex; gap: 14px; flex-wrap: wrap; }
+  .stamp { width: 96px; height: 96px; border-radius: 999px; background: var(--moss-soft); color: var(--moss); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--body); text-align: center; }
+  .stamp b { font-weight: 400; font-size: 1.25rem; line-height: 1.1; }
+  .stamp small { font-size: 0.72rem; color: inherit; opacity: 0.8; }
+  .stamp.now { background: var(--sky-soft); color: var(--sky); transform: rotate(-6deg); }
+  .stamp.next { background: transparent; border: 2px dashed var(--rule); color: var(--ink-soft); }
+  textarea.share { width: 100%; max-width: 60ch; border: none; border-radius: var(--r); background: var(--panel); color: var(--ink); font-family: inherit; font-size: 0.95rem; padding: 16px; min-height: 150px; resize: vertical; display: block; }
+  .help { max-width: 60ch; }
+  .help h2 { font-size: 1.4rem; margin-top: 36px; }
+  .help h3 { font-size: 1.1rem; margin-top: 20px; font-weight: 500; }
+  .help p { margin-top: 10px; }
+  .help ol { margin: 12px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 12px; }
+  .help li::marker { color: var(--moss); font-family: var(--display); font-weight: 600; }
+  footer { margin-top: 64px; color: var(--ink-soft); font-size: 0.9rem; max-width: 70ch; }
 
-  .letters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .letter {
-    font-family: var(--display); font-size: 2.4rem; font-weight: 700; min-width: 72px; height: 80px; padding: 0 12px;
-    border: 3px solid var(--rule); border-radius: 16px; background: var(--paper); color: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .letter.revealed { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
-  .letter.changed { background: var(--teal-soft); border-color: var(--teal); color: var(--teal); }
-  .letter.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
-  .letter.hint { animation: pulse 0.8s 2; }
-  .bigword { text-align: center; font-family: var(--display); font-size: 2.2rem; font-weight: 700; color: var(--teal); min-height: 2.6rem; }
+  /* maths pattern tiles */
+  .prow { display: flex; gap: 8px; justify-content: center; flex-wrap: nowrap; }
+  .ptile { width: 56px; height: 56px; flex-shrink: 0; border-radius: 14px; background: var(--paper); display: flex; align-items: center; justify-content: center; }
+  .ptile img { width: 40px; height: 40px; }
+  .ptile.q { border: 2px dashed var(--apricot); font-family: var(--display); color: var(--apricot); font-size: 1.6rem; }
 
-  .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .btn { border: none; background: var(--ink); color: var(--card); font-weight: 700; min-height: 48px; padding: 10px 22px; border-radius: 999px; }
-  .btn.secondary { background: var(--card); color: var(--ink); border: 1px solid var(--rule); }
-  .btn:disabled { opacity: 0.4; cursor: default; }
-  .progress { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; text-align: center; }
-  .finish { text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center; padding: 10px 0; }
-  .finish .big { font-size: 4rem; line-height: 1; }
-  .finish h3 { font-size: 1.4rem; }
-
-  .pill-nav { display: flex; gap: 6px; flex-wrap: wrap; }
-  .pill { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; min-height: 40px; padding: 6px 14px; }
-  .pill[aria-selected="true"] { background: var(--amber-soft); color: var(--amber); border-color: var(--amber); }
-
-  .memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .mcard { aspect-ratio: 1; border-radius: 12px; border: 3px solid var(--rule); background: var(--card); font-family: var(--display); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0; }
-  .mcard.face-down { background: var(--amber-soft); color: var(--amber); }
-  .mcard.matched { background: var(--teal-soft); border-color: var(--teal); color: var(--teal); }
-
-  .flash { font-family: var(--display); font-size: 4rem; font-weight: 700; text-align: center; background: var(--paper); border: 3px solid var(--rule); border-radius: 18px; padding: 24px 10px; line-height: 1; }
-
-  /* maths tiles: fixed-size, never wrap */
-  .prow { display: flex; gap: 6px; justify-content: center; flex-wrap: nowrap; overflow-x: auto; padding: 4px 0; }
-  .ptile { width: 44px; height: 44px; flex-shrink: 0; border-radius: 10px; background: var(--paper); border: 2px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; line-height: 1; }
-  .ptile.q { border-style: dashed; border-color: var(--amber); }
-  .popts { display: flex; flex-direction: column; gap: 10px; }
-  .popt { border: 3px solid var(--rule); border-radius: 16px; background: var(--card); padding: 10px; min-height: 64px; display: flex; align-items: center; justify-content: center; }
-  .popt .prow { padding: 0; }
-  .popt.right { border-color: var(--teal); background: var(--teal-soft); }
-  .popt.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
-  .popt.hint { animation: pulse 0.8s 2; }
-  .stretch-note { font-size: 0.88rem; color: var(--ink-soft); }
-  .slots { display: flex; gap: 10px; justify-content: center; }
-  .slot { font-family: var(--display); font-size: 2.2rem; font-weight: 700; width: 64px; height: 72px; border-radius: 14px; border: 3px dashed var(--rule); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center; }
-  .slot.filled { border-style: solid; border-color: var(--teal); background: var(--teal-soft); color: var(--teal); }
-  .bank .letter { min-width: 60px; height: 68px; font-size: 2rem; }
-  .bank .letter.used { opacity: 0.25; pointer-events: none; }
-  .caption-text { font-family: var(--display); font-size: 1.9rem; font-weight: 700; text-align: center; line-height: 1.3; color: var(--ink); }
-  .tiles.captions .pic { font-size: 2.2rem; letter-spacing: 4px; }
-  .choice-row { display: flex; gap: 12px; }
-  .choice { flex: 1; min-height: 88px; border: 3px solid var(--rule); border-radius: 18px; background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: var(--display); font-weight: 700; font-size: 1.2rem; }
-  .choice .pic { font-size: 2.2rem; line-height: 1; }
-  .choice.right { border-color: var(--teal); background: var(--teal-soft); }
-  .choice.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
-  .choice.hint { animation: pulse 0.8s 2; }
-  .choice.tick { color: var(--teal); } .choice.cross { color: var(--brick); }
-  .mark-summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-  .mark-summary span { font-family: var(--display); font-weight: 700; border-radius: 8px; padding: 2px 10px; background: var(--teal-soft); color: var(--teal); }
-  .mark-summary span.miss { background: var(--brick-soft); color: var(--brick); }
-  .stretch-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--brick); background: var(--brick-soft); border-radius: 999px; padding: 3px 10px; align-self: flex-start; }
-  .vocab { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-  .vocab span { font-family: var(--display); font-weight: 700; background: var(--teal-soft); color: var(--teal); border-radius: 8px; padding: 2px 10px; }
-
-  .list { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem; }
-  .list li::marker { color: var(--teal); }
-  .links { display: flex; flex-direction: column; gap: 10px; }
-  .link { display: block; text-decoration: none; border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; color: var(--ink); }
-  .link .n { font-family: var(--display); font-weight: 700; color: var(--teal); }
-  .link .d { font-size: 0.88rem; color: var(--ink-soft); }
-
-  .tt { display: flex; flex-direction: column; gap: 6px; }
-  .tt-row { display: grid; grid-template-columns: 3rem 1fr 1fr; gap: 10px; border: 1px solid var(--rule); border-radius: 12px; padding: 10px 12px; font-size: 0.9rem; line-height: 1.35; }
-  .tt-row > div { min-width: 0; }
-  .tt-row.head { border: none; padding: 2px 12px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
-  .tt-row .d { font-family: var(--display); font-weight: 700; color: var(--ink-soft); }
-  .tt-row.today { background: var(--amber-soft); border-color: var(--amber); }
-  .tt-row.today .d { color: var(--amber); }
-  .asks { display: flex; flex-direction: column; gap: 8px; }
-  .ask { border: 1px solid var(--rule); border-radius: 12px; padding: 10px 12px; font-size: 0.95rem; }
-  .ask .meta { font-size: 0.82rem; color: var(--ink-soft); }
-  .journey { display: flex; flex-direction: column; gap: 8px; }
-  .jrow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 0.9rem; }
-  .jrow .w { width: 3.6rem; color: var(--ink-soft); font-weight: 600; flex-shrink: 0; }
-  .jrow .g { font-family: var(--display); font-weight: 700; background: var(--teal-soft); color: var(--teal); border-radius: 8px; padding: 1px 10px; }
-  .jrow.now .g { background: var(--amber-soft); color: var(--amber); }
-  .jrow.next .g { background: var(--paper); color: var(--ink-soft); border: 1px dashed var(--rule); }
-  .jrow .t { font-size: 0.82rem; color: var(--ink-soft); }
-  textarea.share { width: 100%; border: 1px solid var(--rule); border-radius: 10px; background: var(--paper); color: var(--ink); font-family: inherit; font-size: 0.9rem; padding: 10px; min-height: 150px; resize: vertical; }
-
-  footer { text-align: center; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
-  footer a { color: var(--teal); }
-  .help p + p { margin-top: 10px; }
-  .help h3 { font-size: 1rem; margin-top: 14px; }
+  /* play mode */
+  .playmode { position: fixed; inset: 0; background: var(--panel); z-index: 10; display: flex; flex-direction: column; padding: 16px 28px 32px; }
+  .pm-bar { display: flex; justify-content: space-between; align-items: center; }
+  .ring { width: 44px; height: 44px; border-radius: 999px; border: none; background: var(--paper); font-size: 1.1rem; display: inline-flex; align-items: center; justify-content: center; }
+  .dots span { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: var(--rule); margin: 0 3px; }
+  .dots span.done { background: var(--moss); }
+  .pm-task { text-align: center; color: var(--ink-soft); font-size: 1rem; margin-top: 10px; min-height: 1.5em; }
+  .stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; min-height: 0; }
+  .stage.enter { animation: turn 240ms ease-out; }
+  @keyframes turn { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+  .tiles { display: grid; grid-template-columns: repeat(3, 128px); gap: 14px; justify-content: center; }
+  .tiles.two { grid-template-columns: repeat(2, 160px); }
+  .tile { width: 128px; height: 128px; border-radius: var(--r); background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid transparent; transition: transform 160ms ease-out, background 200ms, border-color 200ms; padding: 0; }
+  .tile img { width: 84px; height: 84px; }
+  .tile .pair { display: flex; gap: 4px; } .tile .pair img { width: 52px; height: 52px; }
+  .tile .lbl { font-family: var(--display); font-weight: 500; font-size: 1.1rem; }
+  .tile:active { transform: scale(0.97); }
+  .tile.right { background: var(--moss-soft); border-color: var(--moss); }
+  .tile.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
+  .tile.hint { animation: breathe 800ms ease-in-out 1; }
+  .tiles.two .tile { width: 160px; height: 140px; }
+  @keyframes breathe { 50% { transform: scale(1.05); border-color: var(--moss); } }
+  .bigpic { width: 160px; height: 160px; border: none; background: var(--paper); border-radius: var(--r); display: flex; align-items: center; justify-content: center; }
+  .bigpic img { width: 120px; height: 120px; }
+  .word { font-family: var(--body); font-size: 3rem; color: var(--ink); line-height: 1; letter-spacing: 0.02em; }
+  .word.sky { color: var(--sky); }
+  .caption { font-family: var(--body); font-size: 2.2rem; line-height: 1.3; text-align: center; letter-spacing: 0.02em; }
+  .letters { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .letter { font-family: var(--body); font-size: 2.8rem; width: 88px; height: 96px; border-radius: var(--r); background: var(--paper); border: 3px solid transparent; display: flex; align-items: center; justify-content: center; color: var(--ink); padding: 0; transition: transform 160ms ease-out; line-height: 1; }
+  .letter.quiet { opacity: 0.45; font-size: 2rem; width: 64px; height: 72px; }
+  .letter.revealed, .letter.changed, .letter.right { background: var(--moss-soft); border-color: var(--moss); color: var(--moss); }
+  .letter.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
+  .letter.hint { animation: breathe 800ms ease-in-out 1; }
+  .letter.used { opacity: 0.25; pointer-events: none; }
+  .slot { border: 3px dashed var(--rule); background: transparent; }
+  .slot.filled { border-style: solid; border-color: var(--moss); background: var(--moss-soft); color: var(--moss); }
+  .pm-actions { display: flex; gap: 12px; justify-content: center; }
+  .btn { border: none; border-radius: 999px; padding: 12px 28px; font-size: 1.1rem; background: var(--moss); color: #fff; }
+  .btn.secondary { background: var(--paper); color: var(--ink); }
+  .popts { display: flex; flex-direction: column; gap: 12px; width: min(100%, 560px); }
+  .popt { border: 3px solid transparent; border-radius: var(--r); background: var(--paper); padding: 12px; min-height: 80px; display: flex; align-items: center; justify-content: center; transition: transform 160ms; }
+  .popt.right { background: var(--moss-soft); border-color: var(--moss); }
+  .popt.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
+  .popt.hint { animation: breathe 800ms ease-in-out 1; }
+  .finish { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+  .sticker { width: 140px; height: 140px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 4.6rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 8px var(--paper); animation: stamp 280ms ease-out; }
+  @keyframes stamp { from { transform: rotate(-8deg) scale(1.15); opacity: 0; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
+  .finish h3 { font-size: 1.6rem; }
+  .marks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .marks span { font-family: var(--body); font-size: 1.2rem; border-radius: 10px; padding: 2px 12px; background: var(--moss-soft); color: var(--moss); }
+  .marks span.miss { background: var(--plum-soft); color: var(--plum); }
+  @media (prefers-reduced-motion: reduce) { .stage.enter, .sticker, .tile.hint, .letter.hint, .popt.hint { animation: none; } .tile, .letter, .popt { transition: none; } }
+  @media (max-width: 600px) { .tiles { grid-template-columns: repeat(3, 96px); gap: 10px; } .tile { width: 96px; height: 96px; } .tile img { width: 64px; height: 64px; } .playmode { padding: 12px 16px 24px; } }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="frame">
 
-  <header class="top">
-    <div class="brand">
-      <h1>Freshwater Phonics</h1>
-      <div class="class" id="class-name"></div>
-    </div>
-    <button class="mute" id="mute-btn" aria-pressed="false" aria-label="Sound on" title="Sound on or off">🔊</button>
+  <header>
+    <div class="mark">Freshwater <span>Phonics</span></div>
+    <button class="mute" id="mute-btn" aria-pressed="false" aria-label="Sound on">🔊</button>
   </header>
 
-  <div class="weekline" id="weekline"></div>
+  <div class="weekstrip">
+    <div class="letters" id="week-letters"></div>
+    <div class="meta" id="week-meta"></div>
+    <svg class="frieze" viewBox="0 0 380 120" aria-hidden="true">
+      <circle cx="300" cy="40" r="22" fill="#f6e3cf"/>
+      <path d="M0 120 C 60 70, 120 70, 180 100 S 300 60, 380 95 L380 120 Z" fill="#dfe9dc"/>
+      <path d="M40 120 C 100 90, 170 95, 230 110 S 340 90, 380 108 L380 120 Z" fill="#cfdcc9"/>
+      <path d="M120 112 l6 -26 l6 26 z" fill="#b9c9b4"/><path d="M126 86 v26" stroke="#a9b8a4" stroke-width="2"/>
+    </svg>
+  </div>
   <div class="banner" id="stale-banner" hidden></div>
 
-  <div class="tabbar" role="tablist" aria-label="Sections">
-    <button class="tab-btn" id="tab-btn-today" role="tab" aria-selected="true" aria-controls="panel-today">Phonics</button>
-    <button class="tab-btn" id="tab-btn-maths" role="tab" aria-selected="false" aria-controls="panel-maths">Maths</button>
-    <button class="tab-btn" id="tab-btn-week" role="tab" aria-selected="false" aria-controls="panel-week">Week</button>
-    <button class="tab-btn" id="tab-btn-help" role="tab" aria-selected="false" aria-controls="panel-help">Help</button>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-btn-today" aria-selected="true" aria-controls="panel-today">phonics</button>
+    <button role="tab" id="tab-btn-maths" aria-selected="false" aria-controls="panel-maths">maths</button>
+    <button role="tab" id="tab-btn-week" aria-selected="false" aria-controls="panel-week">week</button>
+    <button role="tab" id="tab-btn-help" aria-selected="false" aria-controls="panel-help">help</button>
+  </nav>
+
+  <div class="ribbon" id="daypick" role="group" aria-label="Choose a day"></div>
+
+  <div id="panel-today" role="tabpanel" aria-labelledby="tab-btn-today">
+    <div class="cols">
+      <div class="script" id="ph-script"></div>
+      <div id="ph-side"></div>
+    </div>
   </div>
 
-  <div class="daypick" id="daypick" role="group" aria-label="Choose a day"></div>
-
-  <div class="panel" id="panel-today" role="tabpanel" aria-labelledby="tab-btn-today">
-    <section class="card routine" id="ph-routine"></section>
-    <section class="card game" id="ph-game"></section>
-    <section class="card game" id="ph-stretch"></section>
-    <section class="card game" id="ph-more">
-      <h2 class="section-title">More ways to play</h2>
-      <div class="pill-nav" id="more-nav"></div>
-      <div class="game" id="more-content"></div>
-    </section>
-    <section class="card">
-      <h2 class="section-title">More practice elsewhere</h2>
-      <div class="links">
-        <a class="link" href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener"><div class="n">Little Wandle for parents</div><div class="d">The scheme school uses. Videos of every sound said correctly, by term, and how blending and tricky words are taught. Start here.</div></a>
-        <a class="link" href="https://www.teachyourmonster.org/teach-your-monster-to-read/" target="_blank" rel="noopener"><div class="n">Teach Your Monster to Read</div><div class="d">Free in a web browser. A full game that teaches the sounds in broadly the same order as school.</div></a>
-        <a class="link" href="https://www.phonicsbloom.com/uk/game/list/phonics-games-phase-2" target="_blank" rel="noopener"><div class="n">Phonics Bloom, Phase 2</div><div class="d">Short free games for the same phase.</div></a>
-        <a class="link" href="https://www.oxfordowl.co.uk/for-home/find-a-book/library-page/" target="_blank" rel="noopener"><div class="n">Oxford Owl free eBooks</div><div class="d">Free books filtered by phase, after a quick sign-up. Choose Phase 2.</div></a>
-      </div>
-    </section>
-  </div>
-
-  <div class="panel" id="panel-maths" role="tabpanel" aria-labelledby="tab-btn-maths" hidden>
-    <section class="card">
-      <div class="eyebrow">This week's maths at school</div>
-      <h2 id="m-topic" style="font-size:1.2rem;margin-top:4px;"></h2>
-      <div class="vocab" id="m-vocab"></div>
-      <p id="m-source" style="font-size:0.88rem;color:var(--ink-soft);margin-top:8px;"></p>
-    </section>
-    <section class="card routine" id="m-routine"></section>
-    <section class="card game" id="m-check"></section>
-    <section class="card game" id="m-stretch"></section>
-    <section class="card">
-      <h2 class="section-title">Everyday moments for the same idea</h2>
-      <ul class="list" id="m-everyday"></ul>
+  <div id="panel-maths" role="tabpanel" aria-labelledby="tab-btn-maths" hidden>
+    <div class="cols">
+      <div class="script" id="m-script"></div>
+      <div id="m-side"></div>
+    </div>
+    <section class="block">
+      <h2>Everyday moments for the same idea</h2>
+      <ul class="list" id="m-everyday" style="max-width:60ch;"></ul>
     </section>
   </div>
 
-  <div class="panel" id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
-    <section class="card">
-      <h2 class="section-title" id="wk-title">This week at home</h2>
-      <div class="tt" id="wk-tt"></div>
-    </section>
-    <section class="card">
-      <h2 class="section-title">School has asked for</h2>
-      <div class="asks" id="wk-asks"></div>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Last week at school</h2>
-      <ul class="list" id="wk-last"></ul>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Every week</h2>
-      <ul class="list" id="wk-standing"></ul>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Sounds so far</h2>
-      <div class="journey" id="wk-journey"></div>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Share this week</h2>
-      <textarea class="share" id="share-text" readonly aria-label="Message to share"></textarea>
-      <div class="actions" style="margin-top:10px;"><button class="btn secondary" id="copy-btn">Copy message</button><span class="progress" id="copy-status"></span></div>
-    </section>
+  <div id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
+    <section class="block" style="margin-top:32px;"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
+    <section class="block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
+    <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
+    <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
+    <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
+    <section class="block"><h2>Share this week</h2><textarea class="share" id="share-text" readonly aria-label="Message to share"></textarea><p style="margin-top:12px;"><button class="btn secondary" id="copy-btn" style="background:var(--panel);">Copy message</button> <span class="quiet" id="copy-status"></span></p></section>
   </div>
 
-  <div class="panel help" id="panel-help" role="tabpanel" aria-labelledby="tab-btn-help" hidden>
-    <section class="card">
-      <h2 class="section-title">What this is</h2>
+  <div id="panel-help" role="tabpanel" aria-labelledby="tab-btn-help" hidden>
+    <div class="help">
+      <h2 style="margin-top:32px;">What this is</h2>
       <p>A weekly page made by a parent in the class, not by the school, and not reviewed by the school. Each Friday the school's update says which sounds and maths topic the children did and what comes next; this page turns that into about 15 minutes a day at home: 10 of phonics, 5 of maths.</p>
-      <p>Nothing is stored and nobody is tracked. If the page is out of date, the banner at the top says so. If something is wrong, tell the parent who shared the link.</p>
-    </section>
-    <section class="card">
-      <h2 class="section-title">How to say the sounds</h2>
+      <p>Nothing is stored and nobody is tracked. If the page is out of date, a notice at the top says so. If something is wrong, tell the parent who shared the link.</p>
+      <h2>How to say the sounds</h2>
       <p>Pure sounds, short and clean. The usual slip is adding "uh": "buh" instead of b, "luh" instead of l. It makes blending harder later, so it is worth getting right from the start. The cues on this page are a reminder; the model to copy is school's own scheme, which has a free video of every sound: <a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle for parents</a>.</p>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Five rules for the practice slot</h2>
-      <ol class="steps" style="margin-top:0;">
+      <h2>Five rules for the practice slot</h2>
+      <ol>
         <li><b>Sound it out, don't guess.</b> If your child guesses from the picture, cover the picture and point to the first letter. Guessing works on easy books and stops working later.</li>
         <li><b>Short, and end well.</b> Ten minutes. Stop while it is still going well, even if you have not finished. A grim session costs more than it gains.</li>
         <li><b>Read aloud every day as well,</b> with a book your child chooses. That is for pleasure and words, not a phonics lesson. Read any hard word to them and keep going.</li>
         <li><b>Never make it a bargain.</b> No "do your sounds and then you can have the iPad". It becomes a chore to survive.</li>
         <li><b>Talk.</b> Understanding what is read comes from knowing about the world, which comes from conversation. Ask what happened, what might happen next, why.</li>
       </ol>
-    </section>
-    <section class="card">
-      <h2 class="section-title">What to do when</h2>
+      <h2>What to do when</h2>
       <h3>Your child guesses from the picture</h3>
       <p>Say "let's check with the letters", point to the first sound, and blend it together. Praise the blending, not the guess.</p>
       <h3>They get stuck blending</h3>
@@ -340,26 +266,43 @@
       <p>Do it standing up, in the bath, on the stairs. Play one game only. If it is a no, skip today and keep the page for tomorrow; one missed day costs nothing.</p>
       <h3>They melt down</h3>
       <p>Stop. The session is over for today, with no consequence. Reading time must stay a good time or everything else here stops working.</p>
-    </section>
-    <section class="card">
-      <h2 class="section-title">Credits</h2>
-      <p style="font-size:0.9rem;color:var(--ink-soft);">Fonts: Baloo 2 and Figtree, via Google Fonts. Pictures are your phone's own emoji. Spoken clips are a computer voice. No reproduction of school or Little Wandle materials; their resources are linked, not copied. Made with Claude by a parent in the class.</p>
-    </section>
+      <h2>More practice elsewhere</h2>
+      <div class="links">
+        <a class="link" href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener"><div class="n">Little Wandle for parents</div><div class="d">The scheme school uses. Videos of every sound said correctly, by term, and how blending and tricky words are taught.</div></a>
+        <a class="link" href="https://www.teachyourmonster.org/teach-your-monster-to-read/" target="_blank" rel="noopener"><div class="n">Teach Your Monster to Read</div><div class="d">Free in a web browser. A full game that teaches the sounds in broadly the same order as school.</div></a>
+        <a class="link" href="https://www.phonicsbloom.com/uk/game/list/phonics-games-phase-2" target="_blank" rel="noopener"><div class="n">Phonics Bloom, Phase 2</div><div class="d">Short free games for the same phase.</div></a>
+        <a class="link" href="https://www.oxfordowl.co.uk/for-home/find-a-book/library-page/" target="_blank" rel="noopener"><div class="n">Oxford Owl free eBooks</div><div class="d">Free books filtered by phase, after a quick sign-up. Choose Phase 2.</div></a>
+      </div>
+      <h2>Credits</h2>
+      <p class="quiet">Fonts: ABeeZee and Fredoka via Google Fonts. Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0. Spoken clips are a computer voice. No reproduction of school or Little Wandle materials; their resources are linked, not copied. Made with Claude by a parent in the class.</p>
+    </div>
   </div>
 
   <footer id="foot"></footer>
   <div class="sr" aria-live="polite" id="live"></div>
 </div>
 
+<div class="playmode" id="play" hidden role="dialog" aria-modal="true" aria-label="Game">
+  <div class="pm-bar">
+    <button class="ring" id="pm-close" aria-label="Close the game">✕</button>
+    <div class="dots" id="pm-dots" aria-hidden="true"></div>
+    <button class="ring" id="pm-say" aria-label="Hear the instruction">🔊</button>
+  </div>
+  <p class="pm-task" id="pm-task"></p>
+  <div class="stage" id="stage"></div>
+</div>
+
 <script>
 (async function () {
-  // ---------- load the week ----------
-  let W;
+  // ---------- load ----------
+  let W, PICS = {};
   try {
-    const r = await fetch("weeks/current.json", { cache: "no-cache" });
-    W = await r.json();
+    [W, PICS] = await Promise.all([
+      fetch("weeks/current.json", { cache: "no-cache" }).then(r => r.json()),
+      fetch("pictures.json", { cache: "no-cache" }).then(r => r.json())
+    ]);
   } catch (e) {
-    document.getElementById("weekline").innerHTML = "<b>Could not load this week's content.</b> Check your connection and reload.";
+    document.getElementById("week-meta").innerHTML = "<b>Could not load this week's content.</b> Check your connection and reload.";
     return;
   }
 
@@ -372,8 +315,12 @@
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   const announce = t => { $("live").textContent = ""; setTimeout(() => { $("live").textContent = t; }, 50); };
   const todayISO = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  const formatDate = iso => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "long" });
+  const pic = (w, cls = "pic") => (w in PICS) ? `<img class="${cls}" src="pictures/${esc(w)}.svg" alt="${esc(w)}">` : `<span>${esc(w)}</span>`;
+  // the words to say, inside quotes, become sky "say" lines
+  const script = t => esc(t).replace(/&quot;([^&]+?)&quot;/g, (m, q) => /\s/.test(q.trim()) ? `<span class="say">"${q}"</span>` : `"${q}"`);
 
-  // ---------- audio: a rendered clip when we have one, otherwise British speech synthesis ----------
+  // ---------- audio: clips, speech fallback, three small sounds ----------
   let manifest = {};
   try { manifest = await (await fetch("audio/manifest.json", { cache: "no-cache" })).json(); } catch (e) {}
   let muted = store.get("fp-muted") === "1";
@@ -389,7 +336,6 @@
     return new Promise(resolve => {
       let done = false;
       const finish = () => { if (!done) { done = true; clearTimeout(guard); resolve(); } };
-      // never let a stalled clip freeze a game
       const guard = setTimeout(finish, 4000);
       const a = new Audio("audio/" + name + ".m4a");
       current = a;
@@ -409,20 +355,30 @@
       window.speechSynthesis.speak(u);
     } catch (e) {}
   }
-  const PH = { good: "Well done.", bad: "Not that one. Listen again.", again: "Try again.", done: "All done. Well played." };
-
-  // ---------- header, week line, stale banner ----------
-  $("class-name").textContent = W.className;
-  const today = todayISO();
-  const weekStart = new Date(W.weekOf + "T00:00:00");
-  const weekEnd = new Date(weekStart); weekEnd.setDate(weekStart.getDate() + 6);
-  const daysPast = Math.floor((new Date(today + "T00:00:00") - weekEnd) / 86400000);
-  $("weekline").innerHTML = `<b>${esc(W.label)}</b><span class="chip ${esc(W.status)}">${W.status === "confirmed" ? "confirmed by school" : "expected, not yet confirmed"}</span><span>updated ${esc(formatDate(W.updated))}</span>`;
-  if (daysPast > 0) {
-    $("stale-banner").hidden = false;
-    $("stale-banner").innerHTML = `<b>This page is out of date.</b> It shows the week of ${esc(formatDate(W.weekOf))}. The sounds below may be last week's; check with school or the parent who shared the link.`;
+  let actx = null;
+  function tone(freq, dur, type = "sine", gain = 0.08, when = 0) {
+    if (muted) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = type; o.frequency.value = freq;
+      g.gain.setValueAtTime(0.0001, actx.currentTime + when);
+      g.gain.exponentialRampToValueAtTime(gain, actx.currentTime + when + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, actx.currentTime + when + dur);
+      o.connect(g); g.connect(actx.destination);
+      o.start(actx.currentTime + when); o.stop(actx.currentTime + when + dur + 0.05);
+    } catch (e) {}
   }
-  function formatDate(iso) { const d = new Date(iso + "T00:00:00"); return d.toLocaleDateString("en-GB", { day: "numeric", month: "long" }); }
+  const SFX = { tap: () => tone(220, 0.06, "triangle", 0.05), right: () => { tone(659, 0.14, "sine", 0.07); tone(784, 0.18, "sine", 0.07, 0.12); }, finish: () => { tone(110, 0.12, "triangle", 0.1); tone(523, 0.25, "sine", 0.06, 0.08); } };
+  const PH = { bad: "Not that one. Listen again.", again: "Try again.", done: "All done. Well played.", good: "Well done." };
+
+  // ---------- week strip, stale banner ----------
+  const today = todayISO();
+  const weekEnd = new Date(W.weekOf + "T00:00:00"); weekEnd.setDate(weekEnd.getDate() + 6);
+  const stale = new Date(today + "T00:00:00") > weekEnd;
+  $("week-letters").textContent = W.phonics.focus.join(" ");
+  $("week-meta").innerHTML = `<b>${esc(W.label.toLowerCase())}</b><span class="quiet"><span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? "confirmed by school" : "expected, not yet confirmed by school"}</span>`;
+  if (stale) { $("stale-banner").hidden = false; $("stale-banner").innerHTML = `<b>This page is out of date.</b> It shows the week of ${esc(formatDate(W.weekOf))}; the sounds may be last week's. Check with school or the parent who shared the link.`; }
 
   // ---------- tabs ----------
   const TABS = ["today", "maths", "week", "help"];
@@ -432,14 +388,14 @@
     store.set("fp-tab", which);
   }
   TABS.forEach(t => $("tab-btn-" + t).addEventListener("click", () => selectTab(t)));
-  $("tab-btn-today").parentElement.addEventListener("keydown", e => {
+  document.querySelector("nav.tabs").addEventListener("keydown", e => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     const i = TABS.findIndex(t => $("tab-btn-" + t).getAttribute("aria-selected") === "true");
     const n = (i + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length;
     selectTab(TABS[n]); $("tab-btn-" + TABS[n]).focus();
   });
 
-  // ---------- day picker (0 = weekend) ----------
+  // ---------- day ribbon ----------
   const dow = new Date().getDay();
   const todayDay = (dow >= 1 && dow <= 5) ? dow : 0;
   let day = todayDay;
@@ -448,449 +404,316 @@
   function renderDayPick() {
     $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
       const d = W.phonics.days[n];
-      const label = n === 0 ? "Sat/Sun" : d.name;
-      const s = n === 0 ? "·" : (d.sound || "✓");
-      return `<button class="day-btn${n === todayDay ? " is-today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="d">${label}</span><span class="s">${esc(s)}</span></button>`;
+      const label = n === 0 ? "rest" : d.name;
+      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : esc(W.phonics.tricky[0].word));
+      return `<button class="day${n === todayDay ? " today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
     }).join("");
-    $("daypick").querySelectorAll(".day-btn").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
+    $("daypick").querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
   }
 
-  // ---------- phonics: routine ----------
-  function renderPhonics() {
-    const r = $("ph-routine"), g = $("ph-game"), st = $("ph-stretch");
-    if (day === 0) {
-      r.innerHTML = `<h2>Weekend</h2><p class="sub" style="margin-top:8px;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      g.hidden = true; st.hidden = true; return;
-    }
-    g.hidden = false;
-    const d = W.phonics.days[day];
-    const cue = d.sound ? W.phonics.cues[d.sound] : null;
-    r.innerHTML = `
-      <div class="eyebrow">${esc(d.name)} · about ${d.minutes} minutes</div>
-      <h2 style="margin-top:4px;">${esc(d.title)}</h2>
-      <ol class="steps">${d.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
-      ${d.sound ? `<div class="sound-card"><div class="glyph">${esc(d.sound)}</div><div><p>${esc(cue)}</p><p style="margin-top:6px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme) ↗</a></p></div></div>` : ""}
-      ${trickyHtml()}`;
-    renderGame(g, d.game);
-    renderStretch(st, d.stretch);
-  }
-  function trickyHtml() {
-    return `<div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);"><div class="eyebrow">Tricky words: show, say, spot the tricky part, say again</div><div class="tricky-list">${W.phonics.tricky.map(t => `<span class="tricky-chip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</div><p style="font-size:0.88rem;color:var(--ink-soft);margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div>`;
-  }
-
-  // ---------- phonics: games ----------
-  function taskBar(text) {
-    return `<div class="task"><button class="say-btn" data-say="${esc(text)}" aria-label="Hear the instruction">🔊</button><span>${esc(text)}</span></div>`;
-  }
-  function wireSay(root) { root.querySelectorAll("[data-say]").forEach(b => b.addEventListener("click", () => speak(b.dataset.say))); }
-  function finish(el, text, again) {
-    el.innerHTML = `<div class="finish"><div class="big">⭐</div><h3>${esc(text)}</h3><button class="btn secondary" id="again">Play again</button></div>`;
-    speak(PH.done); announce(text);
-    el.querySelector("#again").addEventListener("click", again);
-  }
-  function renderGame(el, game) {
-    if (game.type === "hunt") renderHunt(el, game);
-    else if (game.type === "blendpick") renderBlendPick(el, game);
-    else if (game.type === "ladder") renderLadder(el, game);
-    else if (game.type === "tricky") renderTricky(el, game);
-  }
-
-  function renderHunt(el, game) {
-    const items = shuffle(game.items);
-    const total = items.filter(i => i.match).length;
-    let found = 0, misses = 0;
-    el.innerHTML = `${taskBar(game.say)}<div class="tiles" id="hunt"></div><div class="progress" id="hunt-p">0 of ${total} found</div>`;
-    wireSay(el);
-    const grid = el.querySelector("#hunt");
-    grid.innerHTML = items.map((it, i) => `<button class="tile" data-i="${i}" aria-label="${esc(it.word)}"><span class="pic" aria-hidden="true">${it.emoji}</span></button>`).join("");
-    grid.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
-      const it = items[Number(b.dataset.i)];
-      if (b.classList.contains("right")) return;
-      if (it.match) {
-        b.classList.add("right"); found++;
-        el.querySelector("#hunt-p").textContent = `${found} of ${total} found`;
-        await speak(it.word);
-        if (found === total) finish(el, misses === 0 ? "All found, first time!" : "All found!", () => renderHunt(el, game));
-      } else {
-        misses++;
-        b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-        await speak(it.word); await speak(PH.bad);
-        if (misses >= 2) grid.querySelectorAll(".tile").forEach(t => { if (items[Number(t.dataset.i)].match && !t.classList.contains("right")) { t.classList.add("hint"); setTimeout(() => t.classList.remove("hint"), 1700); } });
+  // ---------- play mode ----------
+  const play = $("play"), stage = $("stage");
+  const done = new Set(); // launchers that got a sticker this visit
+  let closing = null;
+  function openPlay(game, meta) {
+    play.hidden = false; document.body.style.overflow = "hidden";
+    $("pm-task").textContent = game.say || "";
+    $("pm-say").onclick = () => speak(game.say);
+    history.pushState({ play: 1 }, "");
+    closing = () => { play.hidden = true; document.body.style.overflow = ""; stage.innerHTML = ""; if (current) { try { current.pause(); } catch (e) {} } renderDay(); };
+    const pm = {
+      stage, meta,
+      progress(i, n) { $("pm-dots").innerHTML = Array.from({ length: n }, (_, k) => `<span class="${k < i ? "done" : ""}"></span>`).join(""); },
+      draw(html) { stage.classList.remove("enter"); void stage.offsetWidth; stage.innerHTML = html; stage.classList.add("enter"); },
+      finish(text, again, extra) {
+        done.add(meta.id);
+        SFX.finish(); speak(PH.done); announce(text);
+        pm.draw(`<div class="finish"><div class="sticker"${meta.sticker.length > 2 ? ' style="font-size:2.6rem;"' : ""}>${esc(meta.sticker)}</div><h3>${esc(text)}</h3>${extra || ""}<div class="pm-actions"><button class="btn secondary" id="pm-again">Again</button><button class="btn" id="pm-done">Done</button></div></div>`);
+        $("pm-again").addEventListener("click", again);
+        $("pm-done").addEventListener("click", closePlay);
       }
-    }));
+    };
+    speak(game.say);
+    GAMES[game.type](pm, game);
+    $("pm-close").focus();
   }
+  function closePlay() { if (history.state && history.state.play) history.back(); else if (closing) { closing(); closing = null; } }
+  window.addEventListener("popstate", () => { if (closing) { closing(); closing = null; } });
+  $("pm-close").addEventListener("click", closePlay);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !play.hidden) closePlay(); });
 
-  function renderBlendPick(el, game) {
-    let i = 0, misses = 0;
-    function word() {
-      const w = game.words[i];
-      const revealed = w.segments.map(() => false);
-      const opts = shuffle([{ word: w.word, emoji: w.emoji, right: true }, ...w.distractors.map(d => ({ ...d, right: false }))]);
-      el.innerHTML = `${taskBar(game.say)}<div class="letters" id="lt"></div><div class="bigword" id="bw">&nbsp;</div><div class="tiles" id="pick" hidden></div><div class="progress">Word ${i + 1} of ${game.words.length}</div>`;
-      wireSay(el);
-      const lt = el.querySelector("#lt"), pick = el.querySelector("#pick");
-      lt.innerHTML = w.segments.map((s, k) => `<button class="letter" data-k="${k}" aria-label="sound ${k + 1}">?</button>`).join("");
-      lt.querySelectorAll(".letter").forEach(b => b.addEventListener("click", () => {
-        const k = Number(b.dataset.k); if (revealed[k]) return;
-        revealed[k] = true; b.textContent = w.segments[k]; b.classList.add("revealed"); b.setAttribute("aria-label", w.segments[k]);
-        if (revealed.every(Boolean)) {
-          el.querySelector("#bw").textContent = w.word;
-          pick.hidden = false;
-          pick.innerHTML = opts.map((o, j) => `<button class="tile" data-j="${j}" aria-label="${esc(o.word)}"><span class="pic" aria-hidden="true">${o.emoji}</span></button>`).join("");
-          speak("Say the word, then tap the picture.");
-          pick.querySelectorAll(".tile").forEach(t => t.addEventListener("click", async () => {
-            const o = opts[Number(t.dataset.j)];
-            if (o.right) {
-              t.classList.add("right"); await speak(w.word);
-              i++;
-              if (i < game.words.length) word(); else finish(el, "All the words blended!", () => { i = 0; misses = 0; word(); });
-            } else {
-              misses++; t.classList.add("wrong"); setTimeout(() => t.classList.remove("wrong"), 400);
-              await speak(o.word); await speak(PH.bad);
-              if (misses >= 2) pick.querySelectorAll(".tile").forEach(x => { if (opts[Number(x.dataset.j)].right) { x.classList.add("hint"); setTimeout(() => x.classList.remove("hint"), 1700); } });
-            }
-          }));
-        }
+  // feedback helpers shared by games
+  async function wrong(el, saidWord, misses, hintSel) {
+    el.classList.add("wrong"); setTimeout(() => el.classList.remove("wrong"), 450);
+    if (saidWord) await speak(saidWord);
+    await speak(PH.bad);
+    if (misses >= 2 && hintSel) stage.querySelectorAll(hintSel).forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); });
+  }
+  const tileBtn = (w, k, extra = "") => `<button class="tile" data-k="${k}" aria-label="${esc(w)}" ${extra}>${pic(w)}</button>`;
+
+  const GAMES = {
+    hunt(pm, g) {
+      const items = shuffle(g.items), total = items.filter(i => i.match).length;
+      let found = 0, misses = 0;
+      pm.progress(0, total);
+      pm.draw(`<div class="tiles">${items.map((it, k) => tileBtn(it.pic || it.word, k, `data-m="${it.match}"`)).join("")}</div>`);
+      stage.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
+        const it = items[Number(b.dataset.k)];
+        if (b.classList.contains("right")) return;
+        SFX.tap();
+        if (it.match) {
+          b.classList.add("right"); found++; pm.progress(found, total); SFX.right(); await speak(it.word);
+          if (found === total) pm.finish(misses ? "All found!" : "All found, first time!", () => GAMES.hunt(pm, g));
+        } else { misses++; await wrong(b, it.word, misses, '.tile[data-m="true"]:not(.right)'); }
       }));
-    }
-    word();
-  }
-
-  function renderLadder(el, game) {
-    let i = 1, misses = 0;
-    function step() {
-      const prev = game.words[i - 1], cur = game.words[i];
-      const changed = [...cur].findIndex((c, k) => c !== prev[k]);
-      el.innerHTML = `${taskBar(game.say)}
-        <div class="letters" aria-label="previous word">${[...prev].map(c => `<div class="letter" style="opacity:0.55;min-width:56px;height:60px;font-size:1.8rem;">${esc(c)}</div>`).join("")}</div>
-        <div class="letters" id="cur"></div>
-        <div class="progress">Word ${i} of ${game.words.length - 1}</div>`;
-      wireSay(el);
-      const cur$ = el.querySelector("#cur");
-      cur$.innerHTML = [...cur].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("");
-      cur$.querySelectorAll(".letter").forEach(b => b.addEventListener("click", async () => {
-        if (Number(b.dataset.k) === changed) {
-          b.classList.add("changed"); await speak(cur);
+    },
+    blendpick(pm, g) {
+      let i = 0, misses = 0;
+      function word() {
+        const w = g.words[i], revealed = w.segments.map(() => false);
+        const opts = shuffle([{ word: w.word, pic: w.pic, right: true }, ...w.distractors.map(d => ({ ...d, right: false }))]);
+        pm.progress(i, g.words.length);
+        pm.draw(`<div class="letters" id="lt">${w.segments.map((s, k) => `<button class="letter" data-k="${k}" aria-label="sound ${k + 1}">?</button>`).join("")}</div><div class="word sky" id="bw">&nbsp;</div><div class="tiles" id="pick" hidden>${opts.map((o, k) => tileBtn(o.pic || o.word, k, `data-r="${o.right}"`)).join("")}</div>`);
+        stage.querySelectorAll("#lt .letter").forEach(b => b.addEventListener("click", () => {
+          const k = Number(b.dataset.k); if (revealed[k]) return; SFX.tap();
+          revealed[k] = true; b.textContent = w.segments[k]; b.classList.add("revealed"); b.setAttribute("aria-label", w.segments[k]);
+          if (revealed.every(Boolean)) { $("bw").textContent = w.word; $("pick").hidden = false; speak("Say the word, then tap the picture."); }
+        }));
+        stage.querySelectorAll("#pick .tile").forEach(t => t.addEventListener("click", async () => {
+          const o = opts[Number(t.dataset.k)]; SFX.tap();
+          if (o.right) { t.classList.add("right"); SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("All the words blended!", () => { i = 0; misses = 0; word(); }); }
+          else { misses++; await wrong(t, o.word, misses, '#pick .tile[data-r="true"]'); }
+        }));
+      }
+      word();
+    },
+    ladder(pm, g) {
+      let i = 1, misses = 0;
+      function step() {
+        const prev = g.words[i - 1], cur = g.words[i], changed = [...cur].findIndex((c, k) => c !== prev[k]);
+        pm.progress(i - 1, g.words.length - 1);
+        pm.draw(`<div class="letters">${[...prev].map(c => `<div class="letter quiet">${esc(c)}</div>`).join("")}</div><div class="letters" id="cur">${[...cur].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("")}</div>`);
+        stage.querySelectorAll("#cur .letter").forEach(b => b.addEventListener("click", async () => {
+          SFX.tap();
+          if (Number(b.dataset.k) === changed) { b.classList.add("changed"); SFX.right(); await speak(cur); i++; if (i < g.words.length) step(); else pm.finish("Every change spotted!", () => { i = 1; misses = 0; step(); }); }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(prev); await speak(cur); if (misses >= 2) { const h = stage.querySelector(`#cur [data-k="${changed}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+        }));
+      }
+      step();
+    },
+    tricky(pm, g) {
+      let i = 0;
+      function word() {
+        const w = g.words[i], t = W.phonics.tricky.find(x => x.word === w), targets = new Set(t.trickyLetters), got = new Set();
+        pm.progress(i, g.words.length);
+        pm.draw(`<div class="letters" id="tw">${[...w].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("")}</div><p class="quiet" style="max-width:40ch;text-align:center;">${esc(t.note)}</p><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
+        $("hear").addEventListener("click", () => speak(w)); speak(w);
+        stage.querySelectorAll("#tw .letter").forEach(b => b.addEventListener("click", async () => {
+          const k = Number(b.dataset.k); SFX.tap();
+          if (targets.has(k)) { b.classList.add("right"); got.add(k); if (got.size === targets.size) { SFX.right(); await speak(PH.good); i++; if (i < g.words.length) word(); else pm.finish("Tricky parts all spotted!", () => { i = 0; word(); }); } }
+          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); speak(PH.again); }
+        }));
+      }
+      word();
+    },
+    segment(pm, g) {
+      const all = [...W.phonics.taught, ...W.phonics.focus];
+      let i = 0, misses = 0;
+      function word() {
+        const w = g.words[i], extras = shuffle(all.filter(x => !w.segments.includes(x))).slice(0, 3), bank = shuffle([...w.segments, ...extras]);
+        let next = 0;
+        pm.progress(i, g.words.length);
+        pm.draw(`<button class="bigpic" id="sg-pic" aria-label="hear the word">${pic(w.pic || w.word)}</button><div class="letters" id="slots">${w.segments.map(() => `<div class="letter slot" aria-hidden="true"></div>`).join("")}</div><div class="letters" id="bank">${bank.map((x, k) => `<button class="letter" data-k="${k}" aria-label="${esc(x)}">${esc(x)}</button>`).join("")}</div>`);
+        $("sg-pic").addEventListener("click", () => speak(w.word)); speak(w.word);
+        const slots = stage.querySelectorAll(".slot");
+        stage.querySelectorAll("#bank .letter").forEach(b => b.addEventListener("click", async () => {
+          const x = bank[Number(b.dataset.k)]; SFX.tap();
+          if (x === w.segments[next]) {
+            b.classList.add("used"); slots[next].textContent = x; slots[next].classList.add("filled"); next++;
+            if (next === w.segments.length) { SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("Every word spelled!", () => { i = 0; misses = 0; word(); }); }
+          } else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(w.word); if (misses >= 2) stage.querySelectorAll("#bank .letter").forEach(h => { if (bank[Number(h.dataset.k)] === w.segments[next]) { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }); }
+        }));
+      }
+      word();
+    },
+    alien(pm, g) {
+      const items = shuffle(g.items);
+      let i = 0, misses = 0;
+      function item() {
+        const it = items[i];
+        pm.progress(i, items.length);
+        pm.draw(`<div class="word">${esc(it.word)}</div><div class="tiles two"><button class="tile" data-real="true" aria-label="real word">${pic("house")}<span class="lbl">real</span></button><button class="tile" data-real="false" aria-label="alien word">${pic("alien")}<span class="lbl">alien</span></button></div><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
+        $("hear").addEventListener("click", () => speak(it.word));
+        stage.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
+          SFX.tap();
+          if ((b.dataset.real === "true") === it.real) { b.classList.add("right"); SFX.right(); await speak(it.real ? "Real word." : "Alien word."); i++; if (i < items.length) item(); else pm.finish("Real and alien all sorted!", () => { i = 0; misses = 0; item(); }); }
+          else { misses++; await wrong(b, it.word, misses, `.tile[data-real="${it.real}"]`); }
+        }));
+      }
+      item();
+    },
+    caption(pm, g) {
+      let i = 0, misses = 0;
+      function item() {
+        const it = g.items[i], order = shuffle(it.options.map((o, k) => k));
+        pm.progress(i, g.items.length);
+        pm.draw(`<div class="caption">${esc(it.text)}</div><div class="tiles" id="cp">${order.map(k => `<button class="tile" data-k="${k}" aria-label="${esc(it.options[k].say)}"><span class="pair">${it.options[k].pics.map(p => pic(p)).join("")}</span></button>`).join("")}</div><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
+        $("hear").addEventListener("click", () => speak(it.text));
+        stage.querySelectorAll("#cp .tile").forEach(b => b.addEventListener("click", async () => {
+          const k = Number(b.dataset.k); SFX.tap();
+          if (k === it.correct) { b.classList.add("right"); SFX.right(); await speak(it.text); i++; if (i < g.items.length) item(); else pm.finish("Every caption read!", () => { i = 0; misses = 0; item(); }); }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(it.options[k].say); await speak("Listen again."); await speak(it.text); if (misses >= 2) { const h = stage.querySelector(`#cp [data-k="${it.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+        }));
+      }
+      item();
+    },
+    mark(pm, g) {
+      const words = shuffle(g.words); let i = 0; const got = [];
+      function word() {
+        pm.progress(i, words.length);
+        pm.draw(`<div class="word">${esc(words[i])}</div><div class="tiles two"><button class="tile" data-ok="1" aria-label="read correctly"><span class="word" style="color:var(--moss);font-size:2.4rem;">✓</span><span class="lbl">got it</span></button><button class="tile" data-ok="0" aria-label="not yet"><span class="word" style="color:var(--plum);font-size:2.4rem;">✗</span><span class="lbl">not yet</span></button></div>`);
+        stage.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
+          SFX.tap(); const ok = b.dataset.ok === "1"; got.push({ word: words[i], ok });
+          if (!ok) await speak(words[i]);
           i++;
-          if (i < game.words.length) step(); else finish(el, "Every change spotted!", () => { i = 1; misses = 0; step(); });
-        } else {
-          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-          await speak(prev); await speak(cur);
-          if (misses >= 2) { const h = cur$.querySelector(`[data-k="${changed}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
-        }
-      }));
-    }
-    step();
-  }
-
-  function renderTricky(el, game) {
-    let i = 0;
-    function word() {
-      const w = game.words[i];
-      const t = W.phonics.tricky.find(x => x.word === w);
-      const targets = new Set(t.trickyLetters);
-      const got = new Set();
-      el.innerHTML = `${taskBar(game.say)}<div class="letters" id="tw"></div><p class="progress">${esc(t.note)}</p><div class="actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div><div class="progress">Word ${i + 1} of ${game.words.length}</div>`;
-      wireSay(el);
-      el.querySelector("#hear").addEventListener("click", () => speak(w));
-      const tw = el.querySelector("#tw");
-      tw.innerHTML = [...w].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("");
-      speak(w);
-      tw.querySelectorAll(".letter").forEach(b => b.addEventListener("click", async () => {
-        const k = Number(b.dataset.k);
-        if (targets.has(k)) {
-          b.classList.add("changed"); got.add(k);
-          if (got.size === targets.size) {
-            await speak(PH.good); i++;
-            if (i < game.words.length) word(); else finish(el, "Tricky parts all spotted!", () => { i = 0; word(); });
-          }
-        } else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400); speak(PH.again); }
-      }));
-    }
-    word();
-  }
-
-  // ---------- phonics: stretch ----------
-  function renderStretch(el, s) {
-    if (!s) { el.hidden = true; return; }
-    el.hidden = false;
-    const head = `<span class="stretch-tag">${esc(s.label)}</span><p class="stretch-note">${esc(W.phonics.stretchNote)}</p>`;
-    if (s.type === "segment") renderSegment(el, s, head);
-    else if (s.type === "alien") renderAlien(el, s, head);
-    else if (s.type === "caption") renderCaption(el, s, head);
-    else if (s.type === "mark") renderMark(el, s, head);
-  }
-
-  function renderSegment(el, s, head) {
-    const all = [...W.phonics.taught, ...W.phonics.focus];
-    let i = 0, misses = 0;
-    function word() {
-      const w = s.words[i];
-      const extras = shuffle(all.filter(g => !w.segments.includes(g))).slice(0, 3);
-      const bank = shuffle([...w.segments, ...extras]);
-      let next = 0;
-      el.innerHTML = `${head}${taskBar(s.say)}
-        <div class="tiles" style="grid-template-columns:1fr;max-width:140px;margin:0 auto;"><button class="tile" id="sg-pic" aria-label="hear the word"><span class="pic" aria-hidden="true">${w.emoji}</span></button></div>
-        <div class="slots" id="slots">${w.segments.map(() => `<div class="slot" aria-hidden="true">·</div>`).join("")}</div>
-        <div class="letters bank" id="bank">${bank.map((g, k) => `<button class="letter" data-k="${k}" aria-label="${esc(g)}">${esc(g)}</button>`).join("")}</div>
-        <div class="progress">Word ${i + 1} of ${s.words.length}</div>`;
-      wireSay(el);
-      el.querySelector("#sg-pic").addEventListener("click", () => speak(w.word));
-      speak(w.word);
-      const slots = el.querySelectorAll(".slot"), bankEl = el.querySelector("#bank");
-      bankEl.querySelectorAll(".letter").forEach(b => b.addEventListener("click", async () => {
-        const g = bank[Number(b.dataset.k)];
-        if (g === w.segments[next]) {
-          b.classList.add("used"); slots[next].textContent = g; slots[next].classList.add("filled"); next++;
-          if (next === w.segments.length) {
-            await speak(w.word); i++;
-            if (i < s.words.length) word(); else finish(el, "Every word spelled!", () => { i = 0; misses = 0; word(); });
-          }
-        } else {
-          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-          await speak(w.word);
-          if (misses >= 2) bankEl.querySelectorAll(".letter").forEach(x => { if (bank[Number(x.dataset.k)] === w.segments[next]) { x.classList.add("hint"); setTimeout(() => x.classList.remove("hint"), 1700); } });
-        }
-      }));
-    }
-    word();
-  }
-
-  function renderAlien(el, s, head) {
-    const items = shuffle(s.items);
-    let i = 0, misses = 0;
-    function item() {
-      const it = items[i];
-      el.innerHTML = `${head}${taskBar(s.say)}
-        <div class="bigword" style="color:var(--ink);font-size:3rem;">${esc(it.word)}</div>
-        <div class="choice-row">
-          <button class="choice" data-real="true" aria-label="real word"><span class="pic" aria-hidden="true">🏠</span>Real</button>
-          <button class="choice" data-real="false" aria-label="alien word"><span class="pic" aria-hidden="true">👾</span>Alien</button>
-        </div>
-        <div class="actions"><button class="btn secondary" id="al-hear">🔊 Hear it</button></div>
-        <div class="progress">Word ${i + 1} of ${items.length}</div>`;
-      wireSay(el);
-      el.querySelector("#al-hear").addEventListener("click", () => speak(it.word));
-      el.querySelectorAll(".choice").forEach(b => b.addEventListener("click", async () => {
-        if ((b.dataset.real === "true") === it.real) {
-          b.classList.add("right"); await speak(it.real ? "Real word." : "Alien word."); i++;
-          if (i < items.length) item(); else finish(el, "Real and alien all sorted!", () => { i = 0; misses = 0; item(); });
-        } else {
-          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-          await speak(it.word);
-          if (misses >= 2) { const h = el.querySelector(`.choice[data-real="${it.real}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
-        }
-      }));
-    }
-    item();
-  }
-
-  function renderCaption(el, s, head) {
-    let i = 0, misses = 0;
-    function item() {
-      const it = s.items[i];
-      const order = shuffle(it.options.map((o, k) => k));
-      el.innerHTML = `${head}${taskBar(s.say)}
-        <div class="caption-text">${esc(it.text)}</div>
-        <div class="actions"><button class="btn secondary" id="cp-hear">🔊 Hear it</button></div>
-        <div class="tiles captions" id="cp"></div>
-        <div class="progress">Caption ${i + 1} of ${s.items.length}</div>`;
-      wireSay(el);
-      el.querySelector("#cp-hear").addEventListener("click", () => speak(it.text));
-      const cp = el.querySelector("#cp");
-      cp.innerHTML = order.map(k => `<button class="tile" data-k="${k}" aria-label="${esc(it.options[k].say)}"><span class="pic" aria-hidden="true">${it.options[k].emoji}</span></button>`).join("");
-      cp.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
-        const k = Number(b.dataset.k);
-        if (k === it.correct) {
-          b.classList.add("right"); await speak(it.text); i++;
-          if (i < s.items.length) item(); else finish(el, "Every caption read!", () => { i = 0; misses = 0; item(); });
-        } else {
-          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-          await speak(it.options[k].say); await speak("Listen again."); await speak(it.text);
-          if (misses >= 2) { const h = cp.querySelector(`[data-k="${it.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
-        }
-      }));
-    }
-    item();
-  }
-
-  function renderMark(el, s, head) {
-    const words = shuffle(s.words);
-    let i = 0; const got = [];
-    function word() {
-      el.innerHTML = `${head}${taskBar(s.say)}
-        <div class="flash">${esc(words[i])}</div>
-        <div class="choice-row">
-          <button class="choice tick" data-ok="1" aria-label="read correctly"><span class="pic" aria-hidden="true">✓</span>Got it</button>
-          <button class="choice cross" data-ok="0" aria-label="not yet"><span class="pic" aria-hidden="true">✗</span>Not yet</button>
-        </div>
-        <div class="progress">Word ${i + 1} of ${words.length}</div>`;
-      wireSay(el);
-      el.querySelectorAll(".choice").forEach(b => b.addEventListener("click", async () => {
-        got.push({ word: words[i], ok: b.dataset.ok === "1" });
-        if (!got[got.length - 1].ok) await speak(words[i]);
-        i++;
-        if (i < words.length) word();
-        else {
-          const ok = got.filter(g => g.ok).length;
-          el.innerHTML = `${head}<div class="finish"><div class="big">${ok === words.length ? "⭐" : "👍"}</div><h3>${ok} of ${words.length} read</h3>
-            <div class="mark-summary">${got.map(g => `<span class="${g.ok ? "" : "miss"}">${esc(g.word)}</span>`).join("")}</div>
-            <p class="stretch-note">${ok === words.length ? "All read first time." : "The red ones are worth one more go tomorrow. Nothing is saved; this is just for you to see."}</p>
-            <button class="btn secondary" id="mk-again">Again</button></div>`;
-          announce(`${ok} of ${words.length} read`);
-          el.querySelector("#mk-again").addEventListener("click", () => { i = 0; got.length = 0; word(); });
-        }
-      }));
-    }
-    word();
-  }
-
-  // ---------- more ways to play ----------
-  function renderMemory(el) {
-    const pairs = W.phonics.memory;
-    const deck = shuffle(pairs.flatMap(p => [{ key: p.grapheme, face: p.grapheme, say: p.word }, { key: p.grapheme, face: p.emoji, say: p.word }]));
-    let open = [], matched = 0, busy = false;
-    el.innerHTML = `${taskBar("Match the letter to a picture that starts with that sound.")}<div class="memory-grid" id="mg"></div><div class="progress" id="mp">0 of ${pairs.length} pairs</div>`;
-    wireSay(el);
-    const g = el.querySelector("#mg");
-    g.innerHTML = deck.map((c, i) => `<button class="mcard face-down" data-i="${i}" aria-label="card ${i + 1}">?</button>`).join("");
-    const cards = g.querySelectorAll(".mcard");
-    cards.forEach(c => c.addEventListener("click", async () => {
-      const i = Number(c.dataset.i);
-      if (busy || c.classList.contains("matched") || open.includes(i)) return;
-      c.textContent = deck[i].face; c.classList.remove("face-down"); c.setAttribute("aria-label", deck[i].face);
-      open.push(i);
-      if (open.length === 2) {
-        busy = true;
-        const [a, b] = open;
-        if (deck[a].key === deck[b].key) {
-          await speak(deck[a].say);
-          cards[a].classList.add("matched"); cards[b].classList.add("matched"); matched++;
-          el.querySelector("#mp").textContent = `${matched} of ${pairs.length} pairs`;
-          open = []; busy = false;
-          if (matched === pairs.length) finish(el, "All pairs matched!", () => renderMemory(el));
-        } else {
-          await wait(800);
-          [a, b].forEach(k => { cards[k].textContent = "?"; cards[k].classList.add("face-down"); cards[k].setAttribute("aria-label", "card " + (k + 1)); });
-          open = []; busy = false;
-        }
+          if (i < words.length) word();
+          else { const n = got.filter(x => x.ok).length; pm.finish(`${n} of ${words.length} read`, () => { i = 0; got.length = 0; word(); }, `<div class="marks">${got.map(x => `<span class="${x.ok ? "" : "miss"}">${esc(x.word)}</span>`).join("")}</div><p class="quiet">${n === words.length ? "All read first time." : "The plum ones are worth one more go tomorrow. Nothing is saved."}</p>`); }
+        }));
       }
-    }));
-  }
-
-  function renderRhymes(el) {
-    let r = 0, misses = 0;
-    function round() {
-      const q = W.phonics.rhymes[r];
-      const opts = shuffle(q.options);
-      el.innerHTML = `${taskBar("Which one rhymes with this?")}
-        <div class="tiles" style="grid-template-columns:1fr;max-width:160px;margin:0 auto;"><button class="tile" id="rt" aria-label="${esc(q.target.word)}"><span class="pic" aria-hidden="true">${q.target.emoji}</span><span class="lbl">${esc(q.target.word)}</span></button></div>
-        <div class="tiles" id="ro"></div><div class="progress">Round ${r + 1} of ${W.phonics.rhymes.length}</div>`;
-      wireSay(el);
-      el.querySelector("#rt").addEventListener("click", () => speak(q.target.word));
-      speak(q.target.word);
-      const ro = el.querySelector("#ro");
-      ro.innerHTML = opts.map((o, i) => `<button class="tile" data-i="${i}" aria-label="${esc(o.word)}"><span class="pic" aria-hidden="true">${o.emoji}</span></button>`).join("");
-      ro.querySelectorAll(".tile").forEach(t => t.addEventListener("click", async () => {
-        const o = opts[Number(t.dataset.i)];
-        await speak(o.word);
-        if (o.right) {
-          t.classList.add("right"); await speak(q.target.word); r++;
-          if (r < W.phonics.rhymes.length) round(); else finish(el, "All the rhymes found!", () => { r = 0; misses = 0; round(); });
-        } else {
-          misses++; t.classList.add("wrong"); setTimeout(() => t.classList.remove("wrong"), 400); await speak(PH.bad);
-          if (misses >= 2) ro.querySelectorAll(".tile").forEach(x => { if (opts[Number(x.dataset.i)].right) { x.classList.add("hint"); setTimeout(() => x.classList.remove("hint"), 1700); } });
+      word();
+    },
+    maths(pm, g) {
+      let i = 0, misses = 0;
+      const tile = t => `<span class="ptile${t === "?" ? " q" : ""}" role="img" aria-label="${esc(t)}">${t === "?" ? "?" : pic(t)}</span>`;
+      const sayQ = q => q.kind === "which" ? "Which row is a pattern?" : q.pattern.map(t => t === "?" ? "something" : t).join(", ") + ". " + (q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?");
+      function q() {
+        const qu = g.questions[i], order = shuffle(qu.options.map((o, k) => k));
+        pm.progress(i, g.questions.length);
+        $("pm-task").textContent = sayQ(qu); $("pm-say").onclick = () => speak(sayQ(qu));
+        pm.draw(`${qu.pattern ? `<div class="prow">${qu.pattern.map(tile).join("")}</div>` : ""}<div class="popts" id="po">${order.map(k => `<button class="popt" data-k="${k}" aria-label="${esc(qu.options[k].join(", "))}"><span class="prow">${qu.options[k].map(tile).join("")}</span></button>`).join("")}</div>`);
+        speak(sayQ(qu));
+        stage.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
+          SFX.tap();
+          if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.kind === "which" ? PH.bad : sayQ(qu)); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+        }));
+      }
+      q();
+    },
+    memory(pm, g) {
+      const pairs = g.pairs;
+      const deck = shuffle(pairs.flatMap(p => [{ key: p.grapheme, kind: "g", face: p.grapheme, say: p.word }, { key: p.grapheme, kind: "p", face: p.pic || p.word, say: p.word }]));
+      let open = [], matched = 0, busy = false;
+      pm.progress(0, pairs.length);
+      pm.draw(`<div class="tiles" style="grid-template-columns:repeat(4, 96px);">${deck.map((c, k) => `<button class="tile" style="width:96px;height:96px;" data-k="${k}" aria-label="card ${k + 1}"><span class="word" style="font-size:2rem;color:var(--apricot);">?</span></button>`).join("")}</div>`);
+      const cards = stage.querySelectorAll(".tile");
+      cards.forEach(c => c.addEventListener("click", async () => {
+        const k = Number(c.dataset.k);
+        if (busy || c.classList.contains("right") || open.includes(k)) return;
+        SFX.tap();
+        c.innerHTML = deck[k].kind === "g" ? `<span class="word" style="font-size:2.4rem;">${esc(deck[k].face)}</span>` : pic(deck[k].face).replace('class="pic"', 'class="pic" style="width:64px;height:64px;"');
+        c.setAttribute("aria-label", deck[k].say); open.push(k);
+        if (open.length === 2) {
+          busy = true; const [a, b] = open;
+          if (deck[a].key === deck[b].key) { SFX.right(); await speak(deck[a].say); cards[a].classList.add("right"); cards[b].classList.add("right"); matched++; pm.progress(matched, pairs.length); open = []; busy = false; if (matched === pairs.length) pm.finish("All pairs matched!", () => GAMES.memory(pm, g)); }
+          else { await wait(800); [a, b].forEach(x => { cards[x].innerHTML = `<span class="word" style="font-size:2rem;color:var(--apricot);">?</span>`; cards[x].setAttribute("aria-label", "card " + (x + 1)); }); open = []; busy = false; }
         }
       }));
+    },
+    rhymes(pm, g) {
+      let r = 0, misses = 0;
+      function round() {
+        const q = g.rounds[r], opts = shuffle(q.options);
+        pm.progress(r, g.rounds.length);
+        pm.draw(`<button class="bigpic" id="rt" aria-label="${esc(q.target.word)}">${pic(q.target.pic || q.target.word)}</button><div class="tiles" id="ro">${opts.map((o, k) => tileBtn(o.pic || o.word, k, `data-r="${o.right}"`)).join("")}</div>`);
+        $("rt").addEventListener("click", () => speak(q.target.word)); speak(q.target.word);
+        stage.querySelectorAll("#ro .tile").forEach(t => t.addEventListener("click", async () => {
+          const o = opts[Number(t.dataset.k)]; SFX.tap(); await speak(o.word);
+          if (o.right) { t.classList.add("right"); SFX.right(); await speak(q.target.word); r++; if (r < g.rounds.length) round(); else pm.finish("All the rhymes found!", () => { r = 0; misses = 0; round(); }); }
+          else { misses++; await wrong(t, null, misses, '#ro .tile[data-r="true"]'); }
+        }));
+      }
+      round();
+    },
+    review(pm, g) {
+      const deck = g.deck; let i = 0;
+      function show() { pm.progress(i, deck.length); pm.draw(`<div class="word" style="font-size:6rem;" aria-live="polite">${esc(deck[i])}</div><div class="pm-actions"><button class="btn secondary" id="prev">← back</button><button class="btn" id="next">next →</button></div>`); $("next").addEventListener("click", () => { i++; if (i < deck.length) show(); else pm.finish("All the sounds reviewed!", () => { i = 0; show(); }); }); $("prev").addEventListener("click", () => { i = Math.max(0, i - 1); show(); }); }
+      show();
     }
-    round();
+  };
+
+  // ---------- launchers ----------
+  const previewPics = g => {
+    if (g.type === "hunt") return g.items.filter(i => i.match).slice(0, 3).map(i => i.pic || i.word);
+    if (g.type === "blendpick" || g.type === "segment") return g.words.slice(0, 3).map(w => w.pic || w.word);
+    if (g.type === "caption") return g.items[0].options[g.items[0].correct].pics;
+    if (g.type === "alien") return ["house", "alien"];
+    if (g.type === "maths") return (g.questions[0].pattern || g.questions[0].options[0]).filter(t => t !== "?").slice(0, 3);
+    if (g.type === "memory") return g.pairs.slice(0, 3).map(p => p.pic || p.word);
+    if (g.type === "rhymes") return g.rounds.slice(0, 3).map(r => r.target.pic || r.target.word);
+    return [];
+  };
+  const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards" };
+  function launcher(game, meta, opts = {}) {
+    const id = meta.id;
+    const html = `<div class="launch${opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).map(p => pic(p)).join("")}</div><div><h3>${esc(opts.title || TITLES[game.type])}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch ? " small" : ""}" data-launch="${id}">Play</button></div>`;
+    return { html, wire() { const b = document.querySelector(`[data-launch="${id}"]`); if (b) b.addEventListener("click", () => openPlay(game, meta)); } };
   }
 
-  function renderReview(el) {
-    const deck = [...W.phonics.taught, ...W.phonics.focus];
-    let i = 0;
-    el.innerHTML = `${taskBar("Say each sound. Tap next when you are ready. No timer.")}<div class="flash" id="fl" aria-live="polite"></div><div class="actions"><button class="btn secondary" id="prev">← Back</button><button class="btn" id="next">Next →</button></div><div class="progress" id="fp"></div>`;
-    wireSay(el);
-    const show = () => { el.querySelector("#fl").textContent = deck[i]; el.querySelector("#fp").textContent = `${i + 1} of ${deck.length}`; };
-    el.querySelector("#next").addEventListener("click", () => { i = (i + 1) % deck.length; show(); });
-    el.querySelector("#prev").addEventListener("click", () => { i = (i + deck.length - 1) % deck.length; show(); });
-    show();
+  // ---------- phonics ----------
+  function trickyHtml() {
+    return `<div class="tricky"><p class="quiet">Tricky words: show, say, spot the tricky part, say again.</p><p style="margin-top:10px;">${W.phonics.tricky.map(t => `<span class="w" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</p><p class="quiet" style="margin-top:8px;max-width:60ch;">${esc(W.phonics.tricky[0].note)}</p></div>`;
   }
-
-  const MORE = [
-    { id: "memory", label: "Memory match", render: renderMemory },
-    { id: "rhymes", label: "Rhyme picker", render: renderRhymes },
-    { id: "review", label: "Sound review", render: renderReview }
-  ];
-  $("more-nav").innerHTML = MORE.map((m, i) => `<button class="pill" role="tab" data-id="${m.id}" aria-selected="${i === 0}">${m.label}</button>`).join("");
-  function selectMore(id) {
-    $("more-nav").querySelectorAll(".pill").forEach(p => p.setAttribute("aria-selected", String(p.dataset.id === id)));
-    MORE.find(m => m.id === id).render($("more-content"));
+  function renderPhonics() {
+    const s = $("ph-script"), side = $("ph-side");
+    const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0].word);
+    if (day === 0) {
+      s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
+      const mem = launcher({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }, { id: "memory", sticker: "★" }, {});
+      const rh = launcher({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }, { id: "rhymes", sticker: "★" }, {});
+      side.innerHTML = `<p class="quiet" style="margin-bottom:8px;">If your child asks to play anyway:</p>${mem.html}${rh.html}`; mem.wire(); rh.wire(); return;
+    }
+    const d = W.phonics.days[day];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(x => `<li>${script(x)}</li>`).join("")}</ol>${trickyHtml()}`;
+    const hero = d.sound
+      ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">${esc(W.phonics.cues[d.sound])}</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme)</a></p></div></div>`
+      : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">This week's tricky word. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
+    const main = launcher(d.game, { id: "main" + day, sticker }, {});
+    const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: "If that was easy. " + d.stretch.say }) : null;
+    side.innerHTML = hero + main.html + (st ? st.html : "") + `<div class="more"><button data-more="memory">${pic("hat")}memory match</button><button data-more="rhymes">${pic("cat")}rhyme picker</button><button data-more="review">${pic("sun")}review cards</button></div>`;
+    main.wire(); if (st) st.wire();
+    side.querySelector('[data-more="memory"]').addEventListener("click", () => openPlay({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }, { id: "memory", sticker }));
+    side.querySelector('[data-more="rhymes"]').addEventListener("click", () => openPlay({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }, { id: "rhymes", sticker }));
+    side.querySelector('[data-more="review"]').addEventListener("click", () => openPlay({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }, { id: "review", sticker }));
   }
-  $("more-nav").querySelectorAll(".pill").forEach(p => p.addEventListener("click", () => selectMore(p.dataset.id)));
-  selectMore("memory");
+  const dayName = n => ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday" })[n];
 
   // ---------- maths ----------
-  $("m-topic").textContent = W.maths.topic;
-  $("m-vocab").innerHTML = W.maths.vocab.map(v => `<span>${esc(v)}</span>`).join("");
-  $("m-source").textContent = W.maths.source;
   $("m-everyday").innerHTML = W.maths.everyday.map(t => `<li>${t}</li>`).join("");
-  const tile = t => `<span class="ptile${t === "?" ? " q" : ""}" role="img" aria-label="${esc(t)}">${W.tiles[t] || t}</span>`;
-  const sayPattern = q => q.pattern.map(t => t === "?" ? "something" : t).join(", ") + ". " + (q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?");
-
   function renderMaths() {
-    const r = $("m-routine"), c = $("m-check"), s = $("m-stretch");
-    if (day === 0) { r.innerHTML = `<h2>Weekend</h2><p class="sub" style="margin-top:8px;">${esc(W.maths.weekend)}</p>`; c.hidden = true; s.hidden = true; return; }
-    c.hidden = false; s.hidden = false;
+    const s = $("m-script"), side = $("m-side");
+    if (day === 0) { s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.maths.weekend)}</p>`; side.innerHTML = ""; return; }
     const d = W.maths.days[day];
-    r.innerHTML = `<div class="eyebrow">${esc(W.phonics.days[day].name)} · about ${d.minutes} minutes · real things first</div><h2 style="margin-top:4px;">${esc(d.title)}</h2><ol class="steps">${d.steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol><p style="margin-top:12px;font-size:0.9rem;color:var(--ink-soft);">Words to use: ${W.maths.stems.map(esc).join(" · ")}</p>`;
-    renderQuiz(c, d.check, "Quick check on the screen", false);
-    renderQuiz(s, d.stretch, d.stretch.label, true);
-  }
-  function renderQuiz(el, block, label, isStretch) {
-    let i = 0, misses = 0;
-    function q() {
-      const qu = block.questions[i];
-      const order = shuffle(qu.options.map((o, k) => k));
-      el.innerHTML = `${isStretch ? `<span class="stretch-tag">${esc(label)}</span>` : `<h2 class="section-title" style="margin:0;">${esc(label)}</h2>`}
-        ${taskBar(qu.kind === "which" ? "Which row is a pattern?" : sayPattern(qu))}
-        ${qu.pattern ? `<div class="prow">${qu.pattern.map(tile).join("")}</div>` : ""}
-        <div class="popts" id="po"></div><div class="progress">Question ${i + 1} of ${block.questions.length}</div>`;
-      wireSay(el);
-      const po = el.querySelector("#po");
-      po.innerHTML = order.map(k => `<button class="popt" data-k="${k}" aria-label="${esc(qu.options[k].join(", "))}"><span class="prow">${qu.options[k].map(tile).join("")}</span></button>`).join("");
-      po.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
-        if (Number(b.dataset.k) === qu.correct) {
-          b.classList.add("right"); await speak(PH.good); i++;
-          if (i < block.questions.length) q(); else finish(el, isStretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); });
-        } else {
-          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
-          await speak(qu.kind === "which" ? PH.bad : sayPattern(qu));
-          if (misses >= 2) { const h = po.querySelector(`[data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
-        }
-      }));
-    }
-    q();
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes · real things first</p><ol>${d.steps.map(x => `<li>${script(x)}</li>`).join("")}</ol><div class="stems"><p class="quiet">Words to use:</p>${W.maths.stems.map(x => `<span class="say">${esc(x)}</span>`).join("")}</div>`;
+    const first = d.check.questions[0];
+    const pattern = (first.pattern || first.options[first.correct]).filter(t => t !== "?").slice(0, 6);
+    const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;
+    const chk = launcher({ type: "maths", say: d.check.say, questions: d.check.questions }, { id: "mcheck" + day, sticker: "★" }, { title: "Quick check on the screen", tag: d.check.say });
+    const st = launcher({ type: "maths", say: d.stretch.say, questions: d.stretch.questions }, { id: "mstretch" + day, sticker: "★", stretch: true }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: "If that was easy. " + d.stretch.say });
+    side.innerHTML = hero + chk.html + st.html; chk.wire(); st.wire();
   }
 
   // ---------- week ----------
-  $("wk-title").textContent = "This week at home · " + W.label;
-  $("wk-tt").innerHTML = `<div class="tt-row head"><div>Day</div><div>Phonics</div><div>Maths</div></div>` + [1, 2, 3, 4, 5].map(n => {
-    const p = W.phonics.days[n], m = W.maths.days[n];
-    return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div>${esc(p.title)}<br><span style="color:var(--ink-soft)">${p.minutes} min</span></div><div>${esc(m.title)}<br><span style="color:var(--ink-soft)">${m.minutes} min</span></div></div>`;
-  }).join("");
-  $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<div class="meta">Since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</div></div>`).join("");
+  $("wk-title").textContent = "This week at home: " + W.label.toLowerCase();
+  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${esc(p.sound || W.phonics.tricky[0].word)}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
+  $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
   $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;
   $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");
-  $("wk-journey").innerHTML = W.journey.map(j => `<div class="jrow ${esc(j.state)}"><span class="w">${esc(j.week)}</span><span class="g">${esc(j.graphemes)}</span>${j.tricky ? `<span class="t">tricky word: ${esc(j.tricky)}</span>` : ""}<span class="t">${j.state === "done" ? "taught" : j.state === "now" ? "this week" : "coming"}</span></div>`).join("");
+  $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
   $("share-text").value = W.share;
-  $("copy-btn").addEventListener("click", async () => {
-    const t = $("share-text");
-    try { await navigator.clipboard.writeText(t.value); $("copy-status").textContent = "Copied."; }
-    catch (e) { t.focus(); t.select(); $("copy-status").textContent = "Select and copy the text above."; }
-  });
+  $("copy-btn").addEventListener("click", async () => { const t = $("share-text"); try { await navigator.clipboard.writeText(t.value); $("copy-status").textContent = "Copied."; } catch (e) { t.focus(); t.select(); $("copy-status").textContent = "Select and copy the text above."; } });
 
-  $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. <a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle for parents</a>.`;
+  $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
 
   // ---------- go ----------
   function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); }

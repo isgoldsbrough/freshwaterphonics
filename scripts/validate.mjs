@@ -9,6 +9,8 @@ if (!file) { console.error("usage: validate.mjs <week.json>"); process.exit(2); 
 const week = JSON.parse(readFileSync(file, "utf8"));
 const errors = [];
 const warn = [];
+const PICS = JSON.parse(readFileSync("pictures.json", "utf8"));
+const needPic = (w, where) => { if (!(w in PICS)) errors.push(`${where}: no picture for "${w}" in pictures.json`); };
 
 const VOWELS = new Set(["a", "e", "i", "o", "u"]);
 const taught = new Set([...week.phonics.taught, ...week.phonics.focus]);
@@ -53,6 +55,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
   if (g.type === "hunt") {
     const targets = g.items.filter(i => i.match).length;
     if (g.items.length < 4 || targets < 2) errors.push(`${where}: needs at least 4 items and 2 targets`);
+    g.items.forEach(i => needPic(i.pic || i.word, where));
     // hunt words are spoken, not printed: no decodability check
   } else if (g.type === "blendpick") {
     for (const w of g.words) {
@@ -60,6 +63,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
       for (const s of w.segments) if (!taught.has(s)) errors.push(`${where}: segment "${s}" in "${w.word}" not taught`);
       if (!w.distractors || w.distractors.length < 2) errors.push(`${where}: "${w.word}" needs 2 distractors`);
+      needPic(w.pic || w.word, where); (w.distractors || []).forEach(d => needPic(d.pic || d.word, where));
     }
   } else if (g.type === "ladder") {
     g.words.forEach(w => checkPrintWord(w, where));
@@ -88,6 +92,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       checkPrintWord(w.word, where);
       if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
       if (new Set(w.segments).size !== w.segments.length) errors.push(`${where}: "${w.word}" repeats a sound; the bank cannot handle that`);
+      needPic(w.pic || w.word, where);
     }
   } else if (s.type === "alien") {
     s.items.forEach(it => checkPrintWord(it.word, where));
@@ -96,6 +101,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
     for (const it of s.items) {
       it.text.split(/\s+/).forEach(wd => { if (!trickySet.has(wd)) checkPrintWord(wd, `${where} "${it.text}"`); });
       if (it.options.length < 3 || it.correct == null || it.correct >= it.options.length) errors.push(`${where}: "${it.text}" needs 3 options and a correct index`);
+      it.options.forEach(o => { if (!o.pics || !o.say) errors.push(`${where}: "${it.text}" option needs pics and say`); (o.pics || []).forEach(pw => needPic(pw, where)); });
     }
   } else if (s.type === "mark") {
     s.words.forEach(wd => checkPrintWord(wd, where));
@@ -110,6 +116,7 @@ for (const p of week.phonics.memory || []) {
   if (!taught.has(p.grapheme)) errors.push(`memory: grapheme "${p.grapheme}" not taught`);
   if (!p.word.startsWith(p.grapheme)) errors.push(`memory: "${p.word}" does not start with "${p.grapheme}"`);
   checkPrintWord(p.word, "memory");
+  needPic(p.pic || p.word, "memory");
 }
 
 // Rhyme picker: words are spoken with pictures, not printed; check rhymes agree and distractors don't rhyme
@@ -117,7 +124,9 @@ const rime = w => w.replace(/^[^aeiou]+/, "");
 for (const r of week.phonics.rhymes || []) {
   const right = r.options.filter(o => o.right);
   if (right.length !== 1) errors.push(`rhymes: "${r.target.word}" needs exactly one right answer`);
+  needPic(r.target.pic || r.target.word, "rhymes");
   for (const o of r.options) {
+    needPic(o.pic || o.word, "rhymes");
     const same = rime(o.word) === rime(r.target.word);
     if (o.right && !same) warn.push(`rhymes: "${o.word}" may not rhyme with "${r.target.word}"`);
     if (!o.right && same) errors.push(`rhymes: distractor "${o.word}" rhymes with "${r.target.word}"`);
@@ -136,7 +145,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       if (q.options.length < 2) errors.push(`${where}: fewer than 2 options`);
       if (q.correct == null || q.correct >= q.options.length) errors.push(`${where}: bad correct index`);
       const all = [...(q.pattern || []), ...q.options.flat()];
-      all.forEach(t => { if (!(t in week.tiles)) errors.push(`${where}: tile "${t}" not in tiles`); });
+      all.forEach(t => { if (t !== "?") needPic(t, where); });
       if (q.kind !== "which" && !q.pattern) errors.push(`${where}: ${q.kind} needs a pattern`);
       if (q.kind === "missing" && !q.pattern.includes("?")) errors.push(`${where}: missing needs a "?" in the pattern`);
       if (q.kind === "next" && q.options.some(o => o.length !== 1)) errors.push(`${where}: next options are single tiles`);

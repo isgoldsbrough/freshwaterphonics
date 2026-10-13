@@ -94,32 +94,26 @@
           "say": "Tap the things that start with h.",
           "items": [
             {
-              "emoji": "🎩",
               "word": "hat",
               "match": true
             },
             {
-              "emoji": "🐔",
               "word": "hen",
               "match": true
             },
             {
-              "emoji": "🐴",
               "word": "horse",
               "match": true
             },
             {
-              "emoji": "🐱",
               "word": "cat",
               "match": false
             },
             {
-              "emoji": "☀️",
               "word": "sun",
               "match": false
             },
             {
-              "emoji": "🦆",
               "word": "duck",
               "match": false
             }
@@ -136,8 +130,7 @@
                 "h",
                 "a",
                 "t"
-              ],
-              "emoji": "🎩"
+              ]
             },
             {
               "word": "hen",
@@ -145,8 +138,7 @@
                 "h",
                 "e",
                 "n"
-              ],
-              "emoji": "🐔"
+              ]
             },
             {
               "word": "hug",
@@ -154,8 +146,7 @@
                 "h",
                 "u",
                 "g"
-              ],
-              "emoji": "🤗"
+              ]
             },
             {
               "word": "hop",
@@ -163,8 +154,7 @@
                 "h",
                 "o",
                 "p"
-              ],
-              "emoji": "🐇"
+              ]
             }
           ]
         }
@@ -185,32 +175,26 @@
           "say": "Tap the things that start with b.",
           "items": [
             {
-              "emoji": "🛏️",
               "word": "bed",
               "match": true
             },
             {
-              "emoji": "🚌",
               "word": "bus",
               "match": true
             },
             {
-              "emoji": "🦇",
               "word": "bat",
               "match": true
             },
             {
-              "emoji": "🐷",
               "word": "pig",
               "match": false
             },
             {
-              "emoji": "🐶",
               "word": "dog",
               "match": false
             },
             {
-              "emoji": "🥚",
               "word": "egg",
               "match": false
             }
@@ -227,8 +211,7 @@
                 "b",
                 "e",
                 "d"
-              ],
-              "emoji": "🛏️"
+              ]
             },
             {
               "word": "bus",
@@ -236,8 +219,7 @@
                 "b",
                 "u",
                 "s"
-              ],
-              "emoji": "🚌"
+              ]
             },
             {
               "word": "bat",
@@ -245,8 +227,7 @@
                 "b",
                 "a",
                 "t"
-              ],
-              "emoji": "🦇"
+              ]
             },
             {
               "word": "bug",
@@ -254,8 +235,7 @@
                 "b",
                 "u",
                 "g"
-              ],
-              "emoji": "🐛"
+              ]
             },
             {
               "word": "bin",
@@ -263,8 +243,7 @@
                 "b",
                 "i",
                 "n"
-              ],
-              "emoji": "🗑️"
+              ]
             }
           ]
         }
@@ -291,15 +270,12 @@
                 "a",
                 "t"
               ],
-              "emoji": "🎩",
               "distractors": [
                 {
-                  "word": "bed",
-                  "emoji": "🛏️"
+                  "word": "bed"
                 },
                 {
-                  "word": "bus",
-                  "emoji": "🚌"
+                  "word": "bus"
                 }
               ]
             },
@@ -310,15 +286,12 @@
                 "o",
                 "g"
               ],
-              "emoji": "🌫️",
               "distractors": [
                 {
-                  "word": "dog",
-                  "emoji": "🐶"
+                  "word": "dog"
                 },
                 {
-                  "word": "cat",
-                  "emoji": "🐱"
+                  "word": "cat"
                 }
               ]
             },
@@ -329,15 +302,12 @@
                 "u",
                 "s"
               ],
-              "emoji": "🚌",
               "distractors": [
                 {
-                  "word": "hat",
-                  "emoji": "🎩"
+                  "word": "hat"
                 },
                 {
-                  "word": "sun",
-                  "emoji": "☀️"
+                  "word": "sun"
                 }
               ]
             },
@@ -348,15 +318,12 @@
                 "e",
                 "d"
               ],
-              "emoji": "🛏️",
               "distractors": [
                 {
-                  "word": "bus",
-                  "emoji": "🚌"
+                  "word": "bus"
                 },
                 {
-                  "word": "hen",
-                  "emoji": "🐔"
+                  "word": "hen"
                 }
               ]
             },
@@ -367,15 +334,12 @@
                 "e",
                 "n"
               ],
-              "emoji": "🐔",
               "distractors": [
                 {
-                  "word": "cat",
-                  "emoji": "🐱"
+                  "word": "cat"
                 },
                 {
-                  "word": "pig",
-                  "emoji": "🐷"
+                  "word": "pig"
                 }
               ]
             },
@@ -386,15 +350,12 @@
                 "u",
                 "p"
               ],
-              "emoji": "☕",
               "distractors": [
                 {
-                  "word": "sock",
-                  "emoji": "🧦"
+                  "word": "sock"
                 },
                 {
-                  "word": "fog",
-                  "emoji": "🌫️"
+                  "word": "fog"
                 }
               ]
             }
@@ -474,16 +435,25 @@
               "text": "the cat is on the bed",
               "options": [
                 {
-                  "emoji": "🐱🛏️",
-                  "say": "a cat on a bed"
+                  "say": "a cat on a bed",
+                  "pics": [
+                    "cat",
+                    "bed"
+                  ]
                 },
                 {
-                  "emoji": "🐶🛏️",
-                  "say": "a dog on a bed"
+                  "say": "a dog on a bed",
+                  "pics": [
+                    "dog",
+                    "bed"
+                  ]
                 },
                 {
-                  "emoji": "🐱🚌",
-                  "say": "a cat on a bus"
+                  "say": "a cat on a bus",
+                  "pics": [
+                    "cat",
+                    "bus"
+                  ]
                 }
               ],
               "correct": 0
@@ -492,16 +462,25 @@
               "text": "the hen is on the bus",
               "options": [
                 {
-                  "emoji": "🐔🛏️",
-                  "say": "a hen on a bed"
+                  "say": "a hen on a bed",
+                  "pics": [
+                    "hen",
+                    "bed"
+                  ]
                 },
                 {
-                  "emoji": "🐔🚌",
-                  "say": "a hen on a bus"
+                  "say": "a hen on a bus",
+                  "pics": [
+                    "hen",
+                    "bus"
+                  ]
                 },
                 {
-                  "emoji": "🐱🚌",
-                  "say": "a cat on a bus"
+                  "say": "a cat on a bus",
+                  "pics": [
+                    "cat",
+                    "bus"
+                  ]
                 }
               ],
               "correct": 1
@@ -510,16 +489,25 @@
               "text": "the bug is in the hat",
               "options": [
                 {
-                  "emoji": "🐛🛏️",
-                  "say": "a bug in a bed"
+                  "say": "a bug in a bed",
+                  "pics": [
+                    "bug",
+                    "bed"
+                  ]
                 },
                 {
-                  "emoji": "🐸🎩",
-                  "say": "a frog in a hat"
+                  "say": "a frog in a hat",
+                  "pics": [
+                    "frog",
+                    "hat"
+                  ]
                 },
                 {
-                  "emoji": "🐛🎩",
-                  "say": "a bug in a hat"
+                  "say": "a bug in a hat",
+                  "pics": [
+                    "bug",
+                    "hat"
+                  ]
                 }
               ],
               "correct": 2
@@ -528,16 +516,25 @@
               "text": "the dog is in the fog",
               "options": [
                 {
-                  "emoji": "🐶🌫️",
-                  "say": "a dog in the fog"
+                  "say": "a dog in the fog",
+                  "pics": [
+                    "dog",
+                    "fog"
+                  ]
                 },
                 {
-                  "emoji": "🐶☀️",
-                  "say": "a dog in the sun"
+                  "say": "a dog in the sun",
+                  "pics": [
+                    "dog",
+                    "sun"
+                  ]
                 },
                 {
-                  "emoji": "🐱🌫️",
-                  "say": "a cat in the fog"
+                  "say": "a cat in the fog",
+                  "pics": [
+                    "cat",
+                    "fog"
+                  ]
                 }
               ],
               "correct": 0
@@ -587,124 +584,102 @@
     "memory": [
       {
         "grapheme": "h",
-        "word": "hat",
-        "emoji": "🎩"
+        "word": "hat"
       },
       {
         "grapheme": "b",
-        "word": "bed",
-        "emoji": "🛏️"
+        "word": "bed"
       },
       {
         "grapheme": "f",
-        "word": "fog",
-        "emoji": "🌫️"
+        "word": "fog"
       },
       {
         "grapheme": "l",
-        "word": "leg",
-        "emoji": "🦵"
+        "word": "leg"
       },
       {
         "grapheme": "s",
-        "word": "sun",
-        "emoji": "☀️"
+        "word": "sun"
       },
       {
         "grapheme": "d",
-        "word": "dog",
-        "emoji": "🐶"
+        "word": "dog"
       }
     ],
     "rhymes": [
       {
         "target": {
-          "word": "hat",
-          "emoji": "🎩"
+          "word": "hat"
         },
         "options": [
           {
             "word": "bat",
-            "emoji": "🦇",
             "right": true
           },
           {
             "word": "pig",
-            "emoji": "🐷",
             "right": false
           },
           {
             "word": "cup",
-            "emoji": "☕",
             "right": false
           }
         ]
       },
       {
         "target": {
-          "word": "leg",
-          "emoji": "🦵"
+          "word": "leg"
         },
         "options": [
           {
             "word": "egg",
-            "emoji": "🥚",
             "right": true
           },
           {
             "word": "bus",
-            "emoji": "🚌",
             "right": false
           },
           {
             "word": "sun",
-            "emoji": "☀️",
             "right": false
           }
         ]
       },
       {
         "target": {
-          "word": "bug",
-          "emoji": "🐛"
+          "word": "bug"
         },
         "options": [
           {
-            "word": "mug",
-            "emoji": "🍺",
+            "word": "hug",
             "right": true
           },
           {
             "word": "hen",
-            "emoji": "🐔",
             "right": false
           },
           {
             "word": "hat",
-            "emoji": "🎩",
             "right": false
           }
         ]
       },
       {
         "target": {
-          "word": "dog",
-          "emoji": "🐶"
+          "word": "dog"
         },
         "options": [
           {
             "word": "frog",
-            "emoji": "🐸",
             "right": true
           },
           {
             "word": "bed",
-            "emoji": "🛏️",
             "right": false
           },
           {
             "word": "fish",
-            "emoji": "🐟",
             "right": false
           }
         ]
@@ -1525,27 +1500,6 @@
       }
     },
     "weekend": "No maths session. If it comes up on its own, stripes on a jumper, tiles on a floor, say \"that's a pattern, what comes next?\" and leave it there."
-  },
-  "tiles": {
-    "red": "🔴",
-    "blue": "🔵",
-    "star": "⭐",
-    "moon": "🌙",
-    "sun": "☀️",
-    "rain": "🌧️",
-    "apple": "🍎",
-    "banana": "🍌",
-    "grapes": "🍇",
-    "frog": "🐸",
-    "dog": "🐶",
-    "cat": "🐱",
-    "leaf": "🍂",
-    "conker": "🌰",
-    "elephant": "🐘",
-    "mouse": "🐭",
-    "clap": "👏",
-    "stomp": "🦶",
-    "?": "❓"
   },
   "school": {
     "lastWeek": [
