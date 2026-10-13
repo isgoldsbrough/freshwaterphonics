@@ -105,8 +105,14 @@
   .pill[aria-selected="true"] { background: var(--sky-soft); color: var(--sky); }
   .inline-stage { margin-top: 16px; background: var(--panel); border-radius: var(--r); padding: 16px 24px 28px; }
   .inline-stage .stage { min-height: 380px; }
-  .trace-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .trace-wrap canvas { touch-action: none; border-radius: var(--r); background: var(--paper); }
+  .trace-box { position: relative; background: var(--paper); border-radius: var(--r); overflow: hidden; }
+  .trace-box svg, .trace-box canvas { position: absolute; inset: 0; }
+  .trace-box canvas { touch-action: none; }
+  .tr-line { stroke: var(--rule); stroke-width: 1; } .tr-line.dash { stroke-dasharray: 3 3; }
+  .tr-guide { fill: none; stroke: #e6dfd2; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+  .tr-demo { fill: none; stroke: var(--sky); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+  .tr-start { fill: var(--apricot); } .tr-num { fill: #fff; font-family: var(--display); font-size: 8px; font-weight: 600; text-anchor: middle; }
+  .tr-arrow { fill: var(--apricot); }
   section.block { margin-top: 48px; }
   section.block h2 { font-size: 1.4rem; margin-bottom: 12px; }
   .list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; }
@@ -879,32 +885,84 @@
   $("more-nav").innerHTML = MORE.map(m => `<button class="pill" role="tab" data-id="${m.id}" aria-selected="false">${m.label}</button>`).join("");
   $("more-nav").querySelectorAll(".pill").forEach(p => p.addEventListener("click", () => selectMore(p.dataset.id)));
 
+  // ---------- letter formation: strokes in a 100 x 150 box (ascender 25, x-height 65, baseline 115, descender 145) ----------
+  const STROKES = {
+    l: { w: 100, cue: "Down tall, from the top.", s: ["M50 25 L50 115"] },
+    i: { w: 100, cue: "Down, then a dot on top.", s: ["M50 65 L50 115", "M50 44 L50 46"] },
+    t: { w: 100, cue: "Down, then across.", s: ["M50 40 L50 115", "M30 65 L70 65"] },
+    o: { w: 100, cue: "Start at the top and go round in one go.", s: ["M50 65 A25 25 0 1 0 50 115 A25 25 0 1 0 50 65"] },
+    c: { w: 100, cue: "Start near the top and curl round.", s: ["M68 72 A25 25 0 1 0 68 108"] },
+    a: { w: 100, cue: "Round the ball, up, then down.", s: ["M74 79 A25 25 0 1 0 74 101 L74 65 L74 115"] },
+    d: { w: 100, cue: "Round the ball, up tall, then down.", s: ["M74 79 A25 25 0 1 0 74 101 L74 25 L74 115"] },
+    g: { w: 100, cue: "Round the ball, up, down, and a hook.", s: ["M74 79 A25 25 0 1 0 74 101 L74 65 L74 134 Q74 150 48 144"] },
+    s: { w: 100, cue: "Curl one way, then the other, like a snake.", s: ["M70 74 A13 13 0 0 0 50 90 A13 13 0 0 1 30 106"] },
+    e: { w: 100, cue: "Across, then round.", s: ["M30 90 L70 90 A20 20 0 1 0 64 106"] },
+    n: { w: 100, cue: "Down, back up, over and down.", s: ["M30 65 L30 115 L30 80 A20 20 0 0 1 70 80 L70 115"] },
+    m: { w: 100, cue: "Down, back up, over, over and down.", s: ["M24 65 L24 115 L24 80 A13 13 0 0 1 50 80 L50 115 L50 80 A13 13 0 0 1 76 80 L76 115"] },
+    r: { w: 100, cue: "Down, back up, and a little arm.", s: ["M36 65 L36 115 L36 82 A18 18 0 0 1 68 80"] },
+    h: { w: 100, cue: "Down tall, back up, over and down.", s: ["M30 25 L30 115 L30 80 A20 20 0 0 1 70 80 L70 115"] },
+    b: { w: 100, cue: "Down tall, back up, round the tummy.", s: ["M30 25 L30 115 L30 72 A22 22 0 1 1 30 113"] },
+    p: { w: 100, cue: "Down, back up, round the tummy.", s: ["M30 65 L30 145 L30 72 A22 22 0 1 1 30 113"] },
+    u: { w: 100, cue: "Down, round, up, then down.", s: ["M30 65 L30 97 A20 20 0 0 0 70 97 L70 65 L70 115"] },
+    k: { w: 100, cue: "Down tall. Then in and out.", s: ["M30 25 L30 115", "M64 70 L30 95 L66 115"] },
+    f: { w: 100, cue: "Curl, down tall, then across.", s: ["M68 36 A14 14 0 0 0 42 46 L42 115", "M26 65 L62 65"] },
+    ck: { w: 170, cue: "c, then k: two letters, one sound.", s: ["M56 72 A25 25 0 1 0 56 108", "M100 25 L100 115", "M134 70 L100 95 L136 115"] }
+  };
+
   GAMES.trace = function (pm, g) {
-    let cur = g.letters[0];
+    const all = TERM.graphemes.map(x => x.g).filter(x => STROKES[x]);
+    let cur = g.letters[0], showAll = false;
     pm.progress(0, 0);
-    pm.draw(`<div class="pills" id="tr-letters">${g.letters.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}</div><div class="trace-wrap"><canvas id="tr-canvas" width="360" height="280" aria-label="Tracing area for the letter ${esc(cur)}"></canvas><div class="pm-actions"><button class="btn secondary" id="tr-clear">Clear</button></div><p class="quiet">The apricot dot is where the letter starts. School's formation phrases are on the Little Wandle page.</p></div>`);
-    const canvas = $("tr-canvas"), ctx = canvas.getContext("2d"), dpr = window.devicePixelRatio || 1;
-    const Wc = 360, Hc = 280;
-    canvas.width = Wc * dpr; canvas.height = Hc * dpr; canvas.style.width = Wc + "px"; canvas.style.height = Hc + "px"; ctx.scale(dpr, dpr);
-    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-    function guide() {
-      ctx.clearRect(0, 0, Wc, Hc);
-      ctx.font = "190px 'ABeeZee', sans-serif"; ctx.fillStyle = css("--rule"); ctx.textAlign = "center"; ctx.textBaseline = "middle";
-      ctx.fillText(cur, Wc / 2, Hc / 2 + 10);
-      const m = ctx.measureText(cur), tall = /[bdfhklt]/.test(cur);
-      ctx.fillStyle = css("--apricot"); ctx.beginPath();
-      ctx.arc(Wc / 2 - m.width / 2 + 18, Hc / 2 + 10 - (tall ? 78 : 40), 7, 0, Math.PI * 2); ctx.fill();
-      ctx.lineWidth = 9; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = css("--sky");
+    function render() {
+      const L = STROKES[cur], list = showAll ? all : g.letters;
+      const H = 300, scale = H / 150, Wd = Math.round(L.w * scale);
+      pm.draw(`<div class="pills" id="tr-letters">${list.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}${showAll ? "" : `<button class="pill" id="tr-all" style="color:var(--moss);">all sounds</button>`}</div>
+        <p class="cue" style="font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--sky);text-align:center;">${esc(L.cue)}</p>
+        <div class="trace-box" style="width:${Wd}px;height:${H}px;">
+          <svg viewBox="0 0 ${L.w} 150" width="${Wd}" height="${H}" aria-hidden="true">
+            <line x1="0" y1="115" x2="${L.w}" y2="115" class="tr-line"/><line x1="0" y1="65" x2="${L.w}" y2="65" class="tr-line dash"/>
+            ${L.s.map((d, i) => `<path d="${d}" class="tr-guide"/>`).join("")}
+            ${L.s.map((d, i) => `<path d="${d}" class="tr-demo" data-i="${i}"/>`).join("")}
+            <g id="tr-marks"></g>
+          </svg>
+          <canvas id="tr-canvas" width="${Wd}" height="${H}" aria-label="Tracing area for ${esc(cur)}"></canvas>
+        </div>
+        <div class="pm-actions"><button class="btn" id="tr-watch">▶ Watch</button><button class="btn secondary" id="tr-clear">Clear</button></div>
+        <p class="quiet" style="text-align:center;max-width:46ch;">Numbers show where each stroke starts; the arrow shows which way it goes. Watch first, then trace over it with a finger or the mouse.</p>`);
+      const svg = pm.stage.querySelector("svg"), marks = $("tr-marks"), demos = [...svg.querySelectorAll(".tr-demo")];
+      // start numbers and a direction arrow a little way along each stroke
+      demos.forEach((p, i) => {
+        const len = p.getTotalLength(), a = p.getPointAtLength(0), b = p.getPointAtLength(Math.min(len * 0.22, 18)), c = p.getPointAtLength(Math.min(len * 0.22, 18) + 1);
+        const ang = Math.atan2(c.y - b.y, c.x - b.x) * 180 / Math.PI;
+        marks.insertAdjacentHTML("beforeend", `<circle cx="${a.x}" cy="${a.y}" r="7" class="tr-start"/><text x="${a.x}" y="${a.y + 2.6}" class="tr-num">${i + 1}</text>${len > 8 ? `<polygon points="0,-4 8,0 0,4" class="tr-arrow" transform="translate(${b.x} ${b.y}) rotate(${ang})"/>` : ""}`);
+        p.style.strokeDasharray = len; p.style.strokeDashoffset = len; p.style.transition = "none";
+      });
+      const canvas = $("tr-canvas"), ctx = canvas.getContext("2d"), dpr = window.devicePixelRatio || 1;
+      canvas.width = Wd * dpr; canvas.height = H * dpr; canvas.style.width = Wd + "px"; canvas.style.height = H + "px"; ctx.scale(dpr, dpr);
+      ctx.lineWidth = 10; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--moss").trim();
+      let drawing = false;
+      const pos = e => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+      canvas.addEventListener("pointerdown", e => { drawing = true; canvas.setPointerCapture(e.pointerId); const p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); SFX.tap(); });
+      canvas.addEventListener("pointermove", e => { if (!drawing) return; const p = pos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+      const up = () => { drawing = false; };
+      canvas.addEventListener("pointerup", up); canvas.addEventListener("pointercancel", up);
+      $("tr-clear").addEventListener("click", () => { ctx.clearRect(0, 0, Wd, H); demos.forEach(p => { p.style.transition = "none"; p.style.strokeDashoffset = p.getTotalLength(); }); });
+      $("tr-watch").addEventListener("click", () => {
+        ctx.clearRect(0, 0, Wd, H);
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let t = 0;
+        demos.forEach(p => { p.style.transition = "none"; p.style.strokeDashoffset = p.getTotalLength(); });
+        demos.forEach(p => {
+          const len = p.getTotalLength(), dur = reduce ? 0 : Math.max(500, len * 9);
+          setTimeout(() => { p.style.transition = `stroke-dashoffset ${dur}ms linear`; void p.getBoundingClientRect(); p.style.strokeDashoffset = 0; }, t);
+          t += dur + 350;
+        });
+        speak(L.cue);
+      });
+      $("tr-letters").querySelectorAll(".pill[data-l]").forEach(b => b.addEventListener("click", () => { cur = b.dataset.l; render(); }));
+      const allBtn = $("tr-all"); if (allBtn) allBtn.addEventListener("click", () => { showAll = true; render(); });
     }
-    guide();
-    $("tr-letters").querySelectorAll(".pill").forEach(b => b.addEventListener("click", () => { cur = b.dataset.l; $("tr-letters").querySelectorAll(".pill").forEach(x => x.setAttribute("aria-selected", String(x === b))); canvas.setAttribute("aria-label", "Tracing area for the letter " + cur); guide(); }));
-    let drawing = false;
-    const pos = e => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-    canvas.addEventListener("pointerdown", e => { drawing = true; canvas.setPointerCapture(e.pointerId); const p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); SFX.tap(); });
-    canvas.addEventListener("pointermove", e => { if (!drawing) return; const p = pos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
-    const up = () => { drawing = false; };
-    canvas.addEventListener("pointerup", up); canvas.addEventListener("pointercancel", up);
-    $("tr-clear").addEventListener("click", guide);
+    render();
   };
   const dayName = n => ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday" })[n];
 
