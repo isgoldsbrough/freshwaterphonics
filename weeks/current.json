@@ -60,7 +60,7 @@
           1,
           2
         ],
-        "note": "Learn the whole word for now. The t-h sound comes in Phase 3, and the e says uh. Expected this week, not yet confirmed by school."
+        "note": "Learn the whole word for now; the t-h sound comes later. Expected this week, not yet confirmed."
       },
       {
         "word": "I",
@@ -84,10 +84,20 @@
         "title": "New sound: h",
         "minutes": 10,
         "steps": [
-          "Show the letter h. Say the sound together three times: a little puff of air, no voice. Watch for \"huh\".",
-          "Say: \"Can you hear h at the start of hat? h, hat.\" Try hen, hop, hill. Your child says the sound, then the word.",
-          "Play the game below: tap the things that start with h.",
-          "Finish with one word to blend out loud: \"h, a, t: hat.\" Your child blends it back to you."
+          {
+            "do": "Show the letter h. Say the sound together three times: a small puff of air, no voice. Watch for huh."
+          },
+          {
+            "do": "Listen for h at the start of words. Your child says the sound, then the word: hat, hen, hop, hill.",
+            "say": "Can you hear h at the start of hat? h, hat."
+          },
+          {
+            "do": "Play the game: tap the things that start with h."
+          },
+          {
+            "do": "Finish with one word to blend out loud. Your child blends it back to you.",
+            "say": "h, a, t: hat."
+          }
         ],
         "game": {
           "type": "hunt",
@@ -165,10 +175,21 @@
         "title": "New sound: b",
         "minutes": 10,
         "steps": [
-          "Show the letter b. Lips together, then open: b. Keep it short, no \"buh\". Say it three times together.",
-          "Quick check from yesterday: \"What sound is this?\" (show h). If it has gone, say it together and move on.",
-          "Say: \"b, bed. b, bus.\" Your child finds one thing in the room that starts with b.",
-          "Play the game below, then blend one word out loud: \"b, e, d: bed.\""
+          {
+            "do": "Show the letter b. Lips together, then open. Keep it short, no buh. Say it three times together."
+          },
+          {
+            "do": "Quick check from yesterday: show h. If it has gone, say it together and move on.",
+            "say": "What sound is this?"
+          },
+          {
+            "do": "Your child says the sound, then the word, then finds one thing in the room that starts with b.",
+            "say": "b, bed. b, bus."
+          },
+          {
+            "do": "Play the game, then blend one word out loud.",
+            "say": "b, e, d: bed."
+          }
         ],
         "game": {
           "type": "hunt",
@@ -254,10 +275,20 @@
         "title": "New sound: f",
         "minutes": 12,
         "steps": [
-          "Show the letter f. Top teeth on the bottom lip and blow: fff. No voice. Say it three times together.",
-          "Say: \"f, fog. f, fun. f, fit.\" Your child says the sound, then the word.",
-          "Blending: say the sounds slowly with a gap, your child says the word. \"h, a, t\" (hat), \"b, u, s\" (bus), \"f, o, g\" (fog).",
-          "Play the game below: tap the sounds, say the word, then pick the picture."
+          {
+            "do": "Show the letter f. Top teeth on the bottom lip and blow: fff. No voice. Say it three times together."
+          },
+          {
+            "do": "Your child says the sound, then the word.",
+            "say": "f, fog. f, fun. f, fit."
+          },
+          {
+            "do": "Blending: say the sounds slowly with a gap; your child says the word.",
+            "say": "h, a, t. b, u, s. f, o, g."
+          },
+          {
+            "do": "Play the game: tap the sounds, say the word, then pick the picture."
+          }
         ],
         "game": {
           "type": "blendpick",
@@ -407,11 +438,24 @@
         "title": "New sound: l",
         "minutes": 12,
         "steps": [
-          "Show the letter l. Tongue tip behind the top teeth: lll. Say it three times together.",
-          "Say: \"l, leg. l, lip. l, log.\" Your child says the sound, then the word.",
-          "Quick check of all four: show h, b, f, l one at a time. \"What sound?\" Say any missed one together.",
-          "Play the game below: one letter changes each time. Your child says the new word, then taps the letter that changed.",
-          "Off screen, if it was easy: say \"bus\"; your child writes it (b, u, s). Check it together, sound by sound."
+          {
+            "do": "Show the letter l. Tongue tip behind the top teeth: lll. Say it three times together."
+          },
+          {
+            "do": "Your child says the sound, then the word.",
+            "say": "l, leg. l, lip. l, log."
+          },
+          {
+            "do": "Quick check of all four: show h, b, f, l one at a time. Say any missed one together.",
+            "say": "What sound?"
+          },
+          {
+            "do": "Play the game: one letter changes each time. Your child says the new word, then taps the letter that changed."
+          },
+          {
+            "do": "Off screen, if it was easy: say bus; your child writes it. Check it together, sound by sound.",
+            "say": "b, u, s."
+          }
         ],
         "game": {
           "type": "ladder",
@@ -548,11 +592,22 @@
         "title": "Review and the tricky word",
         "minutes": 10,
         "steps": [
-          "Sound review: open the review cards below and go through all the sounds so far. Say any wobbly one together; no timer.",
-          "Tricky word \"the\": show it, say it, say \"we can't sound this one out yet, we just know it\". Say it again. Find it in any book on hand.",
-          "Recap \"I\" and \"is\" the same way: show, say, spot the tricky part, say again.",
-          "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on.",
-          "Off screen, if it was easy: say \"hat\" and \"leg\"; your child writes them. Check together, sound by sound."
+          {
+            "do": "Sound review: open the review cards below and go through every sound so far. Say any wobbly one together; no timer."
+          },
+          {
+            "do": "Tricky word the: show it, say it, say it again. Find it in any book to hand.",
+            "say": "We can't sound this one out yet. We just know it: the."
+          },
+          {
+            "do": "Recap I and is the same way: show, say, spot the tricky part, say again."
+          },
+          {
+            "do": "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on."
+          },
+          {
+            "do": "Off screen, if it was easy: say hat and leg; your child writes them. Check together, sound by sound."
+          }
         ],
         "game": {
           "type": "tricky",
@@ -717,9 +772,17 @@
         "title": "Copy a pattern",
         "minutes": 5,
         "steps": [
-          "Make a short pattern with two colours of bricks, blocks or pasta: red, blue, red, blue.",
-          "Your child builds the same one underneath. Say it aloud together in a rhythm.",
-          "Point along both rows: \"Are they exactly the same?\""
+          {
+            "do": "Make a short pattern with two colours of bricks, blocks or pasta: red, blue, red, blue."
+          },
+          {
+            "do": "Your child builds the same one underneath.",
+            "say": "Say it with me: red, blue, red, blue."
+          },
+          {
+            "do": "Point along both rows.",
+            "say": "Are they exactly the same?"
+          }
         ],
         "check": {
           "say": "Which row is the same as the top one?",
@@ -903,9 +966,16 @@
         "title": "What comes next?",
         "minutes": 5,
         "steps": [
-          "Start a pattern and stop part way: red, blue, red, blue, red. \"What comes next?\"",
-          "Your child places the next piece. Say the whole pattern together to check.",
-          "Swap: your child starts one and you continue it. Get it wrong on purpose sometimes so they can fix it."
+          {
+            "do": "Start a pattern and stop part way: red, blue, red, blue, red.",
+            "say": "What comes next?"
+          },
+          {
+            "do": "Your child places the next piece. Say the whole pattern together to check."
+          },
+          {
+            "do": "Swap: your child starts one and you continue it. Get it wrong on purpose sometimes so they can fix it."
+          }
         ],
         "check": {
           "say": "What comes next?",
@@ -1057,9 +1127,16 @@
         "title": "Make a pattern",
         "minutes": 5,
         "steps": [
-          "Collect autumn treasure: conkers, acorns, pine cones, leaves. School has asked for these too.",
-          "Your child makes a pattern for you to continue. \"What's your pattern? Say it for me.\"",
-          "Swap: you make one with a deliberate mistake; your child finds it and fixes it."
+          {
+            "do": "Collect autumn treasure: conkers, acorns, pine cones, leaves. School has asked for these too."
+          },
+          {
+            "do": "Your child makes a pattern for you to continue.",
+            "say": "What's your pattern? Say it for me."
+          },
+          {
+            "do": "Swap: you make one with a deliberate mistake; your child finds it and fixes it."
+          }
         ],
         "check": {
           "say": "Which row is a pattern?",
@@ -1211,9 +1288,16 @@
         "title": "Patterns in a story",
         "minutes": 5,
         "steps": [
-          "Re-read We're Going on a Bear Hunt. Stop at a repeated line: \"What happens again and again?\"",
-          "Find the pattern in the story: grass, river, mud, forest, snowstorm, cave, then back again.",
-          "Make a body pattern together: clap, stomp, clap, stomp. Then clap, clap, stomp."
+          {
+            "do": "Re-read We're Going on a Bear Hunt. Stop at a repeated line.",
+            "say": "What happens again and again?"
+          },
+          {
+            "do": "Find the pattern in the story: grass, river, mud, forest, snowstorm, cave, then back again."
+          },
+          {
+            "do": "Make a body pattern together: clap, stomp, clap, stomp. Then clap, clap, stomp."
+          }
         ],
         "check": {
           "say": "Which piece is missing?",
@@ -1346,9 +1430,16 @@
         "title": "Pattern spotting",
         "minutes": 5,
         "steps": [
-          "Go on a pattern hunt at home or on the way out: clothes, tiles, railings, crossings. Each find is a point.",
-          "For each one: \"What repeats? What changes?\"",
-          "Your child makes a final pattern for you to copy, continue, then say aloud."
+          {
+            "do": "Go on a pattern hunt at home or on the way out: clothes, tiles, railings, crossings. Each find is a point."
+          },
+          {
+            "do": "For each one, ask.",
+            "say": "What repeats? What changes?"
+          },
+          {
+            "do": "Your child makes a final pattern for you to copy, continue, then say aloud."
+          }
         ],
         "check": {
           "say": "What comes next?",

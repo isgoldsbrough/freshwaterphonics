@@ -64,30 +64,36 @@
   @media (max-width: 900px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
 
   .script h2 { font-size: 1.4rem; }
-  .script ol { margin: 20px 0 0; padding-left: 1.5em; display: flex; flex-direction: column; gap: 18px; }
-  .script li::marker { color: var(--moss); font-family: var(--display); font-weight: 600; }
+  .script ol { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 16px; }
+  .script li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; }
+  .script li::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; border-radius: 999px; background: var(--moss-soft); color: var(--moss); font-family: var(--display); font-weight: 600; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .script .do { line-height: 1.5; }
+  .bubble { display: inline-block; margin-top: 8px; background: var(--sky-soft); border-radius: 14px 14px 14px 4px; padding: 8px 14px; font-family: var(--display); font-size: 1.1rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
+  .bubble::before { content: "\201C"; opacity: 0.6; margin-right: 2px; } .bubble::after { content: "\201D"; opacity: 0.6; margin-left: 2px; }
   .say { display: block; margin-top: 6px; padding-left: 14px; border-left: 3px solid var(--sky); font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
-  .tricky { margin-top: 28px; }
-  .tricky .w { font-family: var(--body); font-size: 1.8rem; margin-right: 18px; }
-  .tricky .tp { color: var(--plum); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
-  .stems { margin-top: 20px; }
+  .tricky { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .tricky .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .tchip { background: var(--panel); border-radius: 14px; padding: 6px 16px; font-family: var(--body); font-size: 1.6rem; line-height: 1.2; }
+  .tchip .tp { color: var(--plum); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+  .stems { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 
   .hero { background: var(--panel); border-radius: var(--r); padding: 28px 32px; display: flex; gap: 28px; align-items: center; }
   .hero .big { font-family: var(--body); font-size: 7rem; line-height: 1; color: var(--sky); min-width: 120px; text-align: center; }
   .hero .big.word { font-size: 4.5rem; }
   .hero .big .tp { color: var(--plum); }
-  .hero .cue { font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
+  .hero .cue { font-family: var(--display); font-size: 1.2rem; font-weight: 500; line-height: 1.35; }
   .hero .prow { justify-content: flex-start; }
 
-  .launch { background: var(--panel); border-radius: var(--r); padding: 20px 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; margin-top: 16px; position: relative; }
+  .launch { background: var(--panel); border-radius: var(--r); padding: 18px 20px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; margin-top: 12px; position: relative; min-height: 96px; }
   .launch.stretch { background: var(--apricot-soft); }
-  .launch .pics { display: flex; }
-  .launch .pics img { width: 56px; height: 56px; margin-right: -14px; background: var(--paper); border-radius: 999px; padding: 6px; }
-  .launch h3 { font-size: 1.2rem; }
-  .launch .tag { font-size: 0.9rem; color: var(--ink-soft); }
+  .launch .pics { display: flex; gap: 6px; }
+  .launch .pics img { width: 44px; height: 44px; background: var(--paper); border-radius: 12px; padding: 5px; }
+  .launch h3 { font-size: 1.15rem; font-weight: 500; }
+  .launch .lab { display: block; font-size: 0.8rem; color: var(--apricot); font-family: var(--display); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 2px; }
+  .launch .tag { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .launch .got { position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 1.3rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 4px var(--paper); }
   .play { border: none; background: var(--moss); color: #fff; border-radius: 999px; padding: 12px 28px; font-size: 1.15rem; }
-  .play.small { padding: 10px 22px; font-size: 1.05rem; background: var(--ink); }
+  .play.small { padding: 11px 24px; font-size: 1.05rem; }
   .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
   .more button { background: var(--panel); border: none; border-radius: var(--r); padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1rem; }
   .more img { width: 44px; height: 44px; }
@@ -366,6 +372,7 @@
   const pic = (w, cls = "pic") => (w in PICS) ? `<img class="${cls}" src="pictures/${esc(w)}.svg" alt="${esc(w)}">` : `<span>${esc(w)}</span>`;
   // the words to say, inside quotes, become sky "say" lines
   const script = t => esc(t).replace(/&quot;([^&]+?)&quot;/g, (m, q) => /\s/.test(q.trim()) ? `<span class="say">"${q}"</span>` : `"${q}"`);
+  const stepHtml = st => typeof st === "string" ? `<li><div class="do">${script(st)}</div></li>` : `<li><div><div class="do">${esc(st.do)}</div>${st.say ? `<span class="bubble">${esc(st.say)}</span>` : ""}</div></li>`;
 
   // ---------- audio: clips, speech fallback, three small sounds ----------
   let manifest = {};
@@ -765,7 +772,8 @@
   const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards" };
   function launcher(game, meta, opts = {}) {
     const id = meta.id;
-    const html = `<div class="launch${opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).map(p => pic(p)).join("")}</div><div><h3>${esc(opts.title || TITLES[game.type])}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch ? " small" : ""}" data-launch="${id}">Play</button></div>`;
+    const title = (opts.title || TITLES[game.type]); const cap = title.charAt(0).toUpperCase() + title.slice(1);
+    const html = `<div class="launch${opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).slice(0, 3).map(p => pic(p)).join("")}</div><div>${opts.stretch ? `<span class="lab">stretch · if that was easy</span>` : ""}<h3>${esc(cap)}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch ? " small" : ""}" data-launch="${id}">Play</button></div>`;
     return { html, wire() { const b = document.querySelector(`[data-launch="${id}"]`); if (b) b.addEventListener("click", () => openPlay(opts.list || game, meta)); } };
   }
 
@@ -823,7 +831,7 @@
   function trickyHtml(list) {
     const tr = list || W.phonics.tricky;
     if (!tr.length) return "";
-    return `<div class="tricky"><p class="quiet">Tricky words: show, say, spot the tricky part, say again.</p><p style="margin-top:10px;">${tr.map(t => `<span class="w" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</p><p class="quiet" style="margin-top:8px;max-width:60ch;">${esc(tr[0].note)}</p></div>`;
+    return `<div class="tricky"><p class="quiet">Tricky words: show, say, spot the tricky part, say again.</p><div class="row">${tr.map(t => `<span class="tchip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</div><p class="quiet" style="max-width:60ch;">${esc(tr[0].note)}</p></div>`;
   }
   function renderPhonics() {
     const s = $("ph-script"), side = $("ph-side");
@@ -840,12 +848,12 @@
       side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
     }
     const d = W.phonics.days[day];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(x => `<li>${script(x)}</li>`).join("")}</ol>${trickyHtml()}`;
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
     const hero = d.sound
       ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">${esc(W.phonics.cues[d.sound])}</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme)</a></p></div></div>`
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">This week's tricky word. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
-    const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: "If that was easy. " + d.stretch.say }) : null;
+    const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     side.innerHTML = hero + main.html + (st ? st.html : "");
     main.wire(); if (st) st.wire();
   }
@@ -978,12 +986,12 @@
     }
     if (day === 0) { s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.maths.weekend)}</p>`; side.innerHTML = ""; return; }
     const d = W.maths.days[day];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes · real things first</p><ol>${d.steps.map(x => `<li>${script(x)}</li>`).join("")}</ol><div class="stems"><p class="quiet">Words to use:</p>${W.maths.stems.map(x => `<span class="say">${esc(x)}</span>`).join("")}</div>`;
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes · real things first</p><ol>${d.steps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
     const first = d.check.questions[0];
     const pattern = (first.pattern || first.options[first.correct]).filter(t => t !== "?").slice(0, 6);
     const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;
     const chk = launcher({ type: "maths", say: d.check.say, questions: d.check.questions }, { id: "mcheck" + day, sticker: "★" }, { title: "Quick check on the screen", tag: d.check.say });
-    const st = launcher({ type: "maths", say: d.stretch.say, questions: d.stretch.questions }, { id: "mstretch" + day, sticker: "★", stretch: true }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: "If that was easy. " + d.stretch.say });
+    const st = launcher({ type: "maths", say: d.stretch.say, questions: d.stretch.questions }, { id: "mstretch" + day, sticker: "★", stretch: true }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say });
     side.innerHTML = hero + chk.html + st.html; chk.wire(); st.wire();
   }
 
