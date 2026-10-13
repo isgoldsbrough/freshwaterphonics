@@ -1,0 +1,736 @@
+{
+  "name": "Autumn 1",
+  "graphemes": [
+    {
+      "g": "s",
+      "week": 1,
+      "where": "start"
+    },
+    {
+      "g": "a",
+      "week": 1,
+      "where": "middle"
+    },
+    {
+      "g": "t",
+      "week": 1,
+      "where": "end"
+    },
+    {
+      "g": "p",
+      "week": 1,
+      "where": "start"
+    },
+    {
+      "g": "i",
+      "week": 2,
+      "where": "middle"
+    },
+    {
+      "g": "n",
+      "week": 2,
+      "where": "end"
+    },
+    {
+      "g": "m",
+      "week": 2,
+      "where": "start"
+    },
+    {
+      "g": "d",
+      "week": 2,
+      "where": "start"
+    },
+    {
+      "g": "g",
+      "week": 3,
+      "where": "end"
+    },
+    {
+      "g": "o",
+      "week": 3,
+      "where": "middle"
+    },
+    {
+      "g": "c",
+      "week": 3,
+      "where": "start"
+    },
+    {
+      "g": "k",
+      "week": 3,
+      "where": "start"
+    },
+    {
+      "g": "ck",
+      "week": 4,
+      "where": "end"
+    },
+    {
+      "g": "e",
+      "week": 4,
+      "where": "middle"
+    },
+    {
+      "g": "u",
+      "week": 4,
+      "where": "middle"
+    },
+    {
+      "g": "r",
+      "week": 4,
+      "where": "start"
+    },
+    {
+      "g": "h",
+      "week": 5,
+      "where": "start"
+    },
+    {
+      "g": "b",
+      "week": 5,
+      "where": "start"
+    },
+    {
+      "g": "f",
+      "week": 5,
+      "where": "start"
+    },
+    {
+      "g": "l",
+      "week": 5,
+      "where": "start"
+    }
+  ],
+  "words": {
+    "sun": [
+      "s",
+      "u",
+      "n"
+    ],
+    "sock": [
+      "s",
+      "o",
+      "ck"
+    ],
+    "sad": [
+      "s",
+      "a",
+      "d"
+    ],
+    "hat": [
+      "h",
+      "a",
+      "t"
+    ],
+    "cat": [
+      "c",
+      "a",
+      "t"
+    ],
+    "bat": [
+      "b",
+      "a",
+      "t"
+    ],
+    "map": [
+      "m",
+      "a",
+      "p"
+    ],
+    "cap": [
+      "c",
+      "a",
+      "p"
+    ],
+    "rat": [
+      "r",
+      "a",
+      "t"
+    ],
+    "tap": [
+      "t",
+      "a",
+      "p"
+    ],
+    "bag": [
+      "b",
+      "a",
+      "g"
+    ],
+    "pan": [
+      "p",
+      "a",
+      "n"
+    ],
+    "man": [
+      "m",
+      "a",
+      "n"
+    ],
+    "ram": [
+      "r",
+      "a",
+      "m"
+    ],
+    "fan": [
+      "f",
+      "a",
+      "n"
+    ],
+    "net": [
+      "n",
+      "e",
+      "t"
+    ],
+    "pot": [
+      "p",
+      "o",
+      "t"
+    ],
+    "tin": [
+      "t",
+      "i",
+      "n"
+    ],
+    "nut": [
+      "n",
+      "u",
+      "t"
+    ],
+    "pig": [
+      "p",
+      "i",
+      "g"
+    ],
+    "cup": [
+      "c",
+      "u",
+      "p"
+    ],
+    "hop": [
+      "h",
+      "o",
+      "p"
+    ],
+    "lip": [
+      "l",
+      "i",
+      "p"
+    ],
+    "pen": [
+      "p",
+      "e",
+      "n"
+    ],
+    "pin": [
+      "p",
+      "i",
+      "n"
+    ],
+    "bin": [
+      "b",
+      "i",
+      "n"
+    ],
+    "kid": [
+      "k",
+      "i",
+      "d"
+    ],
+    "kit": [
+      "k",
+      "i",
+      "t"
+    ],
+    "hen": [
+      "h",
+      "e",
+      "n"
+    ],
+    "bed": [
+      "b",
+      "e",
+      "d"
+    ],
+    "leg": [
+      "l",
+      "e",
+      "g"
+    ],
+    "red": [
+      "r",
+      "e",
+      "d"
+    ],
+    "dog": [
+      "d",
+      "o",
+      "g"
+    ],
+    "fog": [
+      "f",
+      "o",
+      "g"
+    ],
+    "log": [
+      "l",
+      "o",
+      "g"
+    ],
+    "lock": [
+      "l",
+      "o",
+      "ck"
+    ],
+    "rock": [
+      "r",
+      "o",
+      "ck"
+    ],
+    "bus": [
+      "b",
+      "u",
+      "s"
+    ],
+    "bug": [
+      "b",
+      "u",
+      "g"
+    ],
+    "hug": [
+      "h",
+      "u",
+      "g"
+    ],
+    "duck": [
+      "d",
+      "u",
+      "ck"
+    ],
+    "hut": [
+      "h",
+      "u",
+      "t"
+    ],
+    "mug": [
+      "m",
+      "u",
+      "g"
+    ],
+    "cab": [
+      "c",
+      "a",
+      "b"
+    ],
+    "cob": [
+      "c",
+      "o",
+      "b"
+    ],
+    "kick": [
+      "k",
+      "i",
+      "ck"
+    ],
+    "fin": [
+      "f",
+      "i",
+      "n"
+    ]
+  },
+  "oral": {
+    "s": [
+      "sun",
+      "sock",
+      "sad"
+    ],
+    "a": [
+      "apple",
+      "hat",
+      "cat"
+    ],
+    "t": [
+      "hat",
+      "net",
+      "nut"
+    ],
+    "p": [
+      "pig",
+      "pen",
+      "pot"
+    ],
+    "i": [
+      "pig",
+      "bin",
+      "lip"
+    ],
+    "n": [
+      "hen",
+      "sun",
+      "pin"
+    ],
+    "m": [
+      "map",
+      "man",
+      "mug"
+    ],
+    "d": [
+      "dog",
+      "duck",
+      "bed"
+    ],
+    "g": [
+      "dog",
+      "bug",
+      "leg"
+    ],
+    "o": [
+      "dog",
+      "fog",
+      "sock"
+    ],
+    "c": [
+      "cat",
+      "cup",
+      "cap"
+    ],
+    "k": [
+      "kid",
+      "kit",
+      "conker"
+    ],
+    "ck": [
+      "duck",
+      "sock",
+      "lock"
+    ],
+    "e": [
+      "hen",
+      "bed",
+      "egg"
+    ],
+    "u": [
+      "bus",
+      "cup",
+      "duck"
+    ],
+    "r": [
+      "rat",
+      "rock",
+      "red"
+    ],
+    "h": [
+      "hat",
+      "hen",
+      "horse"
+    ],
+    "b": [
+      "bed",
+      "bus",
+      "bat"
+    ],
+    "f": [
+      "fog",
+      "fan",
+      "fish"
+    ],
+    "l": [
+      "leg",
+      "lip",
+      "log"
+    ]
+  },
+  "tricky": [
+    {
+      "word": "is",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The s says z."
+    },
+    {
+      "word": "I",
+      "trickyLetters": [
+        0
+      ],
+      "note": "One letter that says its own name."
+    },
+    {
+      "word": "the",
+      "trickyLetters": [
+        0,
+        1,
+        2
+      ],
+      "note": "Learn the whole word for now; the t-h sound comes in Phase 3."
+    }
+  ],
+  "maths": {
+    "topics": [
+      "matching",
+      "comparing amounts, size, mass and capacity",
+      "patterns"
+    ],
+    "questions": [
+      {
+        "kind": "which",
+        "say": "Which row has more?",
+        "options": [
+          [
+            "apple",
+            "apple",
+            "apple"
+          ],
+          [
+            "apple",
+            "apple",
+            "apple",
+            "apple",
+            "apple",
+            "apple"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "which",
+        "say": "Which row has fewer?",
+        "options": [
+          [
+            "star",
+            "star",
+            "star",
+            "star",
+            "star"
+          ],
+          [
+            "star",
+            "star"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "which",
+        "say": "Which row has more?",
+        "options": [
+          [
+            "frog",
+            "frog",
+            "frog",
+            "frog",
+            "frog",
+            "frog",
+            "frog"
+          ],
+          [
+            "frog",
+            "frog",
+            "frog",
+            "frog"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "which",
+        "say": "Which row has fewer?",
+        "options": [
+          [
+            "dog"
+          ],
+          [
+            "dog",
+            "dog",
+            "dog"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "which",
+        "say": "Which row is the same as the other? Tap the one that matches: two apples and a banana.",
+        "options": [
+          [
+            "apple",
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "banana",
+            "banana"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "next",
+        "pattern": [
+          "red",
+          "blue",
+          "red",
+          "blue",
+          "red"
+        ],
+        "options": [
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ],
+          [
+            "star"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "next",
+        "pattern": [
+          "star",
+          "moon",
+          "star",
+          "moon",
+          "star"
+        ],
+        "options": [
+          [
+            "moon"
+          ],
+          [
+            "star"
+          ],
+          [
+            "sun"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "next",
+        "pattern": [
+          "frog",
+          "frog",
+          "dog",
+          "frog",
+          "frog"
+        ],
+        "options": [
+          [
+            "frog"
+          ],
+          [
+            "dog"
+          ],
+          [
+            "cat"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "missing",
+        "pattern": [
+          "apple",
+          "banana",
+          "apple",
+          "?",
+          "apple",
+          "banana"
+        ],
+        "options": [
+          [
+            "banana"
+          ],
+          [
+            "apple"
+          ],
+          [
+            "grapes"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "copy",
+        "pattern": [
+          "leaf",
+          "conker",
+          "leaf",
+          "conker"
+        ],
+        "options": [
+          [
+            "leaf",
+            "conker",
+            "leaf",
+            "conker"
+          ],
+          [
+            "leaf",
+            "leaf",
+            "conker",
+            "conker"
+          ],
+          [
+            "conker",
+            "leaf",
+            "conker",
+            "leaf"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "which",
+        "say": "Which row is a pattern?",
+        "options": [
+          [
+            "sun",
+            "rain",
+            "sun",
+            "rain",
+            "sun",
+            "rain"
+          ],
+          [
+            "sun",
+            "rain",
+            "rain",
+            "sun",
+            "sun",
+            "rain"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "next",
+        "pattern": [
+          "clap",
+          "stomp",
+          "stomp",
+          "clap",
+          "stomp",
+          "stomp",
+          "clap"
+        ],
+        "options": [
+          [
+            "clap"
+          ],
+          [
+            "stomp"
+          ],
+          [
+            "star"
+          ]
+        ],
+        "correct": 1
+      }
+    ]
+  }
+}

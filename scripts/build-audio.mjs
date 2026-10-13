@@ -71,6 +71,17 @@ for (const d of Object.values(week.maths.days)) {
 }
 
 
+// term.json: half-term and archive sessions
+try {
+  const term = JSON.parse(readFileSync("term.json", "utf8"));
+  Object.keys(term.words).forEach(add);
+  Object.values(term.oral).flat().forEach(add);
+  term.graphemes.forEach(({ g, where }) => add(where === "start" ? `Tap the things that start with ${g}.` : where === "end" ? `Tap the things that end with ${g}.` : `Tap the things with ${g} in the middle.`));
+  term.tricky.forEach(t => add(t.word));
+  term.maths.questions.forEach(q => { if (q.say) add(q.say); else { const spoken = q.pattern.map(tileName).join(", "); add(`${spoken}. ${q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?"}`); } });
+  ["Ten minutes. Say every sound, find some, blend some, spot the tricky part.", "Say the sound. Find it. Blend it.", "A few from the whole term: more or fewer, which matches, what comes next.", "Nice work. Next game."].forEach(add);
+} catch (e) { if (e.code !== "ENOENT") throw e; }
+
 let made = 0, kept = 0;
 const manifest = {};
 for (const text of lines) {

@@ -1,0 +1,11 @@
+{
+  "current": "2026-10-12",
+  "break": { "from": "2026-10-17", "to": "2026-11-01", "label": "half term, 17 October to 1 November", "back": "2026-11-02" },
+  "weeks": [
+    { "weekOf": "2026-10-12", "label": "Week of 12 October", "file": "2026-10-12.json", "focus": ["h", "b", "f", "l"], "tricky": "the", "maths": "patterns", "status": "expected" },
+    { "weekOf": "2026-10-05", "label": "Week of 5 October", "file": null, "focus": ["ck", "e", "u", "r"], "tricky": "I", "maths": "comparing amounts, size, mass and capacity", "status": "confirmed" },
+    { "weekOf": "2026-09-28", "label": "Week of 28 September", "file": null, "focus": ["g", "o", "c", "k"], "tricky": "is", "maths": "comparing amounts, size, mass and capacity", "status": "confirmed" },
+    { "weekOf": "2026-09-21", "label": "Week of 21 September", "file": null, "focus": ["i", "n", "m", "d"], "tricky": null, "maths": "matching objects, sorting into categories", "status": "confirmed" },
+    { "weekOf": "2026-09-14", "label": "Week of 14 September", "file": null, "focus": ["s", "a", "t", "p"], "tricky": null, "maths": "matching objects, pictures and sets", "status": "confirmed" }
+  ]
+}

@@ -169,3 +169,35 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`${file}: ok (${warn.length} warning(s))`);
+
+// ---- term.json: the half-term and archive bank ----
+try {
+  const term = JSON.parse(readFileSync("term.json", "utf8"));
+  const termErrors = [];
+  const tg = term.graphemes.map(x => x.g);
+  const all = new Set(tg);
+  const allSorted = [...all].sort((a, b) => b.length - a.length);
+  const seg = w => { const out = []; let i = 0; while (i < w.length) { const g = allSorted.find(g => w.startsWith(g, i)); if (!g) return null; out.push(g); i += g.length; } return out; };
+  for (const [w, segs] of Object.entries(term.words)) {
+    if (segs.join("") !== w) termErrors.push(`term words: "${w}" segments do not spell it`);
+    segs.forEach(s => { if (!all.has(s)) termErrors.push(`term words: "${w}" uses untaught "${s}"`); });
+    const v = segs.filter(s => VOWELS.has(s)).length; if (v !== 1) termErrors.push(`term words: "${w}" has ${v} vowels`);
+    for (let i = 1; i < segs.length; i++) if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) termErrors.push(`term words: "${w}" has adjacent consonants`);
+    if (!(w in PICS)) termErrors.push(`term words: no picture for "${w}"`);
+  }
+  for (const [g, list] of Object.entries(term.oral)) {
+    if (!all.has(g)) termErrors.push(`term oral: unknown grapheme "${g}"`);
+    if (list.length < 3) termErrors.push(`term oral: "${g}" needs 3 words`);
+    list.forEach(w => { if (!(w in PICS)) termErrors.push(`term oral: no picture for "${w}"`); if (!w.includes(g)) termErrors.push(`term oral: "${w}" does not contain "${g}"`); });
+    const blendable = Object.entries(term.words).filter(([w, s]) => s.includes(g)).length;
+    if (blendable < 2) termErrors.push(`term words: fewer than 2 blendable words contain "${g}" (${blendable})`);
+  }
+  term.maths.questions.forEach((q, i) => {
+    const where = `term maths q${i + 1}`;
+    if (q.correct == null || q.correct >= q.options.length) termErrors.push(`${where}: bad correct index`);
+    [...(q.pattern || []), ...q.options.flat()].forEach(t => { if (t !== "?" && !(t in PICS)) termErrors.push(`${where}: no picture for "${t}"`); });
+    if (q.kind === "which" && !q.say) termErrors.push(`${where}: which needs a say line`);
+  });
+  if (termErrors.length) { termErrors.forEach(e => console.error("error:", e)); console.error(`${termErrors.length} error(s) in term.json`); process.exit(1); }
+  console.log("term.json: ok");
+} catch (e) { if (e.code !== "ENOENT") throw e; }
