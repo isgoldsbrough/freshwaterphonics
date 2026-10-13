@@ -2,7 +2,7 @@
   "weekOf": "2026-10-12",
   "status": "expected",
   "label": "Week of 12 October",
-  "className": "Freshwater & Welham, Reception",
+  "className": "Reception · Little Wandle Phase 2",
   "updated": "2026-10-13",
   "nextUpdateExpected": "2026-10-16",
   "phonics": {
@@ -54,20 +54,11 @@
     },
     "tricky": [
       {
-        "word": "the",
-        "trickyLetters": [
-          0,
-          1,
-          2
-        ],
-        "note": "Learn the whole word for now; the t-h sound comes later. Expected this week, not yet confirmed."
-      },
-      {
         "word": "I",
         "trickyLetters": [
           0
         ],
-        "note": "One letter that says its own name. Taught last week."
+        "note": "One letter that says its own name."
       },
       {
         "word": "is",
@@ -85,7 +76,7 @@
         "minutes": 10,
         "steps": [
           {
-            "do": "Show the letter h. Say the sound together three times: a small puff of air, no voice. Watch for huh."
+            "do": "Show the letter h. Say the sound together three times: a small puff of air, like fogging a window. Keep it a breath, not huh."
           },
           {
             "do": "Listen for h at the start of words. Your child says the sound, then the word: hat, hen, hop, hill.",
@@ -402,7 +393,7 @@
               "real": true
             },
             {
-              "word": "fap",
+              "word": "fep",
               "real": false
             },
             {
@@ -476,109 +467,109 @@
           "say": "Read the caption. Then tap the picture that matches.",
           "items": [
             {
-              "text": "the cat is on the bed",
+              "text": "a cat is on a bed",
               "options": [
                 {
-                  "say": "a cat on a bed",
                   "pics": [
                     "cat",
                     "bed"
-                  ]
+                  ],
+                  "say": "a cat on a bed"
                 },
                 {
-                  "say": "a dog on a bed",
                   "pics": [
                     "dog",
                     "bed"
-                  ]
+                  ],
+                  "say": "a dog on a bed"
                 },
                 {
-                  "say": "a cat on a bus",
                   "pics": [
                     "cat",
                     "bus"
-                  ]
+                  ],
+                  "say": "a cat on a bus"
                 }
               ],
               "correct": 0
             },
             {
-              "text": "the hen is on the bus",
+              "text": "a hen is on a bus",
               "options": [
                 {
-                  "say": "a hen on a bed",
                   "pics": [
                     "hen",
                     "bed"
-                  ]
+                  ],
+                  "say": "a hen on a bed"
                 },
                 {
-                  "say": "a hen on a bus",
                   "pics": [
                     "hen",
                     "bus"
-                  ]
+                  ],
+                  "say": "a hen on a bus"
                 },
                 {
-                  "say": "a cat on a bus",
                   "pics": [
                     "cat",
                     "bus"
-                  ]
+                  ],
+                  "say": "a cat on a bus"
                 }
               ],
               "correct": 1
             },
             {
-              "text": "the bug is in the hat",
+              "text": "a bug is in a hat",
               "options": [
                 {
-                  "say": "a bug in a bed",
                   "pics": [
                     "bug",
                     "bed"
-                  ]
+                  ],
+                  "say": "a bug in a bed"
                 },
                 {
-                  "say": "a frog in a hat",
                   "pics": [
                     "frog",
                     "hat"
-                  ]
+                  ],
+                  "say": "a frog in a hat"
                 },
                 {
-                  "say": "a bug in a hat",
                   "pics": [
                     "bug",
                     "hat"
-                  ]
+                  ],
+                  "say": "a bug in a hat"
                 }
               ],
               "correct": 2
             },
             {
-              "text": "the dog is in the fog",
+              "text": "a dog is on a log",
               "options": [
                 {
-                  "say": "a dog in the fog",
                   "pics": [
                     "dog",
-                    "fog"
-                  ]
+                    "log"
+                  ],
+                  "say": "a dog on a log"
                 },
                 {
-                  "say": "a dog in the sun",
                   "pics": [
                     "dog",
                     "sun"
-                  ]
+                  ],
+                  "say": "a dog in the sun"
                 },
                 {
-                  "say": "a cat in the fog",
                   "pics": [
                     "cat",
-                    "fog"
-                  ]
+                    "log"
+                  ],
+                  "say": "a cat on a log"
                 }
               ],
               "correct": 0
@@ -589,18 +580,15 @@
       "5": {
         "name": "Fri",
         "sound": null,
-        "title": "Review and the tricky word",
+        "title": "Review and the tricky words",
         "minutes": 10,
         "steps": [
           {
-            "do": "Sound review: open the review cards below and go through every sound so far. Say any wobbly one together; no timer."
+            "do": "Sound review: open review cards in More ways to play below and go through every sound so far. Say any wobbly one together; no timer."
           },
           {
-            "do": "Tricky word the: show it, say it, say it again. Find it in any book to hand.",
-            "say": "We can't sound this one out yet. We just know it: the."
-          },
-          {
-            "do": "Recap I and is the same way: show, say, spot the tricky part, say again."
+            "do": "Tricky words I and is: show the word, say it, spot the tricky part, say it again.",
+            "say": "The s in is says z."
           },
           {
             "do": "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on."
@@ -613,7 +601,6 @@
           "type": "tricky",
           "say": "Say the word. Then tap the tricky part.",
           "words": [
-            "the",
             "I",
             "is"
           ]
@@ -1596,52 +1583,13 @@
     "lastWeek": [
       "<b>English:</b> We're Going on a Bear Hunt: retelling the story in order and thinking up solutions (how could the bear get in through the window?).",
       "<b>Maths:</b> patterns: copying, continuing, creating and spotting them in a story.",
-      "<b>Phonics:</b> ck, e, u, r and the tricky word I.",
-      "<b>Understanding the World:</b> toys from the past."
+      "<b>Understanding the World:</b> toys from the past.",
+      "<b>Phonics:</b> ck, e, u, r and the tricky word I."
     ],
     "thisWeekPhonics": "h, b, f, l (school's preview from 9 October; confirmed in the next update)",
-    "asks": [
-      {
-        "text": "Give consent and payment for the Little City trip on Arbor",
-        "since": "25 Sep",
-        "note": "asked three times"
-      },
-      {
-        "text": "Sign up for A Day in the Life of Reception",
-        "since": "25 Sep",
-        "note": "asked three times"
-      },
-      {
-        "text": "Reading book in the bookbag every school day",
-        "since": "2 Oct",
-        "note": "school reads with the children and wants to share progress"
-      },
-      {
-        "text": "Bring in conkers, pine cones or acorns for class activities",
-        "since": "9 Oct",
-        "note": ""
-      },
-      {
-        "text": "Bring in tubes, bottles and other recycling for junk modelling",
-        "since": "9 Oct",
-        "note": ""
-      },
-      {
-        "text": "Label all clothes with name and class",
-        "since": "25 Sep",
-        "note": ""
-      },
-      {
-        "text": "A family photo for the This is Us board",
-        "since": "18 Sep",
-        "note": "if not already done"
-      }
-    ],
+    "asks": [],
     "standing": [
-      "<b>Friday, Show and Tell:</b> check the rota outside both classrooms for your child's turn. The item goes in the box by the door at drop-off. Half-term theme: Marvellous Me.",
-      "<b>Every school day:</b> reading book in the bag.",
-      "<b>Always:</b> everything labelled with name and class; a spare set of clothes at school for water play.",
-      "<b>At home:</b> about 10 minutes of phonics and 5 of maths. Stay on a sound an extra day if it is hard; skip ahead if it is easy."
+      "<b>At home:</b> about 10 minutes of phonics and 5 of maths. If a sound is hard, stay on it another day. If it is easy, add the stretch game; we never go on to next week's sounds early."
     ]
   },
   "journey": [
@@ -1670,8 +1618,7 @@
     {
       "week": "Week 5",
       "graphemes": "h b f l",
-      "state": "now",
-      "tricky": "the (expected)"
+      "state": "now"
     },
     {
       "week": "Week 6",
@@ -1679,5 +1626,5 @@
       "state": "next"
     }
   ],
-  "share": "Phonics and maths for this week (w/c 12 Oct): https://freshwaterphonics.vercel.app\n\nSounds: h, b, f, l (one a day). Tricky word: the.\nMaths: patterns.\n\nSchool asks: Little City trip consent on Arbor; Day in the Life sign-up; conkers, pine cones or acorns; tubes and bottles for junk modelling."
+  "share": "Phonics and maths for this week (w/c 12 Oct): https://freshwaterphonics.vercel.app\n\nSounds: h, b, f, l, one a day. Say the sound, not the letter name: \"h\" is a puff of air, not \"aitch\".\nMaths: patterns.\n\nTen minutes a day on a laptop. Made by a parent, not by the school."
 }

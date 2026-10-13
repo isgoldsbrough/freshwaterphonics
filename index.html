@@ -289,7 +289,7 @@
 
   <div id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
     <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
-    <section class="block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
+    <section class="block" id="wk-asks-block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
     <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
@@ -434,7 +434,7 @@
   const today = todayISO();
   const BR = IDX.break || null;
   const inBreak = BR && today >= BR.from && today <= BR.to;
-  const showHalf = BR && today >= new Date(new Date(BR.from + "T00:00:00").getTime() - 7 * 86400000).toISOString().slice(0, 10) && today <= BR.to;
+  const showHalf = inBreak;
   const weekEnd = new Date(W0.weekOf + "T00:00:00"); weekEnd.setDate(weekEnd.getDate() + 6);
   const stale = !inBreak && new Date(today + "T00:00:00") > weekEnd;
   if (stale) { $("stale-banner").hidden = false; $("stale-banner").innerHTML = `<b>This page is out of date.</b> It shows the week of ${esc(formatDate(W0.weekOf))}; the sounds may be last week's. Check with school or the parent who shared the link.`; }
@@ -494,7 +494,7 @@
     $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
       const d = W.phonics.days[n];
       const label = n === 0 ? "rest" : d.name;
-      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : esc(W.phonics.tricky[0].word));
+      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : "✓");
       return `<button class="day${n === todayDay ? " today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
     }).join("");
     $("daypick").querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
@@ -859,7 +859,7 @@
     s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
     const hero = d.sound
       ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">${esc(W.phonics.cues[d.sound])}</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme)</a></p></div></div>`
-      : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">This week's tricky word. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
+      : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">Tricky word recap. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     side.innerHTML = hero + main.html + (st ? st.html : "");
@@ -1005,7 +1005,8 @@
 
   // ---------- week ----------
   $("wk-title").textContent = "This week at home: " + W.label.toLowerCase();
-  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${esc(p.sound || W.phonics.tricky[0].word)}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
+  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : "✓")}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
+  $("wk-asks-block").hidden = !W.school.asks.length;
   $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
   $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;
   $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");

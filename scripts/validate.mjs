@@ -3,6 +3,11 @@
 // graphemes taught so far, all five days exist, every game is well formed.
 // Usage: node scripts/validate.mjs weeks/2026-10-12.json
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+
+// Words a child should never be shown, kept as short hashes so no list sits in the public repo.
+const BLOCK = new Set(["037b3e936d13", "2ddee02a793c", "55391ea0166a", "691eba59f495", "69eefb242876", "6c117afa4299", "788ebd396d3a", "9f210bbd62dc", "ab14d94055e7", "ac04b70e6de3", "bfabc6e65897", "cc934d401b62", "e946a391fb95", "fcff8ed87ab3"]);
+const blocked = w => BLOCK.has(createHash("sha1").update(w.toLowerCase()).digest("hex").slice(0, 12));
 
 const file = process.argv[2];
 if (!file) { console.error("usage: validate.mjs <week.json>"); process.exit(2); }
@@ -32,6 +37,7 @@ function segment(word) {
 
 // Phase 2 print rule: only taught graphemes, one vowel, no adjacent consonants.
 function checkPrintWord(word, where) {
+  if (blocked(word)) { errors.push(`${where}: "${word}" is on the blocklist; choose another word`); return; }
   const segs = segment(word);
   if (!segs) { errors.push(`${where}: "${word}" uses a sound not yet taught`); return; }
   const vowels = segs.filter(s => VOWELS.has(s)).length;
