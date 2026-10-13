@@ -1,4 +1,6 @@
-# freshwaterphonics.uk
+# Freshwater Phonics
+
+Live at https://freshwaterphonics.vercel.app (Vercel, auto-deploys from `main`; also served by GitHub Pages at https://isgoldsbrough.github.io/freshwaterphonics/).
 
 A weekly phonics and maths page for one Reception class, run by a parent. Unofficial; not reviewed by the school.
 
