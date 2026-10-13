@@ -1,0 +1,345 @@
+{
+  "weekOf": "2026-10-12",
+  "status": "expected",
+  "label": "Week of 12 October",
+  "className": "Freshwater & Welham, Reception",
+  "updated": "2026-10-13",
+  "nextUpdateExpected": "2026-10-16",
+  "phonics": {
+    "focus": ["h", "b", "f", "l"],
+    "taught": ["s", "a", "t", "p", "i", "n", "m", "d", "g", "o", "c", "k", "ck", "e", "u", "r"],
+    "cues": {
+      "s": "Hiss like a snake, sss. No voice.",
+      "a": "Open wide, short a, as in apple.",
+      "t": "Tongue tip taps behind the top teeth, t. No voice.",
+      "p": "Pop the lips open, p. No voice.",
+      "i": "Short i, as in in.",
+      "n": "Tongue up, hum through the nose, nnn.",
+      "m": "Lips together, hum, mmm.",
+      "d": "Tongue tip taps behind the teeth, d, with voice.",
+      "g": "Back of the tongue, short g, with voice.",
+      "o": "Round mouth, short o, as in on.",
+      "c": "Back of the tongue, short c. No voice.",
+      "k": "Same sound as c, written k.",
+      "ck": "Same sound as k. Two letters, one sound, at the end of short words.",
+      "e": "Short e, as in egg.",
+      "u": "Short u, as in up.",
+      "r": "A soft growl, rrr. Keep it one sound, no uh on the end.",
+      "h": "A small puff of air, like fogging a window, h. No voice.",
+      "b": "Lips together, then open, b. Keep it short, no buh.",
+      "f": "Top teeth on the bottom lip and blow, fff. No voice.",
+      "l": "Tongue tip behind the top teeth, lll."
+    },
+    "tricky": [
+      { "word": "the", "trickyLetters": [0, 1, 2], "note": "Learn the whole word for now. The t-h sound comes in Phase 3, and the e says uh. Expected this week, not yet confirmed by school." },
+      { "word": "I", "trickyLetters": [0], "note": "One letter that says its own name. Taught last week." },
+      { "word": "is", "trickyLetters": [1], "note": "The s says z. Taught two weeks ago." }
+    ],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "h",
+        "title": "New sound: h",
+        "minutes": 10,
+        "steps": [
+          "Show the letter h. Say the sound together three times: a little puff of air, no voice. Watch for \"huh\".",
+          "Say: \"Can you hear h at the start of hat? h, hat.\" Try hen, hop, hill. Your child says the sound, then the word.",
+          "Play the game below: tap the things that start with h.",
+          "Finish with one word to blend out loud: \"h, a, t: hat.\" Your child blends it back to you."
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with h.",
+          "items": [
+            { "emoji": "🎩", "word": "hat", "match": true },
+            { "emoji": "🐔", "word": "hen", "match": true },
+            { "emoji": "🐴", "word": "horse", "match": true },
+            { "emoji": "🐱", "word": "cat", "match": false },
+            { "emoji": "☀️", "word": "sun", "match": false },
+            { "emoji": "🦆", "word": "duck", "match": false }
+          ]
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "b",
+        "title": "New sound: b",
+        "minutes": 10,
+        "steps": [
+          "Show the letter b. Lips together, then open: b. Keep it short, no \"buh\". Say it three times together.",
+          "Quick check from yesterday: \"What sound is this?\" (show h). If it has gone, say it together and move on.",
+          "Say: \"b, bed. b, bus.\" Your child finds one thing in the room that starts with b.",
+          "Play the game below, then blend one word out loud: \"b, e, d: bed.\""
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with b.",
+          "items": [
+            { "emoji": "🛏️", "word": "bed", "match": true },
+            { "emoji": "🚌", "word": "bus", "match": true },
+            { "emoji": "🦇", "word": "bat", "match": true },
+            { "emoji": "🐷", "word": "pig", "match": false },
+            { "emoji": "🐶", "word": "dog", "match": false },
+            { "emoji": "🥚", "word": "egg", "match": false }
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "f",
+        "title": "New sound: f",
+        "minutes": 12,
+        "steps": [
+          "Show the letter f. Top teeth on the bottom lip and blow: fff. No voice. Say it three times together.",
+          "Say: \"f, fog. f, fun. f, fit.\" Your child says the sound, then the word.",
+          "Blending: say the sounds slowly with a gap, your child says the word. \"h, a, t\" (hat), \"b, u, s\" (bus), \"f, o, g\" (fog).",
+          "Play the game below: tap the sounds, say the word, then pick the picture."
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            { "word": "hat", "segments": ["h", "a", "t"], "emoji": "🎩", "distractors": [{ "word": "bed", "emoji": "🛏️" }, { "word": "bus", "emoji": "🚌" }] },
+            { "word": "fog", "segments": ["f", "o", "g"], "emoji": "🌫️", "distractors": [{ "word": "dog", "emoji": "🐶" }, { "word": "cat", "emoji": "🐱" }] },
+            { "word": "bus", "segments": ["b", "u", "s"], "emoji": "🚌", "distractors": [{ "word": "hat", "emoji": "🎩" }, { "word": "sun", "emoji": "☀️" }] },
+            { "word": "bed", "segments": ["b", "e", "d"], "emoji": "🛏️", "distractors": [{ "word": "bus", "emoji": "🚌" }, { "word": "hen", "emoji": "🐔" }] },
+            { "word": "hen", "segments": ["h", "e", "n"], "emoji": "🐔", "distractors": [{ "word": "cat", "emoji": "🐱" }, { "word": "pig", "emoji": "🐷" }] },
+            { "word": "cup", "segments": ["c", "u", "p"], "emoji": "☕", "distractors": [{ "word": "sock", "emoji": "🧦" }, { "word": "fog", "emoji": "🌫️" }] }
+          ]
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "l",
+        "title": "New sound: l",
+        "minutes": 12,
+        "steps": [
+          "Show the letter l. Tongue tip behind the top teeth: lll. Say it three times together.",
+          "Say: \"l, leg. l, lip. l, log.\" Your child says the sound, then the word.",
+          "Quick check of all four: show h, b, f, l one at a time. \"What sound?\" Say any missed one together.",
+          "Play the game below: one letter changes each time. Your child says the new word, then taps the letter that changed."
+        ],
+        "game": {
+          "type": "ladder",
+          "say": "One letter has changed. Say the new word, then tap the letter that changed.",
+          "words": ["hat", "bat", "bit", "fit", "lit", "lot", "log"]
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Review and the tricky word",
+        "minutes": 10,
+        "steps": [
+          "Sound review: open the review cards below and go through all the sounds so far. Say any wobbly one together; no timer.",
+          "Tricky word \"the\": show it, say it, say \"we can't sound this one out yet, we just know it\". Say it again. Find it in any book on hand.",
+          "Recap \"I\" and \"is\" the same way: show, say, spot the tricky part, say again.",
+          "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on."
+        ],
+        "game": {
+          "type": "tricky",
+          "say": "Say the word. Then tap the tricky part.",
+          "words": ["the", "I", "is"]
+        }
+      }
+    },
+    "weekend": "No set session. If it comes up on its own, a shop sign, a cereal box, a book, spot the sounds together and leave it there.",
+    "memory": [
+      { "grapheme": "h", "word": "hat", "emoji": "🎩" },
+      { "grapheme": "b", "word": "bed", "emoji": "🛏️" },
+      { "grapheme": "f", "word": "fog", "emoji": "🌫️" },
+      { "grapheme": "l", "word": "leg", "emoji": "🦵" },
+      { "grapheme": "s", "word": "sun", "emoji": "☀️" },
+      { "grapheme": "d", "word": "dog", "emoji": "🐶" }
+    ],
+    "rhymes": [
+      { "target": { "word": "hat", "emoji": "🎩" }, "options": [{ "word": "bat", "emoji": "🦇", "right": true }, { "word": "pig", "emoji": "🐷", "right": false }, { "word": "cup", "emoji": "☕", "right": false }] },
+      { "target": { "word": "leg", "emoji": "🦵" }, "options": [{ "word": "egg", "emoji": "🥚", "right": true }, { "word": "bus", "emoji": "🚌", "right": false }, { "word": "sun", "emoji": "☀️", "right": false }] },
+      { "target": { "word": "bug", "emoji": "🐛" }, "options": [{ "word": "mug", "emoji": "🍺", "right": true }, { "word": "hen", "emoji": "🐔", "right": false }, { "word": "hat", "emoji": "🎩", "right": false }] },
+      { "target": { "word": "dog", "emoji": "🐶" }, "options": [{ "word": "frog", "emoji": "🐸", "right": true }, { "word": "bed", "emoji": "🛏️", "right": false }, { "word": "fish", "emoji": "🐟", "right": false }] }
+    ]
+  },
+  "maths": {
+    "topic": "Patterns: copying, continuing, creating and spotting them",
+    "vocab": ["pattern", "repeat", "next", "copy", "continue", "same", "different"],
+    "stems": ["\"Red, blue, red, blue. What comes next?\"", "\"Say the pattern with me.\"", "\"Is it the same? Point and check.\""],
+    "source": "From the 9 October school update: copying and continuing simple patterns, creating them and spotting them in a story.",
+    "everyday": [
+      "<b>Autumn treasure:</b> conkers, acorns, pine cones in a line: conker, acorn, conker, acorn. School wants these brought in too.",
+      "<b>Clothes:</b> stripes on socks, pyjamas, jumpers. \"What colour comes next?\"",
+      "<b>Setting the table:</b> fork, spoon, fork, spoon.",
+      "<b>Body patterns:</b> clap, stomp, clap, stomp. Then your child makes one for you to copy.",
+      "<b>Bear Hunt:</b> the repeated lines are a pattern in words. Which bit repeats, which bit changes?",
+      "<b>Out and about:</b> railings, paving, tiles, zebra crossings."
+    ],
+    "days": {
+      "1": {
+        "title": "Copy a pattern",
+        "minutes": 5,
+        "steps": [
+          "Make a short pattern with two colours of bricks, blocks or pasta: red, blue, red, blue.",
+          "Your child builds the same one underneath. Say it aloud together in a rhythm.",
+          "Point along both rows: \"Are they exactly the same?\""
+        ],
+        "check": {
+          "say": "Which row is the same as the top one?",
+          "questions": [
+            { "kind": "copy", "pattern": ["red", "blue", "red", "blue"], "options": [["red", "blue", "red", "blue"], ["red", "red", "blue", "blue"], ["blue", "red", "blue", "red"]], "correct": 0 },
+            { "kind": "copy", "pattern": ["apple", "banana", "apple", "banana"], "options": [["apple", "apple", "banana", "banana"], ["apple", "banana", "apple", "banana"], ["banana", "apple", "banana", "apple"]], "correct": 1 },
+            { "kind": "copy", "pattern": ["star", "moon", "star", "moon"], "options": [["star", "star", "moon", "moon"], ["moon", "star", "moon", "star"], ["star", "moon", "star", "moon"]], "correct": 2 }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: a longer pattern",
+          "say": "Which row is the same as the top one?",
+          "questions": [
+            { "kind": "copy", "pattern": ["frog", "frog", "dog", "frog", "frog", "dog"], "options": [["frog", "frog", "dog", "frog", "frog", "dog"], ["frog", "dog", "frog", "dog", "frog", "dog"], ["dog", "frog", "frog", "dog", "frog", "frog"]], "correct": 0 },
+            { "kind": "copy", "pattern": ["red", "blue", "star", "red", "blue", "star"], "options": [["red", "blue", "red", "blue", "star", "star"], ["red", "blue", "star", "red", "blue", "star"], ["star", "blue", "red", "star", "blue", "red"]], "correct": 1 }
+          ]
+        }
+      },
+      "2": {
+        "title": "What comes next?",
+        "minutes": 5,
+        "steps": [
+          "Start a pattern and stop part way: red, blue, red, blue, red. \"What comes next?\"",
+          "Your child places the next piece. Say the whole pattern together to check.",
+          "Swap: your child starts one and you continue it. Get it wrong on purpose sometimes so they can fix it."
+        ],
+        "check": {
+          "say": "What comes next?",
+          "questions": [
+            { "kind": "next", "pattern": ["red", "blue", "red", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 1 },
+            { "kind": "next", "pattern": ["apple", "banana", "apple", "banana", "apple"], "options": [["apple"], ["banana"], ["grapes"]], "correct": 1 },
+            { "kind": "next", "pattern": ["star", "moon", "star", "moon", "star"], "options": [["moon"], ["star"], ["sun"]], "correct": 0 }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: patterns with a double",
+          "say": "What comes next?",
+          "questions": [
+            { "kind": "next", "pattern": ["frog", "frog", "dog", "frog", "frog"], "options": [["frog"], ["dog"], ["cat"]], "correct": 1 },
+            { "kind": "next", "pattern": ["leaf", "leaf", "conker", "leaf", "leaf"], "options": [["conker"], ["leaf"], ["star"]], "correct": 0 },
+            { "kind": "next", "pattern": ["red", "red", "blue", "red", "red", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 0 }
+          ]
+        }
+      },
+      "3": {
+        "title": "Make a pattern",
+        "minutes": 5,
+        "steps": [
+          "Collect autumn treasure: conkers, acorns, pine cones, leaves. School has asked for these too.",
+          "Your child makes a pattern for you to continue. \"What's your pattern? Say it for me.\"",
+          "Swap: you make one with a deliberate mistake; your child finds it and fixes it."
+        ],
+        "check": {
+          "say": "Which row is a pattern?",
+          "questions": [
+            { "kind": "which", "options": [["apple", "banana", "apple", "banana", "apple", "banana"], ["apple", "banana", "grapes", "apple", "apple", "banana"]], "correct": 0 },
+            { "kind": "which", "options": [["red", "red", "blue", "star", "red", "blue"], ["red", "blue", "red", "blue", "red", "blue"]], "correct": 1 },
+            { "kind": "which", "options": [["star", "star", "moon", "star", "star", "moon"], ["star", "moon", "moon", "star", "moon", "star"]], "correct": 0 }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: three-part patterns",
+          "say": "What comes next?",
+          "questions": [
+            { "kind": "next", "pattern": ["red", "blue", "star", "red", "blue"], "options": [["red"], ["blue"], ["star"]], "correct": 2 },
+            { "kind": "next", "pattern": ["dog", "cat", "frog", "dog", "cat"], "options": [["frog"], ["dog"], ["cat"]], "correct": 0 },
+            { "kind": "next", "pattern": ["apple", "banana", "grapes", "apple", "banana", "grapes", "apple"], "options": [["banana"], ["grapes"], ["apple"]], "correct": 0 }
+          ]
+        }
+      },
+      "4": {
+        "title": "Patterns in a story",
+        "minutes": 5,
+        "steps": [
+          "Re-read We're Going on a Bear Hunt. Stop at a repeated line: \"What happens again and again?\"",
+          "Find the pattern in the story: grass, river, mud, forest, snowstorm, cave, then back again.",
+          "Make a body pattern together: clap, stomp, clap, stomp. Then clap, clap, stomp."
+        ],
+        "check": {
+          "say": "Which piece is missing?",
+          "questions": [
+            { "kind": "missing", "pattern": ["apple", "banana", "apple", "?", "apple", "banana"], "options": [["banana"], ["apple"], ["grapes"]], "correct": 0 },
+            { "kind": "missing", "pattern": ["red", "blue", "?", "blue", "red", "blue"], "options": [["blue"], ["red"], ["star"]], "correct": 1 },
+            { "kind": "missing", "pattern": ["star", "?", "star", "moon", "star", "moon"], "options": [["star"], ["moon"], ["sun"]], "correct": 1 }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: a missing piece in a longer pattern",
+          "say": "Which piece is missing?",
+          "questions": [
+            { "kind": "missing", "pattern": ["frog", "frog", "dog", "frog", "?", "dog"], "options": [["frog"], ["dog"], ["cat"]], "correct": 0 },
+            { "kind": "missing", "pattern": ["red", "blue", "star", "red", "?", "star"], "options": [["red"], ["blue"], ["star"]], "correct": 1 }
+          ]
+        }
+      },
+      "5": {
+        "title": "Pattern spotting",
+        "minutes": 5,
+        "steps": [
+          "Go on a pattern hunt at home or on the way out: clothes, tiles, railings, crossings. Each find is a point.",
+          "For each one: \"What repeats? What changes?\"",
+          "Your child makes a final pattern for you to copy, continue, then say aloud."
+        ],
+        "check": {
+          "say": "What comes next?",
+          "questions": [
+            { "kind": "next", "pattern": ["elephant", "mouse", "elephant", "mouse", "elephant"], "options": [["mouse"], ["elephant"], ["cat"]], "correct": 0 },
+            { "kind": "next", "pattern": ["sun", "rain", "sun", "rain", "sun"], "options": [["sun"], ["rain"], ["star"]], "correct": 1 },
+            { "kind": "which", "options": [["clap", "stomp", "clap", "stomp", "clap", "stomp"], ["clap", "stomp", "stomp", "clap", "clap", "stomp"]], "correct": 0 }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: sound and movement patterns",
+          "say": "What comes next? Do the actions as you say it.",
+          "questions": [
+            { "kind": "next", "pattern": ["clap", "clap", "stomp", "clap", "clap"], "options": [["stomp"], ["clap"], ["star"]], "correct": 0 },
+            { "kind": "next", "pattern": ["clap", "stomp", "stomp", "clap", "stomp", "stomp", "clap"], "options": [["clap"], ["stomp"], ["star"]], "correct": 1 },
+            { "kind": "next", "pattern": ["red", "blue", "blue", "red", "blue", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 1 }
+          ]
+        }
+      }
+    },
+    "weekend": "No maths session. If it comes up on its own, stripes on a jumper, tiles on a floor, say \"that's a pattern, what comes next?\" and leave it there."
+  },
+  "tiles": {
+    "red": "🔴", "blue": "🔵", "star": "⭐", "moon": "🌙", "sun": "☀️", "rain": "🌧️",
+    "apple": "🍎", "banana": "🍌", "grapes": "🍇", "frog": "🐸", "dog": "🐶", "cat": "🐱",
+    "leaf": "🍂", "conker": "🌰", "elephant": "🐘", "mouse": "🐭", "clap": "👏", "stomp": "🦶", "?": "❓"
+  },
+  "school": {
+    "lastWeek": [
+      "<b>English:</b> We're Going on a Bear Hunt: retelling the story in order and thinking up solutions (how could the bear get in through the window?).",
+      "<b>Maths:</b> patterns: copying, continuing, creating and spotting them in a story.",
+      "<b>Phonics:</b> ck, e, u, r and the tricky word I.",
+      "<b>Understanding the World:</b> toys from the past."
+    ],
+    "thisWeekPhonics": "h, b, f, l (school's preview from 9 October; confirmed in the next update)",
+    "asks": [
+      { "text": "Give consent and payment for the Little City trip on Arbor", "since": "25 Sep", "note": "asked three times" },
+      { "text": "Sign up for A Day in the Life of Reception", "since": "25 Sep", "note": "asked three times" },
+      { "text": "Reading book in the bookbag every school day", "since": "2 Oct", "note": "school reads with the children and wants to share progress" },
+      { "text": "Bring in conkers, pine cones or acorns for class activities", "since": "9 Oct", "note": "" },
+      { "text": "Bring in tubes, bottles and other recycling for junk modelling", "since": "9 Oct", "note": "" },
+      { "text": "Label all clothes with name and class", "since": "25 Sep", "note": "" },
+      { "text": "A family photo for the This is Us board", "since": "18 Sep", "note": "if not already done" }
+    ],
+    "standing": [
+      "<b>Friday, Show and Tell:</b> check the rota outside both classrooms for your child's turn. The item goes in the box by the door at drop-off. Half-term theme: Marvellous Me.",
+      "<b>Every school day:</b> reading book in the bag.",
+      "<b>Always:</b> everything labelled with name and class; a spare set of clothes at school for water play.",
+      "<b>At home:</b> about 10 minutes of phonics and 5 of maths. Stay on a sound an extra day if it is hard; skip ahead if it is easy."
+    ]
+  },
+  "journey": [
+    { "week": "Week 1", "graphemes": "s a t p", "state": "done" },
+    { "week": "Week 2", "graphemes": "i n m d", "state": "done" },
+    { "week": "Week 3", "graphemes": "g o c k", "state": "done", "tricky": "is" },
+    { "week": "Week 4", "graphemes": "ck e u r", "state": "done", "tricky": "I" },
+    { "week": "Week 5", "graphemes": "h b f l", "state": "now", "tricky": "the (expected)" },
+    { "week": "Week 6", "graphemes": "ff ll ss (expected)", "state": "next" }
+  ],
+  "share": "Phonics and maths for this week (w/c 12 Oct): https://freshwaterphonics.uk\n\nSounds: h, b, f, l (one a day). Tricky word: the.\nMaths: patterns.\n\nSchool asks: Little City trip consent on Arbor; Day in the Life sign-up; conkers, pine cones or acorns; tubes and bottles for junk modelling."
+}

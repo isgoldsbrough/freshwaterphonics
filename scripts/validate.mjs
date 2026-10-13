@@ -1,0 +1,134 @@
+#!/usr/bin/env node
+// Validates a week file: every word shown in print must be decodable with the
+// graphemes taught so far, all five days exist, every game is well formed.
+// Usage: node scripts/validate.mjs weeks/2026-10-12.json
+import { readFileSync } from "node:fs";
+
+const file = process.argv[2];
+if (!file) { console.error("usage: validate.mjs <week.json>"); process.exit(2); }
+const week = JSON.parse(readFileSync(file, "utf8"));
+const errors = [];
+const warn = [];
+
+const VOWELS = new Set(["a", "e", "i", "o", "u"]);
+const taught = new Set([...week.phonics.taught, ...week.phonics.focus]);
+const graphemes = [...taught].sort((a, b) => b.length - a.length);
+
+// Greedy longest-match segmentation against the taught set.
+function segment(word) {
+  const out = [];
+  let i = 0;
+  const w = word.toLowerCase();
+  while (i < w.length) {
+    const g = graphemes.find(g => w.startsWith(g, i));
+    if (!g) return null;
+    out.push(g);
+    i += g.length;
+  }
+  return out;
+}
+
+// Phase 2 print rule: only taught graphemes, one vowel, no adjacent consonants.
+function checkPrintWord(word, where) {
+  const segs = segment(word);
+  if (!segs) { errors.push(`${where}: "${word}" uses a sound not yet taught`); return; }
+  const vowels = segs.filter(s => VOWELS.has(s)).length;
+  if (vowels !== 1) { errors.push(`${where}: "${word}" has ${vowels} vowel sounds; Phase 2 print words have one`); return; }
+  for (let i = 1; i < segs.length; i++) {
+    if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) {
+      errors.push(`${where}: "${word}" has adjacent consonants (${segs[i - 1]}${segs[i]}); not before Phase 4`);
+      return;
+    }
+  }
+}
+
+const days = week.phonics.days || {};
+for (const n of ["1", "2", "3", "4", "5"]) {
+  const d = days[n];
+  if (!d) { errors.push(`phonics day ${n} missing`); continue; }
+  if (!Array.isArray(d.steps) || d.steps.length < 3) errors.push(`phonics day ${n}: fewer than 3 steps`);
+  const g = d.game;
+  if (!g) { errors.push(`phonics day ${n}: no game`); continue; }
+  const where = `phonics day ${n} (${g.type})`;
+  if (g.type === "hunt") {
+    const targets = g.items.filter(i => i.match).length;
+    if (g.items.length < 4 || targets < 2) errors.push(`${where}: needs at least 4 items and 2 targets`);
+    // hunt words are spoken, not printed: no decodability check
+  } else if (g.type === "blendpick") {
+    for (const w of g.words) {
+      checkPrintWord(w.word, where);
+      if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
+      for (const s of w.segments) if (!taught.has(s)) errors.push(`${where}: segment "${s}" in "${w.word}" not taught`);
+      if (!w.distractors || w.distractors.length < 2) errors.push(`${where}: "${w.word}" needs 2 distractors`);
+    }
+  } else if (g.type === "ladder") {
+    g.words.forEach(w => checkPrintWord(w, where));
+    for (let i = 1; i < g.words.length; i++) {
+      const a = segment(g.words[i - 1]), b = segment(g.words[i]);
+      if (!a || !b || a.length !== b.length) { errors.push(`${where}: "${g.words[i - 1]}" to "${g.words[i]}" changes length`); continue; }
+      const diff = a.filter((s, k) => s !== b[k]).length;
+      if (diff !== 1) errors.push(`${where}: "${g.words[i - 1]}" to "${g.words[i]}" changes ${diff} letters, not 1`);
+    }
+  } else if (g.type === "tricky") {
+    const known = new Set(week.phonics.tricky.map(t => t.word));
+    g.words.forEach(w => { if (!known.has(w)) errors.push(`${where}: "${w}" is not in phonics.tricky`); });
+  } else {
+    errors.push(`${where}: unknown game type`);
+  }
+}
+
+// Memory pairs: grapheme to a word starting with it (first-sound rule), word printed
+for (const p of week.phonics.memory || []) {
+  if (!taught.has(p.grapheme)) errors.push(`memory: grapheme "${p.grapheme}" not taught`);
+  if (!p.word.startsWith(p.grapheme)) errors.push(`memory: "${p.word}" does not start with "${p.grapheme}"`);
+  checkPrintWord(p.word, "memory");
+}
+
+// Rhyme picker: words are spoken with pictures, not printed; check rhymes agree and distractors don't rhyme
+const rime = w => w.replace(/^[^aeiou]+/, "");
+for (const r of week.phonics.rhymes || []) {
+  const right = r.options.filter(o => o.right);
+  if (right.length !== 1) errors.push(`rhymes: "${r.target.word}" needs exactly one right answer`);
+  for (const o of r.options) {
+    const same = rime(o.word) === rime(r.target.word);
+    if (o.right && !same) warn.push(`rhymes: "${o.word}" may not rhyme with "${r.target.word}"`);
+    if (!o.right && same) errors.push(`rhymes: distractor "${o.word}" rhymes with "${r.target.word}"`);
+  }
+}
+
+// Maths
+const mdays = week.maths.days || {};
+for (const n of ["1", "2", "3", "4", "5"]) {
+  const d = mdays[n];
+  if (!d) { errors.push(`maths day ${n} missing`); continue; }
+  for (const [label, block] of [["check", d.check], ["stretch", d.stretch]]) {
+    if (!block) { errors.push(`maths day ${n}: no ${label}`); continue; }
+    block.questions.forEach((q, i) => {
+      const where = `maths day ${n} ${label} q${i + 1}`;
+      if (q.options.length < 2) errors.push(`${where}: fewer than 2 options`);
+      if (q.correct == null || q.correct >= q.options.length) errors.push(`${where}: bad correct index`);
+      const all = [...(q.pattern || []), ...q.options.flat()];
+      all.forEach(t => { if (!(t in week.tiles)) errors.push(`${where}: tile "${t}" not in tiles`); });
+      if (q.kind !== "which" && !q.pattern) errors.push(`${where}: ${q.kind} needs a pattern`);
+      if (q.kind === "missing" && !q.pattern.includes("?")) errors.push(`${where}: missing needs a "?" in the pattern`);
+      if (q.kind === "next" && q.options.some(o => o.length !== 1)) errors.push(`${where}: next options are single tiles`);
+    });
+  }
+}
+
+// Tricky words have their tricky letters in range
+for (const t of week.phonics.tricky) {
+  t.trickyLetters.forEach(i => { if (i >= t.word.length) errors.push(`tricky: "${t.word}" index ${i} out of range`); });
+}
+
+if (!/^\d{4}-\d{2}-\d{2}$/.test(week.weekOf)) errors.push("weekOf must be YYYY-MM-DD");
+if (new Date(week.weekOf).getDay() !== 1) warn.push("weekOf is not a Monday");
+if (!["confirmed", "expected"].includes(week.status)) errors.push("status must be confirmed or expected");
+
+warn.forEach(w => console.warn("warning:", w));
+if (errors.length) {
+  errors.forEach(e => console.error("error:", e));
+  console.error(`${errors.length} error(s) in ${file}`);
+  process.exit(1);
+}
+console.log(`${file}: ok (${warn.length} warning(s))`);
