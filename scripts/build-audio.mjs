@@ -31,7 +31,9 @@ const add = t => { if (t && t.trim()) lines.add(t.trim()); };
   "All done. Well played.",
   "Say the word, then tap the picture.",
   "Say the new word, then tap the letter that changed.",
-  "Say the word, then tap the tricky part."
+  "Say the word, then tap the tricky part.",
+  "Press each sound button and say the sound. Then sweep along the arrow and say the word.",
+  "Now sweep along the arrow and say the word."
 ].forEach(add);
 
 const p = week.phonics;
@@ -75,6 +77,7 @@ for (const d of Object.values(week.maths.days)) {
 try {
   const term = JSON.parse(readFileSync("term.json", "utf8"));
   Object.keys(term.words).forEach(add);
+  Object.keys(term.blend || {}).forEach(add);
   Object.values(term.oral).flat().forEach(add);
   term.graphemes.forEach(({ g, where }) => add(where === "start" ? `Tap the things that start with ${g}.` : where === "end" ? `Tap the things that end with ${g}.` : `Tap the things with ${g} in the middle.`));
   term.tricky.forEach(t => add(t.word));

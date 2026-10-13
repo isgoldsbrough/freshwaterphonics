@@ -184,12 +184,15 @@ try {
   const all = new Set(tg);
   const allSorted = [...all].sort((a, b) => b.length - a.length);
   const seg = w => { const out = []; let i = 0; while (i < w.length) { const g = allSorted.find(g => w.startsWith(g, i)); if (!g) return null; out.push(g); i += g.length; } return out; };
-  for (const [w, segs] of Object.entries(term.words)) {
-    if (segs.join("") !== w) termErrors.push(`term words: "${w}" segments do not spell it`);
-    segs.forEach(s => { if (!all.has(s)) termErrors.push(`term words: "${w}" uses untaught "${s}"`); });
-    const v = segs.filter(s => VOWELS.has(s)).length; if (v !== 1) termErrors.push(`term words: "${w}" has ${v} vowels`);
-    for (let i = 1; i < segs.length; i++) if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) termErrors.push(`term words: "${w}" has adjacent consonants`);
-    if (!(w in PICS)) termErrors.push(`term words: no picture for "${w}"`);
+  // words = picture bank (games); blend = extra words for Blend it, no picture needed
+  for (const [key, needPic] of [["words", true], ["blend", false]]) for (const [w, segs] of Object.entries(term[key] || {})) {
+    if (blocked(w)) termErrors.push(`term ${key}: "${w}" is on the blocklist`);
+    if (key === "blend" && w in term.words) termErrors.push(`term blend: "${w}" is already in words`);
+    if (segs.join("") !== w) termErrors.push(`term ${key}: "${w}" segments do not spell it`);
+    segs.forEach(s => { if (!all.has(s)) termErrors.push(`term ${key}: "${w}" uses untaught "${s}"`); });
+    const v = segs.filter(s => VOWELS.has(s)).length; if (v !== 1) termErrors.push(`term ${key}: "${w}" has ${v} vowels`);
+    for (let i = 1; i < segs.length; i++) if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) termErrors.push(`term ${key}: "${w}" has adjacent consonants`);
+    if (needPic && !(w in PICS)) termErrors.push(`term words: no picture for "${w}"`);
   }
   for (const [g, list] of Object.entries(term.oral)) {
     if (!all.has(g)) termErrors.push(`term oral: unknown grapheme "${g}"`);
