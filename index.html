@@ -12,7 +12,7 @@
   :root {
     --paper: #f6f1e7; --panel: #fdfaf3; --rule: #e6dfd2; --ink: #2d2a32; --ink-soft: #6b6472;
     --moss: #4f7a5a; --moss-soft: #dfe9dc; --sky: #4a7294; --sky-soft: #dbe6ef;
-    --apricot: #d8955c; --apricot-soft: #f6e3cf; --plum: #7f5a86; --plum-soft: #ece0ee;
+    --apricot: #d8955c; --apricot-soft: #f6e3cf; --plum: #7f5a86; --plum-soft: #ece0ee; --card: #ffffff;
     --display: 'Fredoka', 'ABeeZee', sans-serif; --body: 'ABeeZee', 'Trebuchet MS', sans-serif;
     --r: 20px;
   }
@@ -196,24 +196,18 @@
   .letter.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
   .letter.hint { animation: breathe 800ms ease-in-out 1; }
   .letter.used { opacity: 0.25; pointer-events: none; }
-  /* Blend it: sound buttons as in class, a dot under one letter, a line under letters that make one sound */
-  .bl-wrap { display: inline-flex; flex-direction: column; align-items: stretch; gap: 6px; }
+  /* Blend it: like the class word cards. A dot under a letter that makes one sound, a line under letters that make one sound together */
+  .bl-card { background: var(--card); border: 14px solid var(--apricot); border-radius: 24px; padding: 36px 48px 20px; box-shadow: 0 1px 0 var(--rule); }
   .bl-word { display: flex; justify-content: center; }
   .bl-g { display: flex; flex-direction: column; align-items: stretch; }
-  .bl-l { font-family: var(--body); font-size: 5.5rem; line-height: 1.1; text-align: center; padding: 0 4px; color: var(--ink); transition: color 150ms; }
+  .bl-l { font-family: var(--body); font-size: 6rem; line-height: 1.1; text-align: center; padding: 0 2px; color: var(--ink); transition: color 150ms; }
   .bl-g.on .bl-l { color: var(--moss); }
-  .bl-g.sweep .bl-l { color: var(--sky); }
-  .bl-btn { background: none; border: none; height: 44px; padding: 0 6px; min-width: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-  .bl-btn span { display: block; box-sizing: border-box; flex-shrink: 0; border: 3px solid var(--sky); background: transparent; transition: background 150ms, border-color 150ms; }
-  .bl-btn.dot span { width: 22px; height: 22px; border-radius: 50%; }
-  .bl-btn.bar span { width: 100%; height: 12px; border-radius: 6px; }
-  .bl-g.on .bl-btn span { background: var(--moss); border-color: var(--moss); }
-  .bl-btn.hint span { animation: breathe 800ms ease-in-out 1; border-color: var(--moss); }
-  .bl-arrow { background: none; border: none; padding: 6px 4px; cursor: pointer; touch-action: none; }
-  .bl-arrow svg { display: block; width: 100%; height: 26px; }
-  .bl-arrow line, .bl-arrow path { stroke: var(--rule); transition: stroke 150ms; }
-  .bl-arrow:not([disabled]) line, .bl-arrow:not([disabled]) path { stroke: var(--sky); }
-  .bl-arrow[disabled] { cursor: default; }
+  .bl-btn { background: none; border: none; height: 48px; padding: 0 4px; min-width: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .bl-btn span { display: block; box-sizing: border-box; flex-shrink: 0; background: var(--ink); transition: background 150ms; }
+  .bl-btn.dot span { width: 15px; height: 15px; border-radius: 50%; }
+  .bl-btn.bar span { width: 100%; height: 7px; border-radius: 2px; }
+  .bl-g.on .bl-btn span { background: var(--moss); }
+  .bl-btn.hint span { animation: breathe 800ms ease-in-out 1; }
   .bl-check { display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 150px; }
   .bl-check .pic { width: 88px; height: 88px; }
   .slot { border: 3px dashed var(--rule); background: transparent; }
@@ -769,55 +763,45 @@
       }
       round();
     },
-    // Blend it: press each sound button and say the sound, sweep the arrow and say the word, then check.
+    // Blend it: press each sound button and say the sound, say the word, then check.
     // Sounds are not played: a computer voice adds "uh" or says the letter name, so the child says them.
+    // g.plain: the back of the class card, the word with no buttons.
     blend(pm, g) {
       const stage = pm.stage;
       let i = 0;
+      function check(w) {
+        $("bl-check").innerHTML = `<p class="quiet">Did you say the word? Check it.</p><button class="play" id="bl-ok">Check</button>`;
+        $("bl-ok").addEventListener("click", async () => {
+          $("bl-check").innerHTML = `${w.word in PICS ? pic(w.word) : ""}<button class="play" id="bl-next">${i + 1 < g.words.length ? "Next word" : "Finish"}</button>`;
+          $("bl-next").addEventListener("click", () => { i++; if (i < g.words.length) word(); else end(); });
+          SFX.right(); await speak(w.word);
+        });
+      }
+      function end() {
+        pm.finish(g.plain ? "Read with no buttons!" : "All the words blended!", () => { i = 0; word(); },
+          g.plain ? "" : `<p class="quiet">Now try the same words with no sound buttons.</p><div class="pm-actions"><button class="btn" id="bl-plain">Without buttons</button></div>`);
+        const b = stage.querySelector("#bl-plain");
+        if (b) b.addEventListener("click", () => {
+          const say = "Read each word with no buttons. Then check it.", inline = stage.id === "more-stage";
+          $(inline ? "more-task" : "pm-task").textContent = say; $(inline ? "more-say" : "pm-say").onclick = () => speak(say);
+          speak(say); GAMES.blend(pm, { ...g, say, plain: true });
+        });
+      }
       function word() {
         const w = g.words[i];
-        let next = 0, swept = false;
+        let next = 0;
         pm.progress(i, g.words.length);
-        pm.draw(`<div class="bl-wrap"><div class="bl-word">${w.segments.map((s, k) => `<div class="bl-g" data-k="${k}"><span class="bl-l">${esc(s)}</span><button class="bl-btn ${s.length > 1 ? "bar" : "dot"}" data-k="${k}" aria-label="sound button ${k + 1}"><span></span></button></div>`).join("")}</div>
-          <button class="bl-arrow" id="bl-arrow" disabled aria-label="Sweep along and say the word"><svg viewBox="0 0 100 26" preserveAspectRatio="none"><line x1="2" y1="13" x2="97" y2="13" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></button></div>
-          <div class="bl-check" id="bl-check"><p class="quiet" id="bl-hint">Press each sound button and say the sound.</p></div>`);
-        // arrowhead drawn separately so it keeps its shape however wide the word is
-        const arrow = stage.querySelector("#bl-arrow");
-        arrow.style.position = "relative";
-        arrow.insertAdjacentHTML("beforeend", `<svg viewBox="0 0 14 26" style="position:absolute;right:0;top:6px;width:14px;height:26px;"><path d="M2 4 L12 13 L2 22" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+        pm.draw(`<div class="bl-card"><div class="bl-word">${w.segments.map((s, k) => `<div class="bl-g" data-k="${k}"><span class="bl-l">${esc(s)}</span>${g.plain ? "" : `<button class="bl-btn ${s.length > 1 ? "bar" : "dot"}" data-k="${k}" aria-label="sound button ${k + 1}"><span></span></button>`}</div>`).join("")}</div></div>
+          <div class="bl-check" id="bl-check"><p class="quiet">${g.plain ? "Read the word. Sound it out in your head if you need to." : "Press each sound button and say the sound."}</p></div>`);
+        if (g.plain) { check(w); return; }
         const groups = [...stage.querySelectorAll(".bl-g")], btns = [...stage.querySelectorAll(".bl-btn")];
         btns.forEach(b => b.addEventListener("click", () => {
           const k = Number(b.dataset.k);
           if (k < next) return;
           if (k > next) { btns[next].classList.add("hint"); setTimeout(() => btns[next] && btns[next].classList.remove("hint"), 900); return; }
           SFX.tap(); groups[k].classList.add("on"); b.setAttribute("aria-label", "sound button " + (k + 1) + ", pressed"); next++;
-          if (next === w.segments.length) { arrow.disabled = false; $("bl-hint").textContent = "Now sweep along the arrow and say the word."; speak("Now sweep along the arrow and say the word."); }
+          if (next === w.segments.length) { speak("Now say the word."); check(w); }
         }));
-        // sweep: drag along the arrow, or tap it and the page sweeps for you
-        const lightUpTo = n => groups.forEach((gr, k) => gr.classList.toggle("sweep", k < n));
-        function sweptDone() {
-          if (swept) return; swept = true; lightUpTo(groups.length); arrow.disabled = true;
-          $("bl-check").innerHTML = `<p class="quiet">Did you say the word? Check it.</p><button class="play" id="bl-ok">Check</button>`;
-          $("bl-ok").addEventListener("click", async () => {
-            $("bl-check").innerHTML = `${w.word in PICS ? pic(w.word) : ""}<div class="word" style="font-size:2.4rem;">${esc(w.word)}</div><button class="play" id="bl-next">${i + 1 < g.words.length ? "Next word" : "Finish"}</button>`;
-            SFX.right(); await speak(w.word);
-          });
-          // the Next button is added after Check; listen on the container so it works whenever it appears
-          $("bl-check").addEventListener("click", e => {
-            if (e.target.id !== "bl-next") return;
-            i++; if (i < g.words.length) word(); else pm.finish("All the words blended!", () => { i = 0; word(); });
-          });
-        }
-        let dragging = false, moved = false;
-        const frac = e => { const r = arrow.getBoundingClientRect(); return Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)); };
-        arrow.addEventListener("pointerdown", e => { if (arrow.disabled || swept) return; dragging = true; moved = false; arrow.setPointerCapture(e.pointerId); lightUpTo(Math.ceil(frac(e) * groups.length)); });
-        arrow.addEventListener("pointermove", e => { if (!dragging) return; moved = true; const f = frac(e); lightUpTo(Math.ceil(f * groups.length)); if (f > 0.9) { dragging = false; sweptDone(); } });
-        arrow.addEventListener("pointerup", () => {
-          if (!dragging) return; dragging = false;
-          if (!moved) { let k = 0; const t = setInterval(() => { k++; lightUpTo(k); if (k >= groups.length) { clearInterval(t); setTimeout(sweptDone, 250); } }, 380); }
-          else lightUpTo(0);
-        });
-        arrow.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && !arrow.disabled) { e.preventDefault(); sweptDone(); } });
       }
       word();
     },
@@ -873,7 +857,7 @@
   // ---------- blend it: five words a day from the term bank ----------
   // Words hold that day's sound (Friday: the week's sounds) and only sounds taught by then.
   // The same five each time the day is opened; a day in the week file can name its own with "blend".
-  const BLEND_IT = "Press each sound button and say the sound. Then sweep along the arrow and say the word.";
+  const BLEND_IT = "Press each sound button and say the sound. Then say the word.";
   function seeded(list, key) {
     let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
     const rnd = () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
@@ -969,7 +953,7 @@
     const hero = d.sound
       ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">${esc(W.phonics.cues[d.sound])}</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme)</a></p></div></div>`
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">Tricky word recap. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
-    const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Press the sound buttons, sweep, say the word." });
+    const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Press the sound buttons, then say the word." });
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     side.innerHTML = hero + bl.html + main.html + (st ? st.html : "");
