@@ -550,12 +550,13 @@
     el.classList.add("wrong"); setTimeout(() => el.classList.remove("wrong"), 450);
     if (saidWord) await speak(saidWord);
     await speak(PH.bad);
-    if (misses >= 2 && hintSel) stage.querySelectorAll(hintSel).forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); });
+    if (misses >= 2 && hintSel) (el.closest(".stage") || stage).querySelectorAll(hintSel).forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); });
   }
   const tileBtn = (w, k, extra = "") => `<button class="tile" data-k="${k}" aria-label="${esc(w)}" ${extra}>${pic(w)}</button>`;
 
   const GAMES = {
     hunt(pm, g) {
+      const stage = pm.stage;
       const items = shuffle(g.items), total = items.filter(i => i.match).length;
       let found = 0, misses = 0;
       pm.progress(0, total);
@@ -571,6 +572,7 @@
       }));
     },
     blendpick(pm, g) {
+      const stage = pm.stage;
       let i = 0, misses = 0;
       function word() {
         const w = g.words[i], revealed = w.segments.map(() => false);
@@ -591,6 +593,7 @@
       word();
     },
     ladder(pm, g) {
+      const stage = pm.stage;
       let i = 1, misses = 0;
       function step() {
         const prev = g.words[i - 1], cur = g.words[i], changed = [...cur].findIndex((c, k) => c !== prev[k]);
@@ -605,6 +608,7 @@
       step();
     },
     tricky(pm, g) {
+      const stage = pm.stage;
       let i = 0;
       function word() {
         const w = g.words[i], t = W.phonics.tricky.find(x => x.word === w) || TERM.tricky.find(x => x.word === w), targets = new Set(t.trickyLetters), got = new Set();
@@ -620,6 +624,7 @@
       word();
     },
     segment(pm, g) {
+      const stage = pm.stage;
       const all = [...W.phonics.taught, ...W.phonics.focus];
       let i = 0, misses = 0;
       function word() {
@@ -640,6 +645,7 @@
       word();
     },
     alien(pm, g) {
+      const stage = pm.stage;
       const items = shuffle(g.items);
       let i = 0, misses = 0;
       function item() {
@@ -656,6 +662,7 @@
       item();
     },
     caption(pm, g) {
+      const stage = pm.stage;
       let i = 0, misses = 0;
       function item() {
         const it = g.items[i], order = shuffle(it.options.map((o, k) => k));
@@ -671,6 +678,7 @@
       item();
     },
     mark(pm, g) {
+      const stage = pm.stage;
       const words = shuffle(g.words); let i = 0; const got = [];
       function word() {
         pm.progress(i, words.length);
@@ -686,6 +694,7 @@
       word();
     },
     maths(pm, g) {
+      const stage = pm.stage;
       let i = 0, misses = 0;
       const tile = t => `<span class="ptile${t === "?" ? " q" : ""}" role="img" aria-label="${esc(t)}">${t === "?" ? "?" : pic(t)}</span>`;
       const sayQ = q => q.say || (q.kind === "which" ? "Which row is a pattern?" : q.pattern.map(t => t === "?" ? "something" : t).join(", ") + ". " + (q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?"));
@@ -704,6 +713,7 @@
       q();
     },
     memory(pm, g) {
+      const stage = pm.stage;
       const pairs = g.pairs;
       const deck = shuffle(pairs.flatMap(p => [{ key: p.grapheme, kind: "g", face: p.grapheme, say: p.word }, { key: p.grapheme, kind: "p", face: p.pic || p.word, say: p.word }]));
       let open = [], matched = 0, busy = false;
@@ -724,6 +734,7 @@
       }));
     },
     rhymes(pm, g) {
+      const stage = pm.stage;
       let r = 0, misses = 0;
       function round() {
         const q = g.rounds[r], opts = shuffle(q.options);
@@ -739,6 +750,7 @@
       round();
     },
     review(pm, g) {
+      const stage = pm.stage;
       let deck = g.deck, i = 0, timer = null, left = 0, count = 0;
       const stopTimer = () => { if (timer) { clearInterval(timer); timer = null; } };
       // drawn once; only the card's text changes, so there is no page-turn on every tap
