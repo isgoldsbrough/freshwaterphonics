@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freshwater Phonics sample</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Fredoka:wght@400;500;600&display=swap">
+<style>
+  /* Calm picture book, laptop first: paper ground, two columns, parent reads left, child looks right. */
+  :root {
+    --paper: #f6f1e7; --panel: #fdfaf3; --ink: #2d2a32; --ink-soft: #6b6472;
+    --moss: #4f7a5a; --moss-soft: #dfe9dc; --sky: #4a7294; --sky-soft: #dbe6ef;
+    --apricot: #d8955c; --apricot-soft: #f6e3cf; --plum: #7f5a86; --plum-soft: #ece0ee;
+    --display: 'Fredoka', 'ABeeZee', sans-serif; --body: 'ABeeZee', 'Trebuchet MS', sans-serif;
+    --r: 20px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.05rem; line-height: 1.55; padding-block: 24px 80px; padding-inline: 32px; }
+  .frame { max-width: 1100px; margin: 0 auto; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.15; text-wrap: balance; }
+  p { margin: 0; }
+  button { font-family: var(--display); font-size: 1.1rem; font-weight: 500; cursor: pointer; }
+  a { color: var(--moss); }
+  .quiet { color: var(--ink-soft); font-size: 0.95rem; }
+
+  header { display: flex; justify-content: space-between; align-items: center; }
+  header .mark { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--ink); }
+  header .mark span { color: var(--sky); }
+  .mute { width: 44px; height: 44px; border-radius: 999px; border: none; background: var(--panel); font-size: 1.1rem; }
+
+  .weekstrip { display: flex; align-items: flex-end; gap: 32px; margin-top: 8px; position: relative; }
+  .weekstrip .letters { font-family: var(--body); font-size: 7rem; line-height: 1; color: var(--sky); letter-spacing: 0.06em; }
+  .weekstrip .meta { padding-bottom: 14px; }
+  .weekstrip .meta b { font-family: var(--display); font-weight: 500; font-size: 1.2rem; display: block; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: var(--apricot); margin-right: 6px; vertical-align: 1px; }
+  .frieze { position: absolute; right: 0; bottom: 0; width: 380px; height: 120px; pointer-events: none; }
+
+  nav.tabs { display: flex; gap: 28px; margin-top: 20px; border-bottom: 1px solid #e6dfd2; }
+  nav.tabs a { font-family: var(--display); font-weight: 500; font-size: 1.15rem; color: var(--ink-soft); text-decoration: none; padding: 10px 2px 12px; border-bottom: 3px solid transparent; }
+  nav.tabs a[aria-current] { color: var(--sky); border-color: var(--sky); }
+
+  .ribbon { display: flex; gap: 10px; margin-top: 24px; }
+  .day { width: 64px; height: 72px; border-radius: 16px; background: var(--panel); border: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; position: relative; }
+  .day .l { font-family: var(--body); font-size: 1.9rem; line-height: 1; color: var(--ink); }
+  .day .d { font-size: 0.8rem; color: var(--ink-soft); font-family: var(--body); }
+  .day[aria-selected="true"] { background: var(--sky-soft); }
+  .day[aria-selected="true"] .l { color: var(--sky); }
+  .day.today::after { content: ""; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 999px; background: var(--apricot); }
+
+  .cols { display: grid; grid-template-columns: 560px 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .frieze { display: none; } }
+
+  .script h2 { font-size: 1.4rem; }
+  .script .time { margin-top: 2px; }
+  .script ol { margin: 20px 0 0; padding-left: 1.5em; display: flex; flex-direction: column; gap: 18px; }
+  .script li::marker { color: var(--moss); font-family: var(--display); font-weight: 600; }
+  .say { display: block; margin-top: 6px; padding-left: 14px; border-left: 3px solid var(--sky); font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
+  .tricky { margin-top: 28px; }
+  .tricky .w { font-family: var(--body); font-size: 1.8rem; margin-right: 18px; }
+  .tricky .tp { color: var(--plum); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+  .hero { background: var(--panel); border-radius: var(--r); padding: 28px 32px; display: flex; gap: 28px; align-items: center; }
+  .hero .big { font-family: var(--body); font-size: 7rem; line-height: 1; color: var(--sky); width: 120px; text-align: center; }
+  .hero p { font-size: 1.05rem; }
+  .hero .cue { font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
+
+  .launch { background: var(--panel); border-radius: var(--r); padding: 20px 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; margin-top: 16px; }
+  .launch.stretch { background: var(--apricot-soft); }
+  .launch .pics { display: flex; }
+  .launch .pics img { width: 56px; height: 56px; margin-right: -14px; background: var(--paper); border-radius: 999px; padding: 6px; }
+  .launch h3 { font-size: 1.2rem; }
+  .launch .tag { font-size: 0.9rem; color: var(--ink-soft); }
+  .play { border: none; background: var(--moss); color: #fff; border-radius: 999px; padding: 12px 28px; font-size: 1.15rem; }
+  .play.small { padding: 10px 22px; font-size: 1.05rem; background: var(--ink); }
+  .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .more button { background: var(--panel); border: none; border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1rem; color: var(--ink); }
+  .more img { width: 44px; height: 44px; }
+
+  section.block { margin-top: 56px; }
+  section.block h2 { font-size: 1.5rem; }
+  section.block .intro { margin-top: 6px; max-width: 60ch; }
+
+  .pm { margin-top: 20px; background: var(--panel); border-radius: var(--r); padding: 20px 28px 32px; max-width: 760px; }
+  .pm .bar { display: flex; justify-content: space-between; align-items: center; color: var(--ink-soft); font-size: 0.95rem; }
+  .pm .dots span { display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: #e6dfd2; margin: 0 3px; }
+  .pm .dots span.done { background: var(--moss); }
+  .pm .ring { width: 36px; height: 36px; border-radius: 999px; background: var(--paper); display: inline-flex; align-items: center; justify-content: center; }
+  .pm .task { text-align: center; margin-top: 18px; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 128px); gap: 14px; justify-content: center; margin-top: 22px; }
+  .tile { width: 128px; height: 128px; border-radius: var(--r); background: var(--paper); display: flex; align-items: center; justify-content: center; border: 3px solid transparent; }
+  .tile img { width: 84px; height: 84px; }
+  .tile.right { background: var(--moss-soft); border-color: var(--moss); }
+  .tile.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
+  .sticker { position: absolute; width: 96px; height: 96px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 3.4rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px var(--panel); transform: rotate(-8deg); }
+
+  .compare { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 10px 20px; align-items: center; margin-top: 20px; max-width: 760px; }
+  .compare .h { font-family: var(--display); font-weight: 500; color: var(--ink-soft); }
+  .compare .word { font-family: var(--body); font-size: 1.6rem; }
+  .compare .set { display: flex; gap: 10px; }
+  .compare .set img { width: 64px; height: 64px; background: var(--panel); border-radius: 14px; padding: 8px; }
+  .fontrow { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 16px; align-items: baseline; }
+  .fontrow .ab { font-family: var(--body); font-size: 4rem; line-height: 1; }
+  .fontrow .lab { font-size: 0.9rem; color: var(--ink-soft); }
+  footer { margin-top: 64px; color: var(--ink-soft); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header>
+    <div class="mark">Freshwater <span>Phonics</span></div>
+    <button class="mute" aria-label="Sound on">🔊</button>
+  </header>
+
+  <div class="weekstrip">
+    <div class="letters">h b f l</div>
+    <div class="meta">
+      <b>week of 12 October</b>
+      <span class="quiet"><span class="dot"></span>expected, not yet confirmed by school</span>
+    </div>
+    <svg class="frieze" viewBox="0 0 380 120" aria-hidden="true">
+      <circle cx="300" cy="40" r="22" fill="#f6e3cf"/>
+      <path d="M0 120 C 60 70, 120 70, 180 100 S 300 60, 380 95 L380 120 Z" fill="#dfe9dc"/>
+      <path d="M40 120 C 100 90, 170 95, 230 110 S 340 90, 380 108 L380 120 Z" fill="#cfdcc9"/>
+      <path d="M120 112 l6 -26 l6 26 z" fill="#b9c9b4"/><path d="M126 86 v26" stroke="#a9b8a4" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <nav class="tabs" aria-label="Sections">
+    <a href="#" aria-current="page">phonics</a><a href="#">maths</a><a href="#">week</a><a href="#">help</a>
+  </nav>
+
+  <div class="ribbon" role="group" aria-label="Choose a day">
+    <button class="day"><span class="l">h</span><span class="d">Mon</span></button>
+    <button class="day today" aria-selected="true"><span class="l">b</span><span class="d">Tue</span></button>
+    <button class="day"><span class="l">f</span><span class="d">Wed</span></button>
+    <button class="day"><span class="l">l</span><span class="d">Thu</span></button>
+    <button class="day"><span class="l">the</span><span class="d">Fri</span></button>
+    <button class="day"><span class="l">🍂</span><span class="d">rest</span></button>
+  </div>
+
+  <div class="cols">
+    <div class="script">
+      <h2>Tuesday: the sound b</h2>
+      <p class="time quiet">about 10 minutes</p>
+      <ol>
+        <li>Show the letter b. Lips together, then open. Keep it short, no "buh". Say it three times together.</li>
+        <li>Quick check from yesterday: show h.<span class="say">"What sound is this?"</span></li>
+        <li>Your child says the sound, then the word. Then finds one thing in the room that starts with b.<span class="say">"b, bed. b, bus."</span></li>
+        <li>Play the game, then blend one word out loud.<span class="say">"b, e, d: bed."</span></li>
+      </ol>
+      <div class="tricky">
+        <p class="quiet">Tricky words: show, say, spot the tricky part, say again.</p>
+        <p style="margin-top:10px;"><span class="w"><span class="tp">the</span></span><span class="w"><span class="tp">I</span></span><span class="w">i<span class="tp">s</span></span></p>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero">
+        <div class="big">b</div>
+        <div>
+          <p class="cue">Lips together, then open. Keep it short, no buh.</p>
+          <p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/">Hear it said properly (school's scheme)</a></p>
+        </div>
+      </div>
+      <div class="launch">
+        <div class="pics"><img src="openmoji/bed.svg" alt=""><img src="openmoji/bus.svg" alt=""><img src="openmoji/bat.svg" alt=""></div>
+        <div><h3>Find the b sounds</h3><p class="tag">Tap the things that start with b. Six pictures, three to find.</p></div>
+        <button class="play">Play</button>
+      </div>
+      <div class="launch stretch">
+        <div class="pics"><img src="openmoji/bed.svg" alt=""><img src="openmoji/bus.svg" alt=""></div>
+        <div><h3>Spell it with sounds</h3><p class="tag">If that was easy. Hear the word, tap its sounds in order.</p></div>
+        <button class="play small">Play</button>
+      </div>
+      <div class="more">
+        <button><img src="openmoji/hat.svg" alt="">memory match</button>
+        <button><img src="openmoji/cat.svg" alt="">rhyme picker</button>
+        <button><img src="openmoji/sun.svg" alt="">review cards</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2>Play mode, as it would look</h2>
+    <p class="intro quiet">The game fills the screen with nothing else on it. One task, big tiles, the instruction spoken. The adult closes it with the ring on the left. Shown here as a still: one right tile, one wrong tile, and the finish sticker.</p>
+    <div class="pm" style="position:relative;">
+      <div class="bar"><span class="ring">✕</span><span class="dots"><span class="done"></span><span class="done"></span><span></span><span></span><span></span><span></span></span><span class="ring">🔊</span></div>
+      <p class="task quiet">tap the things that start with b</p>
+      <div class="tiles">
+        <div class="tile right"><img src="openmoji/bed.svg" alt="bed"></div>
+        <div class="tile"><img src="openmoji/pig.svg" alt="pig"></div>
+        <div class="tile wrong"><img src="openmoji/egg.svg" alt="egg"></div>
+        <div class="tile"><img src="openmoji/bus.svg" alt="bus"></div>
+        <div class="tile"><img src="openmoji/dog.svg" alt="dog"></div>
+        <div class="tile"><img src="openmoji/bat.svg" alt="bat"></div>
+      </div>
+      <div class="sticker" style="right:28px;bottom:28px;">b</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Pictures: OpenMoji or Twemoji?</h2>
+    <p class="intro quiet">Same sixteen words from this week, both sets at the size they would appear in play mode. OpenMoji is outlined and flat; Twemoji is rounder and glossier. Either is free and the same on every computer.</p>
+    <div class="compare">
+      <div class="h">word</div><div class="h">OpenMoji</div><div class="h">Twemoji</div>
+      <div class="word">hat</div><div class="set"><img src="openmoji/hat.svg" alt=""></div><div class="set"><img src="twemoji/hat.svg" alt=""></div>
+      <div class="word">hen</div><div class="set"><img src="openmoji/hen.svg" alt=""></div><div class="set"><img src="twemoji/hen.svg" alt=""></div>
+      <div class="word">horse</div><div class="set"><img src="openmoji/horse.svg" alt=""></div><div class="set"><img src="twemoji/horse.svg" alt=""></div>
+      <div class="word">cat</div><div class="set"><img src="openmoji/cat.svg" alt=""></div><div class="set"><img src="twemoji/cat.svg" alt=""></div>
+      <div class="word">sun</div><div class="set"><img src="openmoji/sun.svg" alt=""></div><div class="set"><img src="twemoji/sun.svg" alt=""></div>
+      <div class="word">duck</div><div class="set"><img src="openmoji/duck.svg" alt=""></div><div class="set"><img src="twemoji/duck.svg" alt=""></div>
+      <div class="word">bed</div><div class="set"><img src="openmoji/bed.svg" alt=""></div><div class="set"><img src="twemoji/bed.svg" alt=""></div>
+      <div class="word">bus</div><div class="set"><img src="openmoji/bus.svg" alt=""></div><div class="set"><img src="twemoji/bus.svg" alt=""></div>
+      <div class="word">pig</div><div class="set"><img src="openmoji/pig.svg" alt=""></div><div class="set"><img src="twemoji/pig.svg" alt=""></div>
+      <div class="word">dog</div><div class="set"><img src="openmoji/dog.svg" alt=""></div><div class="set"><img src="twemoji/dog.svg" alt=""></div>
+      <div class="word">egg</div><div class="set"><img src="openmoji/egg.svg" alt=""></div><div class="set"><img src="twemoji/egg.svg" alt=""></div>
+      <div class="word">fog</div><div class="set"><img src="openmoji/fog.svg" alt=""></div><div class="set"><img src="twemoji/fog.svg" alt=""></div>
+      <div class="word">bat</div><div class="set"><img src="openmoji/bat.svg" alt=""></div><div class="set"><img src="twemoji/bat.svg" alt=""></div>
+      <div class="word">frog</div><div class="set"><img src="openmoji/frog.svg" alt=""></div><div class="set"><img src="twemoji/frog.svg" alt=""></div>
+      <div class="word">sock</div><div class="set"><img src="openmoji/sock.svg" alt=""></div><div class="set"><img src="twemoji/sock.svg" alt=""></div>
+      <div class="word">cup</div><div class="set"><img src="openmoji/cup.svg" alt=""></div><div class="set"><img src="twemoji/cup.svg" alt=""></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>The letters, in ABeeZee</h2>
+    <p class="intro quiet">Hold the school's phonics sheet next to these. The a is single-storey, the g is simple, the l is a straight stroke.</p>
+    <div class="fontrow">
+      <div><div class="ab">a g l t f</div><div class="lab">the shapes that differ most between fonts</div></div>
+      <div><div class="ab">h b f l</div><div class="lab">this week</div></div>
+      <div><div class="ab">s a t p i n m d</div><div class="lab">weeks 1 and 2</div></div>
+      <div><div class="ab">g o c k ck e u r</div><div class="lab">weeks 3 and 4</div></div>
+    </div>
+  </section>
+
+  <footer>Sample screen for approval, not the live page. Pictures by <a href="https://openmoji.org/">OpenMoji</a> (CC BY-SA 4.0) and <a href="https://twemoji.twitter.com/">Twemoji</a> (CC BY 4.0). Fonts: ABeeZee and Fredoka via Google Fonts.</footer>
+</div>
+</body>
+</html>
