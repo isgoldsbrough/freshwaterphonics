@@ -120,8 +120,9 @@
   .tr-demo { fill: none; stroke: var(--sky); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
   .tr-start { fill: var(--apricot); } .tr-num { fill: #fff; font-family: var(--display); font-size: 8px; font-weight: 600; text-anchor: middle; }
   .tr-arrow { fill: var(--apricot); }
-  section.block { margin-top: 48px; }
+  section.block { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule); }
   section.block h2 { font-size: 1.4rem; margin-bottom: 12px; }
+  .cols { padding-bottom: 8px; }
   .list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; }
   .list li::marker { color: var(--moss); }
   b { font-family: var(--display); font-weight: 500; }
@@ -285,7 +286,7 @@
   </div>
 
   <div id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
-    <section class="block" style="margin-top:32px;"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
+    <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
     <section class="block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
     <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
