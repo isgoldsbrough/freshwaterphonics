@@ -92,6 +92,13 @@
   .more button { background: var(--panel); border: none; border-radius: var(--r); padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1rem; }
   .more img { width: 44px; height: 44px; }
 
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { border: none; background: var(--panel); border-radius: 999px; padding: 10px 18px; font-size: 1.05rem; color: var(--ink-soft); }
+  .pill[aria-selected="true"] { background: var(--sky-soft); color: var(--sky); }
+  .inline-stage { margin-top: 16px; background: var(--panel); border-radius: var(--r); padding: 16px 24px 28px; }
+  .inline-stage .stage { min-height: 380px; }
+  .trace-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .trace-wrap canvas { touch-action: none; border-radius: var(--r); background: var(--paper); }
   section.block { margin-top: 48px; }
   section.block h2 { font-size: 1.4rem; margin-bottom: 12px; }
   .list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; }
@@ -220,6 +227,15 @@
       <div class="script" id="ph-script"></div>
       <div id="ph-side"></div>
     </div>
+    <section class="block more-block">
+      <h2>More ways to play</h2>
+      <div class="pills" id="more-nav" role="tablist" aria-label="More games"></div>
+      <div class="inline-stage">
+        <div class="pm-bar"><span class="dots" id="more-dots" aria-hidden="true"></span><button class="ring" id="more-say" aria-label="Hear the instruction">🔊</button></div>
+        <p class="pm-task" id="more-task"></p>
+        <div class="stage" id="more-stage"></div>
+      </div>
+    </section>
   </div>
 
   <div id="panel-maths" role="tabpanel" aria-labelledby="tab-btn-maths" hidden>
@@ -686,9 +702,7 @@
     const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0].word);
     if (day === 0) {
       s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      const mem = launcher({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }, { id: "memory", sticker: "★" }, {});
-      const rh = launcher({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }, { id: "rhymes", sticker: "★" }, {});
-      side.innerHTML = `<p class="quiet" style="margin-bottom:8px;">If your child asks to play anyway:</p>${mem.html}${rh.html}`; mem.wire(); rh.wire(); return;
+      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
     }
     const d = W.phonics.days[day];
     s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(x => `<li>${script(x)}</li>`).join("")}</ol>${trickyHtml()}`;
@@ -697,12 +711,72 @@
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">This week's tricky word. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: "If that was easy. " + d.stretch.say }) : null;
-    side.innerHTML = hero + main.html + (st ? st.html : "") + `<div class="more"><button data-more="memory">${pic("hat")}memory match</button><button data-more="rhymes">${pic("cat")}rhyme picker</button><button data-more="review">${pic("sun")}review cards</button></div>`;
+    side.innerHTML = hero + main.html + (st ? st.html : "");
     main.wire(); if (st) st.wire();
-    side.querySelector('[data-more="memory"]').addEventListener("click", () => openPlay({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }, { id: "memory", sticker }));
-    side.querySelector('[data-more="rhymes"]').addEventListener("click", () => openPlay({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }, { id: "rhymes", sticker }));
-    side.querySelector('[data-more="review"]').addEventListener("click", () => openPlay({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }, { id: "review", sticker }));
   }
+
+  // ---------- more ways to play: the same games, inside the page ----------
+  const MORE = [
+    { id: "memory", label: "memory match", game: () => ({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }) },
+    { id: "rhymes", label: "rhyme picker", game: () => ({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }) },
+    { id: "review", label: "review cards", game: () => ({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }) },
+    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Trace the letter with a finger or the mouse. Start at the top.", letters: W.phonics.focus }) }
+  ];
+  const moreStage = $("more-stage");
+  let morePm = null;
+  function inlinePm(game) {
+    if (morePm && morePm.onClose) morePm.onClose();
+    const pm = {
+      stage: moreStage, meta: { id: "more", sticker: "★" },
+      progress(i, n) { $("more-dots").innerHTML = Array.from({ length: n }, (_, k) => `<span class="${k < i ? "done" : ""}"></span>`).join(""); },
+      draw(html) { moreStage.classList.remove("enter"); void moreStage.offsetWidth; moreStage.innerHTML = html; moreStage.classList.add("enter"); },
+      finish(text, again, extra) {
+        SFX.finish(); speak(PH.done); announce(text);
+        pm.draw(`<div class="finish"><div class="sticker">★</div><h3>${esc(text)}</h3>${extra || ""}<div class="pm-actions"><button class="btn" id="more-again">Again</button></div></div>`);
+        $("more-again").addEventListener("click", again);
+      }
+    };
+    $("more-task").textContent = game.say || "";
+    $("more-say").onclick = () => speak(game.say);
+    morePm = pm;
+    return pm;
+  }
+  function selectMore(id) {
+    $("more-nav").querySelectorAll(".pill").forEach(p => p.setAttribute("aria-selected", String(p.dataset.id === id)));
+    const m = MORE.find(x => x.id === id), game = m.game();
+    GAMES[game.type](inlinePm(game), game);
+    store.set("fp-more", id);
+  }
+  $("more-nav").innerHTML = MORE.map(m => `<button class="pill" role="tab" data-id="${m.id}" aria-selected="false">${m.label}</button>`).join("");
+  $("more-nav").querySelectorAll(".pill").forEach(p => p.addEventListener("click", () => selectMore(p.dataset.id)));
+
+  GAMES.trace = function (pm, g) {
+    let cur = g.letters[0];
+    pm.progress(0, 0);
+    pm.draw(`<div class="pills" id="tr-letters">${g.letters.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}</div><div class="trace-wrap"><canvas id="tr-canvas" width="360" height="280" aria-label="Tracing area for the letter ${esc(cur)}"></canvas><div class="pm-actions"><button class="btn secondary" id="tr-clear">Clear</button></div><p class="quiet">The apricot dot is where the letter starts. School's formation phrases are on the Little Wandle page.</p></div>`);
+    const canvas = $("tr-canvas"), ctx = canvas.getContext("2d"), dpr = window.devicePixelRatio || 1;
+    const Wc = 360, Hc = 280;
+    canvas.width = Wc * dpr; canvas.height = Hc * dpr; canvas.style.width = Wc + "px"; canvas.style.height = Hc + "px"; ctx.scale(dpr, dpr);
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    function guide() {
+      ctx.clearRect(0, 0, Wc, Hc);
+      ctx.font = "190px 'ABeeZee', sans-serif"; ctx.fillStyle = css("--rule"); ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(cur, Wc / 2, Hc / 2 + 10);
+      const m = ctx.measureText(cur), tall = /[bdfhklt]/.test(cur);
+      ctx.fillStyle = css("--apricot"); ctx.beginPath();
+      ctx.arc(Wc / 2 - m.width / 2 + 18, Hc / 2 + 10 - (tall ? 78 : 40), 7, 0, Math.PI * 2); ctx.fill();
+      ctx.lineWidth = 9; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = css("--sky");
+    }
+    guide();
+    $("tr-letters").querySelectorAll(".pill").forEach(b => b.addEventListener("click", () => { cur = b.dataset.l; $("tr-letters").querySelectorAll(".pill").forEach(x => x.setAttribute("aria-selected", String(x === b))); canvas.setAttribute("aria-label", "Tracing area for the letter " + cur); guide(); }));
+    let drawing = false;
+    const pos = e => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+    canvas.addEventListener("pointerdown", e => { drawing = true; canvas.setPointerCapture(e.pointerId); const p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); SFX.tap(); });
+    canvas.addEventListener("pointermove", e => { if (!drawing) return; const p = pos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    const up = () => { drawing = false; };
+    canvas.addEventListener("pointerup", up); canvas.addEventListener("pointercancel", up);
+    $("tr-clear").addEventListener("click", guide);
+  };
   const dayName = n => ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday" })[n];
 
   // ---------- maths ----------
@@ -735,6 +809,7 @@
   // ---------- go ----------
   function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); }
   renderDay();
+  selectMore(MORE.some(m => m.id === store.get("fp-more")) ? store.get("fp-more") : "memory");
   const savedTab = store.get("fp-tab");
   selectTab(TABS.includes(savedTab) ? savedTab : "today");
 })();
