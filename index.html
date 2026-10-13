@@ -71,9 +71,10 @@
   .bubble { display: inline-block; margin-top: 8px; background: var(--sky-soft); border-radius: 14px 14px 14px 4px; padding: 8px 14px; font-family: var(--display); font-size: 1.1rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
   .bubble::before { content: "\201C"; opacity: 0.6; margin-right: 2px; } .bubble::after { content: "\201D"; opacity: 0.6; margin-left: 2px; }
   .say { display: block; margin-top: 6px; padding-left: 14px; border-left: 3px solid var(--sky); font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
-  .tricky { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
-  .tricky .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .tchip { background: var(--panel); border-radius: 14px; padding: 6px 16px; font-family: var(--body); font-size: 1.6rem; line-height: 1.2; }
+  .tricky { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); display: flex; align-items: center; gap: 10px 14px; flex-wrap: wrap; }
+  .tricky .lab { font-family: var(--display); font-weight: 500; color: var(--ink-soft); margin-right: 4px; }
+  .tricky .how { font-size: 0.88rem; color: var(--ink-soft); }
+  .tchip { background: var(--panel); border-radius: 12px; padding: 4px 14px; font-family: var(--body); font-size: 1.5rem; line-height: 1.2; }
   .tchip .tp { color: var(--plum); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
   .stems { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 
@@ -835,7 +836,7 @@
   function trickyHtml(list) {
     const tr = list || W.phonics.tricky;
     if (!tr.length) return "";
-    return `<div class="tricky"><p class="quiet">Tricky words: show, say, spot the tricky part, say again.</p><div class="row">${tr.map(t => `<span class="tchip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</div><p class="quiet" style="max-width:60ch;">${esc(tr[0].note)}</p></div>`;
+    return `<div class="tricky"><span class="lab">Tricky words</span>${tr.map(t => `<span class="tchip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}<span class="how">show it · say it · spot the tricky part · say it again</span></div>`;
   }
   function renderPhonics() {
     const s = $("ph-script"), side = $("ph-side");
