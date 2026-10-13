@@ -104,7 +104,9 @@
   .sound .l { font-family: var(--body); font-size: 2rem; line-height: 1; color: var(--sky); }
   .sound .d { font-size: 0.75rem; color: var(--ink-soft); }
   .sound.done::after { content: "✓"; position: absolute; top: 6px; right: 8px; color: var(--moss); font-family: var(--display); font-weight: 600; }
-  select.weeks { font-family: var(--display); font-weight: 500; font-size: 1.2rem; color: var(--ink); background: transparent; border: none; border-bottom: 2px solid var(--rule); padding: 2px 0; cursor: pointer; }
+  select.weeks { -webkit-appearance: none; appearance: none; font-family: var(--display); font-weight: 500; font-size: 1.1rem; color: var(--ink); background: var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5l4 4 4-4' fill='none' stroke='%234a7294' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center; border: 2px solid var(--sky-soft); border-radius: 999px; padding: 8px 40px 8px 16px; cursor: pointer; }
+  select.weeks:hover { border-color: var(--sky); }
+  .weekpick { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 6px; display: block; }
   .viewing { margin-top: 12px; background: var(--sky-soft); border-radius: var(--r); padding: 12px 20px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
   .viewing button { background: var(--panel); border: none; border-radius: 999px; padding: 8px 16px; }
   .pills { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -440,7 +442,7 @@
     const half = inBreak && !W.summary && W === W0;
     $("week-letters").textContent = W.phonics.focus.join(" ");
     const options = IDX.weeks.map(w => `<option value="${esc(w.weekOf)}"${w.weekOf === W.weekOf ? " selected" : ""}>${esc(w.label.toLowerCase())}${w.weekOf === IDX.current ? " (this week)" : ""}</option>`).join("");
-    $("week-meta").innerHTML = `<select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? "confirmed by school" : "expected, not yet confirmed by school"}`}</span>`;
+    $("week-meta").innerHTML = `<span class="weekpick">choose a week, this one or an earlier one</span><select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet" style="display:inline-block;margin-top:8px;">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? "confirmed by school" : "expected, not yet confirmed by school"}`}</span>`;
     $("week-select").addEventListener("change", e => viewWeek(e.target.value));
     const v = $("viewing");
     v.hidden = W === W0;
