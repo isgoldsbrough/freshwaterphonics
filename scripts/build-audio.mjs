@@ -39,6 +39,15 @@ for (const d of Object.values(p.days)) {
   if (g.type === "ladder") g.words.forEach(add);
   if (g.type === "tricky") g.words.forEach(add);
 }
+for (const d of Object.values(p.days)) {
+  const s = d.stretch; if (!s) continue;
+  add(s.say);
+  if (s.type === "segment") s.words.forEach(w => add(w.word));
+  if (s.type === "alien") s.items.forEach(i => add(i.word));
+  if (s.type === "caption") s.items.forEach(i => { add(i.text); i.options.forEach(o => add(o.say)); });
+  if (s.type === "mark") s.words.forEach(add);
+}
+["Real word.", "Alien word.", "Listen again."].forEach(add);
 (p.memory || []).forEach(m => add(m.word));
 (p.rhymes || []).forEach(r => { add(r.target.word); r.options.forEach(o => add(o.word)); });
 p.tricky.forEach(t => add(t.word));

@@ -6,8 +6,30 @@
   "updated": "2026-10-13",
   "nextUpdateExpected": "2026-10-16",
   "phonics": {
-    "focus": ["h", "b", "f", "l"],
-    "taught": ["s", "a", "t", "p", "i", "n", "m", "d", "g", "o", "c", "k", "ck", "e", "u", "r"],
+    "focus": [
+      "h",
+      "b",
+      "f",
+      "l"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "m",
+      "d",
+      "g",
+      "o",
+      "c",
+      "k",
+      "ck",
+      "e",
+      "u",
+      "r"
+    ],
     "cues": {
       "s": "Hiss like a snake, sss. No voice.",
       "a": "Open wide, short a, as in apple.",
@@ -31,9 +53,29 @@
       "l": "Tongue tip behind the top teeth, lll."
     },
     "tricky": [
-      { "word": "the", "trickyLetters": [0, 1, 2], "note": "Learn the whole word for now. The t-h sound comes in Phase 3, and the e says uh. Expected this week, not yet confirmed by school." },
-      { "word": "I", "trickyLetters": [0], "note": "One letter that says its own name. Taught last week." },
-      { "word": "is", "trickyLetters": [1], "note": "The s says z. Taught two weeks ago." }
+      {
+        "word": "the",
+        "trickyLetters": [
+          0,
+          1,
+          2
+        ],
+        "note": "Learn the whole word for now. The t-h sound comes in Phase 3, and the e says uh. Expected this week, not yet confirmed by school."
+      },
+      {
+        "word": "I",
+        "trickyLetters": [
+          0
+        ],
+        "note": "One letter that says its own name. Taught last week."
+      },
+      {
+        "word": "is",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z. Taught two weeks ago."
+      }
     ],
     "days": {
       "1": {
@@ -51,12 +93,79 @@
           "type": "hunt",
           "say": "Tap the things that start with h.",
           "items": [
-            { "emoji": "🎩", "word": "hat", "match": true },
-            { "emoji": "🐔", "word": "hen", "match": true },
-            { "emoji": "🐴", "word": "horse", "match": true },
-            { "emoji": "🐱", "word": "cat", "match": false },
-            { "emoji": "☀️", "word": "sun", "match": false },
-            { "emoji": "🦆", "word": "duck", "match": false }
+            {
+              "emoji": "🎩",
+              "word": "hat",
+              "match": true
+            },
+            {
+              "emoji": "🐔",
+              "word": "hen",
+              "match": true
+            },
+            {
+              "emoji": "🐴",
+              "word": "horse",
+              "match": true
+            },
+            {
+              "emoji": "🐱",
+              "word": "cat",
+              "match": false
+            },
+            {
+              "emoji": "☀️",
+              "word": "sun",
+              "match": false
+            },
+            {
+              "emoji": "🦆",
+              "word": "duck",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "hat",
+              "segments": [
+                "h",
+                "a",
+                "t"
+              ],
+              "emoji": "🎩"
+            },
+            {
+              "word": "hen",
+              "segments": [
+                "h",
+                "e",
+                "n"
+              ],
+              "emoji": "🐔"
+            },
+            {
+              "word": "hug",
+              "segments": [
+                "h",
+                "u",
+                "g"
+              ],
+              "emoji": "🤗"
+            },
+            {
+              "word": "hop",
+              "segments": [
+                "h",
+                "o",
+                "p"
+              ],
+              "emoji": "🐇"
+            }
           ]
         }
       },
@@ -75,12 +184,88 @@
           "type": "hunt",
           "say": "Tap the things that start with b.",
           "items": [
-            { "emoji": "🛏️", "word": "bed", "match": true },
-            { "emoji": "🚌", "word": "bus", "match": true },
-            { "emoji": "🦇", "word": "bat", "match": true },
-            { "emoji": "🐷", "word": "pig", "match": false },
-            { "emoji": "🐶", "word": "dog", "match": false },
-            { "emoji": "🥚", "word": "egg", "match": false }
+            {
+              "emoji": "🛏️",
+              "word": "bed",
+              "match": true
+            },
+            {
+              "emoji": "🚌",
+              "word": "bus",
+              "match": true
+            },
+            {
+              "emoji": "🦇",
+              "word": "bat",
+              "match": true
+            },
+            {
+              "emoji": "🐷",
+              "word": "pig",
+              "match": false
+            },
+            {
+              "emoji": "🐶",
+              "word": "dog",
+              "match": false
+            },
+            {
+              "emoji": "🥚",
+              "word": "egg",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "bed",
+              "segments": [
+                "b",
+                "e",
+                "d"
+              ],
+              "emoji": "🛏️"
+            },
+            {
+              "word": "bus",
+              "segments": [
+                "b",
+                "u",
+                "s"
+              ],
+              "emoji": "🚌"
+            },
+            {
+              "word": "bat",
+              "segments": [
+                "b",
+                "a",
+                "t"
+              ],
+              "emoji": "🦇"
+            },
+            {
+              "word": "bug",
+              "segments": [
+                "b",
+                "u",
+                "g"
+              ],
+              "emoji": "🐛"
+            },
+            {
+              "word": "bin",
+              "segments": [
+                "b",
+                "i",
+                "n"
+              ],
+              "emoji": "🗑️"
+            }
           ]
         }
       },
@@ -99,12 +284,159 @@
           "type": "blendpick",
           "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
           "words": [
-            { "word": "hat", "segments": ["h", "a", "t"], "emoji": "🎩", "distractors": [{ "word": "bed", "emoji": "🛏️" }, { "word": "bus", "emoji": "🚌" }] },
-            { "word": "fog", "segments": ["f", "o", "g"], "emoji": "🌫️", "distractors": [{ "word": "dog", "emoji": "🐶" }, { "word": "cat", "emoji": "🐱" }] },
-            { "word": "bus", "segments": ["b", "u", "s"], "emoji": "🚌", "distractors": [{ "word": "hat", "emoji": "🎩" }, { "word": "sun", "emoji": "☀️" }] },
-            { "word": "bed", "segments": ["b", "e", "d"], "emoji": "🛏️", "distractors": [{ "word": "bus", "emoji": "🚌" }, { "word": "hen", "emoji": "🐔" }] },
-            { "word": "hen", "segments": ["h", "e", "n"], "emoji": "🐔", "distractors": [{ "word": "cat", "emoji": "🐱" }, { "word": "pig", "emoji": "🐷" }] },
-            { "word": "cup", "segments": ["c", "u", "p"], "emoji": "☕", "distractors": [{ "word": "sock", "emoji": "🧦" }, { "word": "fog", "emoji": "🌫️" }] }
+            {
+              "word": "hat",
+              "segments": [
+                "h",
+                "a",
+                "t"
+              ],
+              "emoji": "🎩",
+              "distractors": [
+                {
+                  "word": "bed",
+                  "emoji": "🛏️"
+                },
+                {
+                  "word": "bus",
+                  "emoji": "🚌"
+                }
+              ]
+            },
+            {
+              "word": "fog",
+              "segments": [
+                "f",
+                "o",
+                "g"
+              ],
+              "emoji": "🌫️",
+              "distractors": [
+                {
+                  "word": "dog",
+                  "emoji": "🐶"
+                },
+                {
+                  "word": "cat",
+                  "emoji": "🐱"
+                }
+              ]
+            },
+            {
+              "word": "bus",
+              "segments": [
+                "b",
+                "u",
+                "s"
+              ],
+              "emoji": "🚌",
+              "distractors": [
+                {
+                  "word": "hat",
+                  "emoji": "🎩"
+                },
+                {
+                  "word": "sun",
+                  "emoji": "☀️"
+                }
+              ]
+            },
+            {
+              "word": "bed",
+              "segments": [
+                "b",
+                "e",
+                "d"
+              ],
+              "emoji": "🛏️",
+              "distractors": [
+                {
+                  "word": "bus",
+                  "emoji": "🚌"
+                },
+                {
+                  "word": "hen",
+                  "emoji": "🐔"
+                }
+              ]
+            },
+            {
+              "word": "hen",
+              "segments": [
+                "h",
+                "e",
+                "n"
+              ],
+              "emoji": "🐔",
+              "distractors": [
+                {
+                  "word": "cat",
+                  "emoji": "🐱"
+                },
+                {
+                  "word": "pig",
+                  "emoji": "🐷"
+                }
+              ]
+            },
+            {
+              "word": "cup",
+              "segments": [
+                "c",
+                "u",
+                "p"
+              ],
+              "emoji": "☕",
+              "distractors": [
+                {
+                  "word": "sock",
+                  "emoji": "🧦"
+                },
+                {
+                  "word": "fog",
+                  "emoji": "🌫️"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "fog",
+              "real": true
+            },
+            {
+              "word": "fap",
+              "real": false
+            },
+            {
+              "word": "fun",
+              "real": true
+            },
+            {
+              "word": "fip",
+              "real": false
+            },
+            {
+              "word": "fit",
+              "real": true
+            },
+            {
+              "word": "fom",
+              "real": false
+            },
+            {
+              "word": "bus",
+              "real": true
+            },
+            {
+              "word": "hib",
+              "real": false
+            }
           ]
         }
       },
@@ -117,12 +449,100 @@
           "Show the letter l. Tongue tip behind the top teeth: lll. Say it three times together.",
           "Say: \"l, leg. l, lip. l, log.\" Your child says the sound, then the word.",
           "Quick check of all four: show h, b, f, l one at a time. \"What sound?\" Say any missed one together.",
-          "Play the game below: one letter changes each time. Your child says the new word, then taps the letter that changed."
+          "Play the game below: one letter changes each time. Your child says the new word, then taps the letter that changed.",
+          "Off screen, if it was easy: say \"bus\"; your child writes it (b, u, s). Check it together, sound by sound."
         ],
         "game": {
           "type": "ladder",
           "say": "One letter has changed. Say the new word, then tap the letter that changed.",
-          "words": ["hat", "bat", "bit", "fit", "lit", "lot", "log"]
+          "words": [
+            "hat",
+            "bat",
+            "bit",
+            "fit",
+            "lit",
+            "lot",
+            "log"
+          ]
+        },
+        "stretch": {
+          "type": "caption",
+          "label": "Stretch: read a caption",
+          "say": "Read the caption. Then tap the picture that matches.",
+          "items": [
+            {
+              "text": "the cat is on the bed",
+              "options": [
+                {
+                  "emoji": "🐱🛏️",
+                  "say": "a cat on a bed"
+                },
+                {
+                  "emoji": "🐶🛏️",
+                  "say": "a dog on a bed"
+                },
+                {
+                  "emoji": "🐱🚌",
+                  "say": "a cat on a bus"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "the hen is on the bus",
+              "options": [
+                {
+                  "emoji": "🐔🛏️",
+                  "say": "a hen on a bed"
+                },
+                {
+                  "emoji": "🐔🚌",
+                  "say": "a hen on a bus"
+                },
+                {
+                  "emoji": "🐱🚌",
+                  "say": "a cat on a bus"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "the bug is in the hat",
+              "options": [
+                {
+                  "emoji": "🐛🛏️",
+                  "say": "a bug in a bed"
+                },
+                {
+                  "emoji": "🐸🎩",
+                  "say": "a frog in a hat"
+                },
+                {
+                  "emoji": "🐛🎩",
+                  "say": "a bug in a hat"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "the dog is in the fog",
+              "options": [
+                {
+                  "emoji": "🐶🌫️",
+                  "say": "a dog in the fog"
+                },
+                {
+                  "emoji": "🐶☀️",
+                  "say": "a dog in the sun"
+                },
+                {
+                  "emoji": "🐱🌫️",
+                  "say": "a cat in the fog"
+                }
+              ],
+              "correct": 0
+            }
+          ]
         }
       },
       "5": {
@@ -134,35 +554,180 @@
           "Sound review: open the review cards below and go through all the sounds so far. Say any wobbly one together; no timer.",
           "Tricky word \"the\": show it, say it, say \"we can't sound this one out yet, we just know it\". Say it again. Find it in any book on hand.",
           "Recap \"I\" and \"is\" the same way: show, say, spot the tricky part, say again.",
-          "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on."
+          "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on.",
+          "Off screen, if it was easy: say \"hat\" and \"leg\"; your child writes them. Check together, sound by sound."
         ],
         "game": {
           "type": "tricky",
           "say": "Say the word. Then tap the tricky part.",
-          "words": ["the", "I", "is"]
+          "words": [
+            "the",
+            "I",
+            "is"
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "hat",
+            "bed",
+            "fog",
+            "leg",
+            "bus",
+            "hen",
+            "lip",
+            "cup"
+          ]
         }
       }
     },
     "weekend": "No set session. If it comes up on its own, a shop sign, a cereal box, a book, spot the sounds together and leave it there.",
     "memory": [
-      { "grapheme": "h", "word": "hat", "emoji": "🎩" },
-      { "grapheme": "b", "word": "bed", "emoji": "🛏️" },
-      { "grapheme": "f", "word": "fog", "emoji": "🌫️" },
-      { "grapheme": "l", "word": "leg", "emoji": "🦵" },
-      { "grapheme": "s", "word": "sun", "emoji": "☀️" },
-      { "grapheme": "d", "word": "dog", "emoji": "🐶" }
+      {
+        "grapheme": "h",
+        "word": "hat",
+        "emoji": "🎩"
+      },
+      {
+        "grapheme": "b",
+        "word": "bed",
+        "emoji": "🛏️"
+      },
+      {
+        "grapheme": "f",
+        "word": "fog",
+        "emoji": "🌫️"
+      },
+      {
+        "grapheme": "l",
+        "word": "leg",
+        "emoji": "🦵"
+      },
+      {
+        "grapheme": "s",
+        "word": "sun",
+        "emoji": "☀️"
+      },
+      {
+        "grapheme": "d",
+        "word": "dog",
+        "emoji": "🐶"
+      }
     ],
     "rhymes": [
-      { "target": { "word": "hat", "emoji": "🎩" }, "options": [{ "word": "bat", "emoji": "🦇", "right": true }, { "word": "pig", "emoji": "🐷", "right": false }, { "word": "cup", "emoji": "☕", "right": false }] },
-      { "target": { "word": "leg", "emoji": "🦵" }, "options": [{ "word": "egg", "emoji": "🥚", "right": true }, { "word": "bus", "emoji": "🚌", "right": false }, { "word": "sun", "emoji": "☀️", "right": false }] },
-      { "target": { "word": "bug", "emoji": "🐛" }, "options": [{ "word": "mug", "emoji": "🍺", "right": true }, { "word": "hen", "emoji": "🐔", "right": false }, { "word": "hat", "emoji": "🎩", "right": false }] },
-      { "target": { "word": "dog", "emoji": "🐶" }, "options": [{ "word": "frog", "emoji": "🐸", "right": true }, { "word": "bed", "emoji": "🛏️", "right": false }, { "word": "fish", "emoji": "🐟", "right": false }] }
-    ]
+      {
+        "target": {
+          "word": "hat",
+          "emoji": "🎩"
+        },
+        "options": [
+          {
+            "word": "bat",
+            "emoji": "🦇",
+            "right": true
+          },
+          {
+            "word": "pig",
+            "emoji": "🐷",
+            "right": false
+          },
+          {
+            "word": "cup",
+            "emoji": "☕",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "leg",
+          "emoji": "🦵"
+        },
+        "options": [
+          {
+            "word": "egg",
+            "emoji": "🥚",
+            "right": true
+          },
+          {
+            "word": "bus",
+            "emoji": "🚌",
+            "right": false
+          },
+          {
+            "word": "sun",
+            "emoji": "☀️",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "bug",
+          "emoji": "🐛"
+        },
+        "options": [
+          {
+            "word": "mug",
+            "emoji": "🍺",
+            "right": true
+          },
+          {
+            "word": "hen",
+            "emoji": "🐔",
+            "right": false
+          },
+          {
+            "word": "hat",
+            "emoji": "🎩",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "dog",
+          "emoji": "🐶"
+        },
+        "options": [
+          {
+            "word": "frog",
+            "emoji": "🐸",
+            "right": true
+          },
+          {
+            "word": "bed",
+            "emoji": "🛏️",
+            "right": false
+          },
+          {
+            "word": "fish",
+            "emoji": "🐟",
+            "right": false
+          }
+        ]
+      }
+    ],
+    "stretchNote": "Only if the main game was easy. Stop at the first wobble; a stretch that becomes a struggle teaches the wrong lesson. We never go on to next week's sounds early: school's order matters."
   },
   "maths": {
     "topic": "Patterns: copying, continuing, creating and spotting them",
-    "vocab": ["pattern", "repeat", "next", "copy", "continue", "same", "different"],
-    "stems": ["\"Red, blue, red, blue. What comes next?\"", "\"Say the pattern with me.\"", "\"Is it the same? Point and check.\""],
+    "vocab": [
+      "pattern",
+      "repeat",
+      "next",
+      "copy",
+      "continue",
+      "same",
+      "different"
+    ],
+    "stems": [
+      "\"Red, blue, red, blue. What comes next?\"",
+      "\"Say the pattern with me.\"",
+      "\"Is it the same? Point and check.\""
+    ],
     "source": "From the 9 October school update: copying and continuing simple patterns, creating them and spotting them in a story.",
     "everyday": [
       "<b>Autumn treasure:</b> conkers, acorns, pine cones in a line: conker, acorn, conker, acorn. School wants these brought in too.",
@@ -184,17 +749,178 @@
         "check": {
           "say": "Which row is the same as the top one?",
           "questions": [
-            { "kind": "copy", "pattern": ["red", "blue", "red", "blue"], "options": [["red", "blue", "red", "blue"], ["red", "red", "blue", "blue"], ["blue", "red", "blue", "red"]], "correct": 0 },
-            { "kind": "copy", "pattern": ["apple", "banana", "apple", "banana"], "options": [["apple", "apple", "banana", "banana"], ["apple", "banana", "apple", "banana"], ["banana", "apple", "banana", "apple"]], "correct": 1 },
-            { "kind": "copy", "pattern": ["star", "moon", "star", "moon"], "options": [["star", "star", "moon", "moon"], ["moon", "star", "moon", "star"], ["star", "moon", "star", "moon"]], "correct": 2 }
+            {
+              "kind": "copy",
+              "pattern": [
+                "red",
+                "blue",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "red",
+                  "blue"
+                ],
+                [
+                  "red",
+                  "red",
+                  "blue",
+                  "blue"
+                ],
+                [
+                  "blue",
+                  "red",
+                  "blue",
+                  "red"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "copy",
+              "pattern": [
+                "apple",
+                "banana",
+                "apple",
+                "banana"
+              ],
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "banana",
+                  "banana"
+                ],
+                [
+                  "apple",
+                  "banana",
+                  "apple",
+                  "banana"
+                ],
+                [
+                  "banana",
+                  "apple",
+                  "banana",
+                  "apple"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "copy",
+              "pattern": [
+                "star",
+                "moon",
+                "star",
+                "moon"
+              ],
+              "options": [
+                [
+                  "star",
+                  "star",
+                  "moon",
+                  "moon"
+                ],
+                [
+                  "moon",
+                  "star",
+                  "moon",
+                  "star"
+                ],
+                [
+                  "star",
+                  "moon",
+                  "star",
+                  "moon"
+                ]
+              ],
+              "correct": 2
+            }
           ]
         },
         "stretch": {
           "label": "Stretch: a longer pattern",
           "say": "Which row is the same as the top one?",
           "questions": [
-            { "kind": "copy", "pattern": ["frog", "frog", "dog", "frog", "frog", "dog"], "options": [["frog", "frog", "dog", "frog", "frog", "dog"], ["frog", "dog", "frog", "dog", "frog", "dog"], ["dog", "frog", "frog", "dog", "frog", "frog"]], "correct": 0 },
-            { "kind": "copy", "pattern": ["red", "blue", "star", "red", "blue", "star"], "options": [["red", "blue", "red", "blue", "star", "star"], ["red", "blue", "star", "red", "blue", "star"], ["star", "blue", "red", "star", "blue", "red"]], "correct": 1 }
+            {
+              "kind": "copy",
+              "pattern": [
+                "frog",
+                "frog",
+                "dog",
+                "frog",
+                "frog",
+                "dog"
+              ],
+              "options": [
+                [
+                  "frog",
+                  "frog",
+                  "dog",
+                  "frog",
+                  "frog",
+                  "dog"
+                ],
+                [
+                  "frog",
+                  "dog",
+                  "frog",
+                  "dog",
+                  "frog",
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "frog",
+                  "frog",
+                  "dog",
+                  "frog",
+                  "frog"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "copy",
+              "pattern": [
+                "red",
+                "blue",
+                "star",
+                "red",
+                "blue",
+                "star"
+              ],
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "red",
+                  "blue",
+                  "star",
+                  "star"
+                ],
+                [
+                  "red",
+                  "blue",
+                  "star",
+                  "red",
+                  "blue",
+                  "star"
+                ],
+                [
+                  "star",
+                  "blue",
+                  "red",
+                  "star",
+                  "blue",
+                  "red"
+                ]
+              ],
+              "correct": 1
+            }
           ]
         }
       },
@@ -209,18 +935,146 @@
         "check": {
           "say": "What comes next?",
           "questions": [
-            { "kind": "next", "pattern": ["red", "blue", "red", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 1 },
-            { "kind": "next", "pattern": ["apple", "banana", "apple", "banana", "apple"], "options": [["apple"], ["banana"], ["grapes"]], "correct": 1 },
-            { "kind": "next", "pattern": ["star", "moon", "star", "moon", "star"], "options": [["moon"], ["star"], ["sun"]], "correct": 0 }
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "red"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "apple",
+                "banana",
+                "apple",
+                "banana",
+                "apple"
+              ],
+              "options": [
+                [
+                  "apple"
+                ],
+                [
+                  "banana"
+                ],
+                [
+                  "grapes"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "star",
+                "moon",
+                "star",
+                "moon",
+                "star"
+              ],
+              "options": [
+                [
+                  "moon"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 0
+            }
           ]
         },
         "stretch": {
           "label": "Stretch: patterns with a double",
           "say": "What comes next?",
           "questions": [
-            { "kind": "next", "pattern": ["frog", "frog", "dog", "frog", "frog"], "options": [["frog"], ["dog"], ["cat"]], "correct": 1 },
-            { "kind": "next", "pattern": ["leaf", "leaf", "conker", "leaf", "leaf"], "options": [["conker"], ["leaf"], ["star"]], "correct": 0 },
-            { "kind": "next", "pattern": ["red", "red", "blue", "red", "red", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 0 }
+            {
+              "kind": "next",
+              "pattern": [
+                "frog",
+                "frog",
+                "dog",
+                "frog",
+                "frog"
+              ],
+              "options": [
+                [
+                  "frog"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "leaf",
+                "leaf",
+                "conker",
+                "leaf",
+                "leaf"
+              ],
+              "options": [
+                [
+                  "conker"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "red",
+                "blue",
+                "red",
+                "red",
+                "blue",
+                "red"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            }
           ]
         }
       },
@@ -235,18 +1089,146 @@
         "check": {
           "say": "Which row is a pattern?",
           "questions": [
-            { "kind": "which", "options": [["apple", "banana", "apple", "banana", "apple", "banana"], ["apple", "banana", "grapes", "apple", "apple", "banana"]], "correct": 0 },
-            { "kind": "which", "options": [["red", "red", "blue", "star", "red", "blue"], ["red", "blue", "red", "blue", "red", "blue"]], "correct": 1 },
-            { "kind": "which", "options": [["star", "star", "moon", "star", "star", "moon"], ["star", "moon", "moon", "star", "moon", "star"]], "correct": 0 }
+            {
+              "kind": "which",
+              "options": [
+                [
+                  "apple",
+                  "banana",
+                  "apple",
+                  "banana",
+                  "apple",
+                  "banana"
+                ],
+                [
+                  "apple",
+                  "banana",
+                  "grapes",
+                  "apple",
+                  "apple",
+                  "banana"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "options": [
+                [
+                  "red",
+                  "red",
+                  "blue",
+                  "star",
+                  "red",
+                  "blue"
+                ],
+                [
+                  "red",
+                  "blue",
+                  "red",
+                  "blue",
+                  "red",
+                  "blue"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "options": [
+                [
+                  "star",
+                  "star",
+                  "moon",
+                  "star",
+                  "star",
+                  "moon"
+                ],
+                [
+                  "star",
+                  "moon",
+                  "moon",
+                  "star",
+                  "moon",
+                  "star"
+                ]
+              ],
+              "correct": 0
+            }
           ]
         },
         "stretch": {
           "label": "Stretch: three-part patterns",
           "say": "What comes next?",
           "questions": [
-            { "kind": "next", "pattern": ["red", "blue", "star", "red", "blue"], "options": [["red"], ["blue"], ["star"]], "correct": 2 },
-            { "kind": "next", "pattern": ["dog", "cat", "frog", "dog", "cat"], "options": [["frog"], ["dog"], ["cat"]], "correct": 0 },
-            { "kind": "next", "pattern": ["apple", "banana", "grapes", "apple", "banana", "grapes", "apple"], "options": [["banana"], ["grapes"], ["apple"]], "correct": 0 }
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "star",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "dog",
+                "cat",
+                "frog",
+                "dog",
+                "cat"
+              ],
+              "options": [
+                [
+                  "frog"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "apple",
+                "banana",
+                "grapes",
+                "apple",
+                "banana",
+                "grapes",
+                "apple"
+              ],
+              "options": [
+                [
+                  "banana"
+                ],
+                [
+                  "grapes"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 0
+            }
           ]
         }
       },
@@ -261,17 +1243,127 @@
         "check": {
           "say": "Which piece is missing?",
           "questions": [
-            { "kind": "missing", "pattern": ["apple", "banana", "apple", "?", "apple", "banana"], "options": [["banana"], ["apple"], ["grapes"]], "correct": 0 },
-            { "kind": "missing", "pattern": ["red", "blue", "?", "blue", "red", "blue"], "options": [["blue"], ["red"], ["star"]], "correct": 1 },
-            { "kind": "missing", "pattern": ["star", "?", "star", "moon", "star", "moon"], "options": [["star"], ["moon"], ["sun"]], "correct": 1 }
+            {
+              "kind": "missing",
+              "pattern": [
+                "apple",
+                "banana",
+                "apple",
+                "?",
+                "apple",
+                "banana"
+              ],
+              "options": [
+                [
+                  "banana"
+                ],
+                [
+                  "apple"
+                ],
+                [
+                  "grapes"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "missing",
+              "pattern": [
+                "red",
+                "blue",
+                "?",
+                "blue",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "blue"
+                ],
+                [
+                  "red"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "missing",
+              "pattern": [
+                "star",
+                "?",
+                "star",
+                "moon",
+                "star",
+                "moon"
+              ],
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 1
+            }
           ]
         },
         "stretch": {
           "label": "Stretch: a missing piece in a longer pattern",
           "say": "Which piece is missing?",
           "questions": [
-            { "kind": "missing", "pattern": ["frog", "frog", "dog", "frog", "?", "dog"], "options": [["frog"], ["dog"], ["cat"]], "correct": 0 },
-            { "kind": "missing", "pattern": ["red", "blue", "star", "red", "?", "star"], "options": [["red"], ["blue"], ["star"]], "correct": 1 }
+            {
+              "kind": "missing",
+              "pattern": [
+                "frog",
+                "frog",
+                "dog",
+                "frog",
+                "?",
+                "dog"
+              ],
+              "options": [
+                [
+                  "frog"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "missing",
+              "pattern": [
+                "red",
+                "blue",
+                "star",
+                "red",
+                "?",
+                "star"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            }
           ]
         }
       },
@@ -286,18 +1378,148 @@
         "check": {
           "say": "What comes next?",
           "questions": [
-            { "kind": "next", "pattern": ["elephant", "mouse", "elephant", "mouse", "elephant"], "options": [["mouse"], ["elephant"], ["cat"]], "correct": 0 },
-            { "kind": "next", "pattern": ["sun", "rain", "sun", "rain", "sun"], "options": [["sun"], ["rain"], ["star"]], "correct": 1 },
-            { "kind": "which", "options": [["clap", "stomp", "clap", "stomp", "clap", "stomp"], ["clap", "stomp", "stomp", "clap", "clap", "stomp"]], "correct": 0 }
+            {
+              "kind": "next",
+              "pattern": [
+                "elephant",
+                "mouse",
+                "elephant",
+                "mouse",
+                "elephant"
+              ],
+              "options": [
+                [
+                  "mouse"
+                ],
+                [
+                  "elephant"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "sun",
+                "rain",
+                "sun",
+                "rain",
+                "sun"
+              ],
+              "options": [
+                [
+                  "sun"
+                ],
+                [
+                  "rain"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "options": [
+                [
+                  "clap",
+                  "stomp",
+                  "clap",
+                  "stomp",
+                  "clap",
+                  "stomp"
+                ],
+                [
+                  "clap",
+                  "stomp",
+                  "stomp",
+                  "clap",
+                  "clap",
+                  "stomp"
+                ]
+              ],
+              "correct": 0
+            }
           ]
         },
         "stretch": {
           "label": "Stretch: sound and movement patterns",
           "say": "What comes next? Do the actions as you say it.",
           "questions": [
-            { "kind": "next", "pattern": ["clap", "clap", "stomp", "clap", "clap"], "options": [["stomp"], ["clap"], ["star"]], "correct": 0 },
-            { "kind": "next", "pattern": ["clap", "stomp", "stomp", "clap", "stomp", "stomp", "clap"], "options": [["clap"], ["stomp"], ["star"]], "correct": 1 },
-            { "kind": "next", "pattern": ["red", "blue", "blue", "red", "blue", "blue", "red"], "options": [["red"], ["blue"], ["star"]], "correct": 1 }
+            {
+              "kind": "next",
+              "pattern": [
+                "clap",
+                "clap",
+                "stomp",
+                "clap",
+                "clap"
+              ],
+              "options": [
+                [
+                  "stomp"
+                ],
+                [
+                  "clap"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "clap",
+                "stomp",
+                "stomp",
+                "clap",
+                "stomp",
+                "stomp",
+                "clap"
+              ],
+              "options": [
+                [
+                  "clap"
+                ],
+                [
+                  "stomp"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "red"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            }
           ]
         }
       }
@@ -305,9 +1527,25 @@
     "weekend": "No maths session. If it comes up on its own, stripes on a jumper, tiles on a floor, say \"that's a pattern, what comes next?\" and leave it there."
   },
   "tiles": {
-    "red": "🔴", "blue": "🔵", "star": "⭐", "moon": "🌙", "sun": "☀️", "rain": "🌧️",
-    "apple": "🍎", "banana": "🍌", "grapes": "🍇", "frog": "🐸", "dog": "🐶", "cat": "🐱",
-    "leaf": "🍂", "conker": "🌰", "elephant": "🐘", "mouse": "🐭", "clap": "👏", "stomp": "🦶", "?": "❓"
+    "red": "🔴",
+    "blue": "🔵",
+    "star": "⭐",
+    "moon": "🌙",
+    "sun": "☀️",
+    "rain": "🌧️",
+    "apple": "🍎",
+    "banana": "🍌",
+    "grapes": "🍇",
+    "frog": "🐸",
+    "dog": "🐶",
+    "cat": "🐱",
+    "leaf": "🍂",
+    "conker": "🌰",
+    "elephant": "🐘",
+    "mouse": "🐭",
+    "clap": "👏",
+    "stomp": "🦶",
+    "?": "❓"
   },
   "school": {
     "lastWeek": [
@@ -318,13 +1556,41 @@
     ],
     "thisWeekPhonics": "h, b, f, l (school's preview from 9 October; confirmed in the next update)",
     "asks": [
-      { "text": "Give consent and payment for the Little City trip on Arbor", "since": "25 Sep", "note": "asked three times" },
-      { "text": "Sign up for A Day in the Life of Reception", "since": "25 Sep", "note": "asked three times" },
-      { "text": "Reading book in the bookbag every school day", "since": "2 Oct", "note": "school reads with the children and wants to share progress" },
-      { "text": "Bring in conkers, pine cones or acorns for class activities", "since": "9 Oct", "note": "" },
-      { "text": "Bring in tubes, bottles and other recycling for junk modelling", "since": "9 Oct", "note": "" },
-      { "text": "Label all clothes with name and class", "since": "25 Sep", "note": "" },
-      { "text": "A family photo for the This is Us board", "since": "18 Sep", "note": "if not already done" }
+      {
+        "text": "Give consent and payment for the Little City trip on Arbor",
+        "since": "25 Sep",
+        "note": "asked three times"
+      },
+      {
+        "text": "Sign up for A Day in the Life of Reception",
+        "since": "25 Sep",
+        "note": "asked three times"
+      },
+      {
+        "text": "Reading book in the bookbag every school day",
+        "since": "2 Oct",
+        "note": "school reads with the children and wants to share progress"
+      },
+      {
+        "text": "Bring in conkers, pine cones or acorns for class activities",
+        "since": "9 Oct",
+        "note": ""
+      },
+      {
+        "text": "Bring in tubes, bottles and other recycling for junk modelling",
+        "since": "9 Oct",
+        "note": ""
+      },
+      {
+        "text": "Label all clothes with name and class",
+        "since": "25 Sep",
+        "note": ""
+      },
+      {
+        "text": "A family photo for the This is Us board",
+        "since": "18 Sep",
+        "note": "if not already done"
+      }
     ],
     "standing": [
       "<b>Friday, Show and Tell:</b> check the rota outside both classrooms for your child's turn. The item goes in the box by the door at drop-off. Half-term theme: Marvellous Me.",
@@ -334,12 +1600,39 @@
     ]
   },
   "journey": [
-    { "week": "Week 1", "graphemes": "s a t p", "state": "done" },
-    { "week": "Week 2", "graphemes": "i n m d", "state": "done" },
-    { "week": "Week 3", "graphemes": "g o c k", "state": "done", "tricky": "is" },
-    { "week": "Week 4", "graphemes": "ck e u r", "state": "done", "tricky": "I" },
-    { "week": "Week 5", "graphemes": "h b f l", "state": "now", "tricky": "the (expected)" },
-    { "week": "Week 6", "graphemes": "ff ll ss (expected)", "state": "next" }
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "done"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "done",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "done",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "now",
+      "tricky": "the (expected)"
+    },
+    {
+      "week": "Week 6",
+      "graphemes": "ff ll ss (expected)",
+      "state": "next"
+    }
   ],
   "share": "Phonics and maths for this week (w/c 12 Oct): https://freshwaterphonics.uk\n\nSounds: h, b, f, l (one a day). Tricky word: the.\nMaths: patterns.\n\nSchool asks: Little City trip consent on Arbor; Day in the Life sign-up; conkers, pine cones or acorns; tubes and bottles for junk modelling."
 }

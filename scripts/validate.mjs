@@ -77,6 +77,34 @@ for (const n of ["1", "2", "3", "4", "5"]) {
   }
 }
 
+// Stretch games: same print rule, same sounds, harder skill
+const trickySet = new Set(week.phonics.tricky.map(t => t.word));
+for (const n of ["1", "2", "3", "4", "5"]) {
+  const s = days[n] && days[n].stretch;
+  if (!s) { errors.push(`phonics day ${n}: no stretch`); continue; }
+  const where = `phonics day ${n} stretch (${s.type})`;
+  if (s.type === "segment") {
+    for (const w of s.words) {
+      checkPrintWord(w.word, where);
+      if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
+      if (new Set(w.segments).size !== w.segments.length) errors.push(`${where}: "${w.word}" repeats a sound; the bank cannot handle that`);
+    }
+  } else if (s.type === "alien") {
+    s.items.forEach(it => checkPrintWord(it.word, where));
+    if (s.items.filter(i => i.real).length < 2 || s.items.filter(i => !i.real).length < 2) errors.push(`${where}: needs at least 2 real and 2 alien`);
+  } else if (s.type === "caption") {
+    for (const it of s.items) {
+      it.text.split(/\s+/).forEach(wd => { if (!trickySet.has(wd)) checkPrintWord(wd, `${where} "${it.text}"`); });
+      if (it.options.length < 3 || it.correct == null || it.correct >= it.options.length) errors.push(`${where}: "${it.text}" needs 3 options and a correct index`);
+    }
+  } else if (s.type === "mark") {
+    s.words.forEach(wd => checkPrintWord(wd, where));
+    if (s.words.length < 6) errors.push(`${where}: fewer than 6 words`);
+  } else {
+    errors.push(`${where}: unknown stretch type`);
+  }
+}
+
 // Memory pairs: grapheme to a word starting with it (first-sound rule), word printed
 for (const p of week.phonics.memory || []) {
   if (!taught.has(p.grapheme)) errors.push(`memory: grapheme "${p.grapheme}" not taught`);

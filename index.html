@@ -169,6 +169,24 @@
   .popt.right { border-color: var(--teal); background: var(--teal-soft); }
   .popt.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
   .popt.hint { animation: pulse 0.8s 2; }
+  .stretch-note { font-size: 0.88rem; color: var(--ink-soft); }
+  .slots { display: flex; gap: 10px; justify-content: center; }
+  .slot { font-family: var(--display); font-size: 2.2rem; font-weight: 700; width: 64px; height: 72px; border-radius: 14px; border: 3px dashed var(--rule); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center; }
+  .slot.filled { border-style: solid; border-color: var(--teal); background: var(--teal-soft); color: var(--teal); }
+  .bank .letter { min-width: 60px; height: 68px; font-size: 2rem; }
+  .bank .letter.used { opacity: 0.25; pointer-events: none; }
+  .caption-text { font-family: var(--display); font-size: 1.9rem; font-weight: 700; text-align: center; line-height: 1.3; color: var(--ink); }
+  .tiles.captions .pic { font-size: 2.2rem; letter-spacing: 4px; }
+  .choice-row { display: flex; gap: 12px; }
+  .choice { flex: 1; min-height: 88px; border: 3px solid var(--rule); border-radius: 18px; background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: var(--display); font-weight: 700; font-size: 1.2rem; }
+  .choice .pic { font-size: 2.2rem; line-height: 1; }
+  .choice.right { border-color: var(--teal); background: var(--teal-soft); }
+  .choice.wrong { border-color: var(--brick); background: var(--brick-soft); animation: dip 0.35s; }
+  .choice.hint { animation: pulse 0.8s 2; }
+  .choice.tick { color: var(--teal); } .choice.cross { color: var(--brick); }
+  .mark-summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .mark-summary span { font-family: var(--display); font-weight: 700; border-radius: 8px; padding: 2px 10px; background: var(--teal-soft); color: var(--teal); }
+  .mark-summary span.miss { background: var(--brick-soft); color: var(--brick); }
   .stretch-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--brick); background: var(--brick-soft); border-radius: 999px; padding: 3px 10px; align-self: flex-start; }
   .vocab { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
   .vocab span { font-family: var(--display); font-weight: 700; background: var(--teal-soft); color: var(--teal); border-radius: 8px; padding: 2px 10px; }
@@ -231,6 +249,7 @@
   <div class="panel" id="panel-today" role="tabpanel" aria-labelledby="tab-btn-today">
     <section class="card routine" id="ph-routine"></section>
     <section class="card game" id="ph-game"></section>
+    <section class="card game" id="ph-stretch"></section>
     <section class="card game" id="ph-more">
       <h2 class="section-title">More ways to play</h2>
       <div class="pill-nav" id="more-nav"></div>
@@ -368,11 +387,15 @@
     if (current) { try { current.pause(); } catch (e) {} current = null; }
     const name = manifest[text] || slug(text);
     return new Promise(resolve => {
+      let done = false;
+      const finish = () => { if (!done) { done = true; clearTimeout(guard); resolve(); } };
+      // never let a stalled clip freeze a game
+      const guard = setTimeout(finish, 4000);
       const a = new Audio("audio/" + name + ".m4a");
       current = a;
-      a.addEventListener("ended", resolve, { once: true });
-      a.addEventListener("error", () => { fallback(text); resolve(); }, { once: true });
-      a.play().catch(() => { fallback(text); resolve(); });
+      a.addEventListener("ended", finish, { once: true });
+      a.addEventListener("error", () => { fallback(text); finish(); }, { once: true });
+      a.play().catch(() => { fallback(text); finish(); });
     });
   }
   function fallback(text) {
@@ -434,10 +457,10 @@
 
   // ---------- phonics: routine ----------
   function renderPhonics() {
-    const r = $("ph-routine"), g = $("ph-game");
+    const r = $("ph-routine"), g = $("ph-game"), st = $("ph-stretch");
     if (day === 0) {
       r.innerHTML = `<h2>Weekend</h2><p class="sub" style="margin-top:8px;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      g.hidden = true; return;
+      g.hidden = true; st.hidden = true; return;
     }
     g.hidden = false;
     const d = W.phonics.days[day];
@@ -449,6 +472,7 @@
       ${d.sound ? `<div class="sound-card"><div class="glyph">${esc(d.sound)}</div><div><p>${esc(cue)}</p><p style="margin-top:6px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme) ↗</a></p></div></div>` : ""}
       ${trickyHtml()}`;
     renderGame(g, d.game);
+    renderStretch(st, d.stretch);
   }
   function trickyHtml() {
     return `<div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);"><div class="eyebrow">Tricky words: show, say, spot the tricky part, say again</div><div class="tricky-list">${W.phonics.tricky.map(t => `<span class="tricky-chip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}</div><p style="font-size:0.88rem;color:var(--ink-soft);margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div>`;
@@ -581,6 +605,141 @@
             if (i < game.words.length) word(); else finish(el, "Tricky parts all spotted!", () => { i = 0; word(); });
           }
         } else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400); speak(PH.again); }
+      }));
+    }
+    word();
+  }
+
+  // ---------- phonics: stretch ----------
+  function renderStretch(el, s) {
+    if (!s) { el.hidden = true; return; }
+    el.hidden = false;
+    const head = `<span class="stretch-tag">${esc(s.label)}</span><p class="stretch-note">${esc(W.phonics.stretchNote)}</p>`;
+    if (s.type === "segment") renderSegment(el, s, head);
+    else if (s.type === "alien") renderAlien(el, s, head);
+    else if (s.type === "caption") renderCaption(el, s, head);
+    else if (s.type === "mark") renderMark(el, s, head);
+  }
+
+  function renderSegment(el, s, head) {
+    const all = [...W.phonics.taught, ...W.phonics.focus];
+    let i = 0, misses = 0;
+    function word() {
+      const w = s.words[i];
+      const extras = shuffle(all.filter(g => !w.segments.includes(g))).slice(0, 3);
+      const bank = shuffle([...w.segments, ...extras]);
+      let next = 0;
+      el.innerHTML = `${head}${taskBar(s.say)}
+        <div class="tiles" style="grid-template-columns:1fr;max-width:140px;margin:0 auto;"><button class="tile" id="sg-pic" aria-label="hear the word"><span class="pic" aria-hidden="true">${w.emoji}</span></button></div>
+        <div class="slots" id="slots">${w.segments.map(() => `<div class="slot" aria-hidden="true">·</div>`).join("")}</div>
+        <div class="letters bank" id="bank">${bank.map((g, k) => `<button class="letter" data-k="${k}" aria-label="${esc(g)}">${esc(g)}</button>`).join("")}</div>
+        <div class="progress">Word ${i + 1} of ${s.words.length}</div>`;
+      wireSay(el);
+      el.querySelector("#sg-pic").addEventListener("click", () => speak(w.word));
+      speak(w.word);
+      const slots = el.querySelectorAll(".slot"), bankEl = el.querySelector("#bank");
+      bankEl.querySelectorAll(".letter").forEach(b => b.addEventListener("click", async () => {
+        const g = bank[Number(b.dataset.k)];
+        if (g === w.segments[next]) {
+          b.classList.add("used"); slots[next].textContent = g; slots[next].classList.add("filled"); next++;
+          if (next === w.segments.length) {
+            await speak(w.word); i++;
+            if (i < s.words.length) word(); else finish(el, "Every word spelled!", () => { i = 0; misses = 0; word(); });
+          }
+        } else {
+          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
+          await speak(w.word);
+          if (misses >= 2) bankEl.querySelectorAll(".letter").forEach(x => { if (bank[Number(x.dataset.k)] === w.segments[next]) { x.classList.add("hint"); setTimeout(() => x.classList.remove("hint"), 1700); } });
+        }
+      }));
+    }
+    word();
+  }
+
+  function renderAlien(el, s, head) {
+    const items = shuffle(s.items);
+    let i = 0, misses = 0;
+    function item() {
+      const it = items[i];
+      el.innerHTML = `${head}${taskBar(s.say)}
+        <div class="bigword" style="color:var(--ink);font-size:3rem;">${esc(it.word)}</div>
+        <div class="choice-row">
+          <button class="choice" data-real="true" aria-label="real word"><span class="pic" aria-hidden="true">🏠</span>Real</button>
+          <button class="choice" data-real="false" aria-label="alien word"><span class="pic" aria-hidden="true">👾</span>Alien</button>
+        </div>
+        <div class="actions"><button class="btn secondary" id="al-hear">🔊 Hear it</button></div>
+        <div class="progress">Word ${i + 1} of ${items.length}</div>`;
+      wireSay(el);
+      el.querySelector("#al-hear").addEventListener("click", () => speak(it.word));
+      el.querySelectorAll(".choice").forEach(b => b.addEventListener("click", async () => {
+        if ((b.dataset.real === "true") === it.real) {
+          b.classList.add("right"); await speak(it.real ? "Real word." : "Alien word."); i++;
+          if (i < items.length) item(); else finish(el, "Real and alien all sorted!", () => { i = 0; misses = 0; item(); });
+        } else {
+          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
+          await speak(it.word);
+          if (misses >= 2) { const h = el.querySelector(`.choice[data-real="${it.real}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
+        }
+      }));
+    }
+    item();
+  }
+
+  function renderCaption(el, s, head) {
+    let i = 0, misses = 0;
+    function item() {
+      const it = s.items[i];
+      const order = shuffle(it.options.map((o, k) => k));
+      el.innerHTML = `${head}${taskBar(s.say)}
+        <div class="caption-text">${esc(it.text)}</div>
+        <div class="actions"><button class="btn secondary" id="cp-hear">🔊 Hear it</button></div>
+        <div class="tiles captions" id="cp"></div>
+        <div class="progress">Caption ${i + 1} of ${s.items.length}</div>`;
+      wireSay(el);
+      el.querySelector("#cp-hear").addEventListener("click", () => speak(it.text));
+      const cp = el.querySelector("#cp");
+      cp.innerHTML = order.map(k => `<button class="tile" data-k="${k}" aria-label="${esc(it.options[k].say)}"><span class="pic" aria-hidden="true">${it.options[k].emoji}</span></button>`).join("");
+      cp.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
+        const k = Number(b.dataset.k);
+        if (k === it.correct) {
+          b.classList.add("right"); await speak(it.text); i++;
+          if (i < s.items.length) item(); else finish(el, "Every caption read!", () => { i = 0; misses = 0; item(); });
+        } else {
+          misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 400);
+          await speak(it.options[k].say); await speak("Listen again."); await speak(it.text);
+          if (misses >= 2) { const h = cp.querySelector(`[data-k="${it.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 1700); }
+        }
+      }));
+    }
+    item();
+  }
+
+  function renderMark(el, s, head) {
+    const words = shuffle(s.words);
+    let i = 0; const got = [];
+    function word() {
+      el.innerHTML = `${head}${taskBar(s.say)}
+        <div class="flash">${esc(words[i])}</div>
+        <div class="choice-row">
+          <button class="choice tick" data-ok="1" aria-label="read correctly"><span class="pic" aria-hidden="true">✓</span>Got it</button>
+          <button class="choice cross" data-ok="0" aria-label="not yet"><span class="pic" aria-hidden="true">✗</span>Not yet</button>
+        </div>
+        <div class="progress">Word ${i + 1} of ${words.length}</div>`;
+      wireSay(el);
+      el.querySelectorAll(".choice").forEach(b => b.addEventListener("click", async () => {
+        got.push({ word: words[i], ok: b.dataset.ok === "1" });
+        if (!got[got.length - 1].ok) await speak(words[i]);
+        i++;
+        if (i < words.length) word();
+        else {
+          const ok = got.filter(g => g.ok).length;
+          el.innerHTML = `${head}<div class="finish"><div class="big">${ok === words.length ? "⭐" : "👍"}</div><h3>${ok} of ${words.length} read</h3>
+            <div class="mark-summary">${got.map(g => `<span class="${g.ok ? "" : "miss"}">${esc(g.word)}</span>`).join("")}</div>
+            <p class="stretch-note">${ok === words.length ? "All read first time." : "The red ones are worth one more go tomorrow. Nothing is saved; this is just for you to see."}</p>
+            <button class="btn secondary" id="mk-again">Again</button></div>`;
+          announce(`${ok} of ${words.length} read`);
+          el.querySelector("#mk-again").addEventListener("click", () => { i = 0; got.length = 0; word(); });
+        }
       }));
     }
     word();
