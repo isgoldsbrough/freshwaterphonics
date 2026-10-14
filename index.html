@@ -362,7 +362,7 @@
         <a class="link" href="https://www.oxfordowl.co.uk/for-home/find-a-book/library-page/" target="_blank" rel="noopener"><div class="n">Oxford Owl free eBooks</div><div class="d">Free books filtered by phase, after a quick sign-up. Choose Phase 2.</div></a>
       </div>
       <h2>Credits</h2>
-      <p class="quiet">Fonts: ABeeZee and Fredoka via Google Fonts. Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0. Spoken clips are a computer voice. No reproduction of school or Little Wandle materials; their resources are linked, not copied. Made with Claude by a parent in the class.</p>
+      <p class="quiet">Fonts: ABeeZee and Fredoka via Google Fonts. Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0. Spoken words are a computer voice with a British accent; the single sounds in Blend it are a parent's voice or <a href="https://commons.wikimedia.org/wiki/Category:IPA_audio" target="_blank" rel="noopener">Wikimedia Commons</a> recordings (CC BY-SA 3.0). No reproduction of school or Little Wandle materials; their resources are linked, not copied. Made with Claude by a parent in the class.</p>
     </div>
   </div>
 
@@ -415,6 +415,16 @@
   // ---------- audio: clips, speech fallback, three small sounds ----------
   let manifest = {};
   try { manifest = await (await fetch("audio/manifest.json", { cache: "no-cache" })).json(); } catch (e) {}
+  // pure sounds, chosen or recorded by a parent on the sound check page; c, k and ck share one sound.
+  // A sound with no clip stays silent: the child says it, as in class.
+  let SOUNDS = {};
+  try { SOUNDS = await (await fetch("audio/sounds/sounds.json", { cache: "no-cache" })).json(); } catch (e) {}
+  function playSound(g) {
+    const s = SOUNDS[{ c: "k", ck: "k" }[g] || g];
+    if (muted || !s) return;
+    if (current) { try { current.pause(); } catch (e) {} }
+    current = new Audio("audio/sounds/" + s.file); current.play().catch(() => {});
+  }
   let muted = store.get("fp-muted") === "1";
   const muteBtn = $("mute-btn");
   function paintMute() { muteBtn.textContent = muted ? "🔇" : "🔊"; muteBtn.setAttribute("aria-pressed", String(muted)); muteBtn.setAttribute("aria-label", muted ? "Sound off" : "Sound on"); }
@@ -824,7 +834,7 @@
           const k = Number(b.dataset.k);
           if (k < next) return;
           if (k > next) { btns[next].classList.add("hint"); setTimeout(() => btns[next] && btns[next].classList.remove("hint"), 900); return; }
-          SFX.tap(); groups[k].classList.add("on"); b.setAttribute("aria-label", "sound " + (k + 1) + ", said"); next++;
+          playSound(w.segments[k]); groups[k].classList.add("on"); b.setAttribute("aria-label", "sound " + (k + 1) + ", said"); next++;
           if (next === w.segments.length) { speak("Now say the word."); check(w); }
         }));
       }
@@ -1141,7 +1151,7 @@
   $("share-text").value = W.share;
   $("copy-btn").addEventListener("click", async () => { const t = $("share-text"); try { await navigator.clipboard.writeText(t.value); $("copy-status").textContent = "Copied."; } catch (e) { t.focus(); t.select(); $("copy-status").textContent = "Select and copy the text above."; } });
 
-  $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
+  $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. ${Object.values(SOUNDS).some(x => x.source === "commons") ? `Some sounds from <a href="https://commons.wikimedia.org/wiki/Category:IPA_audio" target="_blank" rel="noopener">Wikimedia Commons</a> recordings, CC BY-SA 3.0. ` : ""}Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
 
   // ---------- go ----------
   function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); }
