@@ -32,9 +32,16 @@ const add = t => { if (t && t.trim()) lines.add(t.trim()); };
   "Say the word, then tap the picture.",
   "Say the new word, then tap the letter that changed.",
   "Say the word, then tap the tricky part.",
-  "Press each sound button and say the sound. Then say the word.",
+  "Touch each dot and line and say the sound. Then say the word.",
   "Now say the word.",
-  "Read each word with no buttons. Then check it."
+  "Read each word with no dots and lines. Then check it.",
+  "Say the sounds again, then push them together.",
+  "Say the sounds, then ask: is it a word we know?",
+  "Listen to the end of each word.",
+  "Read the note. Which letters do not say their usual sound?",
+  "Count each row, then look again.",
+  "What sound is this?",
+  "Watch how the letter is formed and trace it. Then write it on paper with a pencil."
 ].forEach(add);
 
 const p = week.phonics;

@@ -30,28 +30,6 @@
       "u",
       "r"
     ],
-    "cues": {
-      "s": "Hiss like a snake, sss. No voice.",
-      "a": "Open wide, short a, as in apple.",
-      "t": "Tongue tip taps behind the top teeth, t. No voice.",
-      "p": "Pop the lips open, p. No voice.",
-      "i": "Short i, as in in.",
-      "n": "Tongue up, hum through the nose, nnn.",
-      "m": "Lips together, hum, mmm.",
-      "d": "Tongue tip taps behind the teeth, d, with voice.",
-      "g": "Back of the tongue, short g, with voice.",
-      "o": "Round mouth, short o, as in on.",
-      "c": "Back of the tongue, short c. No voice.",
-      "k": "Same sound as c, written k.",
-      "ck": "Same sound as k. Two letters, one sound, at the end of short words.",
-      "e": "Short e, as in egg.",
-      "u": "Short u, as in up.",
-      "r": "A soft growl, rrr. Keep it one sound, no uh on the end.",
-      "h": "A small puff of air, like fogging a window, h. No voice.",
-      "b": "Lips together, then open, b. Keep it short, no buh.",
-      "f": "Top teeth on the bottom lip and blow, fff. No voice.",
-      "l": "Tongue tip behind the top teeth, lll."
-    },
     "tricky": [
       {
         "word": "I",
@@ -65,7 +43,16 @@
         "trickyLetters": [
           1
         ],
-        "note": "The s says z. Taught two weeks ago."
+        "note": "The s says z."
+      },
+      {
+        "word": "the",
+        "trickyLetters": [
+          0,
+          1,
+          2
+        ],
+        "note": "th is a sound to come, and the e says a quick uh."
       }
     ],
     "days": {
@@ -76,18 +63,22 @@
         "minutes": 10,
         "steps": [
           {
-            "do": "Show the letter h. Say the sound together three times: a small puff of air, like fogging a window. Keep it a breath, not huh."
-          },
-          {
-            "do": "Listen for h at the start of words. Your child says the sound, then the word: hat, hen, hop, hill.",
+            "label": "Newest sound",
+            "min": 2,
+            "do": "h, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then listen for it at the start of spoken words, and play Find the sounds.",
             "say": "Can you hear h at the start of hat? h, hat."
           },
           {
-            "do": "Play the game: tap the things that start with h."
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then play Blend it: five words with dots and lines, then the same words without.",
+            "say": "h, o, p. What word?"
           },
           {
-            "do": "Finish with one word to blend out loud. Your child blends it back to you.",
-            "say": "h, a, t: hat."
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say hat. Your child says the sounds, then writes the word on paper with a pencil, using school's phrase for each letter.",
+            "say": "Hat. What sounds can you hear?"
           }
         ],
         "game": {
@@ -167,19 +158,22 @@
         "minutes": 10,
         "steps": [
           {
-            "do": "Show the letter b. Lips together, then open. Keep it short, no buh. Say it three times together."
-          },
-          {
-            "do": "Quick check from yesterday: show h. If it has gone, say it together and move on.",
-            "say": "What sound is this?"
-          },
-          {
-            "do": "Your child says the sound, then the word, then finds one thing in the room that starts with b.",
+            "label": "Newest sound",
+            "min": 2,
+            "do": "b, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds one thing in the room that starts with b.",
             "say": "b, bed. b, bus."
           },
           {
-            "do": "Play the game, then blend one word out loud.",
-            "say": "b, e, d: bed."
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "b, e, d. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say bed. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Bed. What sounds can you hear?"
           }
         ],
         "game": {
@@ -264,21 +258,25 @@
         "name": "Wed",
         "sound": "f",
         "title": "New sound: f",
-        "minutes": 12,
+        "minutes": 10,
         "steps": [
           {
-            "do": "Show the letter f. Top teeth on the bottom lip and blow: fff. No voice. Say it three times together."
-          },
-          {
-            "do": "Your child says the sound, then the word.",
+            "label": "Newest sound",
+            "min": 2,
+            "do": "f, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word.",
             "say": "f, fog. f, fun. f, fit."
           },
           {
-            "do": "Blending: say the sounds slowly with a gap; your child says the word.",
-            "say": "h, a, t. b, u, s. f, o, g."
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "f, i, n. What word?"
           },
           {
-            "do": "Play the game: tap the sounds, say the word, then pick the picture."
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say fan. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Fan. What sounds can you hear?"
           }
         ],
         "game": {
@@ -427,25 +425,25 @@
         "name": "Thu",
         "sound": "l",
         "title": "New sound: l",
-        "minutes": 12,
+        "minutes": 10,
         "steps": [
           {
-            "do": "Show the letter l. Tongue tip behind the top teeth: lll. Say it three times together."
-          },
-          {
-            "do": "Your child says the sound, then the word.",
+            "label": "Newest sound",
+            "min": 2,
+            "do": "l, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then a quick check of all four: h, b, f, l.",
             "say": "l, leg. l, lip. l, log."
           },
           {
-            "do": "Quick check of all four: show h, b, f, l one at a time. Say any missed one together.",
-            "say": "What sound?"
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "l, o, ck. What word?"
           },
           {
-            "do": "Play the game: one letter changes each time. Your child says the new word, then taps the letter that changed."
-          },
-          {
-            "do": "Off screen, if it was easy: say bus; your child writes it. Check it together, sound by sound.",
-            "say": "b, u, s."
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say leg. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Leg. What sounds can you hear?"
           }
         ],
         "game": {
@@ -584,17 +582,21 @@
         "minutes": 10,
         "steps": [
           {
-            "do": "Sound review: open review cards in More ways to play below and go through every sound so far. Say any wobbly one together; no timer."
-          },
-          {
-            "do": "Tricky words I and is: show the word, say it, spot the tricky part, say it again.",
+            "label": "This week's sounds",
+            "min": 2,
+            "do": "Show h, b, f and l one at a time. Your child says each sound. Then the tricky words: show the word, say it, spot the tricky part, say it again.",
             "say": "The s in is says z."
           },
           {
-            "do": "Read the book sent home this week, or any book. Praise every blend; read any hard word to your child and move on."
+            "label": "Blend",
+            "min": 3,
+            "do": "Blend it: five words using all four sounds, with dots and lines, then without.",
+            "say": "h, u, g. What word?"
           },
           {
-            "do": "Off screen, if it was easy: say hat and leg; your child writes them. Check together, sound by sound."
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say hat and leg. Your child writes them on paper. Check together, sound by sound."
           }
         ],
         "game": {
@@ -602,7 +604,8 @@
           "say": "Say the word. Then tap the tricky part.",
           "words": [
             "I",
-            "is"
+            "is",
+            "the"
           ]
         },
         "stretch": {

@@ -68,6 +68,8 @@
   .script li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; }
   .script li::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; border-radius: 999px; background: var(--moss-soft); color: var(--moss); font-family: var(--display); font-weight: 600; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
   .script .do { line-height: 1.5; }
+  .script .lbl { font-family: var(--display); font-weight: 600; color: var(--moss); font-size: 0.95rem; margin-bottom: 2px; }
+  .script .talk { display: flex; flex-wrap: wrap; gap: 0 8px; }
   .bubble { display: inline-block; margin-top: 8px; background: var(--sky-soft); border-radius: 14px 14px 14px 4px; padding: 8px 14px; font-family: var(--display); font-size: 1.1rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
   .bubble::before { content: "\201C"; opacity: 0.6; margin-right: 2px; } .bubble::after { content: "\201D"; opacity: 0.6; margin-left: 2px; }
   .say { display: block; margin-top: 6px; padding-left: 14px; border-left: 3px solid var(--sky); font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: var(--sky); line-height: 1.4; }
@@ -152,6 +154,7 @@
   .help h2 { font-size: 1.4rem; margin-top: 36px; }
   .help h3 { font-size: 1.1rem; margin-top: 20px; font-weight: 500; }
   .help p { margin-top: 10px; }
+  .help ul { margin: 12px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 8px; }
   .help ol { margin: 12px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 12px; }
   .help li::marker { color: var(--moss); font-family: var(--display); font-weight: 600; }
   footer { margin-top: 64px; color: var(--ink-soft); font-size: 0.9rem; max-width: 70ch; }
@@ -195,6 +198,7 @@
   .letter.revealed, .letter.changed, .letter.right { background: var(--moss-soft); border-color: var(--moss); color: var(--moss); }
   .letter.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
   .letter.hint { animation: breathe 800ms ease-in-out 1; }
+  .why { text-align: center; color: var(--sky); font-family: var(--display); font-size: 1.1rem; max-width: 40ch; margin: 0 auto; min-height: 1.4em; }
   .letter.used { opacity: 0.25; pointer-events: none; }
   /* Blend it: like the class word cards. A dot under a letter that makes one sound, a line under letters that make one sound together */
   .bl-card { background: var(--card); border: 14px solid var(--apricot); border-radius: 24px; padding: 36px 48px 20px; box-shadow: 0 1px 0 var(--rule); }
@@ -315,25 +319,41 @@
       <h2 style="margin-top:32px;">What this is</h2>
       <p>A weekly page made by a parent in the class, not by the school, and not reviewed by the school. Each Friday the school's update says which sounds and maths topic the children did and what comes next; this page turns that into about 15 minutes a day at home: 10 of phonics, 5 of maths.</p>
       <p>Nothing is stored and nobody is tracked. If the page is out of date, a notice at the top says so. If something is wrong, tell the parent who shared the link.</p>
-      <h2>How to say the sounds</h2>
-      <p>Pure sounds, short and clean. The usual slip is adding "uh": "buh" instead of b, "luh" instead of l. It makes blending harder later, so it is worth getting right from the start. The cues on this page are a reminder; the model to copy is school's own scheme, which has a free video of every sound: <a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle for parents</a>.</p>
-      <h2>Five rules for the practice slot</h2>
+      <h2>The day in five steps</h2>
+      <p>About ten minutes, in one go or two short ones. Home practises what school has taught; it never teaches a sound first.</p>
       <ol>
-        <li><b>Sound it out, don't guess.</b> If your child guesses from the picture, cover the picture and point to the first letter. Guessing works on easy books and stops working later.</li>
-        <li><b>Short, and end well.</b> Ten minutes. Stop while it is still going well, even if you have not finished. A grim session costs more than it gains.</li>
-        <li><b>Read aloud every day as well,</b> with a book your child chooses. That is for pleasure and words, not a phonics lesson. Read any hard word to them and keep going.</li>
-        <li><b>Never make it a bargain.</b> No "do your sounds and then you can have the iPad". It becomes a chore to survive.</li>
-        <li><b>Talk.</b> Understanding what is read comes from knowing about the world, which comes from conversation. Ask what happened, what might happen next, why.</li>
+        <li><b>Revisit, 2 minutes.</b> Every sound so far, quickly, then the tricky words so far.</li>
+        <li><b>Newest sound, 2 minutes.</b> The sound school taught most recently. If you are not sure it has been taught, skip it.</li>
+        <li><b>Blend, 3 minutes.</b> Robot talk out loud first, then Blend it: with dots and lines, then without.</li>
+        <li><b>Spell and write, 2 minutes.</b> Say a word; your child says its sounds and writes it on paper.</li>
+        <li><b>Books, every day.</b> Your child reads the school practice book; you read the sharing book to them and talk about it. This matters as much as the other four.</li>
       </ol>
-      <h2>What to do when</h2>
-      <h3>Your child guesses from the picture</h3>
-      <p>Say "let's check with the letters", point to the first sound, and blend it together. Praise the blending, not the guess.</p>
-      <h3>They get stuck blending</h3>
-      <p>Say the sounds yourself slowly with a gap, then faster, then say the word. Let them repeat it. Then try the next word; do not drill the same one.</p>
-      <h3>They will not sit down</h3>
-      <p>Do it standing up, in the bath, on the stairs. Play one game only. If it is a no, skip today and keep the page for tomorrow; one missed day costs nothing.</p>
-      <h3>They melt down</h3>
-      <p>Stop. The session is over for today, with no consequence. Reading time must stay a good time or everything else here stops working.</p>
+      <h2>How to say the sounds</h2>
+      <p>Pure sounds, short and clean: mmm, not muh; t, p and k quick. Adding "uh" makes blending harder later. Copy school's own model: <a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle's parent videos</a> and <a href="https://www.littlewandle.org.uk/download/293468/" target="_blank" rel="noopener">sound sheet</a>, which also has the phrase for writing each letter. Use school's words too: sound, tricky word, tricky part, blend.</p>
+      <h2>When it goes wrong</h2>
+      <p>Show the right way, do it together, let them do it alone, then move on. Two tries at most, then you read it and carry on.</p>
+      <h3>A wrong sound</h3>
+      <p>"That one says h. Say it with me: h. Your turn." Come back to it before the end.</p>
+      <h3>Stuck blending</h3>
+      <p>Point under each letter. "Say the sounds... now push them together." Still stuck: say it slowly yourself, then together, then them. Then the next word; do not drill the same one.</p>
+      <h3>A tricky word</h3>
+      <p>"Which part is tricky? In <i>is</i>, the s says z." Then read it together.</p>
+      <h3>Stuck in the practice book</h3>
+      <p>Wait a few seconds. One prompt: "sound it out". Still stuck: read it to them and carry on, and note the word in the reading record.</p>
+      <h3>Never say</h3>
+      <p>"Look at the picture", "what does it start with?", the letter's name instead of its sound, "you know this one", "this is easy". Guessing from pictures works on easy books and stops working later.</p>
+      <h3>Praise</h3>
+      <p>Name what they did: "You said every sound and pushed them together." No prizes for reading, and never a bargain such as "do your sounds, then the iPad".</p>
+      <h3>They will not sit down, or melt down</h3>
+      <p>Do it standing up, in the bath, on the stairs, or stop for today with no consequence. On a tired day, do the books only. Reading time must stay a good time.</p>
+      <h2>Talk to the teacher if</h2>
+      <ul>
+        <li>after several weeks they still cannot blend spoken sounds (c-a-t to cat)</li>
+        <li>they cannot hear rhymes or clap the beats in a word</li>
+        <li>they are falling behind the sounds the class is on</li>
+        <li>they answer differently when spoken to from behind, have had glue ear, or you wonder about their eyesight</li>
+      </ul>
+      <p>Ask early: school would rather help a child keep up than wait for them to catch up.</p>
       <h2>More practice elsewhere</h2>
       <div class="links">
         <a class="link" href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener"><div class="n">Little Wandle for parents</div><div class="d">The scheme school uses. Videos of every sound said correctly, by term, and how blending and tricky words are taught.</div></a>
@@ -390,7 +410,7 @@
   const pic = (w, cls = "pic") => (w in PICS) ? `<img class="${cls}" src="pictures/${esc(w)}.svg" alt="${esc(w)}">` : `<span>${esc(w)}</span>`;
   // the words to say, inside quotes, become sky "say" lines
   const script = t => esc(t).replace(/&quot;([^&]+?)&quot;/g, (m, q) => /\s/.test(q.trim()) ? `<span class="say">"${q}"</span>` : `"${q}"`);
-  const stepHtml = st => typeof st === "string" ? `<li><div class="do">${script(st)}</div></li>` : `<li><div><div class="do">${esc(st.do)}</div>${st.say ? `<span class="bubble">${esc(st.say)}</span>` : ""}</div></li>`;
+  const stepHtml = st => typeof st === "string" ? `<li><div class="do">${script(st)}</div></li>` : `<li><div>${st.label ? `<div class="lbl">${esc(st.label)}${st.min ? ` · ${st.min} min` : ""}</div>` : ""}<div class="do">${esc(st.do)}</div>${st.say ? `<span class="bubble">${esc(st.say)}</span>` : ""}${st.talk ? `<div class="talk">${st.talk.map(t => `<span class="bubble">${esc(t)}</span>`).join("")}</div>` : ""}</div></li>`;
 
   // ---------- audio: clips, speech fallback, three small sounds ----------
   let manifest = {};
@@ -442,6 +462,7 @@
     } catch (e) {}
   }
   const SFX = { tap: () => tone(220, 0.06, "triangle", 0.05), right: () => { tone(659, 0.14, "sine", 0.07); tone(784, 0.18, "sine", 0.07, 0.12); }, finish: () => { tone(110, 0.12, "triangle", 0.1); tone(523, 0.25, "sine", 0.06, 0.08); } };
+  const LOOK = { blend: "Say the sounds again, then push them together.", alien: "Say the sounds, then ask: is it a word we know?", rhyme: "Listen to the end of each word.", tricky: "Read the note. Which letters do not say their usual sound?", count: "Count each row, then look again." };
   const PH = { bad: "Not that one. Listen again.", again: "Try again.", done: "All done. Well played.", good: "Well done." };
 
   // ---------- week strip, stale banner, half term ----------
@@ -477,7 +498,7 @@
     const idx = TERM.graphemes.findIndex(x => x.g === entry.focus[0]);
     const taught = TERM.graphemes.slice(0, idx).map(x => x.g);
     const trickyUpTo = TERM.tricky.slice(0, Math.max(0, TERM.tricky.findIndex(t => t.word === entry.tricky) + 1));
-    return { summary: true, weekOf: entry.weekOf, label: entry.label, status: entry.status, phonics: { focus: entry.focus, taught, cues: W0.phonics.cues, tricky: trickyUpTo.length ? trickyUpTo : [], days: {}, memory: W0.phonics.memory, rhymes: W0.phonics.rhymes }, maths: { topic: entry.maths, days: {} } };
+    return { summary: true, weekOf: entry.weekOf, label: entry.label, status: entry.status, phonics: { focus: entry.focus, taught, tricky: trickyUpTo.length ? trickyUpTo : [], days: {}, memory: W0.phonics.memory, rhymes: W0.phonics.rhymes }, maths: { topic: entry.maths, days: {} } };
   }
 
   // ---------- tabs ----------
@@ -560,10 +581,14 @@
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !play.hidden) closePlay(); });
 
   // feedback helpers shared by games
-  async function wrong(el, saidWord, misses, hintSel) {
+  // a wrong answer says the word chosen, then what to look or listen for (never just "wrong")
+  async function wrong(el, saidWord, misses, hintSel, look) {
     el.classList.add("wrong"); setTimeout(() => el.classList.remove("wrong"), 450);
+    const st = el.closest(".stage") || stage;
+    let why = st.querySelector(".why"); if (!why) { why = document.createElement("p"); why.className = "why"; why.setAttribute("aria-live", "polite"); st.appendChild(why); }
+    why.textContent = look ? (saidWord ? `That is ${saidWord}. ${look}` : look) : "";
     if (saidWord) await speak(saidWord);
-    await speak(PH.bad);
+    await speak(look || PH.bad);
     if (misses >= 2 && hintSel) (el.closest(".stage") || stage).querySelectorAll(hintSel).forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); });
   }
   const tileBtn = (w, k, extra = "") => `<button class="tile" data-k="${k}" aria-label="${esc(w)}" ${extra}>${pic(w)}</button>`;
@@ -582,7 +607,7 @@
         if (it.match) {
           b.classList.add("right"); found++; pm.progress(found, total); SFX.right(); await speak(it.word);
           if (found === total) pm.finish(misses ? "All found!" : "All found, first time!", () => GAMES.hunt(pm, g));
-        } else { misses++; await wrong(b, it.word, misses, '.tile[data-m="true"]:not(.right)'); }
+        } else { misses++; await wrong(b, it.word, misses, '.tile[data-m="true"]:not(.right)', g.say); }
       }));
     },
     blendpick(pm, g) {
@@ -601,7 +626,7 @@
         stage.querySelectorAll("#pick .tile").forEach(t => t.addEventListener("click", async () => {
           const o = opts[Number(t.dataset.k)]; SFX.tap();
           if (o.right) { t.classList.add("right"); SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("All the words blended!", () => { i = 0; misses = 0; word(); }); }
-          else { misses++; await wrong(t, o.word, misses, '#pick .tile[data-r="true"]'); }
+          else { misses++; stage.querySelectorAll("#lt .letter").forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); }); await wrong(t, o.word, misses, '#pick .tile[data-r="true"]', LOOK.blend); }
         }));
       }
       word();
@@ -627,12 +652,12 @@
       function word() {
         const w = g.words[i], t = W.phonics.tricky.find(x => x.word === w) || TERM.tricky.find(x => x.word === w), targets = new Set(t.trickyLetters), got = new Set();
         pm.progress(i, g.words.length);
-        pm.draw(`<div class="letters" id="tw">${[...w].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("")}</div><p class="quiet" style="max-width:40ch;text-align:center;">${esc(t.note)}</p><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
+        pm.draw(`<div class="letters" id="tw">${[...w].map((c, k) => `<button class="letter" data-k="${k}" aria-label="${esc(c)}">${esc(c)}</button>`).join("")}</div><p class="quiet" id="tw-note" style="max-width:40ch;text-align:center;">${esc(t.note)}</p><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
         $("hear").addEventListener("click", () => speak(w)); speak(w);
         stage.querySelectorAll("#tw .letter").forEach(b => b.addEventListener("click", async () => {
           const k = Number(b.dataset.k); SFX.tap();
           if (targets.has(k)) { b.classList.add("right"); got.add(k); if (got.size === targets.size) { SFX.right(); await speak(PH.good); i++; if (i < g.words.length) word(); else pm.finish("Tricky parts all spotted!", () => { i = 0; word(); }); } }
-          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); speak(PH.again); }
+          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); const n = stage.querySelector("#tw-note"); n.classList.add("why"); speak(LOOK.tricky); }
         }));
       }
       word();
@@ -652,7 +677,7 @@
           const x = bank[Number(b.dataset.k)]; SFX.tap();
           if (x === w.segments[next]) {
             b.classList.add("used"); slots[next].textContent = x; slots[next].classList.add("filled"); next++;
-            if (next === w.segments.length) { SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("Every word spelled!", () => { i = 0; misses = 0; word(); }); }
+            if (next === w.segments.length) { SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("Every word spelt!", () => { i = 0; misses = 0; word(); }); }
           } else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(w.word); if (misses >= 2) stage.querySelectorAll("#bank .letter").forEach(h => { if (bank[Number(h.dataset.k)] === w.segments[next]) { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }); }
         }));
       }
@@ -670,7 +695,7 @@
         stage.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
           if ((b.dataset.real === "true") === it.real) { b.classList.add("right"); SFX.right(); await speak(it.real ? "Real word." : "Alien word."); i++; if (i < items.length) item(); else pm.finish("Real and alien all sorted!", () => { i = 0; misses = 0; item(); }); }
-          else { misses++; await wrong(b, it.word, misses, `.tile[data-real="${it.real}"]`); }
+          else { misses++; await wrong(b, it.word, misses, `.tile[data-real="${it.real}"]`, LOOK.alien); }
         }));
       }
       item();
@@ -721,7 +746,7 @@
         stage.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
           if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
-          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.kind === "which" ? PH.bad : sayQ(qu)); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.kind === "which" ? LOOK.count : sayQ(qu)); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
         }));
       }
       q();
@@ -758,14 +783,14 @@
         stage.querySelectorAll("#ro .tile").forEach(t => t.addEventListener("click", async () => {
           const o = opts[Number(t.dataset.k)]; SFX.tap(); await speak(o.word);
           if (o.right) { t.classList.add("right"); SFX.right(); await speak(q.target.word); r++; if (r < g.rounds.length) round(); else pm.finish("All the rhymes found!", () => { r = 0; misses = 0; round(); }); }
-          else { misses++; await wrong(t, null, misses, '#ro .tile[data-r="true"]'); }
+          else { misses++; await wrong(t, null, misses, '#ro .tile[data-r="true"]', LOOK.rhyme); await speak(q.target.word); }
         }));
       }
       round();
     },
-    // Blend it: press each sound button and say the sound, say the word, then check.
+    // Blend it: touch each dot or line and say the sound, say the word, then check.
     // Sounds are not played: a computer voice adds "uh" or says the letter name, so the child says them.
-    // g.plain: the back of the class card, the word with no buttons.
+    // g.plain: the back of the class card, the word with no dots and lines.
     blend(pm, g) {
       const stage = pm.stage;
       let i = 0;
@@ -778,11 +803,11 @@
         });
       }
       function end() {
-        pm.finish(g.plain ? "Read with no buttons!" : "All the words blended!", () => { i = 0; word(); },
-          g.plain ? "" : `<p class="quiet">Now try the same words with no sound buttons.</p><div class="pm-actions"><button class="btn" id="bl-plain">Without buttons</button></div>`);
+        pm.finish(g.plain ? "Read with no dots and lines!" : "All the words blended!", () => { i = 0; word(); },
+          g.plain ? "" : `<p class="quiet">Now try the same words with no dots and lines.</p><div class="pm-actions"><button class="btn" id="bl-plain">Without dots and lines</button></div>`);
         const b = stage.querySelector("#bl-plain");
         if (b) b.addEventListener("click", () => {
-          const say = "Read each word with no buttons. Then check it.", inline = stage.id === "more-stage";
+          const say = "Read each word with no dots and lines. Then check it.", inline = stage.id === "more-stage";
           $(inline ? "more-task" : "pm-task").textContent = say; $(inline ? "more-say" : "pm-say").onclick = () => speak(say);
           speak(say); GAMES.blend(pm, { ...g, say, plain: true });
         });
@@ -791,15 +816,15 @@
         const w = g.words[i];
         let next = 0;
         pm.progress(i, g.words.length);
-        pm.draw(`<div class="bl-card"><div class="bl-word">${w.segments.map((s, k) => `<div class="bl-g" data-k="${k}"><span class="bl-l">${esc(s)}</span>${g.plain ? "" : `<button class="bl-btn ${s.length > 1 ? "bar" : "dot"}" data-k="${k}" aria-label="sound button ${k + 1}"><span></span></button>`}</div>`).join("")}</div></div>
-          <div class="bl-check" id="bl-check"><p class="quiet">${g.plain ? "Read the word. Sound it out in your head if you need to." : "Press each sound button and say the sound."}</p></div>`);
+        pm.draw(`<div class="bl-card"><div class="bl-word">${w.segments.map((s, k) => `<div class="bl-g" data-k="${k}"><span class="bl-l">${esc(s)}</span>${g.plain ? "" : `<button class="bl-btn ${s.length > 1 ? "bar" : "dot"}" data-k="${k}" aria-label="sound ${k + 1}"><span></span></button>`}</div>`).join("")}</div></div>
+          <div class="bl-check" id="bl-check"><p class="quiet">${g.plain ? "Read the word. Sound it out in your head if you need to." : "Touch each dot and line and say the sound."}</p></div>`);
         if (g.plain) { check(w); return; }
         const groups = [...stage.querySelectorAll(".bl-g")], btns = [...stage.querySelectorAll(".bl-btn")];
         btns.forEach(b => b.addEventListener("click", () => {
           const k = Number(b.dataset.k);
           if (k < next) return;
           if (k > next) { btns[next].classList.add("hint"); setTimeout(() => btns[next] && btns[next].classList.remove("hint"), 900); return; }
-          SFX.tap(); groups[k].classList.add("on"); b.setAttribute("aria-label", "sound button " + (k + 1) + ", pressed"); next++;
+          SFX.tap(); groups[k].classList.add("on"); b.setAttribute("aria-label", "sound " + (k + 1) + ", said"); next++;
           if (next === w.segments.length) { speak("Now say the word."); check(w); }
         }));
       }
@@ -857,7 +882,7 @@
   // ---------- blend it: five words a day from the term bank ----------
   // Words hold that day's sound (Friday: the week's sounds) and only sounds taught by then.
   // The same five each time the day is opened; a day in the week file can name its own with "blend".
-  const BLEND_IT = "Press each sound button and say the sound. Then say the word.";
+  const BLEND_IT = "Touch each dot and line and say the sound. Then say the word.";
   function seeded(list, key) {
     let h = 2166136261; for (const ch of key) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
     const rnd = () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
@@ -875,7 +900,10 @@
     // one word with two letters making one sound, when there is one, so the line under them gets used
     const two = pool.find(e => e[1].some(x => x.length > 1) && !pick.includes(e)); if (two && !pick.some(e => e[1].some(x => x.length > 1))) pick.push(two);
     pool.forEach(e => { if (pick.length < 5 && !pick.includes(e)) pick.push(e); });
-    return { type: "blend", say: BLEND_IT, words: seeded(pick.slice(0, 5), W.weekOf + day).map(([w, s]) => ({ word: w, segments: s })) };
+    // words whose first sound can be stretched (ssat, mmap) are easier first blends, so they lead
+    const held = s => "smnflraeiou".includes(s[0]);
+    const order5 = seeded(pick.slice(0, 5), W.weekOf + day).sort((a, b) => held(b[1]) - held(a[1]));
+    return { type: "blend", say: BLEND_IT, words: order5.map(([w, s]) => ({ word: w, segments: s })) };
   }
 
   // ---------- sessions built from the whole term (half term, past weeks) ----------
@@ -934,6 +962,10 @@
     if (!tr.length) return "";
     return `<div class="tricky"><span class="lab">Tricky words</span>${tr.map(t => `<span class="tchip" title="${esc(t.note)}">${[...t.word].map((ch, i) => t.trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</span>`).join("")}<span class="how">show it · say it · spot the tricky part · say it again</span></div>`;
   }
+  // The same five steps every day: revisit, newest sound, blend, spell and write, books.
+  // The week file holds the middle three; revisit and books are the same shape every day.
+  const revisitStep = () => ({ label: "Revisit", min: 2, do: `Flick through every sound taught so far with the review cards below. Your child says each one. Say a wobbly one together, then come back to it at the end. Then the tricky words: ${W.phonics.tricky.map(t => t.word).join(", ")}.`, say: "What sound is this?" });
+  const BOOKS_STEP = { label: "Books", do: "Any time today. Your child reads the school practice book; reading it again on other days is the point, so easy is good. Then you read the sharing book to them and talk about it.", talk: ["What happened?", "What do you think happens next?", "Has that ever happened to you?"] };
   function renderPhonics() {
     const s = $("ph-script"), side = $("ph-side");
     if (W.summary) {
@@ -949,11 +981,12 @@
       side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
     }
     const d = W.phonics.days[day];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes</p><ol>${d.steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
+    const steps = [revisitStep(), ...d.steps, BOOKS_STEP];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
     const hero = d.sound
-      ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">${esc(W.phonics.cues[d.sound])}</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it said properly (school's scheme)</a></p></div></div>`
+      ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">Say it short and pure, the way school does: no \u201cuh\u201d on the end.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it on Little Wandle's parent page</a> · <a href="https://www.littlewandle.org.uk/download/293468/" target="_blank" rel="noopener">school's sound sheet</a></p></div></div>`
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">Tricky word recap. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
-    const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Press the sound buttons, then say the word." });
+    const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Say each sound along the dots and lines, then the word." });
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     side.innerHTML = hero + bl.html + main.html + (st ? st.html : "");
@@ -965,7 +998,7 @@
     { id: "memory", label: "memory match", game: () => ({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }) },
     { id: "rhymes", label: "rhyme picker", game: () => ({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }) },
     { id: "review", label: "review cards", game: () => ({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }) },
-    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Trace the letter with a finger or the mouse. Start at the top.", letters: W.phonics.focus }) }
+    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus }) }
   ];
   const moreStage = $("more-stage");
   let morePm = null;

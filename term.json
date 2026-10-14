@@ -676,6 +676,15 @@
         0
       ],
       "note": "One letter that says its own name."
+    },
+    {
+      "word": "the",
+      "trickyLetters": [
+        0,
+        1,
+        2
+      ],
+      "note": "th is a sound to come, and the e says a quick uh."
     }
   ],
   "maths": {
