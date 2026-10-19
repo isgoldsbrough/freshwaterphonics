@@ -72,6 +72,7 @@ for (const d of Object.values(week.maths.days)) {
   for (const block of [d.check, d.stretch]) {
     add(block.say);
     block.questions.forEach(q => {
+      if (q.say) { add(q.say); return; }
       if (q.kind === "which") return;
       const spoken = q.pattern.map(tileName).join(", ");
       const tail = q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?";

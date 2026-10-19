@@ -166,7 +166,7 @@ for (const t of week.phonics.tricky) {
 
 if (!/^\d{4}-\d{2}-\d{2}$/.test(week.weekOf)) errors.push("weekOf must be YYYY-MM-DD");
 if (new Date(week.weekOf).getDay() !== 1) warn.push("weekOf is not a Monday");
-if (!["confirmed", "expected"].includes(week.status)) errors.push("status must be confirmed or expected");
+if (!["confirmed", "expected", "review"].includes(week.status)) errors.push("status must be confirmed, expected or review");
 
 warn.forEach(w => console.warn("warning:", w));
 if (errors.length) {

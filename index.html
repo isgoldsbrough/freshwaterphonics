@@ -391,6 +391,11 @@
       fetch("weeks/index.json", { cache: "no-cache" }).then(r => r.json()),
       fetch("term.json", { cache: "no-cache" }).then(r => r.json())
     ]);
+    // a week published ahead (e.g. before a holiday) switches on by itself on its Monday
+    const n0 = new Date(), iso0 = n0.getFullYear() + "-" + String(n0.getMonth() + 1).padStart(2, "0") + "-" + String(n0.getDate()).padStart(2, "0");
+    const live = IDX.weeks.filter(w => w.file && w.weekOf <= iso0).sort((a, b) => (a.weekOf < b.weekOf ? 1 : -1))[0];
+    if (live && live.weekOf > IDX.current) { W0 = await fetch("weeks/" + live.file, { cache: "no-cache" }).then(r => r.json()); IDX.current = live.weekOf; }
+    IDX.weeks = IDX.weeks.filter(w => w.weekOf <= IDX.current);
     W = W0;
   } catch (e) {
     document.getElementById("week-meta").innerHTML = "<b>Could not load this week's content.</b> Check your connection and reload.";
@@ -485,9 +490,9 @@
   if (stale) { $("stale-banner").hidden = false; $("stale-banner").innerHTML = `<b>This page is out of date.</b> It shows the week of ${esc(formatDate(W0.weekOf))}; the sounds may be last week's. Check with school or the parent who shared the link.`; }
   function renderStrip() {
     const half = inBreak && !W.summary && W === W0;
-    $("week-letters").textContent = W.phonics.focus.join(" ");
+    $("week-letters").textContent = W.phonics.focus.length ? W.phonics.focus.join(" ") : "review";
     const options = IDX.weeks.map(w => `<option value="${esc(w.weekOf)}"${w.weekOf === W.weekOf ? " selected" : ""}>${esc(w.label.toLowerCase())}${w.weekOf === IDX.current ? " (this week)" : ""}</option>`).join("");
-    $("week-meta").innerHTML = `<span class="weekpick">choose a week, this one or an earlier one</span><select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet" style="display:inline-block;margin-top:8px;">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? "confirmed by school" : "expected, not yet confirmed by school"}`}</span>`;
+    $("week-meta").innerHTML = `<span class="weekpick">choose a week, this one or an earlier one</span><select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet" style="display:inline-block;margin-top:8px;">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? "confirmed by school" : W.status === "review" ? "review week: no new sounds until school says" : "expected, not yet confirmed by school"}`}</span>`;
     $("week-select").addEventListener("change", e => viewWeek(e.target.value));
     const v = $("viewing");
     v.hidden = W === W0;
@@ -539,7 +544,7 @@
     $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
       const d = W.phonics.days[n];
       const label = n === 0 ? "rest" : d.name;
-      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : "✓");
+      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : d.review ? esc(d.review[0]) + "…" : "✓");
       return `<button class="day${n === todayDay ? " today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
     }).join("");
     $("daypick").querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
@@ -902,7 +907,7 @@
     const d = W.phonics.days[day], bank = { ...TERM.words, ...(TERM.blend || {}) };
     if (d.blend) return { type: "blend", say: BLEND_IT, words: d.blend.map(w => ({ word: w, segments: bank[w] })) };
     const order = [...W.phonics.taught, ...W.phonics.focus];
-    const want = d.sound ? [d.sound] : W.phonics.focus;
+    const want = d.sound ? [d.sound] : (d.review || (W.phonics.focus.length ? W.phonics.focus : order));
     const allowed = new Set(d.sound ? order.slice(0, order.indexOf(d.sound) + 1) : order);
     const pool = seeded(Object.entries(bank).filter(([w, s]) => s.every(x => allowed.has(x)) && s.some(x => want.includes(x))), W.weekOf + "-" + day);
     const pick = [];
@@ -959,8 +964,8 @@
       <ol><li>Press Play on the recap and let it run: every sound on cards, a hunt, some blending, the tricky words.</li><li>Or pick one sound below for a five-minute go: find it, then blend it.</li><li>Finish with a book. Read any hard word to your child and keep going.</li></ol>${trickyHtml(TERM.tricky)}`;
     const recap = recapSession();
     const r = launcher(recap[1], { id: "half-recap", sticker: "★" }, { title: "Ten-minute recap", tag: "Every sound, a hunt, some blending, the tricky words. The page picks; you press Play.", list: recap });
-    const m = launcher(termMaths(), { id: "half-maths", sticker: "★" }, { title: "Maths from the whole term", tag: "More or fewer, which matches, what comes next." });
-    $("half-side").innerHTML = `<div class="hero"><div><p class="cue">The whole of Autumn 1 in one place: 20 sounds, 3 tricky words, matching, comparing and patterns.</p><p class="quiet" style="margin-top:8px;">${played.size ? `${played.size} of 20 sounds played on this computer.` : "Nothing is stored anywhere except a tick on this computer when a sound has been played."}</p></div></div>${r.html}${m.html}`;
+    const m = launcher(termMaths(), { id: "half-maths", sticker: "★" }, { title: "Maths from the whole term", tag: "More or fewer, which matches, what comes next, how many." });
+    $("half-side").innerHTML = `<div class="hero"><div><p class="cue">The whole of Autumn 1 in one place: 20 sounds, 3 tricky words (I, is, the), matching, comparing, patterns and the numbers 1, 2 and 3.</p><p class="quiet" style="margin-top:8px;">${played.size ? `${played.size} of 20 sounds played on this computer.` : "Nothing is stored anywhere except a tick on this computer when a sound has been played."}</p></div></div>${r.html}${m.html}`;
     r.wire(); m.wire();
     $("half-grid").innerHTML = TERM.graphemes.map(x => soundTile(x, played.has(x.g))).join("");
     wireSounds($("half-grid"), "half-", g => { const s = halfDone(); s.add(g); store.set(halfKey, JSON.stringify([...s])); });
@@ -988,12 +993,15 @@
     const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0].word);
     if (day === 0) {
       s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
+      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
     }
     const d = W.phonics.days[day];
-    const steps = [revisitStep(), ...d.steps, BOOKS_STEP];
+    // a review week's own first step already goes through the sounds
+    const steps = [...(W.status === "review" ? [] : [revisitStep()]), ...d.steps, BOOKS_STEP];
     s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
-    const hero = d.sound
+    const hero = d.review
+      ? `<div class="hero" style="flex-direction:column;align-items:flex-start;gap:14px;"><div class="big" style="font-size:${d.review.join(" ").length > 9 ? "3rem" : "3.6rem"};min-width:0;white-space:nowrap;text-align:left;">${esc(d.review.join(" "))}</div><div><p class="cue">Review: each sound quick and confident, before school brings new ones.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle's parent videos</a></p></div></div>`
+      : d.sound
       ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">Say it short and pure, the way school does: no \u201cuh\u201d on the end.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it on Little Wandle's parent page</a> · <a href="https://www.littlewandle.org.uk/download/293468/" target="_blank" rel="noopener">school's sound sheet</a></p></div></div>`
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">Tricky word recap. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
     const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Say each sound along the dots and lines, then the word." });
@@ -1008,7 +1016,7 @@
     { id: "memory", label: "memory match", game: () => ({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }) },
     { id: "rhymes", label: "rhyme picker", game: () => ({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }) },
     { id: "review", label: "review cards", game: () => ({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }) },
-    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus }) }
+    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus.length ? W.phonics.focus : W.phonics.taught }) }
   ];
   const moreStage = $("more-stage");
   let morePm = null;
@@ -1125,7 +1133,7 @@
     const s = $("m-script"), side = $("m-side");
     if (W.summary) {
       s.innerHTML = `<h2>${esc(W.label)}: maths</h2><p style="margin-top:12px;max-width:60ch;">That week's topic at school was <b>${esc(W.maths.topic)}</b>. The quick check here draws on the whole term so far.</p>`;
-      const m = launcher(termMaths(), { id: "mwk-" + W.weekOf, sticker: "★" }, { title: "Quick check from the term", tag: "More or fewer, which matches, what comes next." });
+      const m = launcher(termMaths(), { id: "mwk-" + W.weekOf, sticker: "★" }, { title: "Quick check from the term", tag: "More or fewer, which matches, what comes next, how many." });
       side.innerHTML = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p></div></div>${m.html}`; m.wire();
       return;
     }
@@ -1142,7 +1150,7 @@
 
   // ---------- week ----------
   $("wk-title").textContent = "This week at home: " + W.label.toLowerCase();
-  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : "✓")}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
+  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : p.review ? esc(p.review[0]) + "…" : "✓")}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
   $("wk-asks-block").hidden = !W.school.asks.length;
   $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
   $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;

@@ -691,7 +691,8 @@
     "topics": [
       "matching",
       "comparing amounts, size, mass and capacity",
-      "patterns"
+      "patterns",
+      "the numbers 1, 2 and 3"
     ],
     "questions": [
       {
@@ -951,6 +952,63 @@
           ]
         ],
         "correct": 1
+      },
+      {
+        "kind": "which",
+        "say": "Which row has three?",
+        "options": [
+          [
+            "apple",
+            "apple",
+            "apple"
+          ],
+          [
+            "apple",
+            "apple"
+          ],
+          [
+            "apple"
+          ]
+        ],
+        "correct": 0
+      },
+      {
+        "kind": "which",
+        "say": "Which row has two?",
+        "options": [
+          [
+            "star"
+          ],
+          [
+            "star",
+            "star"
+          ],
+          [
+            "star",
+            "star",
+            "star"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "which",
+        "say": "Which row has one?",
+        "options": [
+          [
+            "frog",
+            "frog",
+            "frog"
+          ],
+          [
+            "frog",
+            "frog"
+          ],
+          [
+            "frog"
+          ]
+        ],
+        "correct": 2
       }
     ]
   }

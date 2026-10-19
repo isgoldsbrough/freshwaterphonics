@@ -8,6 +8,15 @@
   },
   "weeks": [
     {
+      "weekOf": "2026-11-02",
+      "label": "Week of 2 November",
+      "file": "2026-11-02.json",
+      "focus": [],
+      "tricky": null,
+      "maths": "the numbers 1, 2 and 3 (home practice)",
+      "status": "review"
+    },
+    {
       "weekOf": "2026-10-12",
       "label": "Week of 12 October",
       "file": "2026-10-12.json",
@@ -18,8 +27,8 @@
         "l"
       ],
       "tricky": "the",
-      "maths": "patterns",
-      "status": "expected"
+      "maths": "the numbers 1, 2 and 3: finding, subitising, representing",
+      "status": "confirmed"
     },
     {
       "weekOf": "2026-10-05",
@@ -32,7 +41,7 @@
         "r"
       ],
       "tricky": "I",
-      "maths": "comparing amounts, size, mass and capacity",
+      "maths": "patterns",
       "status": "confirmed"
     },
     {
