@@ -26,4 +26,4 @@ cp weeks/2026-10-19.json weeks/current.json
 git add -A && git commit -m "Week of 19 October" && git push
 ```
 
-Pictures by OpenMoji (CC BY-SA 4.0). Fonts: ABeeZee and Fredoka from Google Fonts. Designed for a laptop; works on a phone. No tracking, no accounts, nothing stored.
+Pictures by OpenMoji (CC BY-SA 4.0). Fonts: ABeeZee and Fredoka from Google Fonts. Designed for a laptop; works on a phone. No tracking and no accounts. The daily time counter (aim 10 to 20 minutes) is kept in the browser's local storage on that computer only.

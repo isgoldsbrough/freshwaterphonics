@@ -47,6 +47,18 @@
   .banner { margin-top: 12px; background: var(--plum-soft); border-radius: var(--r); padding: 14px 20px; }
   .banner b { color: var(--plum); font-family: var(--display); font-weight: 500; }
 
+  .timebar { margin-top: 14px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 0.95rem; color: var(--ink-soft); }
+  .timebar b { color: var(--ink); font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
+  .timebar .track { position: relative; flex: 0 1 220px; height: 10px; border-radius: 999px; background: var(--rule); overflow: hidden; }
+  .timebar .zone { position: absolute; left: 50%; right: 0; top: 0; bottom: 0; background: var(--moss-soft); }
+  .timebar .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 999px; background: var(--sky); transition: width 600ms; }
+  .timebar.ok .fill { background: var(--moss); }
+  .timebar.over .fill { background: var(--apricot); }
+  .timebar .msg { flex-basis: 100%; }
+  .timebar button { border: none; background: var(--panel); color: var(--ink-soft); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 0.85rem; cursor: pointer; }
+  .tlog { display: grid; grid-template-columns: auto 1fr auto; gap: 8px 16px; align-items: center; max-width: 520px; margin-top: 12px; }
+  .tlog .track { height: 8px; border-radius: 999px; background: var(--rule); position: relative; overflow: hidden; }
+  .tlog .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: var(--moss); }
   nav.tabs { display: flex; gap: 28px; margin-top: 20px; border-bottom: 1px solid var(--rule); }
   nav.tabs button { background: none; border: none; font-size: 1.15rem; color: var(--ink-soft); padding: 10px 2px 12px; border-bottom: 3px solid transparent; margin-bottom: -1px; }
   nav.tabs button[aria-selected="true"] { color: var(--sky); border-color: var(--sky); }
@@ -261,6 +273,7 @@
   </div>
   <div class="banner" id="stale-banner" hidden></div>
   <div class="viewing" id="viewing" hidden></div>
+  <div class="timebar" id="timebar" aria-live="polite"><span>Today <b id="tb-min">0 min</b> · aim 10 to 20</span><span class="track" aria-hidden="true"><span class="zone"></span><span class="fill" id="tb-fill"></span></span><button id="tb-pause" aria-pressed="false">pause</button><span class="msg quiet" id="tb-msg"></span></div>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button role="tab" id="tab-btn-today" aria-selected="true" aria-controls="panel-today">phonics</button>
@@ -313,6 +326,7 @@
 
   <div id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
     <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
+    <section class="block"><h2>Time on here, last 7 days</h2><p class="quiet">Counts only while the page is open and in use; it stops by itself after two minutes with no taps. Kept on this computer only.</p><div class="tlog" id="wk-time"></div></section>
     <section class="block" id="wk-asks-block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
     <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
@@ -323,7 +337,7 @@
     <div class="help">
       <h2 style="margin-top:32px;">What this is</h2>
       <p>A weekly page made by a parent in the class, not by the school, and not reviewed by the school. Each Friday the school's update says which sounds and maths topic the children did and what comes next; this page turns that into about 15 minutes a day at home: 10 of phonics, 5 of maths.</p>
-      <p>Nothing is stored and nobody is tracked. If the page is out of date, a notice at the top says so. If something is wrong, tell the parent who shared the link.</p>
+      <p>Nothing is sent anywhere and nobody is tracked. The time counter is kept on this computer only. If the page is out of date, a notice at the top says so. If something is wrong, tell the parent who shared the link.</p>
       <h2>The day in five steps</h2>
       <p>About ten minutes, in one go or two short ones. Home practises what school has taught; it never teaches a sound first.</p>
       <ol>
@@ -1173,6 +1187,34 @@
   $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
 
   $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. ${Object.values(SOUNDS).some(x => x.source === "commons") ? `Some sounds from <a href="https://commons.wikimedia.org/wiki/Category:IPA_audio" target="_blank" rel="noopener">Wikimedia Commons</a> recordings, CC BY-SA 3.0. ` : ""}Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
+
+  // ---------- time today: active minutes on this computer, aim 10 to 20 ----------
+  (function timer() {
+    const KEY = "fp-time", IDLE = 120, AIM_LO = 10, AIM_HI = 20;
+    const load = () => { try { return JSON.parse(store.get(KEY) || "{}"); } catch (e) { return {}; } };
+    let log = load(), last = Date.now(), paused = false;
+    const day = () => todayISO();
+    ["pointerdown", "keydown", "wheel", "touchstart"].forEach(ev => document.addEventListener(ev, () => { last = Date.now(); }, { passive: true }));
+    function show() {
+      const sec = log[day()] || 0, min = Math.floor(sec / 60);
+      $("tb-min").textContent = min + " min";
+      $("tb-fill").style.width = Math.min(100, sec / (AIM_HI * 60) * 100) + "%";
+      const tb = $("timebar"); tb.classList.toggle("ok", min >= AIM_LO && min < AIM_HI); tb.classList.toggle("over", min >= AIM_HI);
+      $("tb-msg").textContent = paused ? "Paused. Tap resume when she is back." : min >= AIM_HI ? "20 minutes: a good place to stop for today." : min >= AIM_LO ? "10 minutes done: finish what she is on, or carry on to 20." : "";
+      const rows = []; const d0 = new Date(day() + "T12:00:00");
+      for (let k = 6; k >= 0; k--) { const d = new Date(d0); d.setDate(d.getDate() - k); const iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); const m = Math.floor((log[iso] || 0) / 60); rows.push(`<span>${d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}</span><span class="track"><span class="fill" style="width:${Math.min(100, m / AIM_HI * 100)}%"></span></span><span>${m} min</span>`); }
+      $("wk-time").innerHTML = rows.join("");
+    }
+    $("tb-pause").addEventListener("click", () => { paused = !paused; $("tb-pause").textContent = paused ? "resume" : "pause"; $("tb-pause").setAttribute("aria-pressed", String(paused)); last = Date.now(); show(); });
+    setInterval(() => {
+      const busy = current && !current.paused;
+      if (paused || document.visibilityState !== "visible" || (!busy && Date.now() - last > IDLE * 1000)) return;
+      log = load(); log[day()] = (log[day()] || 0) + 5;
+      const keep = Object.keys(log).sort().slice(-60); log = Object.fromEntries(keep.map(k => [k, log[k]]));
+      store.set(KEY, JSON.stringify(log)); show();
+    }, 5000);
+    show();
+  })();
 
   // ---------- go ----------
   function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); }
