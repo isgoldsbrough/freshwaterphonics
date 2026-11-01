@@ -91,7 +91,6 @@
   .launch.stretch { background: var(--apricot-soft); }
   .launch.challenge { background: var(--sky-soft); }
   .launch.challenge .lab { color: var(--sky); }
-  .paper-line { margin: 8px 4px 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.4; }
   .launch .pics { display: flex; gap: 6px; }
   .launch .pics img { width: 44px; height: 44px; background: var(--paper); border-radius: 12px; padding: 5px; }
   .launch h3 { font-size: 1.15rem; font-weight: 500; }
@@ -152,7 +151,6 @@
   .stamp small { font-size: 0.72rem; color: inherit; opacity: 0.8; }
   .stamp.now { background: var(--sky-soft); color: var(--sky); transform: rotate(-6deg); }
   .stamp.next { background: transparent; border: 2px dashed var(--rule); color: var(--ink-soft); }
-  textarea.share { width: 100%; max-width: 60ch; border: none; border-radius: var(--r); background: var(--panel); color: var(--ink); font-family: inherit; font-size: 0.95rem; padding: 16px; min-height: 150px; resize: vertical; display: block; }
   .help { max-width: 60ch; }
   .help h2 { font-size: 1.4rem; margin-top: 36px; }
   .help h3 { font-size: 1.1rem; margin-top: 20px; font-weight: 500; }
@@ -319,7 +317,6 @@
     <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
-    <section class="block"><h2>Share this week</h2><textarea class="share" id="share-text" readonly aria-label="Message to share"></textarea><p style="margin-top:12px;"><button class="btn secondary" id="copy-btn" style="background:var(--panel);">Copy message</button> <span class="quiet" id="copy-status"></span></p></section>
   </div>
 
   <div id="panel-help" role="tabpanel" aria-labelledby="tab-btn-help" hidden>
@@ -899,7 +896,7 @@
   function launcher(game, meta, opts = {}) {
     const id = meta.id;
     const title = (opts.title || TITLES[game.type]); const cap = title.charAt(0).toUpperCase() + title.slice(1);
-    const html = `<div class="launch${opts.challenge ? " challenge" : opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).slice(0, 3).map(p => pic(p)).join("")}</div><div>${opts.challenge ? `<span class="lab">challenge · a big step up, only if the stretch was easy</span>` : opts.stretch ? `<span class="lab">stretch · if that was easy</span>` : ""}<h3>${esc(cap)}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch || opts.challenge ? " small" : ""}" data-launch="${id}">Play</button></div>${opts.paper ? `<p class="paper-line"><b>Off screen:</b> ${esc(opts.paper)}</p>` : ""}`;
+    const html = `<div class="launch${opts.challenge ? " challenge" : opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).slice(0, 3).map(p => pic(p)).join("")}</div><div>${opts.challenge ? `<span class="lab">challenge</span>` : opts.stretch ? `<span class="lab">stretch</span>` : ""}<h3>${esc(cap)}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play" data-launch="${id}">Play</button></div>`;
     return { html, wire() { const b = document.querySelector(`[data-launch="${id}"]`); if (b) b.addEventListener("click", () => openPlay(opts.list || game, meta)); } };
   }
 
@@ -989,6 +986,12 @@
   // The same five steps every day: revisit, newest sound, blend, spell and write, books.
   // The week file holds the middle three; revisit and books are the same shape every day.
   const revisitStep = () => ({ label: "Revisit", min: 2, do: `Flick through every sound taught so far with the review cards below. Your child says each one. Say a wobbly one together, then come back to it at the end. Then the tricky words: ${W.phonics.tricky.map(t => t.word).join(", ")}.`, say: "What sound is this?" });
+  // stretch and challenge are part of every day: one step in the plan, the games on the right
+  const pushStep = (d, label) => {
+    const names = [d.stretch, d.challenge].filter(Boolean).map(x => x.label.replace(/^(Stretch|Challenge): /, ""));
+    const paper = d.challenge && d.challenge.paper;
+    return { label, min: 5, do: `The two harder games on the right: ${names.join(", then ")}.${paper ? " Then off screen: " + paper : ""}` };
+  };
   const BOOKS_STEP = { label: "Books", do: "Any time today. Your child reads the school practice book; reading it again on other days is the point, so easy is good. Then you read the sharing book to them and talk about it.", talk: ["What happened?", "What do you think happens next?", "Has that ever happened to you?"] };
   function renderPhonics() {
     const s = $("ph-script"), side = $("ph-side");
@@ -1006,8 +1009,8 @@
     }
     const d = W.phonics.days[day];
     // a review week's own first step already goes through the sounds
-    const steps = [...(W.status === "review" ? [] : [revisitStep()]), ...d.steps, BOOKS_STEP];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
+    const steps = [...(W.status === "review" ? [] : [revisitStep()]), ...d.steps, ...(d.challenge ? [pushStep(d, "Stretch and challenge")] : []), BOOKS_STEP];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.challenge ? 5 : 0)} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
     const hero = d.review
       ? `<div class="hero" style="flex-direction:column;align-items:flex-start;gap:14px;"><div class="big" style="font-size:${d.review.join(" ").length > 9 ? "3rem" : "3.6rem"};min-width:0;white-space:nowrap;text-align:left;">${esc(d.review.join(" "))}</div><div><p class="cue">Review: each sound quick and confident, before school brings new ones.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle's parent videos</a></p></div></div>`
       : d.sound
@@ -1149,7 +1152,8 @@
     }
     if (day === 0) { s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.maths.weekend)}</p>`; side.innerHTML = ""; return; }
     const d = W.maths.days[day];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes} minutes · real things first</p><ol>${d.steps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
+    const msteps = [...d.steps, ...(d.challenge ? [pushStep(d, "Stretch and challenge")] : [])];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
     const first = d.check.questions[0];
     const pattern = (first.pattern || first.options[first.correct]).filter(t => t !== "?").slice(0, 6);
     const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;
@@ -1161,14 +1165,12 @@
 
   // ---------- week ----------
   $("wk-title").textContent = "This week at home: " + W.label.toLowerCase();
-  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : p.review ? esc(p.review[0]) + "…" : "✓")}</div><div>${esc(p.title)}<small>${p.minutes} min</small></div><div>${esc(m.title)}<small>${m.minutes} min</small></div></div>`; }).join("");
+  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : p.review ? esc(p.review[0]) + "…" : "✓")}</div><div>${esc(p.title)}<small>${p.minutes + (p.challenge ? 5 : 0)} min</small></div><div>${esc(m.title)}<small>${m.minutes + (m.challenge ? 5 : 0)} min</small></div></div>`; }).join("");
   $("wk-asks-block").hidden = !W.school.asks.length;
   $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
   $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;
   $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");
   $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
-  $("share-text").value = W.share;
-  $("copy-btn").addEventListener("click", async () => { const t = $("share-text"); try { await navigator.clipboard.writeText(t.value); $("copy-status").textContent = "Copied."; } catch (e) { t.focus(); t.select(); $("copy-status").textContent = "Select and copy the text above."; } });
 
   $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. ${Object.values(SOUNDS).some(x => x.source === "commons") ? `Some sounds from <a href="https://commons.wikimedia.org/wiki/Category:IPA_audio" target="_blank" rel="noopener">Wikimedia Commons</a> recordings, CC BY-SA 3.0. ` : ""}Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
 
