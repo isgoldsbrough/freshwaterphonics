@@ -5,7 +5,7 @@ Live at https://freshwaterphonics.vercel.app (Vercel, auto-deploys from `main`; 
 A weekly phonics and maths page for one Reception class, run by a parent. Unofficial; not reviewed by the school.
 
 - `index.html`: the page. It never changes week to week.
-- `weeks/YYYY-MM-DD.json`: one file per week. `weeks/current.json` is a copy of the live one.
+- `weeks/YYYY-MM-DD.json`: one file per week. Never delete one: every past week keeps its day-by-day sounds, its games, stretch, challenge and maths, and the week dropdown plays them again (all of Autumn 1 has full files, the first four rebuilt on 1 Nov from the school updates). `weeks/current.json` is a copy of the live one.
 - `weeks/index.json`: the list of weeks for the week dropdown (`current`, each week's sounds and topic, and the half-term `break` dates). Add a row and move `current` each week. A week without a `file` shows its sounds to play, not a day plan.
 - Every day follows the Home Phonics Protocol (https://claude.ai/code/artifact/6379be13-18e8-44e6-8022-82e9ab41bf3b): Revisit, Newest sound, Blend, Spell and write, Books. The page adds Revisit and Books itself; a day in the week file holds the middle three as `{ "label": "Blend", "min": 3, "do": "...", "say": "..." }`. `do` is the action, `say` (optional) the exact words for the parent, shown as a speech bubble. Never write our own pronunciation tips: the page links to Little Wandle's videos and sound sheet. All wording British English.
 - Each phonics and maths day has a `stretch` (one step up, same sounds) and may have a `challenge` (a big step up, shown as a blue card after the stretch). Phonics challenges use the same game types (`mark`, `segment`, `caption`, `alien`); their words may have adjacent consonants and two parts, but no sound not yet taught. Maths challenges may use number tiles and `+` `=`, may go ahead of school, and need a spoken `say` on every question (`hint` is spoken on a wrong answer). Both can carry a `paper` line, shown under the card as "Off screen". The half-term plan for challenges is in `../school/reception/stretch-plan.md`.
@@ -21,7 +21,7 @@ A weekly phonics and maths page for one Reception class, run by a parent. Unoffi
 ```
 node scripts/validate.mjs weeks/2026-10-19.json
 node scripts/build-pictures.mjs
-node scripts/build-audio.mjs weeks/2026-10-19.json
+node scripts/build-audio.mjs   # every week file, so all weeks keep their clips
 cp weeks/2026-10-19.json weeks/current.json
 git add -A && git commit -m "Week of 19 October" && git push
 ```

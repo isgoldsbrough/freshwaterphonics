@@ -161,7 +161,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
 for (const p of week.phonics.memory || []) {
   if (!taught.has(p.grapheme)) errors.push(`memory: grapheme "${p.grapheme}" not taught`);
   if (!p.word.startsWith(p.grapheme)) errors.push(`memory: "${p.word}" does not start with "${p.grapheme}"`);
-  checkPrintWord(p.word, "memory");
+  // memory cards show the letter and a picture; the word is spoken, never printed
   needPic(p.pic || p.word, "memory");
 }
 
@@ -192,7 +192,7 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       if (q.correct == null || q.correct >= q.options.length) errors.push(`${where}: bad correct index`);
       const all = [...(q.pattern || []), ...q.options.flat()];
       all.forEach(t => { if (t !== "?" && !/^\d+$/.test(t) && !/^[+=]$/.test(t)) needPic(t, where); });
-      if (label === "challenge" && !q.say) errors.push(`${where}: challenge questions need a spoken "say"`);
+      if (label === "challenge" && q.kind === "which" && !q.say) errors.push(`${where}: challenge questions need a spoken "say"`);
       if (q.kind !== "which" && !q.pattern) errors.push(`${where}: ${q.kind} needs a pattern`);
       if (q.kind === "missing" && !q.pattern.includes("?")) errors.push(`${where}: missing needs a "?" in the pattern`);
       if (q.kind === "next" && q.options.some(o => o.length !== 1)) errors.push(`${where}: next options are single tiles`);

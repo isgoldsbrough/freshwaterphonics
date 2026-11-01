@@ -1,5 +1,5 @@
 {
-  "current": "2026-10-12",
+  "current": "2026-11-02",
   "break": {
     "from": "2026-10-17",
     "to": "2026-11-01",
@@ -33,7 +33,7 @@
     {
       "weekOf": "2026-10-05",
       "label": "Week of 5 October",
-      "file": null,
+      "file": "2026-10-05.json",
       "focus": [
         "ck",
         "e",
@@ -47,7 +47,7 @@
     {
       "weekOf": "2026-09-28",
       "label": "Week of 28 September",
-      "file": null,
+      "file": "2026-09-28.json",
       "focus": [
         "g",
         "o",
@@ -61,7 +61,7 @@
     {
       "weekOf": "2026-09-21",
       "label": "Week of 21 September",
-      "file": null,
+      "file": "2026-09-21.json",
       "focus": [
         "i",
         "n",
@@ -75,7 +75,7 @@
     {
       "weekOf": "2026-09-14",
       "label": "Week of 14 September",
-      "file": null,
+      "file": "2026-09-14.json",
       "focus": [
         "s",
         "a",

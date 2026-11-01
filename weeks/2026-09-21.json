@@ -1,0 +1,1675 @@
+{
+  "weekOf": "2026-09-21",
+  "status": "confirmed",
+  "label": "Week of 21 September",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-01",
+  "nextUpdateExpected": "2026-09-25",
+  "phonics": {
+    "focus": [
+      "i",
+      "n",
+      "m",
+      "d"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p"
+    ],
+    "tricky": [],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "i",
+        "title": "New sound: i",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "i, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with i in it.",
+            "say": "Can you hear i in the middle of pig? p, i, g."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "p, i, n. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say pin. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Pin. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things with i in the middle.",
+          "items": [
+            {
+              "word": "pig",
+              "match": true
+            },
+            {
+              "word": "pin",
+              "match": true
+            },
+            {
+              "word": "lip",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "pin",
+              "segments": [
+                "p",
+                "i",
+                "n"
+              ]
+            },
+            {
+              "word": "tin",
+              "segments": [
+                "t",
+                "i",
+                "n"
+              ]
+            },
+            {
+              "word": "tap",
+              "segments": [
+                "t",
+                "a",
+                "p"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: longer words",
+          "say": "Four or five sounds in each word. Your child reads it; you tap the tick or the cross.",
+          "words": [
+            "mint",
+            "spin",
+            "snip",
+            "stamp",
+            "sand",
+            "damp"
+          ],
+          "paper": "say spin; your child says every sound, then writes it."
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "n",
+        "title": "New sound: n",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "n, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with n in it.",
+            "say": "Can you hear n at the end of pin? pi, n."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "t, i, n. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say tin. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Tin. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "tin",
+              "segments": [
+                "t",
+                "i",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "dog"
+                },
+                {
+                  "word": "hat"
+                }
+              ]
+            },
+            {
+              "word": "pan",
+              "segments": [
+                "p",
+                "a",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "sun"
+                },
+                {
+                  "word": "cup"
+                }
+              ]
+            },
+            {
+              "word": "man",
+              "segments": [
+                "m",
+                "a",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "pig"
+                },
+                {
+                  "word": "bed"
+                }
+              ]
+            },
+            {
+              "word": "pin",
+              "segments": [
+                "p",
+                "i",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "map"
+                },
+                {
+                  "word": "duck"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "nap",
+              "real": true
+            },
+            {
+              "word": "nim",
+              "real": false
+            },
+            {
+              "word": "tin",
+              "real": true
+            },
+            {
+              "word": "tas",
+              "real": false
+            },
+            {
+              "word": "sip",
+              "real": true
+            },
+            {
+              "word": "pid",
+              "real": false
+            },
+            {
+              "word": "pit",
+              "real": true
+            },
+            {
+              "word": "nad",
+              "real": false
+            }
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "m",
+        "title": "New sound: m",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "m, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with m in it.",
+            "say": "m, map. m, man. m, mug."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "m, a, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say map. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Map. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with m.",
+          "items": [
+            {
+              "word": "map",
+              "match": true
+            },
+            {
+              "word": "man",
+              "match": true
+            },
+            {
+              "word": "mug",
+              "match": true
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "hat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "map",
+              "segments": [
+                "m",
+                "a",
+                "p"
+              ]
+            },
+            {
+              "word": "man",
+              "segments": [
+                "m",
+                "a",
+                "n"
+              ]
+            },
+            {
+              "word": "pan",
+              "segments": [
+                "p",
+                "a",
+                "n"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a longer caption",
+          "say": "Read every word, then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a man and a pin in a tin",
+              "options": [
+                {
+                  "pics": [
+                    "man",
+                    "pin",
+                    "tin"
+                  ],
+                  "say": "a man and a pin and a tin"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "pan",
+                    "tin"
+                  ],
+                  "say": "a man and a pan and a tin"
+                },
+                {
+                  "pics": [
+                    "map",
+                    "pin",
+                    "tin"
+                  ],
+                  "say": "a map and a pin and a tin"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a man and a map in a pan",
+              "options": [
+                {
+                  "pics": [
+                    "man",
+                    "map",
+                    "tin"
+                  ],
+                  "say": "a man and a map and a tin"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "map",
+                    "pan"
+                  ],
+                  "say": "a man and a map and a pan"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "tap",
+                    "pan"
+                  ],
+                  "say": "a man and a tap and a pan"
+                }
+              ],
+              "correct": 1
+            }
+          ],
+          "paper": "write man and map on paper; check each sound together."
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "d",
+        "title": "New sound: d",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "d, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with d in it.",
+            "say": "d, dog. d, duck. d, dig."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "s, a, d. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say sad. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Sad. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "sad",
+              "segments": [
+                "s",
+                "a",
+                "d"
+              ],
+              "distractors": [
+                {
+                  "word": "sun"
+                },
+                {
+                  "word": "pig"
+                }
+              ]
+            },
+            {
+              "word": "map",
+              "segments": [
+                "m",
+                "a",
+                "p"
+              ],
+              "distractors": [
+                {
+                  "word": "cup"
+                },
+                {
+                  "word": "hat"
+                }
+              ]
+            },
+            {
+              "word": "tap",
+              "segments": [
+                "t",
+                "a",
+                "p"
+              ],
+              "distractors": [
+                {
+                  "word": "bed"
+                },
+                {
+                  "word": "dog"
+                }
+              ]
+            },
+            {
+              "word": "pin",
+              "segments": [
+                "p",
+                "i",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "net"
+                },
+                {
+                  "word": "bus"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "dip",
+            "did",
+            "dad",
+            "mad",
+            "sad",
+            "dim",
+            "mat",
+            "nap"
+          ]
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Review the week",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "This week's sounds",
+            "min": 2,
+            "do": "Show i, n, m and d one at a time. Your child says each sound, quick and pure.",
+            "say": "What sound is this?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Blend it: five words using this week's sounds, with dots and lines, then without.",
+            "say": "Sounds first, then the word."
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say pin and mad. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "ladder",
+          "say": "Say the new word, then tap the letter that changed.",
+          "words": [
+            "tin",
+            "tan",
+            "man",
+            "map",
+            "mat"
+          ]
+        },
+        "stretch": {
+          "type": "caption",
+          "label": "Stretch: read a caption",
+          "say": "Read the caption. Then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a pin in a tin",
+              "options": [
+                {
+                  "pics": [
+                    "pin",
+                    "tin"
+                  ],
+                  "say": "a pin and a tin"
+                },
+                {
+                  "pics": [
+                    "pin",
+                    "pan"
+                  ],
+                  "say": "a pin and a pan"
+                },
+                {
+                  "pics": [
+                    "map",
+                    "tin"
+                  ],
+                  "say": "a map and a tin"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a map in a pan",
+              "options": [
+                {
+                  "pics": [
+                    "map",
+                    "tin"
+                  ],
+                  "say": "a map and a tin"
+                },
+                {
+                  "pics": [
+                    "map",
+                    "pan"
+                  ],
+                  "say": "a map and a pan"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "pan"
+                  ],
+                  "say": "a man and a pan"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "tap a tin",
+              "options": [
+                {
+                  "pics": [
+                    "tap",
+                    "pan"
+                  ],
+                  "say": "a tap and a pan"
+                },
+                {
+                  "pics": [
+                    "map",
+                    "tin"
+                  ],
+                  "say": "a map and a tin"
+                },
+                {
+                  "pics": [
+                    "tap",
+                    "tin"
+                  ],
+                  "say": "a tap and a tin"
+                }
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Real word or alien word?",
+          "items": [
+            {
+              "word": "mint",
+              "real": true
+            },
+            {
+              "word": "snad",
+              "real": false
+            },
+            {
+              "word": "sand",
+              "real": true
+            },
+            {
+              "word": "tisp",
+              "real": false
+            },
+            {
+              "word": "damp",
+              "real": true
+            },
+            {
+              "word": "mand",
+              "real": false
+            },
+            {
+              "word": "spin",
+              "real": true
+            },
+            {
+              "word": "spim",
+              "real": false
+            }
+          ],
+          "paper": "you say the man is sad; your child writes it."
+        },
+        "review": [
+          "i",
+          "n",
+          "m",
+          "d"
+        ]
+      }
+    },
+    "weekend": "No set session. If a sound turns up on a sign or a cereal box, spot it together and leave it there.",
+    "memory": [
+      {
+        "grapheme": "n",
+        "word": "net"
+      },
+      {
+        "grapheme": "m",
+        "word": "map"
+      },
+      {
+        "grapheme": "d",
+        "word": "dog"
+      },
+      {
+        "grapheme": "s",
+        "word": "sun"
+      },
+      {
+        "grapheme": "a",
+        "word": "apple"
+      },
+      {
+        "grapheme": "p",
+        "word": "pig"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "man"
+        },
+        "options": [
+          {
+            "word": "pan",
+            "right": true
+          },
+          {
+            "word": "dog",
+            "right": false
+          },
+          {
+            "word": "cup",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "pin"
+        },
+        "options": [
+          {
+            "word": "bin",
+            "right": true
+          },
+          {
+            "word": "hat",
+            "right": false
+          },
+          {
+            "word": "sun",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "map"
+        },
+        "options": [
+          {
+            "word": "cap",
+            "right": true
+          },
+          {
+            "word": "pig",
+            "right": false
+          },
+          {
+            "word": "bed",
+            "right": false
+          }
+        ]
+      }
+    ]
+  },
+  "maths": {
+    "topic": "Matching objects and sorting them into groups",
+    "vocab": [
+      "sort",
+      "group",
+      "same",
+      "different",
+      "belongs",
+      "not"
+    ],
+    "stems": [
+      "\"Which group does this one go in?\"",
+      "\"Why does it belong there?\"",
+      "\"Which one does not belong?\""
+    ],
+    "source": "From the 25 September school update: matching objects and sorting them into categories.",
+    "everyday": [
+      "<b>Washing:</b> sort into socks, tops and trousers.",
+      "<b>Shopping:</b> fruit in one bag, tins in another.",
+      "<b>Toys:</b> animals here, cars there.",
+      "<b>Cutlery drawer:</b> knives, forks, spoons."
+    ],
+    "days": {
+      "1": {
+        "title": "Sort into two groups",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out animals and cars, mixed up."
+          },
+          {
+            "do": "Your child sorts them into two groups.",
+            "say": "Where does this one go?"
+          },
+          {
+            "do": "Ask why for one or two."
+          }
+        ],
+        "check": {
+          "say": "Which one is not an animal?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "bus"
+                ],
+                [
+                  "dog"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "pig"
+                ],
+                [
+                  "hen"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "duck"
+                ],
+                [
+                  "frog"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which does not belong?",
+          "say": "Which one does not belong?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "apple"
+                ],
+                [
+                  "banana"
+                ],
+                [
+                  "grapes"
+                ],
+                [
+                  "sock"
+                ]
+              ],
+              "correct": 3,
+              "hint": "Three are fruit. Which one is not?"
+            },
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "sun"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "cup"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 2,
+              "hint": "Three are in the sky. Which one is not?"
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: sort by two rules",
+          "say": "Which one does not belong?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "duck"
+                ],
+                [
+                  "hen"
+                ],
+                [
+                  "frog"
+                ],
+                [
+                  "horse"
+                ]
+              ],
+              "correct": 3,
+              "hint": "Three can swim. Which one cannot?"
+            },
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "cup"
+                ],
+                [
+                  "mug"
+                ],
+                [
+                  "pot"
+                ],
+                [
+                  "leaf"
+                ]
+              ],
+              "correct": 3,
+              "hint": "Three are things you use in the kitchen."
+            }
+          ],
+          "paper": "sort toys into things that roll and things that don't."
+        }
+      },
+      "2": {
+        "title": "Sort by colour",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Gather red things and blue things."
+          },
+          {
+            "do": "Your child sorts them by colour.",
+            "say": "Red or blue?"
+          },
+          {
+            "do": "Find one more for each group."
+          }
+        ],
+        "check": {
+          "say": "Which one is the same colour?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same colour?",
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "red"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same colour?",
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "blue"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same colour?",
+              "options": [
+                [
+                  "blue"
+                ],
+                [
+                  "red"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "red"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which group?",
+          "say": "Which one belongs with these?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one belongs with these?",
+              "options": [
+                [
+                  "dog"
+                ],
+                [
+                  "apple"
+                ],
+                [
+                  "cup"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "banana",
+                "grapes"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one belongs with these?",
+              "options": [
+                [
+                  "moon"
+                ],
+                [
+                  "fish"
+                ],
+                [
+                  "pen"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "sun",
+                "star"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: a group of three",
+          "say": "Which row is all the same kind?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row is all animals?",
+              "options": [
+                [
+                  "cat",
+                  "dog",
+                  "cup"
+                ],
+                [
+                  "cat",
+                  "dog",
+                  "pig"
+                ],
+                [
+                  "apple",
+                  "dog",
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row is all fruit?",
+              "options": [
+                [
+                  "apple",
+                  "banana",
+                  "grapes"
+                ],
+                [
+                  "apple",
+                  "sock",
+                  "grapes"
+                ],
+                [
+                  "egg",
+                  "banana",
+                  "grapes"
+                ]
+              ],
+              "correct": 0
+            }
+          ],
+          "paper": "sort a handful of buttons or Lego by colour, then by size."
+        }
+      },
+      "3": {
+        "title": "Sort by size",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Big and small things: spoons, shoes, teddies."
+          },
+          {
+            "do": "Your child sorts them into big and small.",
+            "say": "Is it big or small?"
+          },
+          {
+            "do": "Line one group up from small to big."
+          }
+        ],
+        "check": {
+          "say": "Which one is not an animal?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "horse"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "mouse"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "egg"
+                ],
+                [
+                  "rat"
+                ],
+                [
+                  "bat"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which one is not an animal?",
+              "options": [
+                [
+                  "elephant"
+                ],
+                [
+                  "fish"
+                ],
+                [
+                  "pen"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: the odd one out",
+          "say": "Which one does not belong?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "hat"
+                ],
+                [
+                  "cap"
+                ],
+                [
+                  "sock"
+                ],
+                [
+                  "fish"
+                ]
+              ],
+              "correct": 3,
+              "hint": "Three are things you wear."
+            },
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "bus"
+                ],
+                [
+                  "duck"
+                ],
+                [
+                  "hen"
+                ],
+                [
+                  "frog"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: two odd ones out",
+          "say": "Which row has one that does not belong?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has one that does not belong?",
+              "options": [
+                [
+                  "cat",
+                  "dog",
+                  "pig"
+                ],
+                [
+                  "cat",
+                  "dog",
+                  "cup"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has one that does not belong?",
+              "options": [
+                [
+                  "sun",
+                  "star",
+                  "moon"
+                ],
+                [
+                  "sun",
+                  "fish",
+                  "moon"
+                ]
+              ],
+              "correct": 1
+            }
+          ],
+          "paper": "sort shoes into big and small, then line them up by size."
+        }
+      },
+      "4": {
+        "title": "Sort and count",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Sort a handful of mixed things into two groups."
+          },
+          {
+            "do": "Count each group together.",
+            "say": "Which group has more?"
+          },
+          {
+            "do": "Your child picks a new way to sort them."
+          }
+        ],
+        "check": {
+          "say": "Which row has more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "cat",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: sort, then count",
+          "say": "How many animals?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "How many animals?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "cat",
+                "cup",
+                "dog",
+                "pig"
+              ],
+              "hint": "Count only the animals."
+            },
+            {
+              "kind": "which",
+              "say": "How many fruit?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "apple",
+                "sock",
+                "banana"
+              ],
+              "hint": "Count only the fruit."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: sort, then count to five",
+          "say": "How many?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "How many animals?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "cat",
+                "dog",
+                "cup",
+                "pig",
+                "hen",
+                "star"
+              ],
+              "hint": "Count only the animals."
+            },
+            {
+              "kind": "which",
+              "say": "How many things in the sky?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "sun",
+                "fish",
+                "moon",
+                "star",
+                "apple"
+              ],
+              "hint": "Count only the sun, moon and stars."
+            }
+          ],
+          "paper": "sort the cutlery drawer: how many forks, how many spoons?"
+        }
+      },
+      "5": {
+        "title": "Your own rule",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out ten mixed things."
+          },
+          {
+            "do": "Your child sorts them their own way.",
+            "say": "How did you sort them?"
+          },
+          {
+            "do": "You guess their rule."
+          }
+        ],
+        "check": {
+          "say": "Which one does not belong?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "pig"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "cup"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "banana"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one does not belong?",
+              "options": [
+                [
+                  "sun"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "fish"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: spot the rule",
+          "say": "Which one belongs?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one belongs?",
+              "options": [
+                [
+                  "duck"
+                ],
+                [
+                  "hat"
+                ],
+                [
+                  "pen"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "hen",
+                "frog",
+                "fish"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one belongs?",
+              "options": [
+                [
+                  "dog"
+                ],
+                [
+                  "mug"
+                ],
+                [
+                  "leaf"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "cup",
+                "pot",
+                "pan"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: harder rules",
+          "say": "Which one belongs?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one belongs?",
+              "options": [
+                [
+                  "duck"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "horse"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "fish",
+                "frog"
+              ],
+              "hint": "These can swim."
+            },
+            {
+              "kind": "which",
+              "say": "Which one belongs?",
+              "options": [
+                [
+                  "sock"
+                ],
+                [
+                  "egg"
+                ],
+                [
+                  "banana"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "hat",
+                "cap"
+              ],
+              "hint": "These are things you wear."
+            }
+          ],
+          "paper": "your child sorts toys their own way; you guess the rule, then swap."
+        }
+      }
+    },
+    "weekend": "No maths session. If the washing needs sorting, that is maths; leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>English:</b> Hello, Friend!: what it means to be a good friend, understanding others' feelings.",
+      "<b>Maths:</b> matching objects and sorting them into categories.",
+      "<b>Understanding the World:</b> pictures from the past and present.",
+      "<b>Phonics:</b> i, n, m, d."
+    ],
+    "thisWeekPhonics": "i, n, m, d (confirmed by school).",
+    "asks": [],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. This is a past week, kept so every day and every game can be played again."
+    ]
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "now"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "next",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "next",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "next",
+      "tricky": "the"
+    }
+  ],
+  "share": ""
+}

@@ -1,0 +1,1790 @@
+{
+  "weekOf": "2026-10-05",
+  "status": "confirmed",
+  "label": "Week of 5 October",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-01",
+  "nextUpdateExpected": "2026-10-09",
+  "phonics": {
+    "focus": [
+      "ck",
+      "e",
+      "u",
+      "r"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "m",
+      "d",
+      "g",
+      "o",
+      "c",
+      "k"
+    ],
+    "tricky": [
+      {
+        "word": "is",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z."
+      },
+      {
+        "word": "I",
+        "trickyLetters": [
+          0
+        ],
+        "note": "One letter that says its own name."
+      }
+    ],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "ck",
+        "title": "New sound: ck",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "ck, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with ck in it.",
+            "say": "ck at the end of sock: two letters, one sound."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "s, o, ck. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say sock. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Sock. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that end with ck.",
+          "items": [
+            {
+              "word": "sock",
+              "match": true
+            },
+            {
+              "word": "duck",
+              "match": true
+            },
+            {
+              "word": "rock",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "sock",
+              "segments": [
+                "s",
+                "o",
+                "ck"
+              ]
+            },
+            {
+              "word": "duck",
+              "segments": [
+                "d",
+                "u",
+                "ck"
+              ]
+            },
+            {
+              "word": "kick",
+              "segments": [
+                "k",
+                "i",
+                "ck"
+              ]
+            },
+            {
+              "word": "rock",
+              "segments": [
+                "r",
+                "o",
+                "ck"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: longer words",
+          "say": "Four or five sounds in each word. Your child reads it; you tap the tick or the cross.",
+          "words": [
+            "truck",
+            "stuck",
+            "trick",
+            "crisp",
+            "drum",
+            "strap",
+            "snack",
+            "spent"
+          ],
+          "paper": "say stuck; your child says every sound, then writes it."
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "e",
+        "title": "New sound: e",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "e, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with e in it.",
+            "say": "Can you hear e in the middle of net? n, e, t."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "p, e, n. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say net. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Net. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "net",
+              "segments": [
+                "n",
+                "e",
+                "t"
+              ],
+              "distractors": [
+                {
+                  "word": "dog"
+                },
+                {
+                  "word": "cup"
+                }
+              ]
+            },
+            {
+              "word": "pen",
+              "segments": [
+                "p",
+                "e",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "cat"
+                },
+                {
+                  "word": "sun"
+                }
+              ]
+            },
+            {
+              "word": "red",
+              "segments": [
+                "r",
+                "e",
+                "d"
+              ],
+              "distractors": [
+                {
+                  "word": "pig"
+                },
+                {
+                  "word": "bus"
+                }
+              ]
+            },
+            {
+              "word": "sock",
+              "segments": [
+                "s",
+                "o",
+                "ck"
+              ],
+              "distractors": [
+                {
+                  "word": "hat"
+                },
+                {
+                  "word": "fish"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "pet",
+              "real": true
+            },
+            {
+              "word": "ped",
+              "real": false
+            },
+            {
+              "word": "ten",
+              "real": true
+            },
+            {
+              "word": "teg",
+              "real": false
+            },
+            {
+              "word": "men",
+              "real": true
+            },
+            {
+              "word": "meck",
+              "real": false
+            },
+            {
+              "word": "get",
+              "real": true
+            },
+            {
+              "word": "gep",
+              "real": false
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: two-part words",
+          "say": "Read one part, then the other, then push them together. You tap the tick or the cross.",
+          "words": [
+            "sunset",
+            "upset",
+            "rocket",
+            "ticket",
+            "pocket",
+            "kitten"
+          ],
+          "paper": "write sunset as two parts, sun then set."
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "u",
+        "title": "New sound: u",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "u, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with u in it.",
+            "say": "Can you hear u in the middle of sun? s, u, n."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "c, u, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say cup. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Cup. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "sun",
+              "segments": [
+                "s",
+                "u",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "pen"
+                },
+                {
+                  "word": "dog"
+                }
+              ]
+            },
+            {
+              "word": "cup",
+              "segments": [
+                "c",
+                "u",
+                "p"
+              ],
+              "distractors": [
+                {
+                  "word": "net"
+                },
+                {
+                  "word": "hat"
+                }
+              ]
+            },
+            {
+              "word": "mug",
+              "segments": [
+                "m",
+                "u",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "rat"
+                },
+                {
+                  "word": "bed"
+                }
+              ]
+            },
+            {
+              "word": "nut",
+              "segments": [
+                "n",
+                "u",
+                "t"
+              ],
+              "distractors": [
+                {
+                  "word": "pig"
+                },
+                {
+                  "word": "sock"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "sun",
+              "segments": [
+                "s",
+                "u",
+                "n"
+              ]
+            },
+            {
+              "word": "cup",
+              "segments": [
+                "c",
+                "u",
+                "p"
+              ]
+            },
+            {
+              "word": "mug",
+              "segments": [
+                "m",
+                "u",
+                "g"
+              ]
+            },
+            {
+              "word": "nut",
+              "segments": [
+                "n",
+                "u",
+                "t"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a long sentence",
+          "say": "Read every word, then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a duck and a rat sit on a red rug",
+              "options": [
+                {
+                  "pics": [
+                    "duck",
+                    "rat"
+                  ],
+                  "say": "a duck and a rat"
+                },
+                {
+                  "pics": [
+                    "duck",
+                    "dog"
+                  ],
+                  "say": "a duck and a dog"
+                },
+                {
+                  "pics": [
+                    "rat",
+                    "cat"
+                  ],
+                  "say": "a rat and a cat"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "I can pack a cup and a mug in a sock",
+              "options": [
+                {
+                  "pics": [
+                    "cup",
+                    "mug",
+                    "sock"
+                  ],
+                  "say": "a cup and a mug and a sock"
+                },
+                {
+                  "pics": [
+                    "cup",
+                    "pen",
+                    "sock"
+                  ],
+                  "say": "a cup and a pen and a sock"
+                },
+                {
+                  "pics": [
+                    "cup",
+                    "mug",
+                    "hat"
+                  ],
+                  "say": "a cup and a mug and a hat"
+                }
+              ],
+              "correct": 0
+            }
+          ],
+          "paper": "you say a duck is on a rock; your child writes it."
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "r",
+        "title": "New sound: r",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "r, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with r in it.",
+            "say": "r, rat. r, rock. r, red."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "r, u, n. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say run. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Run. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with r.",
+          "items": [
+            {
+              "word": "rat",
+              "match": true
+            },
+            {
+              "word": "rock",
+              "match": true
+            },
+            {
+              "word": "red",
+              "match": true
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "pen",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "caption",
+          "label": "Stretch: read a caption",
+          "say": "Read the caption. Then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a rat is in a sock",
+              "options": [
+                {
+                  "pics": [
+                    "rat",
+                    "sock"
+                  ],
+                  "say": "a rat and a sock"
+                },
+                {
+                  "pics": [
+                    "rat",
+                    "cup"
+                  ],
+                  "say": "a rat and a cup"
+                },
+                {
+                  "pics": [
+                    "duck",
+                    "sock"
+                  ],
+                  "say": "a duck and a sock"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a duck is on a rock",
+              "options": [
+                {
+                  "pics": [
+                    "duck",
+                    "sock"
+                  ],
+                  "say": "a duck and a sock"
+                },
+                {
+                  "pics": [
+                    "duck",
+                    "rock"
+                  ],
+                  "say": "a duck and a rock"
+                },
+                {
+                  "pics": [
+                    "rat",
+                    "rock"
+                  ],
+                  "say": "a rat and a rock"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "a pen is in a mug",
+              "options": [
+                {
+                  "pics": [
+                    "pen",
+                    "cup"
+                  ],
+                  "say": "a pen and a cup"
+                },
+                {
+                  "pics": [
+                    "net",
+                    "mug"
+                  ],
+                  "say": "a net and a mug"
+                },
+                {
+                  "pics": [
+                    "pen",
+                    "mug"
+                  ],
+                  "say": "a pen and a mug"
+                }
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "type": "segment",
+          "label": "Challenge: spell four-sound words",
+          "say": "Listen to the word. Tap every sound in order.",
+          "words": [
+            {
+              "word": "drum",
+              "segments": [
+                "d",
+                "r",
+                "u",
+                "m"
+              ]
+            },
+            {
+              "word": "stomp",
+              "segments": [
+                "s",
+                "t",
+                "o",
+                "m",
+                "p"
+              ]
+            }
+          ],
+          "paper": "write drum and truck; check each sound together."
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Review and the tricky words",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "This week's sounds",
+            "min": 2,
+            "do": "Show ck, e, u and r one at a time. Your child says each sound, quick and pure. Then the tricky words I and is: show it, say it, spot the tricky part, say it again.",
+            "say": "What sound is this?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Blend it: five words using this week's sounds, with dots and lines, then without.",
+            "say": "Sounds first, then the word."
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say duck and red. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "tricky",
+          "say": "Say the word. Then tap the tricky part.",
+          "words": [
+            "I",
+            "is"
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "sock",
+            "duck",
+            "red",
+            "pen",
+            "sun",
+            "rat",
+            "mug",
+            "kick"
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Real word or alien word?",
+          "items": [
+            {
+              "word": "truck",
+              "real": true
+            },
+            {
+              "word": "grut",
+              "real": false
+            },
+            {
+              "word": "drum",
+              "real": true
+            },
+            {
+              "word": "stam",
+              "real": false
+            },
+            {
+              "word": "sunset",
+              "real": true
+            },
+            {
+              "word": "trock",
+              "real": false
+            },
+            {
+              "word": "rocket",
+              "real": true
+            },
+            {
+              "word": "skemp",
+              "real": false
+            }
+          ],
+          "paper": "you say I can run; your child writes it."
+        }
+      }
+    },
+    "weekend": "No set session. If a sound turns up on a sign or a cereal box, spot it together and leave it there.",
+    "memory": [
+      {
+        "grapheme": "e",
+        "word": "egg"
+      },
+      {
+        "grapheme": "r",
+        "word": "rat"
+      },
+      {
+        "grapheme": "c",
+        "word": "cup"
+      },
+      {
+        "grapheme": "s",
+        "word": "sock"
+      },
+      {
+        "grapheme": "k",
+        "word": "kick"
+      },
+      {
+        "grapheme": "d",
+        "word": "duck"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "sock"
+        },
+        "options": [
+          {
+            "word": "rock",
+            "right": true
+          },
+          {
+            "word": "bed",
+            "right": false
+          },
+          {
+            "word": "cat",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "mug"
+        },
+        "options": [
+          {
+            "word": "bug",
+            "right": true
+          },
+          {
+            "word": "pen",
+            "right": false
+          },
+          {
+            "word": "hat",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "rat"
+        },
+        "options": [
+          {
+            "word": "cat",
+            "right": true
+          },
+          {
+            "word": "dog",
+            "right": false
+          },
+          {
+            "word": "sun",
+            "right": false
+          }
+        ]
+      }
+    ]
+  },
+  "maths": {
+    "topic": "Patterns: copying, continuing and making them",
+    "vocab": [
+      "pattern",
+      "repeat",
+      "next",
+      "copy",
+      "same",
+      "different"
+    ],
+    "stems": [
+      "\"What comes next?\"",
+      "\"Say the pattern with me.\"",
+      "\"Which bit repeats?\""
+    ],
+    "source": "From the 9 October school update: copying and continuing simple patterns, creating them and spotting them in a story.",
+    "everyday": [
+      "<b>Beads or Lego:</b> red, blue, red, blue.",
+      "<b>Claps:</b> clap, stomp, clap, stomp.",
+      "<b>Bear Hunt:</b> the repeated lines are a pattern in words.",
+      "<b>Out and about:</b> railings, tiles, zebra crossings."
+    ],
+    "days": {
+      "1": {
+        "title": "Copy a pattern",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Make a pattern with two colours of blocks."
+          },
+          {
+            "do": "Your child copies it underneath.",
+            "say": "Can you make one the same?"
+          },
+          {
+            "do": "Say it together: red, blue, red, blue."
+          }
+        ],
+        "check": {
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "red",
+                "blue",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "red",
+                  "blue"
+                ],
+                [
+                  "red",
+                  "red",
+                  "blue",
+                  "blue"
+                ],
+                [
+                  "blue",
+                  "blue",
+                  "red",
+                  "red"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "same",
+              "pattern": [
+                "cat",
+                "dog",
+                "cat",
+                "dog"
+              ],
+              "options": [
+                [
+                  "dog",
+                  "dog",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "dog",
+                  "cat",
+                  "dog"
+                ],
+                [
+                  "cat",
+                  "cat",
+                  "cat",
+                  "dog"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: copy a longer pattern",
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "star",
+                "moon",
+                "moon",
+                "star",
+                "moon",
+                "moon"
+              ],
+              "options": [
+                [
+                  "star",
+                  "moon",
+                  "star",
+                  "moon",
+                  "star",
+                  "moon"
+                ],
+                [
+                  "star",
+                  "moon",
+                  "moon",
+                  "star",
+                  "moon",
+                  "moon"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: three-part patterns",
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "red",
+                "blue",
+                "apple",
+                "red",
+                "blue",
+                "apple"
+              ],
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "apple",
+                  "red",
+                  "blue",
+                  "apple"
+                ],
+                [
+                  "red",
+                  "apple",
+                  "blue",
+                  "red",
+                  "apple",
+                  "blue"
+                ]
+              ],
+              "correct": 0,
+              "say": "Red, blue, apple. Which row is the same?"
+            }
+          ],
+          "paper": "your child makes an ABC pattern with three colours of Lego."
+        }
+      },
+      "2": {
+        "title": "What comes next?",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Start a pattern and stop: red, blue, red, blue, red."
+          },
+          {
+            "do": "Your child adds the next piece.",
+            "say": "What comes next?"
+          },
+          {
+            "do": "Say the whole pattern to check."
+          }
+        ],
+        "check": {
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "red"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "apple",
+                "banana",
+                "apple",
+                "banana"
+              ],
+              "options": [
+                [
+                  "apple"
+                ],
+                [
+                  "banana"
+                ],
+                [
+                  "grapes"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "sun",
+                "moon",
+                "sun",
+                "moon",
+                "sun"
+              ],
+              "options": [
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: two the same, then one",
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "cat",
+                "cat",
+                "dog",
+                "cat",
+                "cat"
+              ],
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "leaf",
+                "leaf",
+                "conker",
+                "leaf",
+                "leaf",
+                "conker",
+                "leaf"
+              ],
+              "options": [
+                [
+                  "leaf"
+                ],
+                [
+                  "conker"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: three things in turn",
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "apple",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "sun",
+                "moon",
+                "star",
+                "sun",
+                "moon",
+                "star",
+                "sun"
+              ],
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 1
+            }
+          ],
+          "paper": "clap, clap, stomp, clap, clap, stomp: your child carries it on."
+        }
+      },
+      "3": {
+        "title": "Make a pattern",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Give your child two kinds of thing: spoons and forks."
+          },
+          {
+            "do": "They make their own pattern.",
+            "say": "Tell me your pattern."
+          },
+          {
+            "do": "You copy it, and make one mistake for them to spot."
+          }
+        ],
+        "check": {
+          "say": "Which row is a pattern?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row is a pattern?",
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "red",
+                  "blue"
+                ],
+                [
+                  "red",
+                  "red",
+                  "blue",
+                  "red"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which row is a pattern?",
+              "options": [
+                [
+                  "cat",
+                  "dog",
+                  "dog",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "dog",
+                  "cat",
+                  "dog"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: spot the mistake",
+          "say": "Which piece is missing?",
+          "questions": [
+            {
+              "kind": "missing",
+              "pattern": [
+                "red",
+                "blue",
+                "?",
+                "blue",
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "missing",
+              "pattern": [
+                "apple",
+                "apple",
+                "banana",
+                "apple",
+                "?",
+                "banana"
+              ],
+              "options": [
+                [
+                  "banana"
+                ],
+                [
+                  "apple"
+                ],
+                [
+                  "grapes"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: two missing pieces",
+          "say": "Which piece is missing?",
+          "questions": [
+            {
+              "kind": "missing",
+              "pattern": [
+                "sun",
+                "moon",
+                "star",
+                "sun",
+                "?",
+                "star"
+              ],
+              "options": [
+                [
+                  "sun"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "missing",
+              "pattern": [
+                "cat",
+                "cat",
+                "dog",
+                "cat",
+                "cat",
+                "?"
+              ],
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            }
+          ],
+          "paper": "your child makes a pattern with a mistake; you find it."
+        }
+      },
+      "4": {
+        "title": "Patterns in a story",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Read We're Going on a Bear Hunt."
+          },
+          {
+            "do": "Join in with the repeated lines.",
+            "say": "Which bit keeps coming back?"
+          },
+          {
+            "do": "Make a sound pattern: swishy swashy, splash splosh."
+          }
+        ],
+        "check": {
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "leaf",
+                "conker",
+                "leaf",
+                "conker",
+                "leaf"
+              ],
+              "options": [
+                [
+                  "conker"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "duck",
+                "hen",
+                "duck",
+                "hen"
+              ],
+              "options": [
+                [
+                  "hen"
+                ],
+                [
+                  "duck"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "star",
+                "star",
+                "moon",
+                "star",
+                "star"
+              ],
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: growing patterns",
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "One star, two stars, three stars. Which row comes next?",
+              "options": [
+                [
+                  "star",
+                  "star",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "hint": "Each row has one more."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: number patterns",
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "1, 2, 1, 2, 1. What comes next?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "1",
+                "2",
+                "1",
+                "2",
+                "1"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "1, 2, 3, 1, 2. What comes next?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "1",
+                "2",
+                "3",
+                "1",
+                "2"
+              ]
+            }
+          ],
+          "paper": "build towers of 1, 2, 3 blocks: what does the next tower need?"
+        }
+      },
+      "5": {
+        "title": "Patterns everywhere",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Go on a pattern hunt in the house."
+          },
+          {
+            "do": "Your child points out stripes, tiles, railings.",
+            "say": "Where is a pattern?"
+          },
+          {
+            "do": "Draw one on paper together."
+          }
+        ],
+        "check": {
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "red",
+                "blue",
+                "red",
+                "red"
+              ],
+              "options": [
+                [
+                  "blue"
+                ],
+                [
+                  "red"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "pig",
+                "dog",
+                "pig",
+                "dog",
+                "pig"
+              ],
+              "options": [
+                [
+                  "pig"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "egg",
+                "leaf",
+                "egg",
+                "leaf"
+              ],
+              "options": [
+                [
+                  "egg"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "fish"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which is a pattern?",
+          "say": "Which row is a pattern?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row is a pattern?",
+              "options": [
+                [
+                  "sun",
+                  "moon",
+                  "sun",
+                  "moon"
+                ],
+                [
+                  "sun",
+                  "sun",
+                  "moon",
+                  "sun"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which row is a pattern?",
+              "options": [
+                [
+                  "red",
+                  "blue",
+                  "blue",
+                  "red",
+                  "red"
+                ],
+                [
+                  "red",
+                  "blue",
+                  "blue",
+                  "red",
+                  "blue",
+                  "blue"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: longer patterns",
+          "say": "What comes next?",
+          "questions": [
+            {
+              "kind": "next",
+              "pattern": [
+                "red",
+                "blue",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "red"
+              ],
+              "options": [
+                [
+                  "red"
+                ],
+                [
+                  "blue"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "next",
+              "pattern": [
+                "cat",
+                "dog",
+                "pig",
+                "cat",
+                "dog",
+                "pig",
+                "cat",
+                "dog"
+              ],
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 2
+            }
+          ],
+          "paper": "your child draws an ABB pattern with two colours."
+        }
+      }
+    },
+    "weekend": "No maths session. If a pattern turns up on a jumper or a floor, say what comes next and leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>English:</b> We're Going on a Bear Hunt: retelling in order and solving the bear's problems.",
+      "<b>Maths:</b> patterns: copying, continuing, creating and spotting them in a story.",
+      "<b>Understanding the World:</b> toys from the past.",
+      "<b>Phonics:</b> ck, e, u, r and the tricky word I."
+    ],
+    "thisWeekPhonics": "ck, e, u, r and the tricky word I (confirmed by school).",
+    "asks": [],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. This is a past week, kept so every day and every game can be played again."
+    ]
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "done"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "done",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "now",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "next",
+      "tricky": "the"
+    }
+  ],
+  "share": ""
+}

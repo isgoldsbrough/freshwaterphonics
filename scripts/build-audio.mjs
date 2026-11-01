@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 // Renders every spoken line in a week file to a small m4a clip using the Mac's
 // built-in British English voice, so every phone hears the same thing.
-// Usage: node scripts/build-audio.mjs weeks/2026-10-12.json
+// Usage: node scripts/build-audio.mjs            (every week file, so the clip list covers them all)
+//        node scripts/build-audio.mjs weeks/a.json weeks/b.json
 // Needs macOS (`say`, `afconvert`). Skips clips that already exist.
-import { readFileSync, existsSync, mkdirSync, writeFileSync, unlinkSync } from "node:fs";
+import { readFileSync, existsSync, mkdirSync, writeFileSync, unlinkSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
 const VOICE = "Daniel";
-const file = process.argv[2];
-if (!file) { console.error("usage: build-audio.mjs <week.json>"); process.exit(2); }
-const week = JSON.parse(readFileSync(file, "utf8"));
+const files = process.argv.length > 2 ? process.argv.slice(2) : readdirSync("weeks").filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map(f => "weeks/" + f);
 mkdirSync("audio", { recursive: true });
 
 // Text -> filename slug, same function as in the page.
@@ -44,6 +43,9 @@ const add = t => { if (t && t.trim()) lines.add(t.trim()); };
   "Watch how the letter is formed and trace it. Then write it on paper with a pencil."
 ].forEach(add);
 
+const tileName = t => (t === "?" ? "something" : t);
+for (const file of files) {
+const week = JSON.parse(readFileSync(file, "utf8"));
 const p = week.phonics;
 for (const d of Object.values(p.days)) {
   add(d.game.say);
@@ -67,7 +69,6 @@ for (const d of Object.values(p.days)) for (const s of [d.stretch, d.challenge])
 p.tricky.forEach(t => add(t.word));
 
 // Maths: each question read aloud from its tiles
-const tileName = t => (t === "?" ? "something" : t);
 for (const d of Object.values(week.maths.days)) {
   for (const block of [d.check, d.stretch, d.challenge]) {
     if (!block) continue;
@@ -83,6 +84,7 @@ for (const d of Object.values(week.maths.days)) {
   }
 }
 
+}
 
 // term.json: half-term and archive sessions
 try {

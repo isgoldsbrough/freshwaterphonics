@@ -328,7 +328,7 @@
     <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
     <section class="block"><h2>Time on here, last 7 days</h2><p class="quiet">Counts only while the page is open and in use; it stops by itself after two minutes with no taps. Kept on this computer only.</p><div class="tlog" id="wk-time"></div></section>
     <section class="block" id="wk-asks-block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
-    <section class="block"><h2>Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
+    <section class="block"><h2 id="wk-last-h">Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
   </div>
@@ -1000,12 +1000,12 @@
   }
   // The same five steps every day: revisit, newest sound, blend, spell and write, books.
   // The week file holds the middle three; revisit and books are the same shape every day.
-  const revisitStep = () => ({ label: "Revisit", min: 2, do: `Flick through every sound taught so far with the review cards below. Your child says each one. Say a wobbly one together, then come back to it at the end. Then the tricky words: ${W.phonics.tricky.map(t => t.word).join(", ")}.`, say: "What sound is this?" });
+  const revisitStep = () => ({ label: "Revisit", min: 2, do: `Flick through every sound taught so far with the review cards below. Your child says each one. Say a wobbly one together, then come back to it at the end. ${W.phonics.tricky.length ? ` Then the tricky words: ${W.phonics.tricky.map(t => t.word).join(", ")}.` : ""}`, say: "What sound is this?" });
   // stretch and challenge are part of every day: one step in the plan, the games on the right
   const pushStep = (d, label) => {
     const names = [d.stretch, d.challenge].filter(Boolean).map(x => x.label.replace(/^(Stretch|Challenge): /, ""));
     const paper = d.challenge && d.challenge.paper;
-    return { label, min: 5, do: `The two harder games on the right: ${names.join(", then ")}.${paper ? " Then off screen: " + paper : ""}` };
+    return { label, min: 5, do: `${names.length > 1 ? "The two harder games" : "The harder game"} on the right: ${names.join(", then ")}.${paper ? " Then off screen: " + paper : ""}` };
   };
   const BOOKS_STEP = { label: "Books", do: "Any time today. Your child reads the school practice book; reading it again on other days is the point, so easy is good. Then you read the sharing book to them and talk about it.", talk: ["What happened?", "What do you think happens next?", "Has that ever happened to you?"] };
   function renderPhonics() {
@@ -1017,15 +1017,15 @@
       wireSounds(side, "wk-" + W.weekOf + "-", null, new Set([...W.phonics.taught, ...W.phonics.focus]));
       return;
     }
-    const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0].word);
+    const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0] ? W.phonics.tricky[0].word : "★");
     if (day === 0) {
       s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
       side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
     }
     const d = W.phonics.days[day];
     // a review week's own first step already goes through the sounds
-    const steps = [...(W.status === "review" ? [] : [revisitStep()]), ...d.steps, ...(d.challenge ? [pushStep(d, "Stretch and challenge")] : []), BOOKS_STEP];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.challenge ? 5 : 0)} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
+    const steps = [...(W.status === "review" ? [] : [revisitStep()]), ...d.steps, ...(d.stretch || d.challenge ? [pushStep(d, d.challenge ? "Stretch and challenge" : "Stretch")] : []), BOOKS_STEP];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.sound ? "the sound " + d.sound : d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.stretch || d.challenge ? 5 : 0)} minutes, in one go or two short ones</p><ol>${steps.map(stepHtml).join("")}</ol>${trickyHtml()}`;
     const hero = d.review
       ? `<div class="hero" style="flex-direction:column;align-items:flex-start;gap:14px;"><div class="big" style="font-size:${d.review.join(" ").length > 9 ? "3rem" : "3.6rem"};min-width:0;white-space:nowrap;text-align:left;">${esc(d.review.join(" "))}</div><div><p class="cue">Review: each sound quick and confident, before school brings new ones.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Little Wandle's parent videos</a></p></div></div>`
       : d.sound
@@ -1156,8 +1156,8 @@
   const dayName = n => ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday" })[n];
 
   // ---------- maths ----------
-  $("m-everyday").innerHTML = W.maths.everyday.map(t => `<li>${t}</li>`).join("");
   function renderMaths() {
+    $("m-everyday").innerHTML = (W.maths.everyday || W0.maths.everyday).map(t => `<li>${t}</li>`).join("");
     const s = $("m-script"), side = $("m-side");
     if (W.summary) {
       s.innerHTML = `<h2>${esc(W.label)}: maths</h2><p style="margin-top:12px;max-width:60ch;">That week's topic at school was <b>${esc(W.maths.topic)}</b>. The quick check here draws on the whole term so far.</p>`;
@@ -1167,8 +1167,8 @@
     }
     if (day === 0) { s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.maths.weekend)}</p>`; side.innerHTML = ""; return; }
     const d = W.maths.days[day];
-    const msteps = [...d.steps, ...(d.challenge ? [pushStep(d, "Stretch and challenge")] : [])];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
+    const msteps = [...d.steps, ...(d.stretch || d.challenge ? [pushStep(d, d.challenge ? "Stretch and challenge" : "Stretch")] : [])];
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.stretch || d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
     const first = d.check.questions[0];
     const pattern = (first.pattern || first.options[first.correct]).filter(t => t !== "?").slice(0, 6);
     const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;
@@ -1179,13 +1179,18 @@
   }
 
   // ---------- week ----------
-  $("wk-title").textContent = "This week at home: " + W.label.toLowerCase();
-  $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : p.review ? esc(p.review[0]) + "…" : "✓")}</div><div>${esc(p.title)}<small>${p.minutes + (p.challenge ? 5 : 0)} min</small></div><div>${esc(m.title)}<small>${m.minutes + (m.challenge ? 5 : 0)} min</small></div></div>`; }).join("");
-  $("wk-asks-block").hidden = !W.school.asks.length;
-  $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
-  $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;
-  $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");
-  $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
+  function renderWeekTab() {
+    if (W.summary) { $("wk-title").textContent = W.label + ": this week's day plan was not kept"; $("wk-tt").innerHTML = ""; return; }
+    const past = W !== W0;
+    $("wk-title").textContent = (past ? "At home that week: " : "This week at home: ") + W.label.toLowerCase();
+    $("wk-last-h").textContent = past ? "That week at school" : "Last week at school";
+    $("wk-tt").innerHTML = [1, 2, 3, 4, 5].map(n => { const p = W.phonics.days[n], m = W.maths.days[n]; return `<div class="tt-row${n === todayDay ? " today" : ""}"><div class="d">${esc(p.name)}</div><div class="l">${(p.sound ? esc(p.sound) : p.review ? esc(p.review[0]) + "…" : "✓")}</div><div>${esc(p.title)}<small>${p.minutes + (p.stretch || p.challenge ? 5 : 0)} min</small></div><div>${esc(m.title)}<small>${m.minutes + (m.stretch || m.challenge ? 5 : 0)} min</small></div></div>`; }).join("");
+    $("wk-asks-block").hidden = !W.school.asks.length;
+    $("wk-asks").innerHTML = W.school.asks.map(a => `<div class="ask">${esc(a.text)}<small>since ${esc(a.since)}${a.note ? " · " + esc(a.note) : ""}</small></div>`).join("");
+    $("wk-last").innerHTML = W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + (past ? "" : `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`);
+    $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");
+    $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
+  }
 
   $("foot").innerHTML = `Made by a parent in the class, not by the school. Updated ${esc(formatDate(W.updated))}; the next school update is expected ${esc(formatDate(W.nextUpdateExpected))}. ${Object.values(SOUNDS).some(x => x.source === "commons") ? `Some sounds from <a href="https://commons.wikimedia.org/wiki/Category:IPA_audio" target="_blank" rel="noopener">Wikimedia Commons</a> recordings, CC BY-SA 3.0. ` : ""}Pictures by <a href="https://openmoji.org/" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0.`;
 
@@ -1218,7 +1223,7 @@
   })();
 
   // ---------- go ----------
-  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); }
+  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); renderWeekTab(); }
   renderStrip();
   renderDay();
   selectMore(MORE.some(m => m.id === store.get("fp-more")) ? store.get("fp-more") : "memory");

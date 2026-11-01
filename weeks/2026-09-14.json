@@ -1,0 +1,1506 @@
+{
+  "weekOf": "2026-09-14",
+  "status": "confirmed",
+  "label": "Week of 14 September",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-01",
+  "nextUpdateExpected": "2026-09-18",
+  "phonics": {
+    "focus": [
+      "s",
+      "a",
+      "t",
+      "p"
+    ],
+    "taught": [],
+    "tricky": [],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "s",
+        "title": "New sound: s",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "s, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with s in it.",
+            "say": "s, sun. s, sock."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "s, a, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say sat. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Sat. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with s.",
+          "items": [
+            {
+              "word": "sun",
+              "match": true
+            },
+            {
+              "word": "sock",
+              "match": true
+            },
+            {
+              "word": "star",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "hen",
+              "match": false
+            },
+            {
+              "word": "cup",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read six words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "at",
+            "sat",
+            "pat",
+            "tap",
+            "sap",
+            "a"
+          ]
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "a",
+        "title": "New sound: a",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "a, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with a in it.",
+            "say": "a, apple. Can you hear a in cat?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "s, a, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say at. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "At. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things with a in the middle.",
+          "items": [
+            {
+              "word": "hat",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": true
+            },
+            {
+              "word": "map",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "dog",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "sat",
+              "real": true
+            },
+            {
+              "word": "tas",
+              "real": false
+            },
+            {
+              "word": "at",
+              "real": true
+            },
+            {
+              "word": "pas",
+              "real": false
+            },
+            {
+              "word": "pat",
+              "real": true
+            },
+            {
+              "word": "sas",
+              "real": false
+            },
+            {
+              "word": "tap",
+              "real": true
+            },
+            {
+              "word": "ap",
+              "real": false
+            }
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "t",
+        "title": "New sound: t",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "t, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with t in it.",
+            "say": "t, tap. Can you hear t at the end of hat?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "p, a, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say tap. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Tap. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that end with t.",
+          "items": [
+            {
+              "word": "hat",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": true
+            },
+            {
+              "word": "net",
+              "match": true
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "pig",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read six words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "tap",
+            "pat",
+            "at",
+            "sat",
+            "sap",
+            "a"
+          ]
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "p",
+        "title": "New sound: p",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "p, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with p in it.",
+            "say": "p, pig. p, pen. p, pot."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "t, a, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say pat. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Pat. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with p.",
+          "items": [
+            {
+              "word": "pig",
+              "match": true
+            },
+            {
+              "word": "pen",
+              "match": true
+            },
+            {
+              "word": "pot",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "duck",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "tap",
+              "real": true
+            },
+            {
+              "word": "pas",
+              "real": false
+            },
+            {
+              "word": "sap",
+              "real": true
+            },
+            {
+              "word": "tas",
+              "real": false
+            },
+            {
+              "word": "pat",
+              "real": true
+            },
+            {
+              "word": "ap",
+              "real": false
+            },
+            {
+              "word": "at",
+              "real": true
+            },
+            {
+              "word": "sas",
+              "real": false
+            }
+          ]
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Review the week",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "This week's sounds",
+            "min": 2,
+            "do": "Show s, a, t and p one at a time. Your child says each sound, quick and pure.",
+            "say": "What sound is this?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Blend it: five words using this week's sounds, with dots and lines, then without.",
+            "say": "Sounds first, then the word."
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say sat and tap. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with s.",
+          "items": [
+            {
+              "word": "sun",
+              "match": true
+            },
+            {
+              "word": "sock",
+              "match": true
+            },
+            {
+              "word": "sad",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "tap",
+              "match": false
+            },
+            {
+              "word": "apple",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "tap",
+              "segments": [
+                "t",
+                "a",
+                "p"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: longer words with s, a, t, p",
+          "say": "Four or five sounds. Read every sound, then push them together. You tap the tick or the cross.",
+          "words": [
+            "taps",
+            "pats",
+            "spat",
+            "past",
+            "pasta",
+            "tapas"
+          ],
+          "paper": "say spat; your child says every sound, then writes it."
+        },
+        "review": [
+          "s",
+          "a",
+          "t",
+          "p"
+        ]
+      }
+    },
+    "weekend": "No set session. If a sound turns up on a sign or a cereal box, spot it together and leave it there.",
+    "memory": [
+      {
+        "grapheme": "s",
+        "word": "sun"
+      },
+      {
+        "grapheme": "a",
+        "word": "apple"
+      },
+      {
+        "grapheme": "t",
+        "word": "tap"
+      },
+      {
+        "grapheme": "p",
+        "word": "pig"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "cat"
+        },
+        "options": [
+          {
+            "word": "hat",
+            "right": true
+          },
+          {
+            "word": "pig",
+            "right": false
+          },
+          {
+            "word": "cup",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "tap"
+        },
+        "options": [
+          {
+            "word": "map",
+            "right": true
+          },
+          {
+            "word": "sun",
+            "right": false
+          },
+          {
+            "word": "dog",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "pin"
+        },
+        "options": [
+          {
+            "word": "tin",
+            "right": true
+          },
+          {
+            "word": "cat",
+            "right": false
+          },
+          {
+            "word": "bus",
+            "right": false
+          }
+        ]
+      }
+    ]
+  },
+  "maths": {
+    "topic": "Matching objects, pictures and sets",
+    "vocab": [
+      "same",
+      "match",
+      "pair",
+      "different",
+      "set"
+    ],
+    "stems": [
+      "\"Can you find one the same?\"",
+      "\"How do you know they match?\"",
+      "\"Which one is different?\""
+    ],
+    "source": "From the 18 September school update: matching objects, pictures and sets.",
+    "everyday": [
+      "<b>Socks:</b> pair them from the wash basket.",
+      "<b>Shoes:</b> find the other one.",
+      "<b>Snap:</b> any card game where two the same win.",
+      "<b>Tidying:</b> cars in one box, blocks in another."
+    ],
+    "days": {
+      "1": {
+        "title": "Find one the same",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out five pairs of things, all mixed up (spoons, socks, cars)."
+          },
+          {
+            "do": "Your child finds the pairs.",
+            "say": "Can you find one the same?"
+          },
+          {
+            "do": "Swap: you pick one, they find its pair."
+          }
+        ],
+        "check": {
+          "say": "Which one is the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "banana"
+                ],
+                [
+                  "apple"
+                ],
+                [
+                  "frog"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "apple"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "dog"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "dog"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "star"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: the same, out of more",
+          "say": "Which one is the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "duck"
+                ],
+                [
+                  "hen"
+                ],
+                [
+                  "frog"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "frog"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "cup"
+                ],
+                [
+                  "mug"
+                ],
+                [
+                  "pot"
+                ],
+                [
+                  "pan"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "mug"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: match the number",
+          "say": "Which row has the same number?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "star",
+                "star",
+                "star"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "cat",
+                  "cat",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "cat",
+                  "cat"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "dog",
+                "dog",
+                "dog",
+                "dog"
+              ]
+            }
+          ],
+          "paper": "four spoons and four cups: give each cup one spoon. Is there one each?"
+        }
+      },
+      "2": {
+        "title": "Pairs",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out socks or gloves, mixed up."
+          },
+          {
+            "do": "Your child pairs them up.",
+            "say": "Which one goes with this one?"
+          },
+          {
+            "do": "Count the pairs together."
+          }
+        ],
+        "check": {
+          "say": "Which one is the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "sock"
+                ],
+                [
+                  "hat"
+                ],
+                [
+                  "cap"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "sock"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "pen"
+                ],
+                [
+                  "pin"
+                ],
+                [
+                  "pan"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "pan"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "egg"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "fish"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "leaf"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which goes with it?",
+          "say": "Which one goes with it?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one goes with the cup?",
+              "options": [
+                [
+                  "mug"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "cup"
+              ],
+              "hint": "Which one would you drink from?"
+            },
+            {
+              "kind": "which",
+              "say": "Which one goes with the hat?",
+              "options": [
+                [
+                  "fish"
+                ],
+                [
+                  "cap"
+                ],
+                [
+                  "egg"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "hat"
+              ],
+              "hint": "Which one goes on your head?"
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: pairs that match a pattern",
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "red",
+                "blue"
+              ],
+              "options": [
+                [
+                  "blue",
+                  "red"
+                ],
+                [
+                  "red",
+                  "blue"
+                ],
+                [
+                  "red",
+                  "red"
+                ]
+              ],
+              "correct": 1,
+              "say": "Red, blue. Which row is the same?"
+            },
+            {
+              "kind": "same",
+              "pattern": [
+                "cat",
+                "dog",
+                "cat"
+              ],
+              "options": [
+                [
+                  "cat",
+                  "dog",
+                  "cat"
+                ],
+                [
+                  "dog",
+                  "cat",
+                  "dog"
+                ],
+                [
+                  "cat",
+                  "cat",
+                  "dog"
+                ]
+              ],
+              "correct": 0,
+              "say": "Cat, dog, cat. Which row is the same?"
+            }
+          ],
+          "paper": "lay out three things in a row; your child makes the same row next to it."
+        }
+      },
+      "3": {
+        "title": "Picture to object",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Find a picture in a book, then the real thing in the house."
+          },
+          {
+            "do": "Your child matches the picture to the object.",
+            "say": "Where is the real one?"
+          },
+          {
+            "do": "Swap: they find a picture for an object you choose."
+          }
+        ],
+        "check": {
+          "say": "Which one is the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "horse"
+                ],
+                [
+                  "pig"
+                ],
+                [
+                  "cat"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "pig"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "bus"
+                ],
+                [
+                  "duck"
+                ],
+                [
+                  "fish"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "bus"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "grapes"
+                ],
+                [
+                  "banana"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "apple"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: find two the same",
+          "say": "Which row has two the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has two the same?",
+              "options": [
+                [
+                  "cat",
+                  "dog"
+                ],
+                [
+                  "hen",
+                  "hen"
+                ],
+                [
+                  "pig",
+                  "duck"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has two the same?",
+              "options": [
+                [
+                  "sun",
+                  "moon"
+                ],
+                [
+                  "star",
+                  "sun"
+                ],
+                [
+                  "moon",
+                  "moon"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: the same set",
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "apple",
+                "banana",
+                "apple"
+              ],
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "banana"
+                ],
+                [
+                  "apple",
+                  "banana",
+                  "apple"
+                ],
+                [
+                  "banana",
+                  "apple",
+                  "banana"
+                ]
+              ],
+              "correct": 1,
+              "say": "Apple, banana, apple. Which row is the same?"
+            },
+            {
+              "kind": "same",
+              "pattern": [
+                "star",
+                "star",
+                "moon"
+              ],
+              "options": [
+                [
+                  "star",
+                  "moon",
+                  "star"
+                ],
+                [
+                  "moon",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "moon"
+                ]
+              ],
+              "correct": 2,
+              "say": "Star, star, moon. Which row is the same?"
+            }
+          ],
+          "paper": "make a set of three toys; your child makes a set that matches exactly."
+        }
+      },
+      "4": {
+        "title": "Match sets",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Make a set: two spoons. Your child makes a set the same."
+          },
+          {
+            "do": "Try three cars, then four blocks.",
+            "say": "Is yours the same as mine?"
+          },
+          {
+            "do": "Check by putting them side by side, one with one."
+          }
+        ],
+        "check": {
+          "say": "Which row is the same?",
+          "questions": [
+            {
+              "kind": "same",
+              "pattern": [
+                "dog",
+                "dog"
+              ],
+              "options": [
+                [
+                  "dog",
+                  "dog"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "dog",
+                  "dog"
+                ]
+              ],
+              "correct": 0,
+              "say": "Which row is the same?"
+            },
+            {
+              "kind": "same",
+              "pattern": [
+                "egg",
+                "egg",
+                "egg"
+              ],
+              "options": [
+                [
+                  "egg",
+                  "egg"
+                ],
+                [
+                  "egg",
+                  "egg",
+                  "egg"
+                ],
+                [
+                  "egg"
+                ]
+              ],
+              "correct": 1,
+              "say": "Which row is the same?"
+            },
+            {
+              "kind": "same",
+              "pattern": [
+                "duck"
+              ],
+              "options": [
+                [
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck"
+                ]
+              ],
+              "correct": 2,
+              "say": "Which row is the same?"
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: same number, different things",
+          "say": "Which row has the same number?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "frog",
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog",
+                  "frog"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "cat",
+                "cat",
+                "cat"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "moon"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: sets up to five",
+          "say": "Which row has the same number?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "pig",
+                "pig",
+                "pig",
+                "pig",
+                "pig"
+              ],
+              "hint": "Count each row, one at a time."
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "hen",
+                  "hen",
+                  "hen"
+                ],
+                [
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen"
+                ],
+                [
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "duck",
+                "duck",
+                "duck",
+                "duck"
+              ],
+              "hint": "Count each row, one at a time."
+            }
+          ],
+          "paper": "count out five raisins; your child makes a matching set of five."
+        }
+      },
+      "5": {
+        "title": "Match and say why",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out six things that make three pairs."
+          },
+          {
+            "do": "Your child pairs them and says why they match.",
+            "say": "Why do they go together?"
+          },
+          {
+            "do": "Find the odd one out if you add one extra."
+          }
+        ],
+        "check": {
+          "say": "Which one is the same?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "fish"
+                ],
+                [
+                  "frog"
+                ],
+                [
+                  "duck"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "fish"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "hen"
+                ],
+                [
+                  "horse"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "horse"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which one is the same?",
+              "options": [
+                [
+                  "moon"
+                ],
+                [
+                  "sun"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "sun"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which one is different?",
+          "say": "Which one is different?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is different?",
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "dog"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which one is different?",
+              "options": [
+                [
+                  "apple"
+                ],
+                [
+                  "banana"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: different out of more",
+          "say": "Which one is different?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is different?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "moon"
+                ]
+              ],
+              "correct": 3
+            },
+            {
+              "kind": "which",
+              "say": "Which one is different?",
+              "options": [
+                [
+                  "egg"
+                ],
+                [
+                  "egg"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "egg"
+                ],
+                [
+                  "egg"
+                ]
+              ],
+              "correct": 2
+            }
+          ],
+          "paper": "five spoons and one fork in a row: which one is different, and why?"
+        }
+      }
+    },
+    "weekend": "No maths session. If socks need pairing or toys need tidying, that is matching; say so and leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>English:</b> drawing patterns, ordering the letters in her name, codes and maps for the Colour Monster.",
+      "<b>Maths:</b> matching objects, pictures and sets.",
+      "<b>Understanding the World:</b> how humans grow and change, baby to adult.",
+      "<b>Phonics:</b> s, a, t, p."
+    ],
+    "thisWeekPhonics": "s, a, t, p (confirmed by school).",
+    "asks": [],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. This is a past week, kept so every day and every game can be played again."
+    ]
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "now"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "next"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "next",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "next",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "next",
+      "tricky": "the"
+    }
+  ],
+  "share": ""
+}

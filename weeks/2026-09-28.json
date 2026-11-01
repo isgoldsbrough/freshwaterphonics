@@ -1,0 +1,1721 @@
+{
+  "weekOf": "2026-09-28",
+  "status": "confirmed",
+  "label": "Week of 28 September",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-01",
+  "nextUpdateExpected": "2026-10-02",
+  "phonics": {
+    "focus": [
+      "g",
+      "o",
+      "c",
+      "k"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "m",
+      "d"
+    ],
+    "tricky": [
+      {
+        "word": "is",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z."
+      }
+    ],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "g",
+        "title": "New sound: g",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "g, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with g in it.",
+            "say": "Can you hear g at the end of dog? do, g."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "d, i, g. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say dig. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Dig. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that end with g.",
+          "items": [
+            {
+              "word": "dog",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": true
+            },
+            {
+              "word": "leg",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "hat",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "dog",
+              "segments": [
+                "d",
+                "o",
+                "g"
+              ]
+            },
+            {
+              "word": "pig",
+              "segments": [
+                "p",
+                "i",
+                "g"
+              ]
+            },
+            {
+              "word": "pot",
+              "segments": [
+                "p",
+                "o",
+                "t"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: longer words",
+          "say": "Four or five sounds in each word. Your child reads it; you tap the tick or the cross.",
+          "words": [
+            "stop",
+            "spot",
+            "pond",
+            "camp",
+            "stomp",
+            "mask"
+          ],
+          "paper": "say stop; your child says every sound, then writes it."
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "o",
+        "title": "New sound: o",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "o, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with o in it.",
+            "say": "Can you hear o in the middle of dog? d, o, g."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "p, o, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say pot. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Pot. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "dog",
+              "segments": [
+                "d",
+                "o",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "cup"
+                },
+                {
+                  "word": "hen"
+                }
+              ]
+            },
+            {
+              "word": "pot",
+              "segments": [
+                "p",
+                "o",
+                "t"
+              ],
+              "distractors": [
+                {
+                  "word": "bus"
+                },
+                {
+                  "word": "leg"
+                }
+              ]
+            },
+            {
+              "word": "pig",
+              "segments": [
+                "p",
+                "i",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "sun"
+                },
+                {
+                  "word": "bed"
+                }
+              ]
+            },
+            {
+              "word": "cat",
+              "segments": [
+                "c",
+                "a",
+                "t"
+              ],
+              "distractors": [
+                {
+                  "word": "fish"
+                },
+                {
+                  "word": "duck"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real word or alien word?",
+          "say": "Sound it out. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "got",
+              "real": true
+            },
+            {
+              "word": "gop",
+              "real": false
+            },
+            {
+              "word": "not",
+              "real": true
+            },
+            {
+              "word": "kig",
+              "real": false
+            },
+            {
+              "word": "dig",
+              "real": true
+            },
+            {
+              "word": "dop",
+              "real": false
+            },
+            {
+              "word": "on",
+              "real": true
+            },
+            {
+              "word": "nog",
+              "real": false
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: two-part words",
+          "say": "Read one part, then the other, then push them together. You tap the tick or the cross.",
+          "words": [
+            "napkin",
+            "catnip",
+            "picnic",
+            "tomcat",
+            "mantis",
+            "sandpit"
+          ],
+          "paper": "write picnic as two parts, pic then nic."
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "c",
+        "title": "New sound: c",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "c, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with c in it.",
+            "say": "c, cat. c, cup. c, cap."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "c, a, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say cat. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Cat. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with c.",
+          "items": [
+            {
+              "word": "cat",
+              "match": true
+            },
+            {
+              "word": "cup",
+              "match": true
+            },
+            {
+              "word": "cap",
+              "match": true
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "pig",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "cat",
+              "segments": [
+                "c",
+                "a",
+                "t"
+              ]
+            },
+            {
+              "word": "cap",
+              "segments": [
+                "c",
+                "a",
+                "p"
+              ]
+            },
+            {
+              "word": "kid",
+              "segments": [
+                "k",
+                "i",
+                "d"
+              ]
+            },
+            {
+              "word": "kit",
+              "segments": [
+                "k",
+                "i",
+                "t"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a long sentence",
+          "say": "Read every word, then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a cat and a dog sit on a mat",
+              "options": [
+                {
+                  "pics": [
+                    "cat",
+                    "dog"
+                  ],
+                  "say": "a cat and a dog"
+                },
+                {
+                  "pics": [
+                    "cat",
+                    "pig"
+                  ],
+                  "say": "a cat and a pig"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "pig"
+                  ],
+                  "say": "a dog and a pig"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a pig is in a pot and a dog is on a map",
+              "options": [
+                {
+                  "pics": [
+                    "pig",
+                    "pot",
+                    "dog",
+                    "map"
+                  ],
+                  "say": "a pig and a pot and a dog and a map"
+                },
+                {
+                  "pics": [
+                    "pig",
+                    "pan",
+                    "dog",
+                    "map"
+                  ],
+                  "say": "a pig and a pan and a dog and a map"
+                },
+                {
+                  "pics": [
+                    "cat",
+                    "pot",
+                    "dog",
+                    "map"
+                  ],
+                  "say": "a cat and a pot and a dog and a map"
+                }
+              ],
+              "correct": 0
+            }
+          ],
+          "paper": "you say a cat is on a mat; your child writes it."
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "k",
+        "title": "New sound: k",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 2,
+            "do": "k, the sound school taught that day. Say it short and pure, the way the Little Wandle video does. Your child says the sound, then the word, then finds something in the room with k in it.",
+            "say": "k, kid. k, kit. k and c make the same sound."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters: say the sounds, your child says the word. Then Blend it: five words with dots and lines, then the same words without.",
+            "say": "k, i, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say kit. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Kit. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "kid",
+              "segments": [
+                "k",
+                "i",
+                "d"
+              ],
+              "distractors": [
+                {
+                  "word": "sun"
+                },
+                {
+                  "word": "hen"
+                }
+              ]
+            },
+            {
+              "word": "kit",
+              "segments": [
+                "k",
+                "i",
+                "t"
+              ],
+              "distractors": [
+                {
+                  "word": "bed"
+                },
+                {
+                  "word": "bus"
+                }
+              ]
+            },
+            {
+              "word": "cap",
+              "segments": [
+                "c",
+                "a",
+                "p"
+              ],
+              "distractors": [
+                {
+                  "word": "leg"
+                },
+                {
+                  "word": "fish"
+                }
+              ]
+            },
+            {
+              "word": "dog",
+              "segments": [
+                "d",
+                "o",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "cup"
+                },
+                {
+                  "word": "hat"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "caption",
+          "label": "Stretch: read a caption",
+          "say": "Read the caption. Then tap the picture that matches.",
+          "items": [
+            {
+              "text": "a cat is on a pot",
+              "options": [
+                {
+                  "pics": [
+                    "cat",
+                    "pot"
+                  ],
+                  "say": "a cat and a pot"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "pot"
+                  ],
+                  "say": "a dog and a pot"
+                },
+                {
+                  "pics": [
+                    "cat",
+                    "pan"
+                  ],
+                  "say": "a cat and a pan"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a pig is in a pot",
+              "options": [
+                {
+                  "pics": [
+                    "pig",
+                    "pan"
+                  ],
+                  "say": "a pig and a pan"
+                },
+                {
+                  "pics": [
+                    "pig",
+                    "pot"
+                  ],
+                  "say": "a pig and a pot"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "pot"
+                  ],
+                  "say": "a dog and a pot"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "a dog is on a map",
+              "options": [
+                {
+                  "pics": [
+                    "cat",
+                    "map"
+                  ],
+                  "say": "a cat and a map"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "tin"
+                  ],
+                  "say": "a dog and a tin"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "map"
+                  ],
+                  "say": "a dog and a map"
+                }
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Real word or alien word?",
+          "items": [
+            {
+              "word": "stomp",
+              "real": true
+            },
+            {
+              "word": "skop",
+              "real": false
+            },
+            {
+              "word": "camp",
+              "real": true
+            },
+            {
+              "word": "gand",
+              "real": false
+            },
+            {
+              "word": "spot",
+              "real": true
+            },
+            {
+              "word": "stip",
+              "real": false
+            },
+            {
+              "word": "pond",
+              "real": true
+            },
+            {
+              "word": "tisk",
+              "real": false
+            }
+          ],
+          "paper": "write stomp; check each sound together."
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Review and the tricky words",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "This week's sounds",
+            "min": 2,
+            "do": "Show g, o, c and k one at a time. Your child says each sound, quick and pure. Then the tricky word is: show it, say it, spot the tricky part, say it again.",
+            "say": "What sound is this?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Blend it: five words using this week's sounds, with dots and lines, then without.",
+            "say": "Sounds first, then the word."
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say dog and kit. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "tricky",
+          "say": "Say the word. Then tap the tricky part.",
+          "words": [
+            "is"
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "dog",
+            "cat",
+            "pig",
+            "kit",
+            "got",
+            "pot",
+            "kid",
+            "cap"
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read short sentences",
+          "say": "Your child reads the whole sentence. You tap the tick or the cross.",
+          "words": [
+            "a dog is on a mat",
+            "is it a cat",
+            "a pig in a pot",
+            "a kid sat on a cap",
+            "pat a dog",
+            "it is in a tin"
+          ],
+          "paper": "you say a pig is in a pot; your child writes it."
+        }
+      }
+    },
+    "weekend": "No set session. If a sound turns up on a sign or a cereal box, spot it together and leave it there.",
+    "memory": [
+      {
+        "grapheme": "g",
+        "word": "grapes"
+      },
+      {
+        "grapheme": "c",
+        "word": "cat"
+      },
+      {
+        "grapheme": "k",
+        "word": "kid"
+      },
+      {
+        "grapheme": "d",
+        "word": "dog"
+      },
+      {
+        "grapheme": "m",
+        "word": "man"
+      },
+      {
+        "grapheme": "n",
+        "word": "net"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "dog"
+        },
+        "options": [
+          {
+            "word": "log",
+            "right": true
+          },
+          {
+            "word": "cat",
+            "right": false
+          },
+          {
+            "word": "sun",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "cat"
+        },
+        "options": [
+          {
+            "word": "bat",
+            "right": true
+          },
+          {
+            "word": "pen",
+            "right": false
+          },
+          {
+            "word": "cup",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "hen"
+        },
+        "options": [
+          {
+            "word": "pen",
+            "right": true
+          },
+          {
+            "word": "pig",
+            "right": false
+          },
+          {
+            "word": "sock",
+            "right": false
+          }
+        ]
+      }
+    ]
+  },
+  "maths": {
+    "topic": "Comparing amounts, size, mass and capacity",
+    "vocab": [
+      "more",
+      "fewer",
+      "bigger",
+      "smaller",
+      "heavier",
+      "lighter",
+      "full",
+      "empty"
+    ],
+    "stems": [
+      "\"Which has more?\"",
+      "\"Which is heavier? How do you know?\"",
+      "\"Is it full or empty?\""
+    ],
+    "source": "From the 2 October school update: comparing amounts, size, mass and capacity.",
+    "everyday": [
+      "<b>Snacks:</b> two bowls of raisins: which has more?",
+      "<b>Bath:</b> fill and empty cups; which holds more?",
+      "<b>Shopping bags:</b> which is heavier?",
+      "<b>Shoes:</b> line up the family's shoes, smallest to biggest."
+    ],
+    "days": {
+      "1": {
+        "title": "More and fewer",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Two piles of raisins, one clearly bigger."
+          },
+          {
+            "do": "Your child points to the one with more.",
+            "say": "Which has more?"
+          },
+          {
+            "do": "Then which has fewer."
+          }
+        ],
+        "check": {
+          "say": "Which row has more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has fewer?",
+              "options": [
+                [
+                  "star",
+                  "star",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog",
+                  "frog"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: how many more?",
+          "say": "How many more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has one more than two?",
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 0,
+              "hint": "Two, then one more."
+            },
+            {
+              "kind": "which",
+              "say": "Which row has one more than three?",
+              "options": [
+                [
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Three, then one more."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: how many more, up to five",
+          "say": "How many more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Three and how many more make five?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "3",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Count on from three to five on your fingers."
+            },
+            {
+              "kind": "which",
+              "say": "Two and how many more make five?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "2",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Count on from two to five on your fingers."
+            }
+          ],
+          "paper": "two piles of raisins, 3 and 5: how many more in the bigger pile?"
+        }
+      },
+      "2": {
+        "title": "Bigger and smaller",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Find a big and a small of the same thing: spoons, shoes, teddies."
+          },
+          {
+            "do": "Your child says which is bigger.",
+            "say": "Which is bigger?"
+          },
+          {
+            "do": "Then which is smaller."
+          }
+        ],
+        "check": {
+          "say": "Which one is bigger?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is bigger?",
+              "options": [
+                [
+                  "mouse"
+                ],
+                [
+                  "elephant"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is smaller?",
+              "options": [
+                [
+                  "horse"
+                ],
+                [
+                  "rat"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is bigger?",
+              "options": [
+                [
+                  "bus"
+                ],
+                [
+                  "duck"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: order three by size",
+          "say": "Which is the biggest?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which is the biggest?",
+              "options": [
+                [
+                  "mouse"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "elephant"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which is the smallest?",
+              "options": [
+                [
+                  "horse"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "mouse"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: order four",
+          "say": "Which is the biggest?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which is the biggest?",
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "mouse"
+                ],
+                [
+                  "horse"
+                ],
+                [
+                  "dog"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which is the smallest?",
+              "options": [
+                [
+                  "elephant"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "rat"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 2
+            }
+          ],
+          "paper": "line up four shoes from smallest to biggest."
+        }
+      },
+      "3": {
+        "title": "Heavier and lighter",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Hold a heavy and a light thing, one in each hand."
+          },
+          {
+            "do": "Your child holds them and says which is heavier.",
+            "say": "Which is heavier?"
+          },
+          {
+            "do": "Guess first, then check."
+          }
+        ],
+        "check": {
+          "say": "Which one is heavier?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is heavier?",
+              "options": [
+                [
+                  "leaf"
+                ],
+                [
+                  "elephant"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is lighter?",
+              "options": [
+                [
+                  "horse"
+                ],
+                [
+                  "leaf"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is heavier?",
+              "options": [
+                [
+                  "bus"
+                ],
+                [
+                  "egg"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: heaviest of three",
+          "say": "Which is the heaviest?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which is the heaviest?",
+              "options": [
+                [
+                  "egg"
+                ],
+                [
+                  "dog"
+                ],
+                [
+                  "elephant"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which is the lightest?",
+              "options": [
+                [
+                  "leaf"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "horse"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: heaviest of four",
+          "say": "Which is the heaviest?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which is the heaviest?",
+              "options": [
+                [
+                  "cat"
+                ],
+                [
+                  "leaf"
+                ],
+                [
+                  "horse"
+                ],
+                [
+                  "mouse"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which is the lightest?",
+              "options": [
+                [
+                  "dog"
+                ],
+                [
+                  "egg"
+                ],
+                [
+                  "pig"
+                ],
+                [
+                  "horse"
+                ]
+              ],
+              "correct": 1
+            }
+          ],
+          "paper": "hold two bags: which is heavier? Then add one more thing and guess again."
+        }
+      },
+      "4": {
+        "title": "Full and empty",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Water play: a cup, a jug, a bowl."
+          },
+          {
+            "do": "Fill one, leave one empty.",
+            "say": "Which is full?"
+          },
+          {
+            "do": "Half full: is it full or empty?"
+          }
+        ],
+        "check": {
+          "say": "Which row has more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "cup"
+                ],
+                [
+                  "cup",
+                  "cup",
+                  "cup"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has fewer?",
+              "options": [
+                [
+                  "mug",
+                  "mug",
+                  "mug",
+                  "mug",
+                  "mug"
+                ],
+                [
+                  "mug",
+                  "mug"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "pot",
+                  "pot",
+                  "pot",
+                  "pot"
+                ],
+                [
+                  "pot",
+                  "pot"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: which holds more?",
+          "say": "Which one holds more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one holds more?",
+              "options": [
+                [
+                  "cup"
+                ],
+                [
+                  "pot"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Which is bigger inside?"
+            },
+            {
+              "kind": "which",
+              "say": "Which one holds less?",
+              "options": [
+                [
+                  "pan"
+                ],
+                [
+                  "egg"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: the same amount",
+          "say": "Which row has the same number?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "cup",
+                  "cup",
+                  "cup"
+                ],
+                [
+                  "cup",
+                  "cup",
+                  "cup",
+                  "cup"
+                ],
+                [
+                  "cup",
+                  "cup",
+                  "cup",
+                  "cup",
+                  "cup"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "mug",
+                "mug",
+                "mug",
+                "mug"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the same number?",
+              "options": [
+                [
+                  "pot",
+                  "pot",
+                  "pot",
+                  "pot",
+                  "pot"
+                ],
+                [
+                  "pot",
+                  "pot"
+                ],
+                [
+                  "pot",
+                  "pot",
+                  "pot"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "pan",
+                "pan",
+                "pan",
+                "pan",
+                "pan"
+              ]
+            }
+          ],
+          "paper": "fill a mug with cups of water: how many cups fill it?"
+        }
+      },
+      "5": {
+        "title": "Compare anything",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Pick two things in the room."
+          },
+          {
+            "do": "Your child compares them any way they like.",
+            "say": "What is different about them?"
+          },
+          {
+            "do": "Bigger, heavier, more: all count."
+          }
+        ],
+        "check": {
+          "say": "Which row has more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has more?",
+              "options": [
+                [
+                  "banana",
+                  "banana",
+                  "banana",
+                  "banana",
+                  "banana"
+                ],
+                [
+                  "banana",
+                  "banana",
+                  "banana"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which row has fewer?",
+              "options": [
+                [
+                  "egg",
+                  "egg"
+                ],
+                [
+                  "egg",
+                  "egg",
+                  "egg",
+                  "egg"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which one is bigger?",
+              "options": [
+                [
+                  "mouse"
+                ],
+                [
+                  "horse"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: order three",
+          "say": "Which row has the most?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the most?",
+              "options": [
+                [
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the fewest?",
+              "options": [
+                [
+                  "pig",
+                  "pig",
+                  "pig",
+                  "pig"
+                ],
+                [
+                  "pig"
+                ],
+                [
+                  "pig",
+                  "pig",
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: most and fewest, up to six",
+          "say": "Which row has the most?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which row has the most?",
+              "options": [
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ]
+              ],
+              "correct": 2,
+              "hint": "Count each row."
+            },
+            {
+              "kind": "which",
+              "say": "Which row has the fewest?",
+              "options": [
+                [
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen"
+                ],
+                [
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen"
+                ],
+                [
+                  "hen",
+                  "hen",
+                  "hen",
+                  "hen"
+                ]
+              ],
+              "correct": 2,
+              "hint": "Count each row."
+            }
+          ],
+          "paper": "three cups of raisins: put them in order from fewest to most."
+        }
+      }
+    },
+    "weekend": "No maths session. If it comes up, which bag is heavier, which glass is fuller, say so and leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>English:</b> Hello, Friend!: how to be a good friend and what to do in certain situations.",
+      "<b>Maths:</b> comparing amounts, size, mass and capacity.",
+      "<b>Understanding the World:</b> working in groups; the order things happen in.",
+      "<b>Phonics:</b> g, o, c, k and the tricky word is."
+    ],
+    "thisWeekPhonics": "g, o, c, k and the tricky word is (confirmed by school).",
+    "asks": [],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. This is a past week, kept so every day and every game can be played again."
+    ]
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "done"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "now",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "next",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "next",
+      "tricky": "the"
+    }
+  ],
+  "share": ""
+}
