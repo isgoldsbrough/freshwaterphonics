@@ -198,6 +198,22 @@
               ]
             }
           ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
+          "paper": "say stamp; your child says every sound, then writes it.",
+          "words": [
+            "snap",
+            "spin",
+            "mint",
+            "sand",
+            "damp",
+            "stamp",
+            "mist",
+            "snip"
+          ]
         }
       },
       "2": {
@@ -273,6 +289,22 @@
               "word": "cag",
               "real": false
             }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: two-part words",
+          "say": "Read one part, then the other, then push them together: pic, nic, picnic. You tap the tick or the cross.",
+          "paper": "write sunset as two parts, sun then set.",
+          "words": [
+            "picnic",
+            "sunset",
+            "laptop",
+            "hotdog",
+            "backpack",
+            "dustbin",
+            "upset",
+            "ticktock"
           ]
         }
       },
@@ -390,6 +422,131 @@
             "cup",
             "mud"
           ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a long sentence",
+          "say": "Read every word of the sentence, then tap the picture that matches.",
+          "paper": "you say a cat in a hat; your child writes it, one word at a time.",
+          "items": [
+            {
+              "text": "a frog and a hen sit on a log",
+              "options": [
+                {
+                  "pics": [
+                    "frog",
+                    "hen",
+                    "log"
+                  ],
+                  "say": "a frog, a hen and a log"
+                },
+                {
+                  "pics": [
+                    "frog",
+                    "pig",
+                    "log"
+                  ],
+                  "say": "a frog, a pig and a log"
+                },
+                {
+                  "pics": [
+                    "frog",
+                    "hen",
+                    "bed"
+                  ],
+                  "say": "a frog, a hen and a bed"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "the man got a red cap and a big bag",
+              "options": [
+                {
+                  "pics": [
+                    "man",
+                    "hat",
+                    "bag"
+                  ],
+                  "say": "a man, a hat and a bag"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "cap",
+                    "bag"
+                  ],
+                  "say": "a man, a cap and a bag"
+                },
+                {
+                  "pics": [
+                    "man",
+                    "cap",
+                    "cup"
+                  ],
+                  "say": "a man, a cap and a cup"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "I can pat a duck and a pig",
+              "options": [
+                {
+                  "pics": [
+                    "duck",
+                    "dog"
+                  ],
+                  "say": "a duck and a dog"
+                },
+                {
+                  "pics": [
+                    "hen",
+                    "pig"
+                  ],
+                  "say": "a hen and a pig"
+                },
+                {
+                  "pics": [
+                    "duck",
+                    "pig"
+                  ],
+                  "say": "a duck and a pig"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "the bug is on the sock in the sun",
+              "options": [
+                {
+                  "pics": [
+                    "bug",
+                    "sock",
+                    "sun"
+                  ],
+                  "say": "a bug, a sock and the sun"
+                },
+                {
+                  "pics": [
+                    "bug",
+                    "sock",
+                    "moon"
+                  ],
+                  "say": "a bug, a sock and the moon"
+                },
+                {
+                  "pics": [
+                    "bat",
+                    "sock",
+                    "sun"
+                  ],
+                  "say": "a bat, a sock and the sun"
+                }
+              ],
+              "correct": 0
+            }
+          ]
         }
       },
       "4": {
@@ -473,6 +630,59 @@
               ]
             }
           ]
+        },
+        "challenge": {
+          "type": "segment",
+          "label": "Challenge: spell four-sound words",
+          "say": "Listen to the word. Tap every sound in order. There are four.",
+          "paper": "write frog and flag; check each sound together.",
+          "words": [
+            {
+              "word": "frog",
+              "segments": [
+                "f",
+                "r",
+                "o",
+                "g"
+              ]
+            },
+            {
+              "word": "flag",
+              "segments": [
+                "f",
+                "l",
+                "a",
+                "g"
+              ]
+            },
+            {
+              "word": "crab",
+              "segments": [
+                "c",
+                "r",
+                "a",
+                "b"
+              ]
+            },
+            {
+              "word": "hand",
+              "segments": [
+                "h",
+                "a",
+                "n",
+                "d"
+              ]
+            },
+            {
+              "word": "clap",
+              "segments": [
+                "c",
+                "l",
+                "a",
+                "p"
+              ]
+            }
+          ]
         }
       },
       "5": {
@@ -521,6 +731,46 @@
             "sun",
             "hug",
             "lock"
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Is it a real word or an alien word?",
+          "paper": "you say the dog is on the bed; your child writes the sentence.",
+          "items": [
+            {
+              "word": "frog",
+              "real": true
+            },
+            {
+              "word": "blim",
+              "real": false
+            },
+            {
+              "word": "crab",
+              "real": true
+            },
+            {
+              "word": "stup",
+              "real": false
+            },
+            {
+              "word": "plum",
+              "real": true
+            },
+            {
+              "word": "drep",
+              "real": false
+            },
+            {
+              "word": "sunset",
+              "real": true
+            },
+            {
+              "word": "glomp",
+              "real": false
+            }
           ]
         }
       }
@@ -776,6 +1026,83 @@
               "correct": 1
             }
           ]
+        },
+        "challenge": {
+          "label": "Challenge: doubles, one and two",
+          "say": "How many altogether?",
+          "paper": "two raisins and two more; count them all together. Then three and three.",
+          "questions": [
+            {
+              "kind": "which",
+              "pattern": [
+                "apple",
+                "+",
+                "apple"
+              ],
+              "say": "One and one more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "duck",
+                "duck",
+                "+",
+                "duck",
+                "duck"
+              ],
+              "say": "Two and two more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "star",
+                "star",
+                "+",
+                "star",
+                "star"
+              ],
+              "say": "Two and two more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
         }
       },
       "2": {
@@ -896,6 +1223,89 @@
                 ]
               ],
               "correct": 2
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: double three",
+          "say": "How many altogether?",
+          "paper": "three fingers on each hand: how many altogether?",
+          "questions": [
+            {
+              "kind": "which",
+              "pattern": [
+                "frog",
+                "frog",
+                "+",
+                "frog",
+                "frog"
+              ],
+              "say": "Two and two more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "egg",
+                "egg",
+                "egg",
+                "+",
+                "egg",
+                "egg",
+                "egg"
+              ],
+              "say": "Three and three more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "banana",
+                "banana",
+                "banana",
+                "+",
+                "banana",
+                "banana",
+                "banana"
+              ],
+              "say": "Three and three more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1
             }
           ]
         }
@@ -1020,6 +1430,89 @@
               "correct": 1
             }
           ]
+        },
+        "challenge": {
+          "label": "Challenge: double four and five",
+          "say": "How many altogether?",
+          "paper": "both hands up: five and five. Then fold one finger on each hand: four and four.",
+          "questions": [
+            {
+              "kind": "which",
+              "pattern": [
+                "cat",
+                "cat",
+                "cat",
+                "cat",
+                "+",
+                "cat",
+                "cat",
+                "cat",
+                "cat"
+              ],
+              "say": "Four and four more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "8"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "hand",
+                "+",
+                "hand"
+              ],
+              "say": "Five fingers and five more fingers. How many altogether?",
+              "hint": "Hold up both hands and count every finger.",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "10"
+                ],
+                [
+                  "8"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "pig",
+                "pig",
+                "pig",
+                "+",
+                "pig",
+                "pig",
+                "pig"
+              ],
+              "say": "Three and three more. How many altogether?",
+              "hint": "Count them all, one at a time.",
+              "options": [
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
         }
       },
       "4": {
@@ -1130,6 +1623,109 @@
                   "egg",
                   "egg",
                   "egg"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: doubles with numbers",
+          "say": "What does it make?",
+          "paper": "a domino or dice pair with the same dots on both: say the double.",
+          "questions": [
+            {
+              "kind": "which",
+              "pattern": [
+                "1",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "say": "One and one. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "2",
+                "+",
+                "2",
+                "=",
+                "?"
+              ],
+              "say": "Two and two. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "3",
+                "+",
+                "3",
+                "=",
+                "?"
+              ],
+              "say": "Three and three. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "7"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "4",
+                "+",
+                "4",
+                "=",
+                "?"
+              ],
+              "say": "Four and four. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "9"
+                ],
+                [
+                  "7"
                 ]
               ],
               "correct": 0
@@ -1257,6 +1853,109 @@
               "correct": 0
             }
           ]
+        },
+        "challenge": {
+          "label": "Challenge: all the doubles to five",
+          "say": "What does it make?",
+          "paper": "call out a double, 1 and 1 up to 5 and 5; your child answers with fingers.",
+          "questions": [
+            {
+              "kind": "which",
+              "pattern": [
+                "5",
+                "+",
+                "5",
+                "=",
+                "?"
+              ],
+              "say": "Five and five. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "10"
+                ],
+                [
+                  "11"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "3",
+                "+",
+                "?",
+                "=",
+                "6"
+              ],
+              "say": "Three and how many more make six? It is a double.",
+              "hint": "Three on one hand. How many on the other hand make six?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "2",
+                "+",
+                "2",
+                "=",
+                "?"
+              ],
+              "say": "Two and two. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "pattern": [
+                "4",
+                "+",
+                "4",
+                "=",
+                "?"
+              ],
+              "say": "Four and four. What does it make?",
+              "hint": "Show it on your fingers, then count them all.",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "9"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
         }
       }
     },
@@ -1310,5 +2009,5 @@
       "state": "now"
     }
   ],
-  "share": "Phonics and maths for the first week back (w/c 2 Nov): https://freshwaterphonics.vercel.app\n\nPhonics: a review of every sound so far, a group a day, until school says which new sounds come next.\nMaths: the numbers 1, 2 and 3: find them, spot them without counting, show them on fingers.\n\nTen minutes a day on a laptop. Made by a parent, not by the school."
+  "share": "Phonics and maths for the first week back (w/c 2 Nov): https://freshwaterphonics.vercel.app\n\nPhonics: a review of every sound so far, a group a day, until school says which new sounds come next.\nMaths: the numbers 1, 2 and 3: find them, spot them without counting, show them on fingers.\n\nNew: an optional challenge card each day, for children who find the stretch easy.\n\nTen minutes a day on a laptop. Made by a parent, not by the school."
 }

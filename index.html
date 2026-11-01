@@ -89,6 +89,9 @@
 
   .launch { background: var(--panel); border-radius: var(--r); padding: 18px 20px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; margin-top: 12px; position: relative; min-height: 96px; }
   .launch.stretch { background: var(--apricot-soft); }
+  .launch.challenge { background: var(--sky-soft); }
+  .launch.challenge .lab { color: var(--sky); }
+  .paper-line { margin: 8px 4px 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.4; }
   .launch .pics { display: flex; gap: 6px; }
   .launch .pics img { width: 44px; height: 44px; background: var(--paper); border-radius: 12px; padding: 5px; }
   .launch h3 { font-size: 1.15rem; font-weight: 500; }
@@ -164,6 +167,11 @@
   .ptile { width: 56px; height: 56px; flex-shrink: 0; border-radius: 14px; background: var(--paper); display: flex; align-items: center; justify-content: center; }
   .ptile img { width: 40px; height: 40px; }
   .ptile.q { border: 2px dashed var(--apricot); font-family: var(--display); color: var(--apricot); font-size: 1.6rem; }
+  .ptile.num { font-family: var(--body); font-size: 2rem; color: var(--ink); }
+  .ptile.op { background: transparent; width: 32px; font-family: var(--body); font-size: 2rem; color: var(--ink-soft); }
+  .prow.wide { flex-wrap: wrap; max-width: 560px; }
+  .prow.wide .ptile { width: 46px; height: 46px; }
+  .prow.wide .ptile img { width: 34px; height: 34px; }
 
   /* play mode */
   .playmode { position: fixed; inset: 0; background: var(--panel); z-index: 10; display: flex; flex-direction: column; padding: 16px 28px 32px; }
@@ -750,18 +758,19 @@
     maths(pm, g) {
       const stage = pm.stage;
       let i = 0, misses = 0;
-      const tile = t => `<span class="ptile${t === "?" ? " q" : ""}" role="img" aria-label="${esc(t)}">${t === "?" ? "?" : pic(t)}</span>`;
+      const tile = t => /^\d+$/.test(t) ? `<span class="ptile num">${esc(t)}</span>` : /^[+=]$/.test(t) ? `<span class="ptile op" aria-label="${t === "+" ? "and" : "makes"}">${esc(t)}</span>` : `<span class="ptile${t === "?" ? " q" : ""}" role="img" aria-label="${esc(t)}">${t === "?" ? "?" : pic(t)}</span>`;
+      const row = ts => `<div class="prow${ts.length > 7 ? " wide" : ""}">${ts.map(tile).join("")}</div>`;
       const sayQ = q => q.say || (q.kind === "which" ? "Which row is a pattern?" : q.pattern.map(t => t === "?" ? "something" : t).join(", ") + ". " + (q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?"));
       function q() {
         const qu = g.questions[i], order = shuffle(qu.options.map((o, k) => k));
         pm.progress(i, g.questions.length);
         $("pm-task").textContent = sayQ(qu); $("pm-say").onclick = () => speak(sayQ(qu));
-        pm.draw(`${qu.pattern ? `<div class="prow">${qu.pattern.map(tile).join("")}</div>` : ""}<div class="popts" id="po">${order.map(k => `<button class="popt" data-k="${k}" aria-label="${esc(qu.options[k].join(", "))}"><span class="prow">${qu.options[k].map(tile).join("")}</span></button>`).join("")}</div>`);
+        pm.draw(`${qu.pattern ? row(qu.pattern) : ""}<div class="popts" id="po">${order.map(k => `<button class="popt" data-k="${k}" aria-label="${esc(qu.options[k].join(", "))}"><span class="prow">${qu.options[k].map(tile).join("")}</span></button>`).join("")}</div>`);
         speak(sayQ(qu));
         stage.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
-          if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
-          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.kind === "which" ? LOOK.count : sayQ(qu)); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+          if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.challenge ? "Challenge done!" : pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.hint || (qu.kind === "which" ? LOOK.count : sayQ(qu))); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
         }));
       }
       q();
@@ -880,7 +889,7 @@
     if (g.type === "blendpick" || g.type === "segment") return g.words.slice(0, 3).map(w => w.pic || w.word);
     if (g.type === "caption") return g.items[0].options[g.items[0].correct].pics;
     if (g.type === "alien") return ["house", "alien"];
-    if (g.type === "maths") return (g.questions[0].pattern || g.questions[0].options[0]).filter(t => t !== "?").slice(0, 3);
+    if (g.type === "maths") { const ts = g.questions.flatMap(q => [...(q.pattern || []), ...q.options.flat()]).filter(t => t in PICS); return [...new Set(ts)].slice(0, 3); }
     if (g.type === "memory") return g.pairs.slice(0, 3).map(p => p.pic || p.word);
     if (g.type === "rhymes") return g.rounds.slice(0, 3).map(r => r.target.pic || r.target.word);
     if (g.type === "blend") return g.words.filter(w => w.word in PICS).slice(0, 3).map(w => w.word);
@@ -890,7 +899,7 @@
   function launcher(game, meta, opts = {}) {
     const id = meta.id;
     const title = (opts.title || TITLES[game.type]); const cap = title.charAt(0).toUpperCase() + title.slice(1);
-    const html = `<div class="launch${opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).slice(0, 3).map(p => pic(p)).join("")}</div><div>${opts.stretch ? `<span class="lab">stretch · if that was easy</span>` : ""}<h3>${esc(cap)}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch ? " small" : ""}" data-launch="${id}">Play</button></div>`;
+    const html = `<div class="launch${opts.challenge ? " challenge" : opts.stretch ? " stretch" : ""}" id="launch-${id}">${done.has(id) ? `<span class="got" aria-label="done">${esc(meta.sticker)}</span>` : ""}<div class="pics">${previewPics(game).slice(0, 3).map(p => pic(p)).join("")}</div><div>${opts.challenge ? `<span class="lab">challenge · a big step up, only if the stretch was easy</span>` : opts.stretch ? `<span class="lab">stretch · if that was easy</span>` : ""}<h3>${esc(cap)}</h3><p class="tag">${esc(opts.tag || game.say || "")}</p></div><button class="play${opts.stretch || opts.challenge ? " small" : ""}" data-launch="${id}">Play</button></div>${opts.paper ? `<p class="paper-line"><b>Off screen:</b> ${esc(opts.paper)}</p>` : ""}`;
     return { html, wire() { const b = document.querySelector(`[data-launch="${id}"]`); if (b) b.addEventListener("click", () => openPlay(opts.list || game, meta)); } };
   }
 
@@ -1007,8 +1016,9 @@
     const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Say each sound along the dots and lines, then the word." });
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
-    side.innerHTML = hero + bl.html + main.html + (st ? st.html : "");
-    bl.wire(); main.wire(); if (st) st.wire();
+    const ch = d.challenge ? launcher(d.challenge, { id: "challenge" + day, sticker, challenge: true }, { challenge: true, title: d.challenge.label.replace(/^Challenge: /, ""), tag: d.challenge.say, paper: d.challenge.paper }) : null;
+    side.innerHTML = hero + bl.html + main.html + (st ? st.html : "") + (ch ? ch.html : "");
+    bl.wire(); main.wire(); if (st) st.wire(); if (ch) ch.wire();
   }
 
   // ---------- more ways to play: the same games, inside the page ----------
@@ -1145,7 +1155,8 @@
     const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;
     const chk = launcher({ type: "maths", say: d.check.say, questions: d.check.questions }, { id: "mcheck" + day, sticker: "★" }, { title: "Quick check on the screen", tag: d.check.say });
     const st = launcher({ type: "maths", say: d.stretch.say, questions: d.stretch.questions }, { id: "mstretch" + day, sticker: "★", stretch: true }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say });
-    side.innerHTML = hero + chk.html + st.html; chk.wire(); st.wire();
+    const ch = d.challenge ? launcher({ type: "maths", say: d.challenge.say, questions: d.challenge.questions }, { id: "mchallenge" + day, sticker: "★", challenge: true }, { challenge: true, title: d.challenge.label.replace(/^Challenge: /, ""), tag: d.challenge.say, paper: d.challenge.paper }) : null;
+    side.innerHTML = hero + chk.html + st.html + (ch ? ch.html : ""); chk.wire(); st.wire(); if (ch) ch.wire();
   }
 
   // ---------- week ----------

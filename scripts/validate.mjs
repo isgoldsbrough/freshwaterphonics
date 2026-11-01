@@ -117,6 +117,46 @@ for (const n of ["1", "2", "3", "4", "5"]) {
   }
 }
 
+// Challenge (optional, one per day): a bigger step on the SAME sounds. Longer words are
+// allowed (adjacent consonants, two-part words like picnic), but never a sound not yet taught.
+function checkChallengeWord(word, where) {
+  if (blocked(word)) { errors.push(`${where}: "${word}" is on the blocklist; choose another word`); return; }
+  if (!segment(word)) { errors.push(`${where}: "${word}" uses a sound not yet taught`); return; }
+  // letters that make one sound together, such as sh in ship, must not be read as s-h before they are taught
+  const LATER = ["sh", "ch", "th", "ng", "nk", "qu", "ff", "ll", "ss", "zz", "wh", "ph", "ai", "ee", "oa", "oo", "ar", "or", "ur", "ow", "oi", "er", "igh", "ear", "air"];
+  const hit = LATER.find(g => !taught.has(g) && word.toLowerCase().includes(g));
+  if (hit) errors.push(`${where}: "${word}" contains ${hit}, a sound not yet taught`);
+}
+for (const n of ["1", "2", "3", "4", "5"]) {
+  const s = days[n] && days[n].challenge;
+  if (!s) continue;
+  const where = `phonics day ${n} challenge (${s.type})`;
+  if (!/^Challenge: /.test(s.label || "")) errors.push(`${where}: label must start "Challenge: "`);
+  if (s.type === "segment") {
+    for (const w of s.words) {
+      checkChallengeWord(w.word, where);
+      if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
+      w.segments.forEach(x => { if (!taught.has(x)) errors.push(`${where}: segment "${x}" in "${w.word}" not taught`); });
+      if (new Set(w.segments).size !== w.segments.length) errors.push(`${where}: "${w.word}" repeats a sound; the bank cannot handle that`);
+      needPic(w.pic || w.word, where);
+    }
+  } else if (s.type === "alien") {
+    s.items.forEach(it => checkChallengeWord(it.word, where));
+    if (s.items.filter(i => i.real).length < 2 || s.items.filter(i => !i.real).length < 2) errors.push(`${where}: needs at least 2 real and 2 alien`);
+  } else if (s.type === "caption") {
+    for (const it of s.items) {
+      it.text.split(/\s+/).forEach(wd => { if (!trickySet.has(wd)) checkChallengeWord(wd, `${where} "${it.text}"`); });
+      if (it.options.length < 3 || it.correct == null || it.correct >= it.options.length) errors.push(`${where}: "${it.text}" needs 3 options and a correct index`);
+      it.options.forEach(o => { if (!o.pics || !o.say) errors.push(`${where}: "${it.text}" option needs pics and say`); (o.pics || []).forEach(pw => needPic(pw, where)); });
+    }
+  } else if (s.type === "mark") {
+    s.words.forEach(wd => wd.split(/\s+/).forEach(x => { if (!trickySet.has(x)) checkChallengeWord(x, where); }));
+    if (s.words.length < 6) errors.push(`${where}: fewer than 6 words`);
+  } else {
+    errors.push(`${where}: unknown challenge type`);
+  }
+}
+
 // Memory pairs: grapheme to a word starting with it (first-sound rule), word printed
 for (const p of week.phonics.memory || []) {
   if (!taught.has(p.grapheme)) errors.push(`memory: grapheme "${p.grapheme}" not taught`);
@@ -144,14 +184,15 @@ const mdays = week.maths.days || {};
 for (const n of ["1", "2", "3", "4", "5"]) {
   const d = mdays[n];
   if (!d) { errors.push(`maths day ${n} missing`); continue; }
-  for (const [label, block] of [["check", d.check], ["stretch", d.stretch]]) {
-    if (!block) { errors.push(`maths day ${n}: no ${label}`); continue; }
+  for (const [label, block] of [["check", d.check], ["stretch", d.stretch], ["challenge", d.challenge]]) {
+    if (!block) { if (label !== "challenge") errors.push(`maths day ${n}: no ${label}`); continue; }
     block.questions.forEach((q, i) => {
       const where = `maths day ${n} ${label} q${i + 1}`;
       if (q.options.length < 2) errors.push(`${where}: fewer than 2 options`);
       if (q.correct == null || q.correct >= q.options.length) errors.push(`${where}: bad correct index`);
       const all = [...(q.pattern || []), ...q.options.flat()];
-      all.forEach(t => { if (t !== "?") needPic(t, where); });
+      all.forEach(t => { if (t !== "?" && !/^\d+$/.test(t) && !/^[+=]$/.test(t)) needPic(t, where); });
+      if (label === "challenge" && !q.say) errors.push(`${where}: challenge questions need a spoken "say"`);
       if (q.kind !== "which" && !q.pattern) errors.push(`${where}: ${q.kind} needs a pattern`);
       if (q.kind === "missing" && !q.pattern.includes("?")) errors.push(`${where}: missing needs a "?" in the pattern`);
       if (q.kind === "next" && q.options.some(o => o.length !== 1)) errors.push(`${where}: next options are single tiles`);

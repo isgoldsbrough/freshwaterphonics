@@ -53,8 +53,8 @@ for (const d of Object.values(p.days)) {
   if (g.type === "ladder") g.words.forEach(add);
   if (g.type === "tricky") g.words.forEach(add);
 }
-for (const d of Object.values(p.days)) {
-  const s = d.stretch; if (!s) continue;
+for (const d of Object.values(p.days)) for (const s of [d.stretch, d.challenge]) {
+  if (!s) continue;
   add(s.say);
   if (s.type === "segment") s.words.forEach(w => add(w.word));
   if (s.type === "alien") s.items.forEach(i => add(i.word));
@@ -69,9 +69,11 @@ p.tricky.forEach(t => add(t.word));
 // Maths: each question read aloud from its tiles
 const tileName = t => (t === "?" ? "something" : t);
 for (const d of Object.values(week.maths.days)) {
-  for (const block of [d.check, d.stretch]) {
+  for (const block of [d.check, d.stretch, d.challenge]) {
+    if (!block) continue;
     add(block.say);
     block.questions.forEach(q => {
+      if (q.hint) add(q.hint);
       if (q.say) { add(q.say); return; }
       if (q.kind === "which") return;
       const spoken = q.pattern.map(tileName).join(", ");
