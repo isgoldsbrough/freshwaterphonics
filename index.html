@@ -50,7 +50,7 @@
   .timebar { margin-top: 14px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 0.95rem; color: var(--ink-soft); }
   .timebar b { color: var(--ink); font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
   .timebar .track { position: relative; flex: 0 1 220px; height: 10px; border-radius: 999px; background: var(--rule); overflow: hidden; }
-  .timebar .zone { position: absolute; left: 50%; right: 0; top: 0; bottom: 0; background: var(--moss-soft); }
+  .timebar .zone { position: absolute; left: 40%; right: 0; top: 0; bottom: 0; background: var(--moss-soft); }
   .timebar .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 999px; background: var(--sky); transition: width 600ms; }
   .timebar.ok .fill { background: var(--moss); }
   .timebar.over .fill { background: var(--apricot); }
@@ -273,7 +273,7 @@
   </div>
   <div class="banner" id="stale-banner" hidden></div>
   <div class="viewing" id="viewing" hidden></div>
-  <div class="timebar" id="timebar" aria-live="polite"><span>Today <b id="tb-min">0 min</b> · aim 10 to 20</span><span class="track" aria-hidden="true"><span class="zone"></span><span class="fill" id="tb-fill"></span></span><button id="tb-pause" aria-pressed="false">pause</button><span class="msg quiet" id="tb-msg"></span></div>
+  <div class="timebar" id="timebar" aria-live="polite"><span>Today <b id="tb-min">0 min</b> · up to 25</span><span class="track" aria-hidden="true"><span class="zone"></span><span class="fill" id="tb-fill"></span></span><button id="tb-pause" aria-pressed="false">pause</button><span class="msg quiet" id="tb-msg"></span></div>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button role="tab" id="tab-btn-today" aria-selected="true" aria-controls="panel-today">phonics</button>
@@ -1190,7 +1190,7 @@
 
   // ---------- time today: active minutes on this computer, aim 10 to 20 ----------
   (function timer() {
-    const KEY = "fp-time", IDLE = 120, AIM_LO = 10, AIM_HI = 20;
+    const KEY = "fp-time", IDLE = 120, AIM_LO = 10, AIM_HI = 25;
     const load = () => { try { return JSON.parse(store.get(KEY) || "{}"); } catch (e) { return {}; } };
     let log = load(), last = Date.now(), paused = false;
     const day = () => todayISO();
@@ -1200,7 +1200,7 @@
       $("tb-min").textContent = min + " min";
       $("tb-fill").style.width = Math.min(100, sec / (AIM_HI * 60) * 100) + "%";
       const tb = $("timebar"); tb.classList.toggle("ok", min >= AIM_LO && min < AIM_HI); tb.classList.toggle("over", min >= AIM_HI);
-      $("tb-msg").textContent = paused ? "Paused. Tap resume when she is back." : min >= AIM_HI ? "20 minutes: a good place to stop for today." : min >= AIM_LO ? "10 minutes done: finish what she is on, or carry on to 20." : "";
+      $("tb-msg").textContent = paused ? "Paused. Tap resume when she is back." : min >= AIM_HI ? "25 minutes: time to stop for today." : min >= AIM_LO ? "10 minutes done: carry on, up to 25." : "";
       const rows = []; const d0 = new Date(day() + "T12:00:00");
       for (let k = 6; k >= 0; k--) { const d = new Date(d0); d.setDate(d.getDate() - k); const iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); const m = Math.floor((log[iso] || 0) / 60); rows.push(`<span>${d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}</span><span class="track"><span class="fill" style="width:${Math.min(100, m / AIM_HI * 100)}%"></span></span><span>${m} min</span>`); }
       $("wk-time").innerHTML = rows.join("");
