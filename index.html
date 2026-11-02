@@ -113,7 +113,6 @@
   .play.small { padding: 11px 24px; font-size: 1.05rem; }
   a.play { display: inline-block; text-decoration: none; font-family: var(--display); font-weight: 500; }
   .launch.book { background: var(--plum-soft); }
-  .book-block .launch { max-width: 560px; }
   .launch.book .lab { color: var(--plum); }
   .launch.book .bk { width: 44px; height: 44px; background: var(--paper); border-radius: 12px; display: grid; place-items: center; font-size: 1.6rem; }
   .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
@@ -303,10 +302,6 @@
         <p class="pm-task" id="more-task"></p>
         <div class="stage" id="more-stage"></div>
       </div>
-    </section>
-    <section class="block book-block" id="book-block" hidden>
-      <h2>Book of the week</h2>
-      <div id="book-card"></div>
     </section>
   </div>
 
@@ -1021,7 +1016,7 @@
     const e = IDX.weeks.filter(w => w.book && w.weekOf <= W.weekOf).sort((a, b) => (a.weekOf < b.weekOf ? 1 : -1))[0];
     if (!e) return "";
     const same = e.weekOf === W.weekOf, b = e.book;
-    return `<div class="launch book"><div class="pics"><span class="bk" aria-hidden="true">📖</span></div><div><span class="lab">${same ? "read in class this week" : "read in class, " + esc(e.label.toLowerCase())}</span><h3>${esc(b.title)}</h3><p class="tag">${esc(b.game)}</p></div><a class="play" href="${esc(b.file)}">Play</a></div>`;
+    return `<div class="launch book"><div class="pics"><span class="bk" aria-hidden="true">📖</span></div><div><span class="lab">${same ? "book of the week" : "book of the week, " + esc(e.label.toLowerCase())}</span><h3>${esc(b.title)}</h3><p class="tag">${esc(b.game)}</p></div><a class="play" href="${esc(b.file)}">Play</a></div>`;
   }
   const BOOKS_STEP = { label: "Books", do: "Any time today. Your child reads the school practice book; reading it again on other days is the point, so easy is good. Then you read the sharing book to them and talk about it.", talk: ["What happened?", "What do you think happens next?", "Has that ever happened to you?"] };
   function renderPhonics() {
@@ -1029,14 +1024,14 @@
     if (W.summary) {
       const entry = IDX.weeks.find(x => x.weekOf === W.weekOf);
       s.innerHTML = `<h2>${esc(W.label)}</h2><p class="quiet">${W.status === "confirmed" ? "confirmed by school" : ""}</p><p style="margin-top:12px;max-width:60ch;">That week school taught <b>${esc(W.phonics.focus.join(", "))}</b>${entry.tricky ? ` and the tricky word <b>${esc(entry.tricky)}</b>` : ""}. The day-by-day plan was not on this page yet, but every sound can be played: tap one for a five-minute go, find it then blend it, using only the sounds taught up to then.</p>${trickyHtml()}`;
-      side.innerHTML = `<div class="hero"><div class="big" style="font-size:3.6rem;min-width:0;white-space:nowrap;">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">The sounds of that week.</p></div></div><div class="sounds">${W.phonics.focus.map(g => soundTile(TERM.graphemes.find(x => x.g === g) || { g, week: "" }, false)).join("")}</div>`;
+      side.innerHTML = `<div class="hero"><div class="big" style="font-size:3.6rem;min-width:0;white-space:nowrap;">${esc(W.phonics.focus.join(" "))}</div><div><p class="cue">The sounds of that week.</p></div></div><div class="sounds">${W.phonics.focus.map(g => soundTile(TERM.graphemes.find(x => x.g === g) || { g, week: "" }, false)).join("")}</div>` + bookCard();
       wireSounds(side, "wk-" + W.weekOf + "-", null, new Set([...W.phonics.taught, ...W.phonics.focus]));
       return;
     }
     const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0] ? W.phonics.tricky[0].word : "★");
     if (day === 0) {
       s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>`; return;
+      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>` + bookCard(); return;
     }
     const d = W.phonics.days[day];
     // a review week's own first step already goes through the sounds
@@ -1051,7 +1046,7 @@
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     const ch = d.challenge ? launcher(d.challenge, { id: "challenge" + day, sticker, challenge: true }, { challenge: true, title: d.challenge.label.replace(/^Challenge: /, ""), tag: d.challenge.say, paper: d.challenge.paper }) : null;
-    side.innerHTML = hero + bl.html + main.html + (st ? st.html : "") + (ch ? ch.html : "");
+    side.innerHTML = hero + bl.html + main.html + (st ? st.html : "") + (ch ? ch.html : "") + bookCard();
     bl.wire(); main.wire(); if (st) st.wire(); if (ch) ch.wire();
   }
 
@@ -1239,8 +1234,7 @@
   })();
 
   // ---------- go ----------
-  function renderBook() { const c = bookCard(); $("book-block").hidden = !c; $("book-card").innerHTML = c; }
-  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); renderWeekTab(); renderBook(); }
+  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); renderWeekTab(); }
   renderStrip();
   renderDay();
   selectMore(MORE.some(m => m.id === store.get("fp-more")) ? store.get("fp-more") : "memory");
