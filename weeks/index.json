@@ -28,7 +28,13 @@
       ],
       "tricky": "the",
       "maths": "the numbers 1, 2 and 3: finding, subitising, representing",
-      "status": "confirmed"
+      "status": "confirmed",
+      "book": {
+        "title": "The Smeds and the Smoos",
+        "by": "Julia Donaldson and Axel Scheffler",
+        "file": "books/the-smeds-and-the-smoos.html",
+        "game": "Read and spell words from the story, real or Smed words, then count Smeds and Smoos up to doubles."
+      }
     },
     {
       "weekOf": "2026-10-05",
@@ -42,7 +48,13 @@
       ],
       "tricky": "I",
       "maths": "patterns",
-      "status": "confirmed"
+      "status": "confirmed",
+      "book": {
+        "title": "We're Going on a Bear Hunt",
+        "by": "Michael Rosen and Helen Oxenbury",
+        "file": "books/going-on-a-bear-hunt.html",
+        "game": "Put the hunt in story order, read and spell words like mud and duck, then patterns."
+      }
     },
     {
       "weekOf": "2026-09-28",
@@ -56,7 +68,13 @@
       ],
       "tricky": "is",
       "maths": "comparing amounts, size, mass and capacity",
-      "status": "confirmed"
+      "status": "confirmed",
+      "book": {
+        "title": "Hello, Friend!",
+        "by": "Rebecca Cobb",
+        "file": "books/hello-friend.html",
+        "game": "Feelings from the story, read and spell words with s a t p i n m d, then match and sort."
+      }
     },
     {
       "weekOf": "2026-09-21",
@@ -70,7 +88,13 @@
       ],
       "tricky": null,
       "maths": "matching objects, sorting into categories",
-      "status": "confirmed"
+      "status": "confirmed",
+      "book": {
+        "title": "Hello, Friend!",
+        "by": "Rebecca Cobb",
+        "file": "books/hello-friend.html",
+        "game": "Feelings from the story, read and spell words with s a t p i n m d, then match and sort."
+      }
     },
     {
       "weekOf": "2026-09-14",

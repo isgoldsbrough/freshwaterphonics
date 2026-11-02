@@ -111,6 +111,11 @@
   .launch .got { position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 1.3rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 4px var(--paper); }
   .play { border: none; background: var(--moss); color: #fff; border-radius: 999px; padding: 12px 28px; font-size: 1.15rem; }
   .play.small { padding: 11px 24px; font-size: 1.05rem; }
+  a.play { display: inline-block; text-decoration: none; font-family: var(--display); font-weight: 500; }
+  .launch.book { background: var(--plum-soft); }
+  .book-block .launch { max-width: 560px; }
+  .launch.book .lab { color: var(--plum); }
+  .launch.book .bk { width: 44px; height: 44px; background: var(--paper); border-radius: 12px; display: grid; place-items: center; font-size: 1.6rem; }
   .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
   .more button { background: var(--panel); border: none; border-radius: var(--r); padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1rem; }
   .more img { width: 44px; height: 44px; }
@@ -298,6 +303,10 @@
         <p class="pm-task" id="more-task"></p>
         <div class="stage" id="more-stage"></div>
       </div>
+    </section>
+    <section class="block book-block" id="book-block" hidden>
+      <h2>Book of the week</h2>
+      <div id="book-card"></div>
     </section>
   </div>
 
@@ -1007,6 +1016,13 @@
     const paper = d.challenge && d.challenge.paper;
     return { label, min: 5, do: `${names.length > 1 ? "The two harder games" : "The harder game"} on the right: ${names.join(", then ")}.${paper ? " Then off screen: " + paper : ""}` };
   };
+  // the class book: the newest week up to the one on screen that has a book game
+  function bookCard() {
+    const e = IDX.weeks.filter(w => w.book && w.weekOf <= W.weekOf).sort((a, b) => (a.weekOf < b.weekOf ? 1 : -1))[0];
+    if (!e) return "";
+    const same = e.weekOf === W.weekOf, b = e.book;
+    return `<div class="launch book"><div class="pics"><span class="bk" aria-hidden="true">📖</span></div><div><span class="lab">${same ? "read in class this week" : "read in class, " + esc(e.label.toLowerCase())}</span><h3>${esc(b.title)}</h3><p class="tag">${esc(b.game)}</p></div><a class="play" href="${esc(b.file)}">Play</a></div>`;
+  }
   const BOOKS_STEP = { label: "Books", do: "Any time today. Your child reads the school practice book; reading it again on other days is the point, so easy is good. Then you read the sharing book to them and talk about it.", talk: ["What happened?", "What do you think happens next?", "Has that ever happened to you?"] };
   function renderPhonics() {
     const s = $("ph-script"), side = $("ph-side");
@@ -1223,7 +1239,8 @@
   })();
 
   // ---------- go ----------
-  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); renderWeekTab(); }
+  function renderBook() { const c = bookCard(); $("book-block").hidden = !c; $("book-card").innerHTML = c; }
+  function renderDay() { renderDayPick(); renderPhonics(); renderMaths(); renderHalf(); renderWeekTab(); renderBook(); }
   renderStrip();
   renderDay();
   selectMore(MORE.some(m => m.id === store.get("fp-more")) ? store.get("fp-more") : "memory");
