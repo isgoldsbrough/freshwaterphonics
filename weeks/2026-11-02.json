@@ -36,6 +36,34 @@
     ],
     "tricky": [
       {
+        "word": "as",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z, like in is."
+      },
+      {
+        "word": "put",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents. If it sounds just like it looks where you live, it isn't tricky."
+      },
+      {
+        "word": "pull",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in put."
+      },
+      {
+        "word": "full",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in pull."
+      },
+      {
         "word": "I",
         "trickyLetters": [
           0
@@ -62,106 +90,56 @@
     "days": {
       "1": {
         "name": "Mon",
-        "sound": null,
-        "review": [
-          "s",
-          "a",
-          "t",
-          "p",
-          "i",
-          "n",
-          "m",
-          "d"
-        ],
-        "title": "Review: s a t p i n m d",
+        "sound": "ff",
+        "title": "New sound: ff",
         "minutes": 10,
         "steps": [
           {
-            "label": "Review sounds",
-            "min": 2,
-            "do": "Show s, a, t, p, i, n, m, d one at a time. Your child says each sound, quick and pure. A wobbly one: say it together, then come back to it at the end. Then the tricky words I, is and the.",
-            "say": "What sound is this?"
+            "label": "Newest sound",
+            "min": 3,
+            "do": "ff, new at school this week. Say it short and pure, the way the Little Wandle video does. Then read puff, huff, off. Two letters, one sound.",
+            "say": "ff, puff. ff, off."
           },
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words from today's sounds, with dots and lines, then the same words without.",
-            "say": "m, a, p. What word?"
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "p, u, ff. What word?"
           },
           {
             "label": "Spell and write",
             "min": 2,
-            "do": "Say pin. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
-            "say": "Pin. What sounds can you hear?"
+            "do": "Say puff. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Puff. What sounds can you hear?"
           }
         ],
         "game": {
-          "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
-          "words": [
+          "type": "hunt",
+          "say": "Tap the things that end with ff.",
+          "items": [
             {
-              "word": "map",
-              "segments": [
-                "m",
-                "a",
-                "p"
-              ],
-              "distractors": [
-                {
-                  "word": "sun"
-                },
-                {
-                  "word": "dog"
-                }
-              ]
+              "word": "puff",
+              "match": true
             },
             {
-              "word": "pin",
-              "segments": [
-                "p",
-                "i",
-                "n"
-              ],
-              "distractors": [
-                {
-                  "word": "cup"
-                },
-                {
-                  "word": "hat"
-                }
-              ]
+              "word": "huff",
+              "match": true
             },
             {
-              "word": "tap",
-              "segments": [
-                "t",
-                "a",
-                "p"
-              ],
-              "distractors": [
-                {
-                  "word": "bed"
-                },
-                {
-                  "word": "fan"
-                }
-              ]
+              "word": "giraffe",
+              "match": true
             },
             {
-              "word": "man",
-              "segments": [
-                "m",
-                "a",
-                "n"
-              ],
-              "distractors": [
-                {
-                  "word": "pig"
-                },
-                {
-                  "word": "net"
-                }
-              ]
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "pig",
+              "match": false
             }
           ]
         },
@@ -171,437 +149,21 @@
           "say": "Listen to the word. Tap its sounds in order.",
           "words": [
             {
-              "word": "tap",
-              "segments": [
-                "t",
-                "a",
-                "p"
-              ]
-            },
-            {
-              "word": "pin",
+              "word": "puff",
               "segments": [
                 "p",
-                "i",
-                "n"
-              ]
-            },
-            {
-              "word": "map",
-              "segments": [
-                "m",
-                "a",
-                "p"
-              ]
-            },
-            {
-              "word": "tin",
-              "segments": [
-                "t",
-                "i",
-                "n"
-              ]
-            }
-          ]
-        },
-        "challenge": {
-          "type": "mark",
-          "label": "Challenge: read longer words",
-          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
-          "paper": "say stamp; your child says every sound, then writes it.",
-          "words": [
-            "snap",
-            "spin",
-            "mint",
-            "sand",
-            "damp",
-            "stamp",
-            "mist",
-            "snip"
-          ]
-        }
-      },
-      "2": {
-        "name": "Tue",
-        "sound": null,
-        "review": [
-          "g",
-          "o",
-          "c",
-          "k",
-          "ck"
-        ],
-        "title": "Review: g o c k ck",
-        "minutes": 10,
-        "steps": [
-          {
-            "label": "Review sounds",
-            "min": 2,
-            "do": "Show g, o, c, k, ck one at a time. Your child says each sound, quick and pure. A wobbly one: say it together, then come back to it at the end. Then the tricky words I, is and the.",
-            "say": "c and k say the same sound. So does ck, at the end."
-          },
-          {
-            "label": "Blend",
-            "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words from today's sounds, with dots and lines, then the same words without.",
-            "say": "s, o, ck. What word?"
-          },
-          {
-            "label": "Spell and write",
-            "min": 2,
-            "do": "Say dog. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
-            "say": "Dog. What sounds can you hear?"
-          }
-        ],
-        "game": {
-          "type": "ladder",
-          "say": "Say the new word, then tap the letter that changed.",
-          "words": [
-            "cat",
-            "cot",
-            "cog",
-            "dog",
-            "dig",
-            "pig"
-          ]
-        },
-        "stretch": {
-          "type": "alien",
-          "label": "Stretch: real or alien?",
-          "say": "Read the word. Is it a real word or an alien word?",
-          "items": [
-            {
-              "word": "cot",
-              "real": true
-            },
-            {
-              "word": "kit",
-              "real": true
-            },
-            {
-              "word": "sock",
-              "real": true
-            },
-            {
-              "word": "gop",
-              "real": false
-            },
-            {
-              "word": "kib",
-              "real": false
-            },
-            {
-              "word": "cag",
-              "real": false
-            }
-          ]
-        },
-        "challenge": {
-          "type": "mark",
-          "label": "Challenge: two-part words",
-          "say": "Read one part, then the other, then push them together: pic, nic, picnic. You tap the tick or the cross.",
-          "paper": "write sunset as two parts, sun then set.",
-          "words": [
-            "picnic",
-            "sunset",
-            "laptop",
-            "hotdog",
-            "backpack",
-            "dustbin",
-            "upset",
-            "ticktock"
-          ]
-        }
-      },
-      "3": {
-        "name": "Wed",
-        "sound": null,
-        "review": [
-          "e",
-          "u",
-          "r"
-        ],
-        "title": "Review: e u r",
-        "minutes": 10,
-        "steps": [
-          {
-            "label": "Review sounds",
-            "min": 2,
-            "do": "Show e, u, r one at a time. Your child says each sound, quick and pure. A wobbly one: say it together, then come back to it at the end. Then the tricky words I, is and the.",
-            "say": "What sound is this?"
-          },
-          {
-            "label": "Blend",
-            "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words from today's sounds, with dots and lines, then the same words without.",
-            "say": "r, e, d. What word?"
-          },
-          {
-            "label": "Spell and write",
-            "min": 2,
-            "do": "Say red. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
-            "say": "Red. What sounds can you hear?"
-          }
-        ],
-        "game": {
-          "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
-          "words": [
-            {
-              "word": "red",
-              "segments": [
-                "r",
-                "e",
-                "d"
-              ],
-              "distractors": [
-                {
-                  "word": "dog"
-                },
-                {
-                  "word": "pig"
-                }
-              ]
-            },
-            {
-              "word": "cup",
-              "segments": [
-                "c",
                 "u",
-                "p"
-              ],
-              "distractors": [
-                {
-                  "word": "hat"
-                },
-                {
-                  "word": "fan"
-                }
+                "ff"
               ]
             },
             {
-              "word": "bus",
+              "word": "huff",
               "segments": [
-                "b",
+                "h",
                 "u",
-                "s"
-              ],
-              "distractors": [
-                {
-                  "word": "sun"
-                },
-                {
-                  "word": "map"
-                }
+                "ff"
               ]
             },
-            {
-              "word": "net",
-              "segments": [
-                "n",
-                "e",
-                "t"
-              ],
-              "distractors": [
-                {
-                  "word": "leg"
-                },
-                {
-                  "word": "cat"
-                }
-              ]
-            }
-          ]
-        },
-        "stretch": {
-          "type": "mark",
-          "label": "Stretch: read eight words, you mark",
-          "say": "Your child reads each word aloud. You tap the tick or the cross.",
-          "words": [
-            "red",
-            "rug",
-            "run",
-            "rip",
-            "nut",
-            "pen",
-            "cup",
-            "mud"
-          ]
-        },
-        "challenge": {
-          "type": "caption",
-          "label": "Challenge: read a long sentence",
-          "say": "Read every word of the sentence, then tap the picture that matches.",
-          "paper": "you say a cat in a hat; your child writes it, one word at a time.",
-          "items": [
-            {
-              "text": "a frog and a hen sit on a log",
-              "options": [
-                {
-                  "pics": [
-                    "frog",
-                    "hen",
-                    "log"
-                  ],
-                  "say": "a frog, a hen and a log"
-                },
-                {
-                  "pics": [
-                    "frog",
-                    "pig",
-                    "log"
-                  ],
-                  "say": "a frog, a pig and a log"
-                },
-                {
-                  "pics": [
-                    "frog",
-                    "hen",
-                    "bed"
-                  ],
-                  "say": "a frog, a hen and a bed"
-                }
-              ],
-              "correct": 0
-            },
-            {
-              "text": "the man got a red cap and a big bag",
-              "options": [
-                {
-                  "pics": [
-                    "man",
-                    "hat",
-                    "bag"
-                  ],
-                  "say": "a man, a hat and a bag"
-                },
-                {
-                  "pics": [
-                    "man",
-                    "cap",
-                    "bag"
-                  ],
-                  "say": "a man, a cap and a bag"
-                },
-                {
-                  "pics": [
-                    "man",
-                    "cap",
-                    "cup"
-                  ],
-                  "say": "a man, a cap and a cup"
-                }
-              ],
-              "correct": 1
-            },
-            {
-              "text": "I can pat a duck and a pig",
-              "options": [
-                {
-                  "pics": [
-                    "duck",
-                    "dog"
-                  ],
-                  "say": "a duck and a dog"
-                },
-                {
-                  "pics": [
-                    "hen",
-                    "pig"
-                  ],
-                  "say": "a hen and a pig"
-                },
-                {
-                  "pics": [
-                    "duck",
-                    "pig"
-                  ],
-                  "say": "a duck and a pig"
-                }
-              ],
-              "correct": 2
-            },
-            {
-              "text": "the bug is on the sock in the sun",
-              "options": [
-                {
-                  "pics": [
-                    "bug",
-                    "sock",
-                    "sun"
-                  ],
-                  "say": "a bug, a sock and the sun"
-                },
-                {
-                  "pics": [
-                    "bug",
-                    "sock",
-                    "moon"
-                  ],
-                  "say": "a bug, a sock and the moon"
-                },
-                {
-                  "pics": [
-                    "bat",
-                    "sock",
-                    "sun"
-                  ],
-                  "say": "a bat, a sock and the sun"
-                }
-              ],
-              "correct": 0
-            }
-          ]
-        }
-      },
-      "4": {
-        "name": "Thu",
-        "sound": null,
-        "review": [
-          "h",
-          "b",
-          "f",
-          "l"
-        ],
-        "title": "Review: h b f l",
-        "minutes": 10,
-        "steps": [
-          {
-            "label": "Review sounds",
-            "min": 2,
-            "do": "Show h, b, f, l one at a time. Your child says each sound, quick and pure. A wobbly one: say it together, then come back to it at the end. Then the tricky words I, is and the.",
-            "say": "What sound is this?"
-          },
-          {
-            "label": "Blend",
-            "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words from today's sounds, with dots and lines, then the same words without.",
-            "say": "f, o, g. What word?"
-          },
-          {
-            "label": "Spell and write",
-            "min": 2,
-            "do": "Say bus. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
-            "say": "Bus. What sounds can you hear?"
-          }
-        ],
-        "game": {
-          "type": "ladder",
-          "say": "Say the new word, then tap the letter that changed.",
-          "words": [
-            "hut",
-            "but",
-            "bit",
-            "fit",
-            "fin",
-            "fan"
-          ]
-        },
-        "stretch": {
-          "type": "segment",
-          "label": "Stretch: spell it with sounds",
-          "say": "Listen to the word. Tap its sounds in order.",
-          "words": [
             {
               "word": "hat",
               "segments": [
@@ -617,109 +179,515 @@
                 "e",
                 "d"
               ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
+          "paper": "say cliff; your child says every sound, then writes it.",
+          "words": [
+            "cliff",
+            "stiff",
+            "sniff",
+            "scuff",
+            "muffin",
+            "puffin",
+            "cuff",
+            "off"
+          ]
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "ll",
+        "title": "New sound: ll",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "ll, new at school this week. Say it short and pure, the way the Little Wandle video does. Then read bell, hill, doll. Two letters, one sound.",
+            "say": "ll, bell. ll, hill."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "b, e, ll. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say bell. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Bell. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that end with ll.",
+          "items": [
+            {
+              "word": "bell",
+              "match": true
             },
             {
-              "word": "fog",
+              "word": "doll",
+              "match": true
+            },
+            {
+              "word": "hill",
+              "match": true
+            },
+            {
+              "word": "dog",
+              "match": false
+            },
+            {
+              "word": "hat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real or alien?",
+          "say": "Read the word. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "bell",
+              "real": true
+            },
+            {
+              "word": "mell",
+              "real": false
+            },
+            {
+              "word": "hill",
+              "real": true
+            },
+            {
+              "word": "rull",
+              "real": false
+            },
+            {
+              "word": "doll",
+              "real": true
+            },
+            {
+              "word": "pell",
+              "real": false
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Read every sound, then push them together. You tap the tick or the cross.",
+          "paper": "write spell; tap the sounds on your fingers first: s, p, e, ll.",
+          "words": [
+            "spell",
+            "smell",
+            "still",
+            "skill",
+            "hilltop",
+            "sell",
+            "dull",
+            "fill"
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "ss",
+        "title": "New sound: ss",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "ss, new at school this week. Say it short and pure, the way the Little Wandle video does. Then read hiss, kiss, mess. Two letters, one sound.",
+            "say": "ss, hiss. ss, kiss."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "h, i, ss. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say hiss. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Hiss. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "hiss",
               "segments": [
-                "f",
+                "h",
+                "i",
+                "ss"
+              ],
+              "distractors": [
+                {
+                  "word": "kiss"
+                },
+                {
+                  "word": "bus"
+                }
+              ]
+            },
+            {
+              "word": "kiss",
+              "segments": [
+                "k",
+                "i",
+                "ss"
+              ],
+              "distractors": [
+                {
+                  "word": "hiss"
+                },
+                {
+                  "word": "doll"
+                }
+              ]
+            },
+            {
+              "word": "bell",
+              "segments": [
+                "b",
+                "e",
+                "ll"
+              ],
+              "distractors": [
+                {
+                  "word": "hill"
+                },
+                {
+                  "word": "bed"
+                }
+              ]
+            },
+            {
+              "word": "doll",
+              "segments": [
+                "d",
+                "o",
+                "ll"
+              ],
+              "distractors": [
+                {
+                  "word": "dog"
+                },
+                {
+                  "word": "bell"
+                }
+              ]
+            },
+            {
+              "word": "hill",
+              "segments": [
+                "h",
+                "i",
+                "ll"
+              ],
+              "distractors": [
+                {
+                  "word": "hen"
+                },
+                {
+                  "word": "doll"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "mess",
+            "less",
+            "boss",
+            "toss",
+            "fuss",
+            "kiss",
+            "miss",
+            "hiss"
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a sentence",
+          "say": "Read every word of the sentence, then tap the picture that matches.",
+          "paper": "you say a doll in a bed; your child writes it, one word at a time.",
+          "items": [
+            {
+              "text": "a doll in a bed",
+              "options": [
+                {
+                  "pics": [
+                    "dog",
+                    "bed"
+                  ],
+                  "say": "a dog and a bed"
+                },
+                {
+                  "pics": [
+                    "doll",
+                    "bed"
+                  ],
+                  "say": "a doll and a bed"
+                },
+                {
+                  "pics": [
+                    "doll",
+                    "bus"
+                  ],
+                  "say": "a doll and a bus"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "a dog on a hill",
+              "options": [
+                {
+                  "pics": [
+                    "dog",
+                    "hill"
+                  ],
+                  "say": "a dog and a hill"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "bus"
+                  ],
+                  "say": "a dog and a bus"
+                },
+                {
+                  "pics": [
+                    "cat",
+                    "hill"
+                  ],
+                  "say": "a cat and a hill"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a bell and a hat",
+              "options": [
+                {
+                  "pics": [
+                    "doll",
+                    "hat"
+                  ],
+                  "say": "a doll and a hat"
+                },
+                {
+                  "pics": [
+                    "bell",
+                    "cap"
+                  ],
+                  "say": "a bell and a cap"
+                },
+                {
+                  "pics": [
+                    "bell",
+                    "hat"
+                  ],
+                  "say": "a bell and a hat"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "I can huff and puff",
+              "options": [
+                {
+                  "pics": [
+                    "huff",
+                    "puff"
+                  ],
+                  "say": "huffing and puffing"
+                },
+                {
+                  "pics": [
+                    "hiss",
+                    "puff"
+                  ],
+                  "say": "hissing and puffing"
+                },
+                {
+                  "pics": [
+                    "huff",
+                    "kiss"
+                  ],
+                  "say": "huffing and a kiss"
+                }
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "j",
+        "title": "New sound: j",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "j, new at school this week. Say it short and pure, the way the Little Wandle video does. Then read jet, jog, jam.",
+            "say": "j, jet. j, jam."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "j, e, t. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say jet. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Jet. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with j.",
+          "items": [
+            {
+              "word": "jet",
+              "match": true
+            },
+            {
+              "word": "jog",
+              "match": true
+            },
+            {
+              "word": "juice",
+              "match": true
+            },
+            {
+              "word": "bed",
+              "match": false
+            },
+            {
+              "word": "fox",
+              "match": false
+            },
+            {
+              "word": "map",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "jet",
+              "segments": [
+                "j",
+                "e",
+                "t"
+              ]
+            },
+            {
+              "word": "jog",
+              "segments": [
+                "j",
                 "o",
                 "g"
               ]
             },
             {
-              "word": "leg",
+              "word": "bell",
               "segments": [
-                "l",
+                "b",
                 "e",
-                "g"
+                "ll"
+              ]
+            },
+            {
+              "word": "hiss",
+              "segments": [
+                "h",
+                "i",
+                "ss"
               ]
             }
           ]
         },
         "challenge": {
-          "type": "segment",
-          "label": "Challenge: spell four-sound words",
-          "say": "Listen to the word. Tap every sound in order. There are four.",
-          "paper": "write frog and flag; check each sound together.",
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "paper": "write jump; check each sound together.",
           "words": [
-            {
-              "word": "frog",
-              "segments": [
-                "f",
-                "r",
-                "o",
-                "g"
-              ]
-            },
-            {
-              "word": "flag",
-              "segments": [
-                "f",
-                "l",
-                "a",
-                "g"
-              ]
-            },
-            {
-              "word": "crab",
-              "segments": [
-                "c",
-                "r",
-                "a",
-                "b"
-              ]
-            },
-            {
-              "word": "hand",
-              "segments": [
-                "h",
-                "a",
-                "n",
-                "d"
-              ]
-            },
-            {
-              "word": "clap",
-              "segments": [
-                "c",
-                "l",
-                "a",
-                "p"
-              ]
-            }
+            "jump",
+            "jest",
+            "jacket",
+            "jam",
+            "jug",
+            "jab",
+            "jog",
+            "jets"
           ]
         }
       },
       "5": {
         "name": "Fri",
         "sound": null,
-        "title": "Tricky words and every sound",
+        "title": "Tricky words and every new sound",
         "minutes": 10,
         "steps": [
           {
-            "label": "Every sound",
+            "label": "Every new sound",
             "min": 2,
-            "do": "All 20 sounds on the review cards, quickly. Then the tricky words I, is and the: show the word, say it, spot the tricky part, say it again.",
-            "say": "In the, the th is still to come, and the e says a quick uh."
+            "do": "This week's four sounds on the review cards: ff, ll, ss, j. Then the tricky words as, put, pull and full: show the word, say it, spot the tricky part, say it again.",
+            "say": "In as, the s says z, like in is."
           },
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words from today's sounds, with dots and lines, then the same words without.",
-            "say": "l, u, ck. What word?"
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "j, u, g. What word?"
           },
           {
             "label": "Spell and write",
             "min": 2,
-            "do": "Say sun and leg. Your child writes them on paper. Check together, sound by sound."
+            "do": "Say bell and puff. Your child writes them on paper. Check together, sound by sound."
           }
         ],
         "game": {
           "type": "tricky",
           "say": "Say the word. Then tap the tricky part.",
           "words": [
-            "I",
-            "is",
+            "as",
+            "put",
+            "pull",
+            "full",
             "the"
           ]
         },
@@ -728,83 +696,83 @@
           "label": "Stretch: read eight words, you mark",
           "say": "Your child reads each word aloud. You tap the tick or the cross.",
           "words": [
-            "sat",
-            "pin",
-            "dog",
-            "kick",
-            "red",
-            "sun",
-            "hug",
-            "lock"
+            "huff",
+            "puff",
+            "bell",
+            "hill",
+            "mess",
+            "jam",
+            "jet",
+            "off"
           ]
         },
         "challenge": {
           "type": "alien",
           "label": "Challenge: real or alien, longer words",
           "say": "Sound out every letter, then push them together. Is it a real word or an alien word?",
-          "paper": "you say the dog is on the bed; your child writes the sentence.",
+          "paper": "you say the doll is on the hill; your child writes the sentence.",
           "items": [
             {
-              "word": "frog",
+              "word": "spell",
               "real": true
             },
             {
-              "word": "blim",
+              "word": "jesp",
               "real": false
             },
             {
-              "word": "crab",
+              "word": "cliff",
               "real": true
             },
             {
-              "word": "stup",
+              "word": "blof",
               "real": false
             },
             {
-              "word": "plum",
+              "word": "sniff",
               "real": true
             },
             {
-              "word": "drep",
+              "word": "jull",
               "real": false
             },
             {
-              "word": "sunset",
+              "word": "puffin",
               "real": true
             },
             {
-              "word": "glomp",
+              "word": "smass",
               "real": false
             }
           ]
         }
       }
     },
-    "weekend": "No set session. A book together, and if a sound turns up on a sign or a cereal box, spot it and leave it there.",
+    "weekend": "No set session. A book together, and if ff, ll or ss turns up at the end of a word (off, bell, dress), spot it and leave it there.",
     "memory": [
+      {
+        "grapheme": "f",
+        "word": "fox"
+      },
+      {
+        "grapheme": "d",
+        "word": "doll"
+      },
       {
         "grapheme": "s",
         "word": "sun"
       },
       {
-        "grapheme": "m",
-        "word": "map"
+        "grapheme": "j",
+        "word": "jet"
       },
       {
-        "grapheme": "d",
-        "word": "dog"
+        "grapheme": "h",
+        "word": "hat"
       },
       {
-        "grapheme": "c",
-        "word": "cat"
-      },
-      {
-        "grapheme": "r",
-        "word": "rat"
-      },
-      {
-        "grapheme": "l",
-        "word": "leg"
+        "grapheme": "b",
+        "word": "bed"
       }
     ],
     "rhymes": [
@@ -1973,10 +1941,10 @@
       "<b>Understanding the World:</b> sorting pictures from the past and present.",
       "<b>Phonics:</b> h, b, f, l and the tricky word the."
     ],
-    "thisWeekPhonics": "ff, ll, ss and j, with the tricky words put, pull, full and as (from the 6 November update). This page was on Autumn 1 review that week, because school hadn't said the sounds yet; ff, ll, ss and j are caught up in the week of 9 November.",
+    "thisWeekPhonics": "ff, ll, ss and j, with the tricky words put, pull, full and as (from the 6 November update).",
     "asks": [],
     "standing": [
-      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. School taught ff, ll, ss and j this week. This page went over the Autumn 1 sounds instead, a group a day, because school hadn't said yet; the new sounds are caught up in the week of 9 November."
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge."
     ]
   },
   "journey": [
@@ -2020,6 +1988,5 @@
       "state": "next"
     }
   ],
-  "share": "",
-  "homeReview": true
+  "share": ""
 }
