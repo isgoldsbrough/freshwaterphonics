@@ -18,6 +18,7 @@ A weekly phonics and maths page for one Reception class, run by a parent. Unoffi
 - `sample/`: the approved look-and-feel sample, kept for reference.
 - `scripts/validate.mjs`: refuses any printed word that uses a sound not yet taught.
 - `scripts/build-audio.mjs`: renders the clips.
+- `scripts/check-site.mjs`: the whole-site check, run before every push (`--live` after it). It checks the data and opens every week, day, tab and game in headless Chrome. See `../.claude/skills/site-check/SKILL.md`.
 
 ## Publishing a week
 

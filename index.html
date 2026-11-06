@@ -211,6 +211,7 @@
   .tile.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
   .tile.hint { animation: breathe 800ms ease-in-out 1; }
   .tiles.two .tile { width: 160px; height: 140px; }
+  @media (max-width: 460px) { .tiles.mem { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 8px; width: 100%; } .tiles.mem .tile { width: 100% !important; height: auto !important; aspect-ratio: 1; } }
   @keyframes breathe { 50% { transform: scale(1.05); border-color: var(--moss); } }
   .bigpic { width: 160px; height: 160px; border: none; background: var(--paper); border-radius: var(--r); display: flex; align-items: center; justify-content: center; }
   .bigpic img { width: 120px; height: 120px; }
@@ -801,7 +802,7 @@
       const deck = shuffle(pairs.flatMap(p => [{ key: p.grapheme, kind: "g", face: p.grapheme, say: p.word }, { key: p.grapheme, kind: "p", face: p.pic || p.word, say: p.word }]));
       let open = [], matched = 0, busy = false;
       pm.progress(0, pairs.length);
-      pm.draw(`<div class="tiles" style="grid-template-columns:repeat(4, 96px);">${deck.map((c, k) => `<button class="tile" style="width:96px;height:96px;" data-k="${k}" aria-label="card ${k + 1}"><span class="word" style="font-size:2rem;color:var(--apricot);">?</span></button>`).join("")}</div>`);
+      pm.draw(`<div class="tiles mem" style="grid-template-columns:repeat(4, 96px);">${deck.map((c, k) => `<button class="tile" style="width:96px;height:96px;" data-k="${k}" aria-label="card ${k + 1}"><span class="word" style="font-size:2rem;color:var(--apricot);">?</span></button>`).join("")}</div>`);
       const cards = stage.querySelectorAll(".tile");
       cards.forEach(c => c.addEventListener("click", async () => {
         const k = Number(c.dataset.k);
@@ -1046,12 +1047,13 @@
       : d.sound
       ? `<div class="hero"><div class="big">${esc(d.sound)}</div><div><p class="cue">Say it short and pure, the way school does: no \u201cuh\u201d on the end.</p><p class="quiet" style="margin-top:8px;"><a href="https://www.littlewandle.org.uk/resources/for-parents/" target="_blank" rel="noopener">Hear it on Little Wandle's parent page</a> · <a href="https://www.littlewandle.org.uk/download/293468/" target="_blank" rel="noopener">school's sound sheet</a></p></div></div>`
       : `<div class="hero"><div class="big word">${[...W.phonics.tricky[0].word].map((ch, i) => W.phonics.tricky[0].trickyLetters.includes(i) ? `<span class="tp">${esc(ch)}</span>` : esc(ch)).join("")}</div><div><p class="cue">Tricky word recap. Show it, say it, spot the tricky part, say it again.</p><p class="quiet" style="margin-top:8px;">${esc(W.phonics.tricky[0].note)}</p></div></div>`;
-    const bl = launcher(blendGame(day), { id: "blend" + day, sticker }, { tag: "Say each sound along the dots and lines, then the word." });
+    // no Blend it card on a day with no words to blend yet (the first days of term)
+    const bg = blendGame(day), bl = bg.words.length ? launcher(bg, { id: "blend" + day, sticker }, { tag: "Say each sound along the dots and lines, then the word." }) : null;
     const main = launcher(d.game, { id: "main" + day, sticker }, {});
     const st = d.stretch ? launcher(d.stretch, { id: "stretch" + day, sticker }, { stretch: true, title: d.stretch.label.replace(/^Stretch: /, ""), tag: d.stretch.say }) : null;
     const ch = d.challenge ? launcher(d.challenge, { id: "challenge" + day, sticker, challenge: true }, { challenge: true, title: d.challenge.label.replace(/^Challenge: /, ""), tag: d.challenge.say, paper: d.challenge.paper }) : null;
-    side.innerHTML = hero + bl.html + main.html + (st ? st.html : "") + (ch ? ch.html : "") + bookCard();
-    bl.wire(); main.wire(); if (st) st.wire(); if (ch) ch.wire();
+    side.innerHTML = hero + (bl ? bl.html : "") + main.html + (st ? st.html : "") + (ch ? ch.html : "") + bookCard();
+    if (bl) bl.wire(); main.wire(); if (st) st.wire(); if (ch) ch.wire();
   }
 
   // ---------- more ways to play: the same games, inside the page ----------
