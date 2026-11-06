@@ -1106,15 +1106,25 @@
     u: { w: 100, cue: "Down, round, up, then down.", s: ["M30 65 L30 97 A20 20 0 0 0 70 97 L70 65 L70 115"] },
     k: { w: 100, cue: "Down tall. Then in and out.", s: ["M30 25 L30 115", "M64 70 L30 95 L66 115"] },
     f: { w: 100, cue: "Curl, down tall, then across.", s: ["M68 36 A14 14 0 0 0 42 46 L42 115", "M26 65 L62 65"] },
-    ck: { w: 170, cue: "c, then k: two letters, one sound.", s: ["M56 72 A25 25 0 1 0 56 108", "M100 25 L100 115", "M134 70 L100 95 L136 115"] }
+    ck: { w: 170, cue: "c, then k: two letters, one sound.", s: ["M56 72 A25 25 0 1 0 56 108", "M100 25 L100 115", "M134 70 L100 95 L136 115"] },
+    ff: { w: 170, cue: "f, then f again: two letters, one sound.", s: ["M68 36 A14 14 0 0 0 42 46 L42 115", "M26 65 L62 65", "M138 36 A14 14 0 0 0 112 46 L112 115", "M96 65 L132 65"] },
+    ll: { w: 170, cue: "Down tall, then down tall again: two letters, one sound.", s: ["M60 25 L60 115", "M110 25 L110 115"] },
+    ss: { w: 170, cue: "One snake, then another: two letters, one sound.", s: ["M65 74 A13 13 0 0 0 45 90 A13 13 0 0 1 25 106", "M145 74 A13 13 0 0 0 125 90 A13 13 0 0 1 105 106"] },
+    j: { w: 100, cue: "Down below the line, a hook, then a dot on top.", s: ["M56 65 L56 134 Q56 150 30 144", "M56 44 L56 46"] },
+    v: { w: 100, cue: "Down the slope, then back up.", s: ["M28 65 L50 115 L72 65"] },
+    w: { w: 100, cue: "Down, up, down, up.", s: ["M18 65 L34 115 L50 75 L66 115 L82 65"] },
+    x: { w: 100, cue: "Slope down one way, then cross it the other way.", s: ["M30 65 L70 115", "M70 65 L30 115"] },
+    y: { w: 100, cue: "A short slope, then a long slope down below the line.", s: ["M30 65 L50 108", "M70 65 L40 145"] }
   };
 
   GAMES.trace = function (pm, g) {
     const all = TERM.graphemes.map(x => x.g).filter(x => STROKES[x]);
-    let cur = g.letters[0], showAll = false;
+    // only letters with a stroke guide; if none of this week's have one, show every letter
+    const mine = g.letters.filter(x => STROKES[x]);
+    let showAll = !mine.length, cur = (mine[0] || all[0]);
     pm.progress(0, 0);
     function render() {
-      const L = STROKES[cur], list = showAll ? all : g.letters;
+      const L = STROKES[cur], list = showAll ? all : mine;
       const H = 300, scale = H / 150, Wd = Math.round(L.w * scale);
       pm.draw(`<div class="pills" id="tr-letters">${list.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}${showAll ? "" : `<button class="pill" id="tr-all" style="color:var(--moss);">all sounds</button>`}</div>
         <p class="cue" style="font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--sky);text-align:center;">${esc(L.cue)}</p>
