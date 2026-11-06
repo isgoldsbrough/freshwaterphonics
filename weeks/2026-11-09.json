@@ -1,0 +1,2123 @@
+{
+  "weekOf": "2026-11-09",
+  "status": "expected",
+  "label": "Week of 9 November",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-06",
+  "nextUpdateExpected": "2026-11-13",
+  "phonics": {
+    "focus": [
+      "v",
+      "w",
+      "x",
+      "y"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "m",
+      "d",
+      "g",
+      "o",
+      "c",
+      "k",
+      "ck",
+      "e",
+      "u",
+      "r",
+      "h",
+      "b",
+      "f",
+      "l",
+      "ff",
+      "ll",
+      "ss",
+      "j"
+    ],
+    "tricky": [
+      {
+        "word": "as",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z, like in is."
+      },
+      {
+        "word": "put",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents. If it sounds just like it looks where you live, it isn't tricky."
+      },
+      {
+        "word": "pull",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in put."
+      },
+      {
+        "word": "full",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in pull."
+      },
+      {
+        "word": "I",
+        "trickyLetters": [
+          0
+        ],
+        "note": "One letter that says its own name."
+      },
+      {
+        "word": "is",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z."
+      },
+      {
+        "word": "the",
+        "trickyLetters": [
+          0,
+          1,
+          2
+        ],
+        "note": "th is a sound to come, and the e says a quick uh."
+      }
+    ],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "v",
+        "title": "New sound: v",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "v, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then last week's sound ff, which school taught while this page was on review: show it, say it, read puff, huff, off.",
+            "say": "v, van. v, vet."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "v, a, n. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say van. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Van. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with v.",
+          "items": [
+            {
+              "word": "van",
+              "match": true
+            },
+            {
+              "word": "violin",
+              "match": true
+            },
+            {
+              "word": "volcano",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "duck",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "van",
+              "segments": [
+                "v",
+                "a",
+                "n"
+              ]
+            },
+            {
+              "word": "bell",
+              "segments": [
+                "b",
+                "e",
+                "ll"
+              ]
+            },
+            {
+              "word": "jet",
+              "segments": [
+                "j",
+                "e",
+                "t"
+              ]
+            },
+            {
+              "word": "doll",
+              "segments": [
+                "d",
+                "o",
+                "ll"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
+          "paper": "say vest; your child says every sound, then writes it.",
+          "words": [
+            "vest",
+            "spell",
+            "smell",
+            "cliff",
+            "dress",
+            "jump",
+            "stiff",
+            "glass"
+          ]
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "w",
+        "title": "New sound: w",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "w, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then last week's sound ll, which school taught while this page was on review: show it, say it, read bell, hill, doll.",
+            "say": "w, web. w, wet."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "w, i, g. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say web. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Web. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with w.",
+          "items": [
+            {
+              "word": "web",
+              "match": true
+            },
+            {
+              "word": "watch",
+              "match": true
+            },
+            {
+              "word": "worm",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "hat",
+              "match": false
+            },
+            {
+              "word": "fox",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real or alien?",
+          "say": "Read the word. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "wet",
+              "real": true
+            },
+            {
+              "word": "win",
+              "real": true
+            },
+            {
+              "word": "wig",
+              "real": true
+            },
+            {
+              "word": "wab",
+              "real": false
+            },
+            {
+              "word": "vem",
+              "real": false
+            },
+            {
+              "word": "wud",
+              "real": false
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: two-part words",
+          "say": "Read one part, then the other, then push them together: muf, fin, muffin. You tap the tick or the cross.",
+          "paper": "write puffin as two parts, puff then in.",
+          "words": [
+            "muffin",
+            "puffin",
+            "jacket",
+            "hilltop",
+            "windmill",
+            "velvet",
+            "picnic",
+            "sunset"
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "x",
+        "title": "New sound: x",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "x, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then last week's sound ss, which school taught while this page was on review: show it, say it, read hiss, mess, kiss.",
+            "say": "x, box. x, fox. x comes at the end."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "f, o, x. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say box. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Box. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "box",
+              "segments": [
+                "b",
+                "o",
+                "x"
+              ],
+              "distractors": [
+                {
+                  "word": "fox"
+                },
+                {
+                  "word": "bus"
+                }
+              ]
+            },
+            {
+              "word": "fox",
+              "segments": [
+                "f",
+                "o",
+                "x"
+              ],
+              "distractors": [
+                {
+                  "word": "dog"
+                },
+                {
+                  "word": "box"
+                }
+              ]
+            },
+            {
+              "word": "ox",
+              "segments": [
+                "o",
+                "x"
+              ],
+              "distractors": [
+                {
+                  "word": "fox"
+                },
+                {
+                  "word": "egg"
+                }
+              ]
+            },
+            {
+              "word": "van",
+              "segments": [
+                "v",
+                "a",
+                "n"
+              ],
+              "distractors": [
+                {
+                  "word": "bus"
+                },
+                {
+                  "word": "web"
+                }
+              ]
+            },
+            {
+              "word": "web",
+              "segments": [
+                "w",
+                "e",
+                "b"
+              ],
+              "distractors": [
+                {
+                  "word": "net"
+                },
+                {
+                  "word": "van"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "box",
+            "fox",
+            "six",
+            "mix",
+            "fix",
+            "wax",
+            "wet",
+            "vet"
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a long sentence",
+          "say": "Read every word of the sentence, then tap the picture that matches.",
+          "paper": "you say put the fox in the box; your child writes it, one word at a time.",
+          "items": [
+            {
+              "text": "the fox is in a box",
+              "options": [
+                {
+                  "pics": [
+                    "fox",
+                    "box"
+                  ],
+                  "say": "a fox and a box"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "box"
+                  ],
+                  "say": "a dog and a box"
+                },
+                {
+                  "pics": [
+                    "fox",
+                    "bus"
+                  ],
+                  "say": "a fox and a bus"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a red van and a big bell",
+              "options": [
+                {
+                  "pics": [
+                    "van",
+                    "bus"
+                  ],
+                  "say": "a van and a bus"
+                },
+                {
+                  "pics": [
+                    "bell",
+                    "hat"
+                  ],
+                  "say": "a bell and a hat"
+                },
+                {
+                  "pics": [
+                    "van",
+                    "bell"
+                  ],
+                  "say": "a van and a bell"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "I can jog up a hill",
+              "options": [
+                {
+                  "pics": [
+                    "jog",
+                    "log"
+                  ],
+                  "say": "running and a log"
+                },
+                {
+                  "pics": [
+                    "jog",
+                    "hill"
+                  ],
+                  "say": "running and a hill"
+                },
+                {
+                  "pics": [
+                    "hop",
+                    "hill"
+                  ],
+                  "say": "hopping and a hill"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "put the jet in the box",
+              "options": [
+                {
+                  "pics": [
+                    "jet",
+                    "box"
+                  ],
+                  "say": "a jet and a box"
+                },
+                {
+                  "pics": [
+                    "jet",
+                    "bag"
+                  ],
+                  "say": "a jet and a bag"
+                },
+                {
+                  "pics": [
+                    "van",
+                    "box"
+                  ],
+                  "say": "a van and a box"
+                }
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "y",
+        "title": "New sound: y",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "y, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Then last week's sound j, which school taught while this page was on review: show it, say it, read jet, jam, jog.",
+            "say": "y, yes. y, yum."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "y, e, s. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say yes. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Yes. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with y.",
+          "items": [
+            {
+              "word": "yoyo",
+              "match": true
+            },
+            {
+              "word": "yawn",
+              "match": true
+            },
+            {
+              "word": "yum",
+              "match": true
+            },
+            {
+              "word": "bed",
+              "match": false
+            },
+            {
+              "word": "fox",
+              "match": false
+            },
+            {
+              "word": "map",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "fox",
+              "segments": [
+                "f",
+                "o",
+                "x"
+              ]
+            },
+            {
+              "word": "web",
+              "segments": [
+                "w",
+                "e",
+                "b"
+              ]
+            },
+            {
+              "word": "van",
+              "segments": [
+                "v",
+                "a",
+                "n"
+              ]
+            },
+            {
+              "word": "yum",
+              "segments": [
+                "y",
+                "u",
+                "m"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "segment",
+          "label": "Challenge: spell four-sound words",
+          "say": "Listen to the word. Tap every sound in order. There are four.",
+          "paper": "write vest and flag; check each sound together.",
+          "words": [
+            {
+              "word": "vest",
+              "segments": [
+                "v",
+                "e",
+                "s",
+                "t"
+              ]
+            },
+            {
+              "word": "flag",
+              "segments": [
+                "f",
+                "l",
+                "a",
+                "g"
+              ]
+            },
+            {
+              "word": "drum",
+              "segments": [
+                "d",
+                "r",
+                "u",
+                "m"
+              ]
+            },
+            {
+              "word": "hand",
+              "segments": [
+                "h",
+                "a",
+                "n",
+                "d"
+              ]
+            },
+            {
+              "word": "frog",
+              "segments": [
+                "f",
+                "r",
+                "o",
+                "g"
+              ]
+            }
+          ]
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Tricky words and every new sound",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Every new sound",
+            "min": 2,
+            "do": "The eight Autumn 2 sounds on the review cards: ff, ll, ss, j, v, w, x, y. Then the tricky words as, put, pull and full: show the word, say it, spot the tricky part, say it again.",
+            "say": "In as, the s says z, like in is."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "j, u, g. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say bell and fox. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "tricky",
+          "say": "Say the word. Then tap the tricky part.",
+          "words": [
+            "as",
+            "put",
+            "pull",
+            "full",
+            "the"
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "huff",
+            "puff",
+            "bell",
+            "hill",
+            "mess",
+            "jam",
+            "jet",
+            "yes"
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Is it a real word or an alien word?",
+          "paper": "you say put the van on the hill; your child writes the sentence.",
+          "items": [
+            {
+              "word": "spell",
+              "real": true
+            },
+            {
+              "word": "jesp",
+              "real": false
+            },
+            {
+              "word": "jump",
+              "real": true
+            },
+            {
+              "word": "plox",
+              "real": false
+            },
+            {
+              "word": "muffin",
+              "real": true
+            },
+            {
+              "word": "twib",
+              "real": false
+            },
+            {
+              "word": "windmill",
+              "real": true
+            },
+            {
+              "word": "glov",
+              "real": false
+            }
+          ]
+        }
+      }
+    },
+    "weekend": "No set session. A book together, and if one of the new sounds turns up on a sign or a cereal box (a v, a w, an x at the end of box), spot it and leave it there.",
+    "memory": [
+      {
+        "grapheme": "j",
+        "word": "jet"
+      },
+      {
+        "grapheme": "v",
+        "word": "van"
+      },
+      {
+        "grapheme": "w",
+        "word": "web"
+      },
+      {
+        "grapheme": "y",
+        "word": "yum"
+      },
+      {
+        "grapheme": "b",
+        "word": "bell"
+      },
+      {
+        "grapheme": "f",
+        "word": "fox"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "fox"
+        },
+        "options": [
+          {
+            "word": "box",
+            "right": true
+          },
+          {
+            "word": "van",
+            "right": false
+          },
+          {
+            "word": "bell",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "jet"
+        },
+        "options": [
+          {
+            "word": "net",
+            "right": true
+          },
+          {
+            "word": "web",
+            "right": false
+          },
+          {
+            "word": "hill",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "van"
+        },
+        "options": [
+          {
+            "word": "fan",
+            "right": true
+          },
+          {
+            "word": "jet",
+            "right": false
+          },
+          {
+            "word": "box",
+            "right": false
+          }
+        ]
+      }
+    ],
+    "stretchNote": "Only if the main game was easy. Stop at the first wobble; a stretch that becomes a struggle teaches the wrong lesson. We never go on to next week's sounds early: school's order matters."
+  },
+  "maths": {
+    "topic": "One more, one less, and making 1, 2 and 3",
+    "vocab": [
+      "one more",
+      "one less",
+      "makes",
+      "and",
+      "altogether",
+      "the same"
+    ],
+    "stems": [
+      "\"Here are two. One more makes...?\"",
+      "\"Here are three. Take one away. How many now?\"",
+      "\"Two and one make three. What else makes three?\""
+    ],
+    "source": "From the 6 November school update: one more, one less, and the composition of 1, 2 and 3. Home practice runs a week behind school for maths.",
+    "everyday": [
+      "<b>Snacks:</b> two grapes on a plate. One more? Eat one: one less?",
+      "<b>Stairs:</b> stand on step 2. One step up is 3, one step down is 1.",
+      "<b>Two hands:</b> hide three raisins in two hands. Open one: how many in the other?",
+      "<b>Toys:</b> three teddies on the sofa. Two on one cushion, one on the other: still three."
+    ],
+    "days": {
+      "1": {
+        "title": "One more",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out two spoons. Add one more.",
+            "say": "Two, and one more. How many now?"
+          },
+          {
+            "do": "Do it again from one, then from three."
+          },
+          {
+            "do": "Your child adds one more for you to count."
+          }
+        ],
+        "check": {
+          "say": "Which row has one more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are two apples. Which row has one more?",
+              "options": [
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "apple",
+                "apple"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here is one star. Which row has one more?",
+              "options": [
+                [
+                  "star",
+                  "star"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "star"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are two frogs. Which row has one more?",
+              "options": [
+                [
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog",
+                  "frog"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "frog",
+                "frog"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: one more than 3 and 4",
+          "say": "Which row has one more?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are three ducks. Which row has one more?",
+              "options": [
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck"
+                ],
+                [
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck",
+                  "duck"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "duck",
+                "duck",
+                "duck"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are four dogs. Which row has one more?",
+              "options": [
+                [
+                  "dog",
+                  "dog",
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "dog",
+                "dog",
+                "dog",
+                "dog"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: ways to make 5",
+          "say": "How many in the other hand?",
+          "paper": "five raisins in two hands. Open one: how many in the hidden hand?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Five altogether. Four in one hand. How many in the other?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "4",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Four, then count on to five on your fingers."
+            },
+            {
+              "kind": "which",
+              "say": "Five altogether. Three in one hand. How many in the other?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "1"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "3",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Three, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Two and two more. How many altogether?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "2",
+                "+",
+                "2",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Show two fingers on each hand."
+            }
+          ]
+        }
+      },
+      "2": {
+        "title": "One less",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Put out three cars. Take one away.",
+            "say": "Three, and one less. How many now?"
+          },
+          {
+            "do": "Do it again from two, then from four."
+          },
+          {
+            "do": "Your child takes one away for you to count."
+          }
+        ],
+        "check": {
+          "say": "Which row has one less?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are three apples. Which row has one less?",
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple",
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "apple",
+                "apple",
+                "apple"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are two stars. Which row has one less?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "star",
+                "star"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are three cats. Which row has one less?",
+              "options": [
+                [
+                  "cat",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "cat"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "cat",
+                "cat",
+                "cat"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: one less than 4 and 5",
+          "say": "Which row has one less?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are five pigs. Which row has one less?",
+              "options": [
+                [
+                  "pig",
+                  "pig",
+                  "pig",
+                  "pig"
+                ],
+                [
+                  "pig",
+                  "pig",
+                  "pig",
+                  "pig",
+                  "pig"
+                ],
+                [
+                  "pig",
+                  "pig",
+                  "pig"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "pig",
+                "pig",
+                "pig",
+                "pig",
+                "pig"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are four frogs. Which row has one less?",
+              "options": [
+                [
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog",
+                  "frog"
+                ],
+                [
+                  "frog",
+                  "frog",
+                  "frog",
+                  "frog"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "frog",
+                "frog",
+                "frog",
+                "frog"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: ways to make 5",
+          "say": "How many in the other hand?",
+          "paper": "five crackers on a plate. Hide some under a cup: how many are hiding?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Five altogether. Two in one hand. How many in the other?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "2",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Two, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Five altogether. Five in one hand. How many in the other?",
+              "options": [
+                [
+                  "0"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "5",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "If all five are in one hand, the other hand is empty."
+            },
+            {
+              "kind": "which",
+              "say": "Three and three more. How many altogether?",
+              "options": [
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "3",
+                "+",
+                "3",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Three fingers on each hand."
+            }
+          ]
+        }
+      },
+      "3": {
+        "title": "Making 3",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Three teddies and two cushions. Sit them two and one, then three and none.",
+            "say": "Two and one. Still three?"
+          },
+          {
+            "do": "Swap them round: one and two."
+          },
+          {
+            "do": "Your child makes three a different way."
+          }
+        ],
+        "check": {
+          "say": "How many altogether?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Two apples and one more. How many altogether?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "apple",
+                "apple",
+                "+",
+                "apple"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "One star and two more. How many altogether?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "star",
+                "+",
+                "star",
+                "star"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "One duck and one more. How many altogether?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "duck",
+                "+",
+                "duck"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: what makes 3?",
+          "say": "Which row makes three?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which makes three?",
+              "options": [
+                [
+                  "1",
+                  "+",
+                  "1"
+                ],
+                [
+                  "2",
+                  "+",
+                  "1"
+                ],
+                [
+                  "2",
+                  "+",
+                  "2"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Three altogether. Two here. How many are hiding?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "dog",
+                "dog",
+                "+",
+                "?"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: ways to make 5",
+          "say": "How many in the other hand?",
+          "paper": "five toes on one foot: wiggle two, how many are still?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Five altogether. One in one hand. How many in the other?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "1",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "One, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Which makes five?",
+              "options": [
+                [
+                  "2",
+                  "+",
+                  "2"
+                ],
+                [
+                  "3",
+                  "+",
+                  "1"
+                ],
+                [
+                  "3",
+                  "+",
+                  "2"
+                ]
+              ],
+              "correct": 2,
+              "hint": "Count them all together."
+            },
+            {
+              "kind": "which",
+              "say": "Four and four more. How many altogether?",
+              "options": [
+                [
+                  "7"
+                ],
+                [
+                  "8"
+                ],
+                [
+                  "9"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "4",
+                "+",
+                "4",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Use both hands, four fingers each."
+            }
+          ]
+        }
+      },
+      "4": {
+        "title": "Making 2 and 3",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Two socks, two feet: one and one makes two. Then two and none."
+          },
+          {
+            "do": "Three raisins: two in one hand, one in the other. Open both.",
+            "say": "How many altogether?"
+          },
+          {
+            "do": "Your child hides them for you to guess."
+          }
+        ],
+        "check": {
+          "say": "How many altogether?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "One cat and one more. How many altogether?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "cat",
+                "+",
+                "cat"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Two frogs and one more. How many altogether?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "frog",
+                "frog",
+                "+",
+                "frog"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Which row makes two?",
+              "options": [
+                [
+                  "pig",
+                  "pig",
+                  "pig"
+                ],
+                [
+                  "pig",
+                  "pig"
+                ],
+                [
+                  "pig"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: hidden ones",
+          "say": "How many are hiding?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Three altogether. One here. How many are hiding?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "star",
+                "+",
+                "?"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Two altogether. One here. How many are hiding?",
+              "options": [
+                [
+                  "1"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "0"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "sun",
+                "+",
+                "?"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: ways to make 5",
+          "say": "How many in the other hand?",
+          "paper": "say a number from 0 to 5; your child shows the rest to make five on their fingers.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Five altogether. Three in one hand. How many in the other?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "3",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Three, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Which makes five?",
+              "options": [
+                [
+                  "4",
+                  "+",
+                  "1"
+                ],
+                [
+                  "2",
+                  "+",
+                  "2"
+                ],
+                [
+                  "1",
+                  "+",
+                  "1"
+                ]
+              ],
+              "correct": 0,
+              "hint": "Count them all together."
+            },
+            {
+              "kind": "which",
+              "say": "Five and five more. How many altogether?",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "11"
+                ],
+                [
+                  "10"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "5",
+                "+",
+                "5",
+                "=",
+                "?"
+              ],
+              "hint": "All your fingers."
+            }
+          ]
+        }
+      },
+      "5": {
+        "title": "One more, one less, mixed",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Line up three toys. Ask for one more, then one less, then one more again."
+          },
+          {
+            "do": "Make three two ways with the toys.",
+            "say": "Two and one. One and two."
+          },
+          {
+            "do": "Your child asks you a one more or one less question."
+          }
+        ],
+        "check": {
+          "say": "Listen carefully.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are two apples. Which row has one more?",
+              "options": [
+                [
+                  "apple",
+                  "apple",
+                  "apple"
+                ],
+                [
+                  "apple"
+                ],
+                [
+                  "apple",
+                  "apple"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "apple",
+                "apple"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are three stars. Which row has one less?",
+              "options": [
+                [
+                  "star",
+                  "star",
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star"
+                ],
+                [
+                  "star",
+                  "star",
+                  "star"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "star",
+                "star",
+                "star"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Two ducks and one more. How many altogether?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "duck",
+                "duck",
+                "+",
+                "duck"
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: one more, one less to 5",
+          "say": "Listen carefully.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Here are four cats. Which row has one more?",
+              "options": [
+                [
+                  "cat",
+                  "cat",
+                  "cat",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "cat",
+                  "cat"
+                ],
+                [
+                  "cat",
+                  "cat",
+                  "cat",
+                  "cat"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "cat",
+                "cat",
+                "cat",
+                "cat"
+              ]
+            },
+            {
+              "kind": "which",
+              "say": "Here are five dogs. Which row has one less?",
+              "options": [
+                [
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog"
+                ],
+                [
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog",
+                  "dog"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "dog",
+                "dog",
+                "dog",
+                "dog",
+                "dog"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: all the ways to make 5",
+          "say": "What makes five?",
+          "paper": "with five raisins, find every way to share them between two hands: 5 and 0, 4 and 1, 3 and 2.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Five altogether. Four in one hand. How many in the other?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "1"
+                ],
+                [
+                  "0"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "4",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Four, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Five altogether. Two in one hand. How many in the other?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "2"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "2",
+                "+",
+                "?",
+                "=",
+                "5"
+              ],
+              "hint": "Two, then count on to five."
+            },
+            {
+              "kind": "which",
+              "say": "Three and three more. How many altogether?",
+              "options": [
+                [
+                  "6"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "3",
+                "+",
+                "3",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Three fingers on each hand."
+            }
+          ]
+        }
+      }
+    },
+    "weekend": "No maths session. If it comes up on its own, an extra biscuit, a sock missing, say \"one more\" or \"one less\" and leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>Phonics:</b> ff, ll, ss, j and the tricky words put, pull, full and as.",
+      "<b>English:</b> What's in the Witch's Kitchen? (Nick Sharratt): decorating cauldrons with nice and nasty foods, finding the first sound of each food, and retelling the story to a friend.",
+      "<b>Maths:</b> one more, one less, and making 1, 2 and 3.",
+      "<b>Understanding the World:</b> generations: talking about family members and drawing family trees."
+    ],
+    "thisWeekPhonics": "v, w, x, y (named as next week's sounds in the 6 November update)",
+    "asks": [
+      {
+        "text": "Add to the Daffodil competition on Arbor.",
+        "since": "6 November"
+      },
+      {
+        "text": "Check the new Show and Tell rota outside the classrooms. This term's theme is Superheroes: something about an inspiring family member, or pictures of special people.",
+        "since": "6 November"
+      },
+      {
+        "text": "Outdoor PE times have changed: check the timetable outside the classrooms.",
+        "since": "6 November"
+      }
+    ],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. School taught ff, ll, ss and j while this page was on review, so each day also catches up one of them, and Friday goes over all eight new sounds."
+    ]
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "done"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "done",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "done",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "done",
+      "tricky": "the"
+    },
+    {
+      "week": "Autumn 2 week 1",
+      "graphemes": "ff ll ss j",
+      "state": "done",
+      "tricky": "put, pull, full, as"
+    },
+    {
+      "week": "Autumn 2 week 2",
+      "graphemes": "v w x y",
+      "state": "now"
+    },
+    {
+      "week": "Autumn 2 week 3",
+      "graphemes": "z zz qu (expected)",
+      "state": "next"
+    }
+  ],
+  "share": ""
+}

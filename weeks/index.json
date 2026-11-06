@@ -1,5 +1,5 @@
 {
-  "current": "2026-11-02",
+  "current": "2026-11-09",
   "break": {
     "from": "2026-10-17",
     "to": "2026-11-01",
@@ -8,13 +8,33 @@
   },
   "weeks": [
     {
+      "weekOf": "2026-11-09",
+      "label": "Week of 9 November",
+      "file": "2026-11-09.json",
+      "focus": [
+        "v",
+        "w",
+        "x",
+        "y"
+      ],
+      "tricky": null,
+      "maths": "one more, one less, making 1, 2 and 3 (home practice)",
+      "status": "expected"
+    },
+    {
       "weekOf": "2026-11-02",
       "label": "Week of 2 November",
       "file": "2026-11-02.json",
       "focus": [],
       "tricky": null,
       "maths": "the numbers 1, 2 and 3 (home practice)",
-      "status": "review"
+      "status": "review",
+      "book": {
+        "title": "What's in the Witch's Kitchen?",
+        "by": "Nick Sharratt",
+        "file": "books/whats-in-the-witchs-kitchen.html",
+        "game": "Nice or nasty, first sounds for the cauldron, read and spell words like bug and egg, then one more and one less."
+      }
     },
     {
       "weekOf": "2026-10-12",

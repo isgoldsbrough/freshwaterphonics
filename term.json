@@ -1,5 +1,5 @@
 {
-  "name": "Autumn 1",
+  "name": "Autumn 1 and 2",
   "graphemes": [
     {
       "g": "s",
@@ -99,6 +99,46 @@
     {
       "g": "l",
       "week": 5,
+      "where": "start"
+    },
+    {
+      "g": "ff",
+      "week": 6,
+      "where": "end"
+    },
+    {
+      "g": "ll",
+      "week": 6,
+      "where": "end"
+    },
+    {
+      "g": "ss",
+      "week": 6,
+      "where": "end"
+    },
+    {
+      "g": "j",
+      "week": 6,
+      "where": "start"
+    },
+    {
+      "g": "v",
+      "week": 7,
+      "where": "start"
+    },
+    {
+      "g": "w",
+      "week": 7,
+      "where": "start"
+    },
+    {
+      "g": "x",
+      "week": 7,
+      "where": "end"
+    },
+    {
+      "g": "y",
+      "week": 7,
       "where": "start"
     }
   ],
@@ -337,6 +377,100 @@
       "f",
       "i",
       "n"
+    ],
+    "bell": [
+      "b",
+      "e",
+      "ll"
+    ],
+    "doll": [
+      "d",
+      "o",
+      "ll"
+    ],
+    "hill": [
+      "h",
+      "i",
+      "ll"
+    ],
+    "jet": [
+      "j",
+      "e",
+      "t"
+    ],
+    "jog": [
+      "j",
+      "o",
+      "g"
+    ],
+    "puff": [
+      "p",
+      "u",
+      "ff"
+    ],
+    "huff": [
+      "h",
+      "u",
+      "ff"
+    ],
+    "hiss": [
+      "h",
+      "i",
+      "ss"
+    ],
+    "kiss": [
+      "k",
+      "i",
+      "ss"
+    ],
+    "van": [
+      "v",
+      "a",
+      "n"
+    ],
+    "vet": [
+      "v",
+      "e",
+      "t"
+    ],
+    "web": [
+      "w",
+      "e",
+      "b"
+    ],
+    "win": [
+      "w",
+      "i",
+      "n"
+    ],
+    "box": [
+      "b",
+      "o",
+      "x"
+    ],
+    "fox": [
+      "f",
+      "o",
+      "x"
+    ],
+    "ox": [
+      "o",
+      "x"
+    ],
+    "six": [
+      "s",
+      "i",
+      "x"
+    ],
+    "yum": [
+      "y",
+      "u",
+      "m"
+    ],
+    "yes": [
+      "y",
+      "e",
+      "s"
     ]
   },
   "blend": {
@@ -771,6 +905,125 @@
       "d",
       "e",
       "ck"
+    ],
+    "off": [
+      "o",
+      "ff"
+    ],
+    "cuff": [
+      "c",
+      "u",
+      "ff"
+    ],
+    "mess": [
+      "m",
+      "e",
+      "ss"
+    ],
+    "less": [
+      "l",
+      "e",
+      "ss"
+    ],
+    "fuss": [
+      "f",
+      "u",
+      "ss"
+    ],
+    "boss": [
+      "b",
+      "o",
+      "ss"
+    ],
+    "till": [
+      "t",
+      "i",
+      "ll"
+    ],
+    "fill": [
+      "f",
+      "i",
+      "ll"
+    ],
+    "well": [
+      "w",
+      "e",
+      "ll"
+    ],
+    "sell": [
+      "s",
+      "e",
+      "ll"
+    ],
+    "jam": [
+      "j",
+      "a",
+      "m"
+    ],
+    "jab": [
+      "j",
+      "a",
+      "b"
+    ],
+    "jug": [
+      "j",
+      "u",
+      "g"
+    ],
+    "jut": [
+      "j",
+      "u",
+      "t"
+    ],
+    "vat": [
+      "v",
+      "a",
+      "t"
+    ],
+    "wet": [
+      "w",
+      "e",
+      "t"
+    ],
+    "wig": [
+      "w",
+      "i",
+      "g"
+    ],
+    "wag": [
+      "w",
+      "a",
+      "g"
+    ],
+    "mix": [
+      "m",
+      "i",
+      "x"
+    ],
+    "fix": [
+      "f",
+      "i",
+      "x"
+    ],
+    "wax": [
+      "w",
+      "a",
+      "x"
+    ],
+    "yet": [
+      "y",
+      "e",
+      "t"
+    ],
+    "yap": [
+      "y",
+      "a",
+      "p"
+    ],
+    "yell": [
+      "y",
+      "e",
+      "ll"
     ]
   },
   "oral": {
@@ -873,6 +1126,46 @@
       "leg",
       "lip",
       "log"
+    ],
+    "ff": [
+      "puff",
+      "muffin",
+      "giraffe"
+    ],
+    "ll": [
+      "bell",
+      "doll",
+      "hill"
+    ],
+    "ss": [
+      "dress",
+      "glass",
+      "chess"
+    ],
+    "j": [
+      "jet",
+      "jog",
+      "juice"
+    ],
+    "v": [
+      "van",
+      "violin",
+      "volcano"
+    ],
+    "w": [
+      "web",
+      "watch",
+      "worm"
+    ],
+    "x": [
+      "box",
+      "fox",
+      "ox"
+    ],
+    "y": [
+      "yoyo",
+      "yawn",
+      "yum"
     ]
   },
   "tricky": [
@@ -898,6 +1191,34 @@
         2
       ],
       "note": "th is a sound to come, and the e says a quick uh."
+    },
+    {
+      "word": "as",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The s says z, like in is."
+    },
+    {
+      "word": "put",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The u is the tricky part in many accents. If it sounds just like it looks where you live, it isn't tricky."
+    },
+    {
+      "word": "pull",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The u is the tricky part in many accents, as in put."
+    },
+    {
+      "word": "full",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The u is the tricky part in many accents, as in pull."
     }
   ],
   "maths": {
@@ -905,7 +1226,8 @@
       "matching",
       "comparing amounts, size, mass and capacity",
       "patterns",
-      "the numbers 1, 2 and 3"
+      "the numbers 1, 2 and 3",
+      "one more and one less, making 1, 2 and 3"
     ],
     "questions": [
       {
