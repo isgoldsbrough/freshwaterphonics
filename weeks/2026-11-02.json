@@ -1,12 +1,17 @@
 {
   "weekOf": "2026-11-02",
-  "status": "review",
+  "status": "confirmed",
   "label": "Week of 2 November",
   "className": "Reception · Little Wandle Phase 2",
   "updated": "2026-10-19",
   "nextUpdateExpected": "2026-11-06",
   "phonics": {
-    "focus": [],
+    "focus": [
+      "ff",
+      "ll",
+      "ss",
+      "j"
+    ],
     "taught": [
       "s",
       "a",
@@ -1968,10 +1973,10 @@
       "<b>Understanding the World:</b> sorting pictures from the past and present.",
       "<b>Phonics:</b> h, b, f, l and the tricky word the."
     ],
-    "thisWeekPhonics": "a review of every Autumn 1 sound. School has not said which new sounds come first; they appear here as soon as it does.",
+    "thisWeekPhonics": "ff, ll, ss and j, with the tricky words put, pull, full and as (from the 6 November update). This page was on Autumn 1 review that week, because school hadn't said the sounds yet; ff, ll, ss and j are caught up in the week of 9 November.",
     "asks": [],
     "standing": [
-      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. This week is review only: every sound so far, a group a day, so the new sounds land on firm ground."
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. School taught ff, ll, ss and j this week. This page went over the Autumn 1 sounds instead, a group a day, because school hadn't said yet; the new sounds are caught up in the week of 9 November."
     ]
   },
   "journey": [
@@ -2004,10 +2009,17 @@
       "tricky": "the"
     },
     {
-      "week": "Autumn 2",
-      "graphemes": "review, then new sounds when school says",
-      "state": "now"
+      "week": "Autumn 2 week 1",
+      "graphemes": "ff ll ss j",
+      "state": "now",
+      "tricky": "put, pull, full, as"
+    },
+    {
+      "week": "Autumn 2 week 2",
+      "graphemes": "v w x y (expected)",
+      "state": "next"
     }
   ],
-  "share": ""
+  "share": "",
+  "homeReview": true
 }

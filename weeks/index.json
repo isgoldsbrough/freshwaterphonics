@@ -25,10 +25,15 @@
       "weekOf": "2026-11-02",
       "label": "Week of 2 November",
       "file": "2026-11-02.json",
-      "focus": [],
+      "focus": [
+        "ff",
+        "ll",
+        "ss",
+        "j"
+      ],
       "tricky": null,
       "maths": "the numbers 1, 2 and 3 (home practice)",
-      "status": "review",
+      "status": "confirmed",
       "book": {
         "title": "What's in the Witch's Kitchen?",
         "by": "Nick Sharratt",
