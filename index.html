@@ -200,6 +200,9 @@
   .stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; min-height: 0; }
   .stage.enter { animation: turn 240ms ease-out; }
   @keyframes turn { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+  .daypick-head { margin: 18px 0 10px; }
+  .daypick-head h3 { font-size: 1.05rem; }
+  .daypick-head p { margin: 2px 0 0; font-size: 0.92rem; max-width: 60ch; }
   .tiles { display: grid; grid-template-columns: repeat(3, 128px); gap: 14px; justify-content: center; }
   .tiles.two { grid-template-columns: repeat(2, 160px); }
   .tile { width: 128px; height: 128px; border-radius: var(--r); background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid transparent; transition: transform 160ms ease-out, background 200ms, border-color 200ms; padding: 0; }
@@ -291,6 +294,7 @@
     <button role="tab" id="tab-btn-help" aria-selected="false" aria-controls="panel-help">help</button>
   </nav>
 
+  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet">Each weekday has its own sound and games: tap one to open it. Weekends (the leaf) are rest days, so no games show.</p></div>
   <div class="ribbon" id="daypick" role="group" aria-label="Choose a day"></div>
 
   <div id="panel-today" role="tabpanel" aria-labelledby="tab-btn-today">
@@ -521,7 +525,7 @@
     $("week-letters").textContent = W.phonics.focus.length ? W.phonics.focus.join(" ") : "review";
     $("week-letters").classList.toggle("long", W.phonics.focus.join(" ").length > 9);
     const options = IDX.weeks.map(w => `<option value="${esc(w.weekOf)}"${w.weekOf === W.weekOf ? " selected" : ""}>${esc(w.label.toLowerCase())}${w.weekOf === IDX.current ? (w.weekOf > today ? " (starts Monday)" : " (this week)") : ""}</option>`).join("");
-    $("week-meta").innerHTML = `<span class="weekpick">choose a week, this one or an earlier one</span><select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet" style="display:inline-block;margin-top:8px;">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? (W.homeReview ? "confirmed by school · this page was on review" : "confirmed by school") : W.status === "review" ? "review week: no new sounds until school says" : "expected, not yet confirmed by school"}`}</span>`;
+    $("week-meta").innerHTML = `<span class="weekpick">choose a week, this one or an earlier one</span><select class="weeks" id="week-select" aria-label="Choose a week">${options}</select><br><span class="quiet" style="display:inline-block;margin-top:8px;">${half ? `${esc(BR.label)} · no new sounds` : `<span class="dot${W.status === "confirmed" ? " moss" : ""}"></span>${W.status === "confirmed" ? (W.homeReview ? "confirmed by school · this page was on review" : "confirmed by school") : W.status === "review" ? "review week: no new sounds until school says" : W.expectedFrom === "littlewandle" ? `expected from <a href="https://www.littlewandle.org.uk/download/293448/" target="_blank" rel="noopener">Little Wandle's order of sounds</a>, not yet confirmed by school` : "expected, not yet confirmed by school"}`}</span>`;
     $("week-select").addEventListener("change", e => viewWeek(e.target.value));
     const v = $("viewing");
     v.hidden = W === W0;
@@ -569,6 +573,7 @@
   const saved = store.get("fp-day");
   if (saved && saved.startsWith(today + ":")) day = Number(saved.split(":")[1]);
   function renderDayPick() {
+    $("daypick-head").hidden = !W.phonics.days[1];
     if (!W.phonics.days[1]) { $("daypick").innerHTML = ""; return; }
     $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
       const d = W.phonics.days[n];
@@ -1036,7 +1041,7 @@
     const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0] ? W.phonics.tricky[0].word : "★");
     if (day === 0) {
       s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">If your child asks to play anyway, the games below are there all week.</p></div></div>` + bookCard(); return;
+      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">Weekends are rest days, so no games show here. Tap a weekday above for its games.</p></div></div>` + bookCard(); return;
     }
     const d = W.phonics.days[day];
     // a review week's own first step already goes through the sounds

@@ -136,6 +136,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
         const where = tag + " " + pd.name + " phonics";
         const need = ["main" + n].concat(pd.stretch ? ["stretch" + n] : [], pd.challenge ? ["challenge" + n] : []);
         for (const id of need) if (!$("launch-" + id)) E(where + ": missing the " + id.replace(/\\d/, "") + " game on the right");
+        if (!visible($("daypick-head"))) E(where + ": the 'Choose a day' heading is missing");
         if (!$("ph-script").textContent.trim()) E(where + ": the day plan on the left is empty");
         if (!d.querySelector("#ph-side .launch.book") && IDX.weeks.some(w => w.book && w.weekOf <= W.weekOf)) E(where + ": book of the week card missing");
         R.log.push(where + ": " + await openAll($("ph-side"), where) + " games opened");
