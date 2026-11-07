@@ -42,6 +42,9 @@ for (const w of IDX.weeks) {
   }
 }
 const cur = IDX.weeks.find(w => w.weekOf === IDX.current);
+// a review week with no new sounds should only happen when school says it is revising
+if (cur && cur.status === "review" && !(cur.focus || []).length)
+  warn(`current week ${cur.weekOf} is a review week with no new sounds. If school didn't say it's revising, use the next group from "Expected order" in school/reception/phonics-progress.md, marked expected`);
 if (cur && cur.file && readFileSync(join(SITE, "weeks/current.json"), "utf8") !== readFileSync(join(SITE, "weeks", cur.file), "utf8"))
   err(`weeks/current.json is not an exact copy of weeks/${cur.file}`);
 
