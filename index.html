@@ -307,7 +307,7 @@
   </nav>
 
   <div id="daypick-wrap">
-  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet">Each weekday has its own sound and games: tap one to open it. Weekends (the leaf) are rest days, so no games show.</p></div>
+  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet">Each weekday has its own sound and games: tap one to open it.</p></div>
   <div class="ribbon" id="daypick" role="group" aria-label="Choose a day"></div>
   </div>
 
@@ -584,16 +584,16 @@
   // ---------- day ribbon ----------
   const dow = new Date().getDay();
   const todayDay = (dow >= 1 && dow <= 5) ? dow : 0;
-  let day = todayDay;
+  let day = todayDay || 5; // weekend: open Friday
   const saved = store.get("fp-day");
-  if (saved && saved.startsWith(today + ":")) day = Number(saved.split(":")[1]);
+  if (saved && saved.startsWith(today + ":")) { const n = Number(saved.split(":")[1]); if (n >= 1 && n <= 5) day = n; }
   function renderDayPick() {
     $("daypick-head").hidden = !W.phonics.days[1];
     if (!W.phonics.days[1]) { $("daypick").innerHTML = ""; return; }
-    $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
+    $("daypick").innerHTML = [1, 2, 3, 4, 5].map(n => {
       const d = W.phonics.days[n];
-      const label = n === 0 ? "rest" : d.name;
-      const l = n === 0 ? pic("leaf") : (d.sound ? esc(d.sound) : d.review ? esc(d.review[0]) + "…" : "✓");
+      const label = d.name;
+      const l = (d.sound ? esc(d.sound) : d.review ? esc(d.review[0]) + "…" : "✓");
       return `<button class="day${n === todayDay ? " today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
     }).join("");
     $("daypick").querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
@@ -1054,10 +1054,6 @@
       return;
     }
     const sticker = day && W.phonics.days[day].sound ? W.phonics.days[day].sound : (W.phonics.tricky[0] ? W.phonics.tricky[0].word : "★");
-    if (day === 0) {
-      s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.phonics.weekend)}</p>${trickyHtml()}`;
-      side.innerHTML = `<div class="hero"><div class="big">${esc(W.phonics.focus.join(" ") || "review")}</div><div><p class="cue">Weekends are rest days, so no games show here. Tap a weekday above for its games.</p></div></div>` + bookCard(); return;
-    }
     const d = W.phonics.days[day];
     // a review week's own first step already goes through the sounds
     const steps = [...(W.status === "review" || W.homeReview ? [] : [revisitStep()]), ...d.steps, ...(d.stretch || d.challenge ? [pushStep(d, d.challenge ? "Stretch and challenge" : "Stretch")] : []), BOOKS_STEP];
@@ -1225,7 +1221,6 @@
       side.innerHTML = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p></div></div>${m.html}`; m.wire();
       return;
     }
-    if (day === 0) { s.innerHTML = `<h2>The weekend</h2><p style="margin-top:12px;max-width:60ch;">${esc(W.maths.weekend)}</p>`; side.innerHTML = ""; return; }
     const d = W.maths.days[day];
     const msteps = [...d.steps, ...(d.stretch || d.challenge ? [pushStep(d, d.challenge ? "Stretch and challenge" : "Stretch")] : [])];
     s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.stretch || d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;

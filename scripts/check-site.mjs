@@ -66,7 +66,6 @@ for (const w of weeks) {
       if (g.type === "caption") (g.items || []).forEach(i => i.options.forEach(o => o.pics.forEach(p => picWords.add(p))));
     }
   }
-  if (!W.phonics.weekend) warn(`${w.file}: no weekend note`);
   (W.phonics.memory || []).forEach(m => picWords.add(m.word));
   (W.phonics.rhymes || []).forEach(r => { picWords.add(r.target.word); r.options.forEach(o => picWords.add(o.word)); });
   for (const d of Object.values(W.maths.days || {}))
@@ -129,7 +128,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
     await tab("today");
     const dayBtns = [...d.querySelectorAll("#daypick button")];
     if (W.phonics.days && W.phonics.days[1]) {
-      if (dayBtns.length !== 6) E(tag + ": " + dayBtns.length + " day buttons, expected 6");
+      if (dayBtns.length !== 5) E(tag + ": " + dayBtns.length + " day buttons, expected 5 (Monday to Friday)");
       for (let n = 1; n <= 5; n++) {
         const pd = W.phonics.days[n], md = W.maths.days[n], b = dayBtns[n - 1];
         if (!pd) { E(tag + ": no phonics day " + n); continue; }
@@ -152,9 +151,6 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
           await openAll($("panel-maths"), mw);
         } else E(mw + ": no maths day");
       }
-      // rest day and the extra games
-      dayBtns[5] && dayBtns[5].click(); await wait(300); await tab("today");
-      if (!$("ph-side").textContent.trim()) E(tag + " rest: right-hand side is empty");
     }
     await tab("maths");
     if (W.phonics.days[1] && !visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading is missing on the maths tab");
