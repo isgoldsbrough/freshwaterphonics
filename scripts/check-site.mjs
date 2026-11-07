@@ -141,6 +141,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
         const where = tag + " " + pd.name + " phonics";
         const need = ["main" + n].concat(pd.stretch ? ["stretch" + n] : [], pd.challenge ? ["challenge" + n] : []);
         for (const id of need) if (!$("launch-" + id)) E(where + ": missing the " + id.replace(/\\d/, "") + " game on the right");
+        if (!visible($("daypick-head"))) E(where + ": the 'Choose a day' heading is missing");
         if (!$("ph-script").textContent.trim()) E(where + ": the day plan on the left is empty");
         if (!d.querySelector("#ph-side .launch.book") && IDX.weeks.some(w => w.book && w.weekOf <= W.weekOf)) E(where + ": book of the week card missing");
         R.log.push(where + ": " + await openAll($("ph-side"), where) + " games opened");
@@ -155,7 +156,10 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
       dayBtns[5] && dayBtns[5].click(); await wait(300); await tab("today");
       if (!$("ph-side").textContent.trim()) E(tag + " rest: right-hand side is empty");
     }
+    await tab("maths");
+    if (W.phonics.days[1] && !visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading is missing on the maths tab");
     await tab("week");
+    if (visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading shows on the week tab");
     if (W.phonics.days && W.phonics.days[1] && $("wk-tt").children.length !== 5) E(tag + " week tab: timetable has " + $("wk-tt").children.length + " rows, expected 5");
     if (!$("wk-last").children.length) E(tag + " week tab: 'at school' list is empty");
     if (!$("wk-journey").children.length) E(tag + " week tab: 'sounds so far' is empty");
@@ -169,6 +173,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
   for (const m of more) { m.click(); await wait(300); if (!$("more-stage").innerHTML.trim()) E("More ways to play: '" + m.textContent.trim() + "' is empty"); }
   if (!more.some(m => /number trace/.test(m.textContent))) E("More ways to play: no number trace");
   await tab("help"); if (!$("panel-help").textContent.trim()) E("help tab is empty");
+  if (visible($("daypick-head"))) E("the 'Choose a day' heading shows on the help tab");
   // phone width: nothing wider than the screen
   const pd = P.contentDocument, pe = pd.documentElement;
   if (pe.scrollWidth > pe.clientWidth + 2) {
