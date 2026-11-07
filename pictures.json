@@ -100,5 +100,9 @@
   "vet": "1FA7A",
   "win": "1F3C6",
   "six": "0036-FE0F-20E3",
-  "yes": "2705"
+  "yes": "2705",
+  "circle": "local",
+  "triangle": "local",
+  "square": "local",
+  "rectangle": "local"
 }

@@ -1227,7 +1227,8 @@
       "comparing amounts, size, mass and capacity",
       "patterns",
       "the numbers 1, 2 and 3",
-      "one more and one less, making 1, 2 and 3"
+      "one more and one less, making 1, 2 and 3",
+      "circles, triangles and shapes with 4 sides (ready for when school starts them)"
     ],
     "questions": [
       {
@@ -1544,6 +1545,89 @@
           ]
         ],
         "correct": 2
+      },
+      {
+        "kind": "which",
+        "say": "Which one is a circle?",
+        "options": [
+          [
+            "triangle"
+          ],
+          [
+            "circle"
+          ],
+          [
+            "square"
+          ]
+        ],
+        "correct": 1
+      },
+      {
+        "kind": "which",
+        "say": "Which one is a triangle?",
+        "options": [
+          [
+            "square"
+          ],
+          [
+            "rectangle"
+          ],
+          [
+            "triangle"
+          ]
+        ],
+        "correct": 2
+      },
+      {
+        "kind": "which",
+        "say": "Which shape has four sides?",
+        "options": [
+          [
+            "circle"
+          ],
+          [
+            "square"
+          ],
+          [
+            "triangle"
+          ]
+        ],
+        "correct": 1,
+        "hint": "Count the sides with your finger."
+      },
+      {
+        "kind": "which",
+        "say": "Which shape has three sides?",
+        "options": [
+          [
+            "triangle"
+          ],
+          [
+            "rectangle"
+          ],
+          [
+            "circle"
+          ]
+        ],
+        "correct": 0,
+        "hint": "Count the sides with your finger."
+      },
+      {
+        "kind": "which",
+        "say": "Which shape has no corners?",
+        "options": [
+          [
+            "square"
+          ],
+          [
+            "triangle"
+          ],
+          [
+            "circle"
+          ]
+        ],
+        "correct": 2,
+        "hint": "A corner is where two sides meet. Can you find one on the circle?"
       }
     ]
   }

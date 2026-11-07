@@ -208,9 +208,10 @@
   .stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; min-height: 0; }
   .stage.enter { animation: turn 240ms ease-out; }
   @keyframes turn { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
-  .daypick-head { margin: 18px 0 10px; }
-  .daypick-head h3 { font-size: 1.35rem; }
-  .daypick-head p { margin: 4px 0 0; font-size: 1rem; max-width: 64ch; }
+  .termcard { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 900px; }
+  .termcard .tc { background: var(--panel); border-radius: var(--r); padding: 14px 16px; }
+  .termcard .tc .lab { font-family: var(--display); font-weight: 500; font-size: 0.85rem; color: var(--moss); }
+  .termcard .tc p { margin: 4px 0 0; }
   .tiles { display: grid; grid-template-columns: repeat(3, 128px); gap: 14px; justify-content: center; }
   .tiles.two { grid-template-columns: repeat(2, 160px); }
   .tile { width: 128px; height: 128px; border-radius: var(--r); background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid transparent; transition: transform 160ms ease-out, background 200ms, border-color 200ms; padding: 0; }
@@ -302,7 +303,6 @@
     <button role="tab" id="tab-btn-help" aria-selected="false" aria-controls="panel-help">help</button>
   </nav>
 
-  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet">Each weekday has its own sound and games: tap one to open it. Weekends (the leaf) are rest days, so no games show.</p></div>
   <div class="ribbon" id="daypick" role="group" aria-label="Choose a day"></div>
 
   <div id="panel-today" role="tabpanel" aria-labelledby="tab-btn-today">
@@ -351,6 +351,7 @@
     <section class="block"><h2 id="wk-last-h">Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
+    <section class="block" id="wk-term-block" hidden><h2 id="wk-term-h">This term at school</h2><div class="termcard" id="wk-term"></div></section>
   </div>
 
   <div id="panel-help" role="tabpanel" aria-labelledby="tab-btn-help" hidden>
@@ -581,7 +582,6 @@
   const saved = store.get("fp-day");
   if (saved && saved.startsWith(today + ":")) day = Number(saved.split(":")[1]);
   function renderDayPick() {
-    $("daypick-head").hidden = !W.phonics.days[1];
     if (!W.phonics.days[1]) { $("daypick").innerHTML = ""; return; }
     $("daypick").innerHTML = [1, 2, 3, 4, 5, 0].map(n => {
       const d = W.phonics.days[n];
@@ -1074,7 +1074,8 @@
     { id: "memory", label: "memory match", game: () => ({ type: "memory", say: "Match the letter to a picture that starts with that sound.", pairs: W.phonics.memory }) },
     { id: "rhymes", label: "rhyme picker", game: () => ({ type: "rhymes", say: "Which one rhymes with this?", rounds: W.phonics.rhymes }) },
     { id: "review", label: "review cards", game: () => ({ type: "review", say: "Say each sound. Tap next when you are ready. No timer.", deck: [...W.phonics.taught, ...W.phonics.focus] }) },
-    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus.length ? W.phonics.focus : W.phonics.taught }) }
+    { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus.length ? W.phonics.focus : W.phonics.taught }) },
+    { id: "numbers", label: "number trace", game: () => ({ type: "trace", numbers: true, say: "Watch how the number is formed and trace it. Then write it on paper with a pencil.", letters: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] }) }
   ];
   const moreStage = $("more-stage");
   let morePm = null;
@@ -1106,6 +1107,18 @@
 
   // ---------- letter formation: strokes in a 100 x 150 box (ascender 25, x-height 65, baseline 115, descender 145) ----------
   const STROKES = {
+    // numbers 0 to 10, for number trace (writing numbers is on the Autumn 2 knowledge organiser)
+    "0": { w: 100, cue: "Start at the top, round and back up to the top.", s: ["M50 25 A25 45 0 1 0 50 115 A25 45 0 1 0 50 25"] },
+    "1": { w: 100, cue: "Start at the top and go straight down.", s: ["M50 25 L50 115"] },
+    "2": { w: 100, cue: "Round the top, slide down, then along the bottom.", s: ["M28 46 Q30 25 51 25 Q73 26 72 48 Q70 66 28 115 L76 115"] },
+    "3": { w: 100, cue: "Round to the middle, then round again.", s: ["M30 34 Q48 18 66 32 Q76 50 50 68 Q78 74 72 98 Q62 122 28 106"] },
+    "4": { w: 100, cue: "Down and across, then a line down.", s: ["M58 25 L24 86 L80 86", "M60 52 L60 115"] },
+    "5": { w: 100, cue: "Down, round the tummy, then the hat on top.", s: ["M34 25 L31 64 Q62 50 72 80 Q75 110 46 114 Q32 114 25 104", "M34 25 L72 25"] },
+    "6": { w: 100, cue: "Curve down and round, then curl in.", s: ["M68 30 Q52 20 40 42 Q24 78 36 104 Q50 122 66 104 Q76 84 56 76 Q38 72 30 94"] },
+    "7": { w: 100, cue: "Across the top, then a long line down.", s: ["M26 25 L74 25 L42 115"] },
+    "8": { w: 100, cue: "Make an S, then go back up to the top.", s: ["M64 36 Q60 22 48 24 Q30 26 32 44 Q36 60 50 68 Q72 78 70 98 Q66 116 48 115 Q28 113 30 94 Q32 76 52 66 Q66 56 64 36"] },
+    "9": { w: 100, cue: "Round the head, then straight down.", s: ["M70 44 Q66 25 48 26 Q28 28 30 48 Q34 66 54 62 Q68 58 70 44 L70 115"] },
+    "10": { w: 170, cue: "A 1, then a 0 next to it.", s: ["M48 25 L48 115", "M115 25 A25 45 0 1 0 115 115 A25 45 0 1 0 115 25"] },
     l: { w: 100, cue: "Down tall, from the top.", s: ["M50 25 L50 115"] },
     i: { w: 100, cue: "Down, then a dot on top.", s: ["M50 65 L50 115", "M50 44 L50 46"] },
     t: { w: 100, cue: "Down, then across.", s: ["M50 40 L50 115", "M30 65 L70 65"] },
@@ -1140,12 +1153,12 @@
     const all = TERM.graphemes.map(x => x.g).filter(x => STROKES[x]);
     // only letters with a stroke guide; if none of this week's have one, show every letter
     const mine = g.letters.filter(x => STROKES[x]);
-    let showAll = !mine.length, cur = (mine[0] || all[0]);
+    let showAll = !mine.length && !g.numbers, cur = (mine[0] || all[0]);
     pm.progress(0, 0);
     function render() {
       const L = STROKES[cur], list = showAll ? all : mine;
       const H = 300, scale = H / 150, Wd = Math.round(L.w * scale);
-      pm.draw(`<div class="pills" id="tr-letters">${list.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}${showAll ? "" : `<button class="pill" id="tr-all" style="color:var(--moss);">all sounds</button>`}</div>
+      pm.draw(`<div class="pills" id="tr-letters">${list.map(l => `<button class="pill" data-l="${esc(l)}" aria-selected="${l === cur}">${esc(l)}</button>`).join("")}${showAll || g.numbers ? "" : `<button class="pill" id="tr-all" style="color:var(--moss);">all sounds</button>`}</div>
         <p class="cue" style="font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--sky);text-align:center;">${esc(L.cue)}</p>
         <div class="trace-box" style="width:${Wd}px;height:${H}px;">
           <svg viewBox="0 0 ${L.w} 150" width="${Wd}" height="${H}" aria-hidden="true">
@@ -1231,6 +1244,17 @@
       ? `<li><b>That week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li><li class="quiet" style="list-style:none;margin-left:-1em;margin-top:6px;">The week before:</li>` + W.school.lastWeek.map(t => `<li>${t}</li>`).join("")
       : W.school.lastWeek.map(t => `<li>${t}</li>`).join("") + `<li><b>This week's phonics:</b> ${esc(W.school.thisWeekPhonics)}</li>`;
     $("wk-standing").innerHTML = W.school.standing.map(t => `<li>${t}</li>`).join("");
+    // from the school's knowledge organiser: one talk question, one word to say (not read), one thing at home
+    const T = W.school.term;
+    $("wk-term-block").hidden = !T;
+    if (T) {
+      $("wk-term-h").textContent = "This term at school: " + T.theme;
+      $("wk-term").innerHTML = `<div class="tc"><span class="lab">talk about</span><p>${esc(T.question)}</p>${T.stem ? `<p class="quiet">Try the sentence starter "${esc(T.stem)}"</p>` : ""}</div>`
+        + `<div class="tc"><span class="lab">a word to say</span><p><b>${esc(T.word)}</b>: ${esc(T.meaning)}</p><p class="quiet">For talking, not reading: it uses sounds still to come.</p></div>`
+        + `<div class="tc"><span class="lab">at home</span><p>${esc(T.home)}</p></div>`
+        + (T.coming ? `<div class="tc"><span class="lab">coming up</span><p>${esc(T.coming)}</p></div>` : "")
+        + `<p class="quiet" style="grid-column:1/-1;">From the school's ${esc(T.source || "knowledge organiser")}.</p>`;
+    }
     $("wk-journey").innerHTML = W.journey.map(j => `<div class="stamp ${esc(j.state)}" title="${esc(j.week)}${j.tricky ? ", tricky word " + esc(j.tricky) : ""}"><b>${esc(j.graphemes.replace(/ \(expected\)/, ""))}</b><small>${esc(j.week.toLowerCase())}${j.state === "next" ? ", expected" : ""}</small></div>`).join("");
   }
 

@@ -75,6 +75,11 @@ for (const w of weeks) {
   for (const k of ["lastWeek", "asks", "standing"]) if (!W.school || !Array.isArray(W.school[k])) err(`${w.file}: school.${k} missing`);
   if (!W.journey || !W.journey.length) err(`${w.file}: journey missing`);
 }
+// the term's maths pool (half term, past weeks, shapes) needs its pictures too
+for (const q of (json("term.json").maths.questions || [])) [...(q.pattern || []), ...q.options.flat()].filter(isWord).forEach(x => picWords.add(x));
+// number trace needs a guide for every number 0 to 10
+for (let n = 0; n <= 10; n++) if (!html.includes(`"${n}": { w:`)) err(`index.html STROKES: no number-trace guide for ${n}`);
+for (const w of weeks) { const t = json("weeks/" + w.file).school?.term; if (t) for (const k of ["theme", "question", "word", "meaning", "home"]) if (!t[k]) err(`${w.file}: school.term.${k} is empty`); }
 for (const p of picWords) {
   if (!(p in PICS)) err(`picture missing: "${p}" has no entry in pictures.json (the game would show the word instead)`);
   else if (!existsSync(join(SITE, "pictures", p + ".svg"))) err(`picture missing: pictures/${p}.svg (run scripts/build-pictures.mjs)`);
@@ -136,7 +141,6 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
         const where = tag + " " + pd.name + " phonics";
         const need = ["main" + n].concat(pd.stretch ? ["stretch" + n] : [], pd.challenge ? ["challenge" + n] : []);
         for (const id of need) if (!$("launch-" + id)) E(where + ": missing the " + id.replace(/\\d/, "") + " game on the right");
-        if (!visible($("daypick-head"))) E(where + ": the 'Choose a day' heading is missing");
         if (!$("ph-script").textContent.trim()) E(where + ": the day plan on the left is empty");
         if (!d.querySelector("#ph-side .launch.book") && IDX.weeks.some(w => w.book && w.weekOf <= W.weekOf)) E(where + ": book of the week card missing");
         R.log.push(where + ": " + await openAll($("ph-side"), where) + " games opened");
@@ -155,13 +159,15 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
     if (W.phonics.days && W.phonics.days[1] && $("wk-tt").children.length !== 5) E(tag + " week tab: timetable has " + $("wk-tt").children.length + " rows, expected 5");
     if (!$("wk-last").children.length) E(tag + " week tab: 'at school' list is empty");
     if (!$("wk-journey").children.length) E(tag + " week tab: 'sounds so far' is empty");
+    if (W.school.term && !visible($("wk-term-block"))) E(tag + " week tab: 'This term at school' is missing");
     const bi = brokenImgs(); if (bi.length) E(tag + ": broken pictures " + bi.join(", "));
   }
   // back to the current week: More ways to play, and help
   $("week-select").value = IDX.current; $("week-select").dispatchEvent(new Event("change")); await wait(700);
   await tab("today");
-  const more = [...d.querySelectorAll(".chips button, [data-more]")].filter(visible);
-  for (const m of more) { m.click(); await wait(300); }
+  const more = [...d.querySelectorAll("#more-nav button")].filter(visible);
+  for (const m of more) { m.click(); await wait(300); if (!$("more-stage").innerHTML.trim()) E("More ways to play: '" + m.textContent.trim() + "' is empty"); }
+  if (!more.some(m => /number trace/.test(m.textContent))) E("More ways to play: no number trace");
   await tab("help"); if (!$("panel-help").textContent.trim()) E("help tab is empty");
   // phone width: nothing wider than the screen
   const pd = P.contentDocument, pe = pd.documentElement;
