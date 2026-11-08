@@ -215,6 +215,12 @@
   .termcard .tc { background: var(--panel); border-radius: var(--r); padding: 14px 16px; }
   .termcard .tc .lab { font-family: var(--display); font-weight: 500; font-size: 0.85rem; color: var(--moss); }
   .termcard .tc p { margin: 4px 0 0; }
+  .org-words { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 20px; max-width: 900px; margin: 0; padding: 0; list-style: none; }
+  .org-words li { padding: 6px 0; border-bottom: 1px solid var(--line, rgba(0,0,0,0.08)); }
+  .org-list { margin: 0; padding-left: 1.2em; max-width: 64ch; }
+  .org-list li { margin: 4px 0; }
+  .org-list li.done { list-style: none; margin-left: -1.2em; }
+  .termcard .tc .home { margin-top: 8px; }
   .tiles { display: grid; grid-template-columns: repeat(3, 128px); gap: 14px; justify-content: center; }
   .tiles.two { grid-template-columns: repeat(2, 160px); }
   .tile { width: 128px; height: 128px; border-radius: var(--r); background: var(--paper); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid transparent; transition: transform 160ms ease-out, background 200ms, border-color 200ms; padding: 0; }
@@ -303,6 +309,7 @@
     <button role="tab" id="tab-btn-maths" aria-selected="false" aria-controls="panel-maths">maths</button>
     <button role="tab" id="tab-btn-half" aria-selected="false" aria-controls="panel-half" hidden>half term</button>
     <button role="tab" id="tab-btn-week" aria-selected="false" aria-controls="panel-week">week</button>
+    <button role="tab" id="tab-btn-term" aria-selected="false" aria-controls="panel-term">term</button>
     <button role="tab" id="tab-btn-help" aria-selected="false" aria-controls="panel-help">help</button>
   </nav>
 
@@ -336,6 +343,11 @@
       <h2>Everyday moments for the same idea</h2>
       <ul class="list" id="m-everyday" style="max-width:60ch;"></ul>
     </section>
+    <section class="block" id="m-write-block">
+      <h2>Writing numbers</h2>
+      <p class="quiet" style="max-width:64ch;">School practises writing numbers this term. Trace 0 to 10 with the arrows, then write them on paper. At home, spot numbers out and about: doors, buses, prices.</p>
+      <div id="m-write" style="max-width:420px;margin-top:12px;"></div>
+    </section>
   </div>
 
   <div id="panel-half" role="tabpanel" aria-labelledby="tab-btn-half" hidden>
@@ -351,19 +363,25 @@
   </div>
 
   <div id="panel-week" role="tabpanel" aria-labelledby="tab-btn-week" hidden>
-    <section class="block" id="wk-term-block" hidden><h2 id="wk-term-h">This term at school</h2><div class="termcard" id="wk-term"></div></section>
-    <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
     <section class="block" id="wk-asks-block"><h2>School has asked for</h2><div class="asks" id="wk-asks"></div></section>
     <section class="block"><h2 id="wk-last-h">Last week at school</h2><ul class="list" id="wk-last" style="max-width:60ch;"></ul></section>
     <section class="block"><h2>Every week</h2><ul class="list" id="wk-standing" style="max-width:60ch;"></ul></section>
-    <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div></section>
+    <section class="block"><h2>Sounds so far</h2><div class="stamps" id="wk-journey"></div><p class="quiet" style="margin-top:12px;max-width:64ch;">If school hasn't yet said next week's sounds, they are assumed from the next stage of <a href="https://www.littlewandle.org.uk/download/293448/" target="_blank" rel="noopener">Little Wandle's order of sounds</a> and marked "expected" until school confirms them.</p></section>
     <section class="block"><h2>Time on here, last 7 days</h2><p class="quiet">Counts only while the page is open and in use; it stops by itself after two minutes with no taps. Kept on this computer only.</p><div class="tlog" id="wk-time"></div></section>
+    <section class="block"><h2 id="wk-title">This week at home</h2><div class="tt" id="wk-tt"></div></section>
+  </div>
+
+  <div id="panel-term" role="tabpanel" aria-labelledby="tab-btn-term" hidden>
+    <section class="block" id="wk-term-block" hidden><h2 id="wk-term-h">This term at school</h2><div class="termcard" id="wk-term"></div></section>
+    <section class="block" id="term-none" hidden><h2>This term at school</h2><p class="quiet" style="max-width:64ch;">No term notes for this week. They start from the week of 2 November, taken from the school's knowledge organiser.</p></section>
+    <div id="org"></div>
   </div>
 
   <div id="panel-help" role="tabpanel" aria-labelledby="tab-btn-help" hidden>
     <div class="help">
       <h2 style="margin-top:32px;">What this is</h2>
       <p>A weekly page made by a parent in the class, not by the school, and not reviewed by the school. Each Friday the school's update says which sounds and maths topic the children did and what comes next; this page turns that into about 15 minutes a day at home: 10 of phonics, 5 of maths.</p>
+      <p>If school hasn't yet said next week's sounds, they are assumed from the next stage of <a href="https://www.littlewandle.org.uk/download/293448/" target="_blank" rel="noopener">Little Wandle's order of sounds</a> and marked "expected" until school confirms them.</p>
       <p>Nothing is sent anywhere and nobody is tracked. The time counter is kept on this computer only. If the page is out of date, a notice at the top says so. If something is wrong, tell the parent who shared the link.</p>
       <h2>The day in five steps</h2>
       <p>About ten minutes, in one go or two short ones. Home practises what school has taught; it never teaches a sound first.</p>
@@ -467,6 +485,8 @@
   // ---------- audio: clips, speech fallback, three small sounds ----------
   let manifest = {};
   try { manifest = await (await fetch("audio/manifest.json", { cache: "no-cache" })).json(); } catch (e) {}
+  let ORGS = [];
+  try { ORGS = (await (await fetch("organisers.json", { cache: "no-cache" })).json()).organisers || []; } catch (e) {}
   // pure sounds, chosen or recorded by a parent on the sound check page; c, k and ck share one sound.
   // A sound with no clip stays silent: the child says it, as in class.
   let SOUNDS = {};
@@ -564,8 +584,27 @@
     return { summary: true, weekOf: entry.weekOf, label: entry.label, status: entry.status, phonics: { focus: entry.focus, taught, tricky: trickyUpTo.length ? trickyUpTo : [], days: {}, memory: W0.phonics.memory, rhymes: W0.phonics.rhymes }, maths: { topic: entry.maths, days: {} } };
   }
 
+  // ---------- term tab: the school's knowledge organiser, in our own words ----------
+  function renderOrganiser(O) {
+    const sec = (h, body, note) => `<section class="block"><h2>${h}</h2>${note ? `<p class="quiet" style="margin:-4px 0 12px;max-width:64ch;">${note}</p>` : ""}${body}</section>`;
+    let h = "";
+    h += sec("This term: " + esc(O.theme),
+      `<div class="termcard">${O.big.map(b => `<div class="tc"><span class="lab">big question</span><p>${esc(b.q)}</p><p class="quiet">${esc(b.a)}</p></div>`).join("")}</div>`,
+      `${esc(O.term)}. The questions the class is exploring, with the answers school is looking for.`);
+    h += sec("Words this term", `<ul class="org-words">${O.words.map(w => `<li><b>${esc(w.w)}</b>: ${esc(w.m)}</li>`).join("")}</ul>`,
+      "For talking, not reading: most use sounds still to come. Use them in conversation and ask what they mean.");
+    h += sec("Books to share", `<ul class="org-list">${O.books.map(b => `<li><i>${esc(b.title)}</i> by ${esc(b.by)}</li>`).join("")}</ul>`,
+      "Books school suggests for this topic, for you to read to your child. Try the library.");
+    h += sec("Maths this term", `<ul class="org-list">${O.maths.map(m => { const done = m.done && m.done <= W.weekOf; return `<li${done ? ' class="done"' : ""}>${done ? "✓ " : ""}${esc(m.t)}${done ? ' <span class="quiet">(done)</span>' : ""}${m.site ? `<br><span class="quiet">On this page: ${esc(m.site)}.</span>` : ""}</li>`; }).join("")}</ul>${O.mathsHome ? `<p style="margin-top:10px;max-width:64ch;"><b>At home:</b> ${esc(O.mathsHome)}</p>` : ""}`,
+      "In the school's order. Ticks show what school has said it has done.");
+    h += sec("What school is covering", `<div class="termcard">${O.areas.map(a => `<div class="tc"><span class="lab">${esc(a.a)}</span><p>${esc(a.s)}</p>${a.home ? `<p class="home"><b>At home:</b> ${esc(a.home)}</p>` : ""}${a.site ? `<p class="quiet">On this page: ${esc(a.site)}.</p>` : ""}</div>`).join("")}</div>`);
+    h += sec("Dates", `<ul class="org-list">${O.dates.map(d => `<li><b>${formatDate(d.d)}</b>: ${esc(d.t)}${d.d < W.weekOf ? ' <span class="quiet">(done)</span>' : ""}</li>`).join("")}${O.comingBook ? `<li><b>Coming up</b>: ${esc(O.comingBook)}</li>` : ""}</ul>`);
+    h += `<p class="quiet" style="margin-top:8px;max-width:64ch;">Summarised from ${esc(O.source)} by a parent in the class; not written or checked by the school.</p>`;
+    return h;
+  }
+
   // ---------- tabs ----------
-  const TABS = ["today", "maths", "half", "week", "help"];
+  const TABS = ["today", "maths", "half", "week", "term", "help"];
   const currentTab = () => TABS.find(t => $("tab-btn-" + t).getAttribute("aria-selected") === "true");
   $("tab-btn-half").hidden = !showHalf;
   function selectTab(which) {
@@ -584,7 +623,7 @@
   // ---------- day ribbon ----------
   const dow = new Date().getDay();
   const todayDay = (dow >= 1 && dow <= 5) ? dow : 0;
-  let day = todayDay || 5; // weekend: open Friday
+  let day = todayDay || (W.weekOf > today ? 1 : 5); // weekend: Friday of the week just done, or Monday if the new week is up
   const saved = store.get("fp-day");
   if (saved && saved.startsWith(today + ":")) { const n = Number(saved.split(":")[1]); if (n >= 1 && n <= 5) day = n; }
   function renderDayPick() {
@@ -1080,6 +1119,7 @@
     { id: "trace", label: "letter trace", game: () => ({ type: "trace", say: "Watch how the letter is formed and trace it. Then write it on paper with a pencil.", letters: W.phonics.focus.length ? W.phonics.focus : W.phonics.taught }) },
     { id: "numbers", label: "number trace", game: () => ({ type: "trace", numbers: true, say: "Watch how the number is formed and trace it. Then write it on paper with a pencil.", letters: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] }) }
   ];
+  { const nt = launcher(MORE.find(m => m.id === "numbers").game(), { id: "mwrite", sticker: "5" }, { title: "number trace" }); $("m-write").innerHTML = nt.html; nt.wire(); }
   const moreStage = $("more-stage");
   let morePm = null;
   function inlinePm(game) {
@@ -1249,9 +1289,12 @@
     // from the school's knowledge organiser: one talk question, one word to say (not read), one thing at home
     const T = W.school.term;
     $("wk-term-block").hidden = !T;
+    const O = ORGS.find(o => o.from <= W.weekOf && W.weekOf <= o.to);
+    $("term-none").hidden = !!(T || O);
+    $("org").innerHTML = O ? renderOrganiser(O) : "";
     if (T) {
-      $("wk-term-h").textContent = "This term at school: " + T.theme;
-      $("wk-term").innerHTML = `<div class="tc"><span class="lab">talk about</span><p>${esc(T.question)}</p>${T.stem ? `<p class="quiet">Try the sentence starter "${esc(T.stem)}"</p>` : ""}</div>`
+      $("wk-term-h").textContent = "This week's talk: " + T.theme;
+      $("wk-term").innerHTML = `<div class="tc"><span class="lab">talk about</span><p>${esc(T.question)}</p>${T.answer ? `<p class="quiet">${esc(T.answer)}</p>` : ""}${T.stem ? `<p class="quiet">Try the sentence starter "${esc(T.stem)}"</p>` : ""}</div>`
         + `<div class="tc"><span class="lab">a word to say</span><p><b>${esc(T.word)}</b>: ${esc(T.meaning)}</p><p class="quiet">For talking, not reading: it uses sounds still to come.</p></div>`
         + `<div class="tc"><span class="lab">at home</span><p>${esc(T.home)}</p></div>`
         + (T.coming ? `<div class="tc"><span class="lab">coming up</span><p>${esc(T.coming)}</p></div>` : "")

@@ -153,13 +153,21 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
       }
     }
     await tab("maths");
+    if (!$("launch-mwrite")) E(tag + " maths tab: the Writing numbers card is missing");
     if (W.phonics.days[1] && !visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading is missing on the maths tab");
     await tab("week");
     if (visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading shows on the week tab");
     if (W.phonics.days && W.phonics.days[1] && $("wk-tt").children.length !== 5) E(tag + " week tab: timetable has " + $("wk-tt").children.length + " rows, expected 5");
     if (!$("wk-last").children.length) E(tag + " week tab: 'at school' list is empty");
     if (!$("wk-journey").children.length) E(tag + " week tab: 'sounds so far' is empty");
-    if (W.school.term && !visible($("wk-term-block"))) E(tag + " week tab: 'This term at school' is missing");
+    if (visible($("wk-term-block"))) E(tag + ": 'This term at school' shows on the week tab; it belongs on the term tab");
+    await tab("term");
+    if (visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading shows on the term tab");
+    if (W.school.term && !visible($("wk-term-block"))) E(tag + " term tab: 'This term at school' is missing");
+    const ORG = (await (await fetch("organisers.json")).json()).organisers.find(o => o.from <= W.weekOf && W.weekOf <= o.to);
+    if (ORG && !$("org").textContent.includes("Words this term")) E(tag + " term tab: the organiser (" + ORG.term + ") is missing");
+    if (!W.school.term && !ORG && !visible($("term-none"))) E(tag + " term tab: empty, with no 'no term notes' line");
+    if (!$("panel-term").textContent.trim()) E(tag + " term tab is empty");
     const bi = brokenImgs(); if (bi.length) E(tag + ": broken pictures " + bi.join(", "));
   }
   // back to the current week: More ways to play, and help
@@ -207,7 +215,7 @@ server.close();
 
 // ---------- 3. live site ----------
 if (process.argv.includes("--live")) {
-  const files = ["index.html", "term.json", "pictures.json", ...readdirSync(join(SITE, "weeks")).map(f => "weeks/" + f), ...readdirSync(join(SITE, "books")).filter(f => f.endsWith(".html")).map(f => "books/" + f)];
+  const files = ["index.html", "term.json", "pictures.json", "organisers.json", ...readdirSync(join(SITE, "weeks")).map(f => "weeks/" + f), ...readdirSync(join(SITE, "books")).filter(f => f.endsWith(".html")).map(f => "books/" + f)];
   let same = 0;
   for (const f of files) {
     try {
