@@ -536,7 +536,7 @@
     ],
     "days": {
       "1": {
-        "title": "Find one the same",
+        "title": "Find one the same", "short": "same",
         "minutes": 5,
         "steps": [
           {
@@ -723,7 +723,7 @@
         }
       },
       "2": {
-        "title": "Pairs",
+        "title": "Pairs", "short": "pairs",
         "minutes": 5,
         "steps": [
           {
@@ -904,7 +904,7 @@
         }
       },
       "3": {
-        "title": "Picture to object",
+        "title": "Picture to object", "short": "picture",
         "minutes": 5,
         "steps": [
           {
@@ -1087,7 +1087,7 @@
         }
       },
       "4": {
-        "title": "Match sets",
+        "title": "Match sets", "short": "sets",
         "minutes": 5,
         "steps": [
           {
@@ -1293,7 +1293,7 @@
         }
       },
       "5": {
-        "title": "Match and say why",
+        "title": "Match and say why", "short": "why?",
         "minutes": 5,
         "steps": [
           {

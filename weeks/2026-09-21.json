@@ -804,7 +804,7 @@
     ],
     "days": {
       "1": {
-        "title": "Sort into two groups",
+        "title": "Sort into two groups", "short": "2 groups",
         "minutes": 5,
         "steps": [
           {
@@ -966,7 +966,7 @@
         }
       },
       "2": {
-        "title": "Sort by colour",
+        "title": "Sort by colour", "short": "colour",
         "minutes": 5,
         "steps": [
           {
@@ -1132,7 +1132,7 @@
         }
       },
       "3": {
-        "title": "Sort by size",
+        "title": "Sort by size", "short": "size",
         "minutes": 5,
         "steps": [
           {
@@ -1287,7 +1287,7 @@
         }
       },
       "4": {
-        "title": "Sort and count",
+        "title": "Sort and count", "short": "count",
         "minutes": 5,
         "steps": [
           {
@@ -1460,7 +1460,7 @@
         }
       },
       "5": {
-        "title": "Your own rule",
+        "title": "Your own rule", "short": "own rule",
         "minutes": 5,
         "steps": [
           {

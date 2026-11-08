@@ -759,7 +759,7 @@
     ],
     "days": {
       "1": {
-        "title": "Copy a pattern",
+        "title": "Copy a pattern", "short": "copy",
         "minutes": 5,
         "steps": [
           {
@@ -953,7 +953,7 @@
         }
       },
       "2": {
-        "title": "What comes next?",
+        "title": "What comes next?", "short": "next?",
         "minutes": 5,
         "steps": [
           {
@@ -1114,7 +1114,7 @@
         }
       },
       "3": {
-        "title": "Make a pattern",
+        "title": "Make a pattern", "short": "make",
         "minutes": 5,
         "steps": [
           {
@@ -1275,7 +1275,7 @@
         }
       },
       "4": {
-        "title": "Patterns in a story",
+        "title": "Patterns in a story", "short": "story",
         "minutes": 5,
         "steps": [
           {
@@ -1417,7 +1417,7 @@
         }
       },
       "5": {
-        "title": "Pattern spotting",
+        "title": "Pattern spotting", "short": "spot",
         "minutes": 5,
         "steps": [
           {

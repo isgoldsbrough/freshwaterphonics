@@ -79,8 +79,9 @@
   #daypick .day .l { font-size: 2.4rem; }
   #daypick .day .l img { width: 38px; height: 38px; }
   #daypick .day .d { font-size: 0.9rem; }
+  #daypick .day.txt .l { font-size: 1.25rem; line-height: 1.15; padding: 0 4px; text-align: center; }
   #daypick .day[aria-selected="true"] { border-color: var(--sky); }
-  @media (max-width: 600px) { #daypick { gap: 6px; } #daypick .day { height: 76px; } #daypick .day .l { font-size: 1.8rem; } #daypick .day .d { font-size: 0.78rem; } }
+  @media (max-width: 600px) { #daypick { gap: 6px; } #daypick .day { height: 76px; } #daypick .day .l { font-size: 1.8rem; } #daypick .day .d { font-size: 0.78rem; } #daypick .day.txt .l { font-size: 0.95rem; } }
   .day.today::after { content: ""; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 999px; background: var(--apricot); }
 
   .cols { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 48px; margin-top: 32px; align-items: start; }
@@ -314,7 +315,7 @@
   </nav>
 
   <div id="daypick-wrap">
-  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet">Each weekday has its own sound and games: tap one to open it.</p></div>
+  <div class="daypick-head" id="daypick-head"><h3>Choose a day</h3><p class="quiet" id="daypick-note">Each weekday has its own sound and games: tap one to open it.</p></div>
   <div class="ribbon" id="daypick" role="group" aria-label="Choose a day"></div>
   </div>
 
@@ -593,8 +594,8 @@
       `${esc(O.term)}. The questions the class is exploring, with the answers school is looking for.`);
     h += sec("Words this term", `<ul class="org-words">${O.words.map(w => `<li><b>${esc(w.w)}</b>: ${esc(w.m)}</li>`).join("")}</ul>`,
       "For talking, not reading: most use sounds still to come. Use them in conversation and ask what they mean.");
-    h += sec("Books to share", `<ul class="org-list">${O.books.map(b => `<li><i>${esc(b.title)}</i> by ${esc(b.by)}</li>`).join("")}</ul>`,
-      "Books school suggests for this topic, for you to read to your child. Try the library.");
+    h += sec("Books to share", `<ul class="org-list">${O.books.map(b => `<li><i>${esc(b.title)}</i> by ${esc(b.by)}${b.url ? ` · <a href="${esc(b.url)}" target="_blank" rel="noopener">on Amazon</a>` : ""}</li>`).join("")}</ul>`,
+      "Books school suggests for this topic, for you to read to your child. Try the library first; the Amazon links are plain searches, with no affiliate link.");
     h += sec("Maths this term", `<ul class="org-list">${O.maths.map(m => { const done = m.done && m.done <= W.weekOf; return `<li${done ? ' class="done"' : ""}>${done ? "✓ " : ""}${esc(m.t)}${done ? ' <span class="quiet">(done)</span>' : ""}${m.site ? `<br><span class="quiet">On this page: ${esc(m.site)}.</span>` : ""}</li>`; }).join("")}</ul>${O.mathsHome ? `<p style="margin-top:10px;max-width:64ch;"><b>At home:</b> ${esc(O.mathsHome)}</p>` : ""}`,
       "In the school's order. Ticks show what school has said it has done.");
     h += sec("What school is covering", `<div class="termcard">${O.areas.map(a => `<div class="tc"><span class="lab">${esc(a.a)}</span><p>${esc(a.s)}</p>${a.home ? `<p class="home"><b>At home:</b> ${esc(a.home)}</p>` : ""}${a.site ? `<p class="quiet">On this page: ${esc(a.site)}.</p>` : ""}</div>`).join("")}</div>`);
@@ -611,6 +612,7 @@
     TABS.forEach(t => { $("tab-btn-" + t).setAttribute("aria-selected", String(t === which)); $("panel-" + t).hidden = t !== which; });
     $("daypick-wrap").hidden = !((which === "today" || which === "maths") && !W.summary);
     store.set("fp-tab", which);
+    if (W && W.phonics) renderDayPick();
   }
   TABS.forEach(t => $("tab-btn-" + t).addEventListener("click", () => selectTab(t)));
   document.querySelector("nav.tabs").addEventListener("keydown", e => {
@@ -629,11 +631,14 @@
   function renderDayPick() {
     $("daypick-head").hidden = !W.phonics.days[1];
     if (!W.phonics.days[1]) { $("daypick").innerHTML = ""; return; }
+    const maths = currentTab() === "maths";
+    $("daypick-note").textContent = maths ? "Each weekday has its own maths idea: tap one to open it." : "Each weekday has its own sound and games: tap one to open it.";
     $("daypick").innerHTML = [1, 2, 3, 4, 5].map(n => {
-      const d = W.phonics.days[n];
+      const d = W.phonics.days[n], m = W.maths.days && W.maths.days[n];
       const label = d.name;
-      const l = (d.sound ? esc(d.sound) : d.review ? esc(d.review[0]) + "…" : "✓");
-      return `<button class="day${n === todayDay ? " today" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
+      const ml = m ? (m.short || m.title) : "";
+      const l = maths && ml ? esc(ml) : (d.sound ? esc(d.sound) : d.review ? esc(d.review[0]) + "…" : "✓");
+      return `<button class="day${n === todayDay ? " today" : ""}${maths && ml && [...ml].length > 3 ? " txt" : ""}" data-day="${n}" aria-selected="${n === day}" aria-label="${label}${n === todayDay ? ", today" : ""}"><span class="l">${l}</span><span class="d">${label}</span></button>`;
     }).join("");
     $("daypick").querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { day = Number(b.dataset.day); store.set("fp-day", today + ":" + day); renderDay(); }));
   }

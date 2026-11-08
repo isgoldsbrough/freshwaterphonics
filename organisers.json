@@ -25,10 +25,10 @@
         { "w": "healthy", "m": "food and habits that keep you strong and well" }
       ],
       "books": [
-        { "title": "A Superhero Like You", "by": "Dr Ranj" },
-        { "title": "What Will I Be?", "by": "Francesca Stickley" },
-        { "title": "My Beautiful Voice", "by": "Joseph Coelho" },
-        { "title": "The Jolly Postman", "by": "Janet and Allan Ahlberg" }
+        { "title": "A Superhero Like You", "by": "Dr Ranj", "url": "https://www.amazon.co.uk/s?k=A+Superhero+Like+You+Dr+Ranj&i=stripbooks" },
+        { "title": "What Will I Be?", "by": "Francesca Stickley", "url": "https://www.amazon.co.uk/s?k=What+Will+I+Be+Francesca+Stickley&i=stripbooks" },
+        { "title": "My Beautiful Voice", "by": "Joseph Coelho", "url": "https://www.amazon.co.uk/s?k=My+Beautiful+Voice+Joseph+Coelho&i=stripbooks" },
+        { "title": "The Jolly Postman", "by": "Janet and Allan Ahlberg", "url": "https://www.amazon.co.uk/s?k=The+Jolly+Postman+Janet+Allan+Ahlberg&i=stripbooks" }
       ],
       "maths": [
         { "t": "Numbers 1 to 5" },

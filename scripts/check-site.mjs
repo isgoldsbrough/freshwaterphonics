@@ -146,6 +146,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
         R.log.push(where + ": " + await openAll($("ph-side"), where) + " games opened");
         await tab("maths");
         const mw = tag + " " + pd.name + " maths";
+        if (md) { const mb = d.querySelectorAll("#daypick button")[n - 1], want = md.short || md.title; if (!mb || !mb.textContent.includes(want)) E(mw + ": day button shows '" + (mb ? mb.textContent.trim() : "nothing") + "' on the maths tab, expected '" + want + "'"); if (!md.short) Wn(mw + ": no short label for the day button (the full title is used)"); }
         if (md) {
           for (const id of ["mcheck" + n, "mstretch" + n].concat(md.challenge ? ["mchallenge" + n] : [])) if (!$("launch-" + id)) E(mw + ": missing " + id.replace(/\\d/, ""));
           await openAll($("panel-maths"), mw);

@@ -900,7 +900,7 @@
     ],
     "days": {
       "1": {
-        "title": "One more",
+        "title": "One more", "short": "+1",
         "minutes": 5,
         "steps": [
           {
@@ -1135,7 +1135,7 @@
         }
       },
       "2": {
-        "title": "One less",
+        "title": "One less", "short": "−1",
         "minutes": 5,
         "steps": [
           {
@@ -1378,7 +1378,7 @@
         }
       },
       "3": {
-        "title": "Making 3",
+        "title": "Making 3", "short": "3",
         "minutes": 5,
         "steps": [
           {
@@ -1592,7 +1592,7 @@
         }
       },
       "4": {
-        "title": "Making 2 and 3",
+        "title": "Making 2 and 3", "short": "2 and 3",
         "minutes": 5,
         "steps": [
           {
@@ -1801,7 +1801,7 @@
         }
       },
       "5": {
-        "title": "One more, one less, mixed",
+        "title": "One more, one less, mixed", "short": "mix",
         "minutes": 5,
         "steps": [
           {

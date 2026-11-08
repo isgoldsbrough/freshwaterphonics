@@ -880,7 +880,7 @@
     ],
     "days": {
       "1": {
-        "title": "Find 1, 2 and 3",
+        "title": "Find 1, 2 and 3", "short": "1 2 3",
         "minutes": 5,
         "steps": [
           {
@@ -1079,7 +1079,7 @@
         }
       },
       "2": {
-        "title": "Spot it without counting",
+        "title": "Spot it without counting", "short": "spot",
         "minutes": 5,
         "steps": [
           {
@@ -1284,7 +1284,7 @@
         }
       },
       "3": {
-        "title": "Show it on your fingers",
+        "title": "Show it on your fingers", "short": "fingers",
         "minutes": 5,
         "steps": [
           {
@@ -1489,7 +1489,7 @@
         }
       },
       "4": {
-        "title": "Dot patterns to 3",
+        "title": "Dot patterns to 3", "short": "dots",
         "minutes": 5,
         "steps": [
           {
@@ -1707,7 +1707,7 @@
         }
       },
       "5": {
-        "title": "Match the amount",
+        "title": "Match the amount", "short": "match",
         "minutes": 5,
         "steps": [
           {
