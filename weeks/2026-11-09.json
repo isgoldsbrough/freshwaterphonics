@@ -1,9 +1,9 @@
 {
   "weekOf": "2026-11-09",
-  "status": "expected",
+  "status": "confirmed",
   "label": "Week of 9 November",
   "className": "Reception · Little Wandle Phase 2",
-  "updated": "2026-11-06",
+  "updated": "2026-11-13",
   "nextUpdateExpected": "2026-11-13",
   "phonics": {
     "focus": [
@@ -39,6 +39,36 @@
       "j"
     ],
     "tricky": [
+      {
+        "word": "and",
+        "trickyLetters": [
+          1,
+          2
+        ],
+        "note": "Each letter says its usual sound, but n and d sit together, which comes later. For now, learn it as a whole word."
+      },
+      {
+        "word": "has",
+        "trickyLetters": [
+          2
+        ],
+        "note": "The s says z, like in is and as."
+      },
+      {
+        "word": "his",
+        "trickyLetters": [
+          2
+        ],
+        "note": "The s says z, like in is and has."
+      },
+      {
+        "word": "her",
+        "trickyLetters": [
+          1,
+          2
+        ],
+        "note": "er is a sound to come."
+      },
       {
         "word": "as",
         "trickyLetters": [
@@ -900,7 +930,8 @@
     ],
     "days": {
       "1": {
-        "title": "One more", "short": "+1",
+        "title": "One more",
+        "short": "+1",
         "minutes": 5,
         "steps": [
           {
@@ -1135,7 +1166,8 @@
         }
       },
       "2": {
-        "title": "One less", "short": "−1",
+        "title": "One less",
+        "short": "−1",
         "minutes": 5,
         "steps": [
           {
@@ -1378,7 +1410,8 @@
         }
       },
       "3": {
-        "title": "Making 3", "short": "3",
+        "title": "Making 3",
+        "short": "3",
         "minutes": 5,
         "steps": [
           {
@@ -1592,7 +1625,8 @@
         }
       },
       "4": {
-        "title": "Making 2 and 3", "short": "2 and 3",
+        "title": "Making 2 and 3",
+        "short": "2 and 3",
         "minutes": 5,
         "steps": [
           {
@@ -1801,7 +1835,8 @@
         }
       },
       "5": {
-        "title": "One more, one less, mixed", "short": "mix",
+        "title": "One more, one less, mixed",
+        "short": "mix",
         "minutes": 5,
         "steps": [
           {
@@ -2054,7 +2089,7 @@
       "<b>Maths:</b> one more, one less, and making 1, 2 and 3.",
       "<b>Understanding the World:</b> generations: talking about family members and drawing family trees."
     ],
-    "thisWeekPhonics": "v, w, x, y (named as next week's sounds in the 6 November update)",
+    "thisWeekPhonics": "v, w, x, y, with the tricky words and, has, his and her (confirmed in the 13 November update)",
     "asks": [
       {
         "text": "Add to the Daffodil competition on Arbor.",
@@ -2121,11 +2156,12 @@
     {
       "week": "Autumn 2 week 2",
       "graphemes": "v w x y",
-      "state": "now"
+      "state": "now",
+      "tricky": "and, has, his, her"
     },
     {
       "week": "Autumn 2 week 3",
-      "graphemes": "z zz qu (expected)",
+      "graphemes": "z qu ch, words ending in s",
       "state": "next"
     }
   ],

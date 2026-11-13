@@ -1,0 +1,2104 @@
+{
+  "weekOf": "2026-11-16",
+  "status": "expected",
+  "label": "Week of 16 November",
+  "className": "Reception · Little Wandle Phase 2",
+  "updated": "2026-11-13",
+  "nextUpdateExpected": "2026-11-20",
+  "phonics": {
+    "focus": [
+      "z",
+      "qu",
+      "ch"
+    ],
+    "taught": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "m",
+      "d",
+      "g",
+      "o",
+      "c",
+      "k",
+      "ck",
+      "e",
+      "u",
+      "r",
+      "h",
+      "b",
+      "f",
+      "l",
+      "ff",
+      "ll",
+      "ss",
+      "j",
+      "v",
+      "w",
+      "x",
+      "y"
+    ],
+    "tricky": [
+      {
+        "word": "and",
+        "trickyLetters": [
+          1,
+          2
+        ],
+        "note": "Each letter says its usual sound, but n and d sit together, which comes later. For now, learn it as a whole word."
+      },
+      {
+        "word": "has",
+        "trickyLetters": [
+          2
+        ],
+        "note": "The s says z, like in is and as."
+      },
+      {
+        "word": "his",
+        "trickyLetters": [
+          2
+        ],
+        "note": "The s says z, like in is and has."
+      },
+      {
+        "word": "her",
+        "trickyLetters": [
+          1,
+          2
+        ],
+        "note": "er is a sound to come."
+      },
+      {
+        "word": "as",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z, like in is."
+      },
+      {
+        "word": "put",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents. If it sounds just like it looks where you live, it isn't tricky."
+      },
+      {
+        "word": "pull",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in put."
+      },
+      {
+        "word": "full",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The u is the tricky part in many accents, as in pull."
+      },
+      {
+        "word": "I",
+        "trickyLetters": [
+          0
+        ],
+        "note": "One letter that says its own name."
+      },
+      {
+        "word": "is",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The s says z."
+      },
+      {
+        "word": "the",
+        "trickyLetters": [
+          0,
+          1,
+          2
+        ],
+        "note": "th is a sound to come, and the e says a quick uh."
+      }
+    ],
+    "days": {
+      "1": {
+        "name": "Mon",
+        "sound": "z",
+        "title": "New sound: z",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "z, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does.",
+            "say": "z, zip. z, zap."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "z, i, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say zip. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Zip. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with z.",
+          "items": [
+            {
+              "word": "zebra",
+              "match": true
+            },
+            {
+              "word": "zip",
+              "match": true
+            },
+            {
+              "word": "zap",
+              "match": true
+            },
+            {
+              "word": "cat",
+              "match": false
+            },
+            {
+              "word": "sun",
+              "match": false
+            },
+            {
+              "word": "duck",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "zip",
+              "segments": [
+                "z",
+                "i",
+                "p"
+              ]
+            },
+            {
+              "word": "zap",
+              "segments": [
+                "z",
+                "a",
+                "p"
+              ]
+            },
+            {
+              "word": "web",
+              "segments": [
+                "w",
+                "e",
+                "b"
+              ]
+            },
+            {
+              "word": "fox",
+              "segments": [
+                "f",
+                "o",
+                "x"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: read longer words",
+          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
+          "paper": "say zest; your child says every sound, then writes it.",
+          "words": [
+            "zest",
+            "twin",
+            "frost",
+            "swim",
+            "stamp",
+            "crust",
+            "plum",
+            "zigzag"
+          ]
+        }
+      },
+      "2": {
+        "name": "Tue",
+        "sound": "qu",
+        "title": "New sound: qu",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "qu, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, one sound: q always has u with it.",
+            "say": "qu, quack. qu, quiz."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "qu, i, z. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say quack. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Quack. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with qu.",
+          "items": [
+            {
+              "word": "queen",
+              "match": true
+            },
+            {
+              "word": "quack",
+              "match": true
+            },
+            {
+              "word": "squirrel",
+              "match": true
+            },
+            {
+              "word": "pig",
+              "match": false
+            },
+            {
+              "word": "hat",
+              "match": false
+            },
+            {
+              "word": "fox",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "alien",
+          "label": "Stretch: real or alien?",
+          "say": "Read the word. Is it a real word or an alien word?",
+          "items": [
+            {
+              "word": "quiz",
+              "real": true
+            },
+            {
+              "word": "quit",
+              "real": true
+            },
+            {
+              "word": "zip",
+              "real": true
+            },
+            {
+              "word": "quom",
+              "real": false
+            },
+            {
+              "word": "zub",
+              "real": false
+            },
+            {
+              "word": "quep",
+              "real": false
+            }
+          ]
+        },
+        "challenge": {
+          "type": "mark",
+          "label": "Challenge: two-part words",
+          "say": "Read one part, then the other, then push them together: quick, sand, quicksand. You tap the tick or the cross.",
+          "paper": "write laptop as two parts, lap then top.",
+          "words": [
+            "quicksand",
+            "liquid",
+            "laptop",
+            "zigzag",
+            "hotdog",
+            "cobweb",
+            "upset",
+            "goblin"
+          ]
+        }
+      },
+      "3": {
+        "name": "Wed",
+        "sound": "s",
+        "title": "Words ending in s",
+        "minutes": 10,
+        "blend": [
+          "bus",
+          "yes",
+          "hiss",
+          "kiss",
+          "mess"
+        ],
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "Words ending in s, which school is teaching this week. No new letter: an s on the end often means more than one. Show one hat, then two: hat, hats. Then bug, bugs.",
+            "say": "One hat. Two hats. Can you hear the s on the end?"
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with s in them, with dots and lines, then without. Then robot-talk h, a, t, s together.",
+            "say": "h, a, t, s. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say pigs. Your child says the sounds, then writes it on paper. Check it together, sound by sound: the s goes on the end.",
+            "say": "Pigs. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "blendpick",
+          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "words": [
+            {
+              "word": "hats",
+              "pic": "hat",
+              "segments": [
+                "h",
+                "a",
+                "t",
+                "s"
+              ],
+              "distractors": [
+                {
+                  "word": "cat"
+                },
+                {
+                  "word": "bat"
+                }
+              ]
+            },
+            {
+              "word": "bugs",
+              "pic": "bug",
+              "segments": [
+                "b",
+                "u",
+                "g",
+                "s"
+              ],
+              "distractors": [
+                {
+                  "word": "bus"
+                },
+                {
+                  "word": "mug"
+                }
+              ]
+            },
+            {
+              "word": "pens",
+              "pic": "pen",
+              "segments": [
+                "p",
+                "e",
+                "n",
+                "s"
+              ],
+              "distractors": [
+                {
+                  "word": "pin"
+                },
+                {
+                  "word": "hen"
+                }
+              ]
+            },
+            {
+              "word": "dogs",
+              "pic": "dog",
+              "segments": [
+                "d",
+                "o",
+                "g",
+                "s"
+              ],
+              "distractors": [
+                {
+                  "word": "log"
+                },
+                {
+                  "word": "fox"
+                }
+              ]
+            },
+            {
+              "word": "cups",
+              "pic": "cup",
+              "segments": [
+                "c",
+                "u",
+                "p",
+                "s"
+              ],
+              "distractors": [
+                {
+                  "word": "cap"
+                },
+                {
+                  "word": "mug"
+                }
+              ]
+            }
+          ]
+        },
+        "stretch": {
+          "type": "caption",
+          "label": "Stretch: one or more than one?",
+          "say": "Read the word. Is it one, or more than one? Tap the picture.",
+          "items": [
+            {
+              "text": "hats",
+              "options": [
+                {
+                  "pics": [
+                    "hat"
+                  ],
+                  "say": "one hat"
+                },
+                {
+                  "pics": [
+                    "hat",
+                    "hat"
+                  ],
+                  "say": "two hats"
+                },
+                {
+                  "pics": [
+                    "cat",
+                    "cat"
+                  ],
+                  "say": "two cats"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "pig",
+              "options": [
+                {
+                  "pics": [
+                    "pig",
+                    "pig"
+                  ],
+                  "say": "two pigs"
+                },
+                {
+                  "pics": [
+                    "dog"
+                  ],
+                  "say": "one dog"
+                },
+                {
+                  "pics": [
+                    "pig"
+                  ],
+                  "say": "one pig"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "hens",
+              "options": [
+                {
+                  "pics": [
+                    "hen",
+                    "hen",
+                    "hen"
+                  ],
+                  "say": "three hens"
+                },
+                {
+                  "pics": [
+                    "hen"
+                  ],
+                  "say": "one hen"
+                },
+                {
+                  "pics": [
+                    "pen",
+                    "pen"
+                  ],
+                  "say": "two pens"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "bug",
+              "options": [
+                {
+                  "pics": [
+                    "bus"
+                  ],
+                  "say": "one bus"
+                },
+                {
+                  "pics": [
+                    "bug"
+                  ],
+                  "say": "one bug"
+                },
+                {
+                  "pics": [
+                    "bug",
+                    "bug"
+                  ],
+                  "say": "two bugs"
+                }
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "type": "caption",
+          "label": "Challenge: read a long sentence",
+          "say": "Read every word of the sentence, then tap the picture that matches.",
+          "paper": "you say the hens and the cats sat on a mat; your child writes it, one word at a time.",
+          "items": [
+            {
+              "text": "his dogs and cats sit on the bed",
+              "options": [
+                {
+                  "pics": [
+                    "dog",
+                    "cat",
+                    "bus"
+                  ],
+                  "say": "dogs, cats and a bus"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "cat",
+                    "bed"
+                  ],
+                  "say": "dogs, cats and a bed"
+                },
+                {
+                  "pics": [
+                    "pig",
+                    "cat",
+                    "bed"
+                  ],
+                  "say": "pigs, cats and a bed"
+                }
+              ],
+              "correct": 1
+            },
+            {
+              "text": "her six hens get wet in the fog",
+              "options": [
+                {
+                  "pics": [
+                    "hen",
+                    "fog"
+                  ],
+                  "say": "hens in the fog"
+                },
+                {
+                  "pics": [
+                    "hen",
+                    "sun"
+                  ],
+                  "say": "hens in the sun"
+                },
+                {
+                  "pics": [
+                    "duck",
+                    "fog"
+                  ],
+                  "say": "ducks in the fog"
+                }
+              ],
+              "correct": 0
+            },
+            {
+              "text": "a fox has a big box of nuts",
+              "options": [
+                {
+                  "pics": [
+                    "fox",
+                    "bag",
+                    "nut"
+                  ],
+                  "say": "a fox, a bag and nuts"
+                },
+                {
+                  "pics": [
+                    "dog",
+                    "box",
+                    "nut"
+                  ],
+                  "say": "a dog, a box and nuts"
+                },
+                {
+                  "pics": [
+                    "fox",
+                    "box",
+                    "nut"
+                  ],
+                  "say": "a fox, a box and nuts"
+                }
+              ],
+              "correct": 2
+            },
+            {
+              "text": "put the cups and the pens in the bag",
+              "options": [
+                {
+                  "pics": [
+                    "cup",
+                    "pen",
+                    "bag"
+                  ],
+                  "say": "cups, pens and a bag"
+                },
+                {
+                  "pics": [
+                    "cup",
+                    "pin",
+                    "bag"
+                  ],
+                  "say": "cups, pins and a bag"
+                },
+                {
+                  "pics": [
+                    "cup",
+                    "pen",
+                    "box"
+                  ],
+                  "say": "cups, pens and a box"
+                }
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      },
+      "4": {
+        "name": "Thu",
+        "sound": "ch",
+        "title": "New sound: ch",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Newest sound",
+            "min": 3,
+            "do": "ch, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, one sound.",
+            "say": "ch, chip. ch, chick."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "ch, i, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say chip. Your child says the sounds, then writes it on paper. Check it together, sound by sound.",
+            "say": "Chip. What sounds can you hear?"
+          }
+        ],
+        "game": {
+          "type": "hunt",
+          "say": "Tap the things that start with ch.",
+          "items": [
+            {
+              "word": "chick",
+              "match": true
+            },
+            {
+              "word": "cheese",
+              "match": true
+            },
+            {
+              "word": "chair",
+              "match": true
+            },
+            {
+              "word": "bed",
+              "match": false
+            },
+            {
+              "word": "fox",
+              "match": false
+            },
+            {
+              "word": "map",
+              "match": false
+            }
+          ]
+        },
+        "stretch": {
+          "type": "segment",
+          "label": "Stretch: spell it with sounds",
+          "say": "Listen to the word. Tap its sounds in order.",
+          "words": [
+            {
+              "word": "chip",
+              "segments": [
+                "ch",
+                "i",
+                "p"
+              ]
+            },
+            {
+              "word": "chick",
+              "segments": [
+                "ch",
+                "i",
+                "ck"
+              ]
+            },
+            {
+              "word": "quiz",
+              "segments": [
+                "qu",
+                "i",
+                "z"
+              ]
+            },
+            {
+              "word": "zip",
+              "segments": [
+                "z",
+                "i",
+                "p"
+              ]
+            }
+          ]
+        },
+        "challenge": {
+          "type": "segment",
+          "label": "Challenge: spell four-sound words",
+          "say": "Listen to the word. Tap every sound in order. There are four.",
+          "paper": "write chips and frog; check each sound together.",
+          "words": [
+            {
+              "word": "chips",
+              "segments": [
+                "ch",
+                "i",
+                "p",
+                "s"
+              ],
+              "pic": "chip"
+            },
+            {
+              "word": "frog",
+              "segments": [
+                "f",
+                "r",
+                "o",
+                "g"
+              ]
+            },
+            {
+              "word": "crab",
+              "segments": [
+                "c",
+                "r",
+                "a",
+                "b"
+              ]
+            },
+            {
+              "word": "hand",
+              "segments": [
+                "h",
+                "a",
+                "n",
+                "d"
+              ]
+            },
+            {
+              "word": "bugs",
+              "segments": [
+                "b",
+                "u",
+                "g",
+                "s"
+              ],
+              "pic": "bug"
+            }
+          ]
+        }
+      },
+      "5": {
+        "name": "Fri",
+        "sound": null,
+        "title": "Tricky words and every new sound",
+        "minutes": 10,
+        "steps": [
+          {
+            "label": "Every new sound",
+            "min": 2,
+            "do": "This week's sounds on the review cards: z, qu, ch, then one hat, two hats for words ending in s. Then the tricky words and, has, his, her: show the word, say it, spot the tricky part, say it again.",
+            "say": "In his and has, the s says z."
+          },
+          {
+            "label": "Blend",
+            "min": 3,
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "say": "ch, o, p. What word?"
+          },
+          {
+            "label": "Spell and write",
+            "min": 2,
+            "do": "Say chip and quiz. Your child writes them on paper. Check together, sound by sound."
+          }
+        ],
+        "game": {
+          "type": "tricky",
+          "say": "Say the word. Then tap the tricky part.",
+          "words": [
+            "and",
+            "has",
+            "his",
+            "her",
+            "the"
+          ]
+        },
+        "stretch": {
+          "type": "mark",
+          "label": "Stretch: read eight words, you mark",
+          "say": "Your child reads each word aloud. You tap the tick or the cross.",
+          "words": [
+            "zip",
+            "quiz",
+            "chip",
+            "chop",
+            "much",
+            "hats",
+            "bugs",
+            "quack"
+          ]
+        },
+        "challenge": {
+          "type": "alien",
+          "label": "Challenge: real or alien, longer words",
+          "say": "Sound out every letter, then push them together. Is it a real word or an alien word?",
+          "paper": "you say his chips are in the box; your child writes the sentence.",
+          "items": [
+            {
+              "word": "chips",
+              "real": true
+            },
+            {
+              "word": "chom",
+              "real": false
+            },
+            {
+              "word": "quilt",
+              "real": true
+            },
+            {
+              "word": "quelp",
+              "real": false
+            },
+            {
+              "word": "chest",
+              "real": true
+            },
+            {
+              "word": "zond",
+              "real": false
+            },
+            {
+              "word": "swims",
+              "real": true
+            },
+            {
+              "word": "frich",
+              "real": false
+            }
+          ]
+        }
+      }
+    },
+    "weekend": "No set session. A book together, and if one of the new sounds turns up on a sign or a packet (a z, a qu, a ch on a chip shop sign), spot it and leave it there.",
+    "memory": [
+      {
+        "grapheme": "z",
+        "word": "zip"
+      },
+      {
+        "grapheme": "qu",
+        "word": "quack"
+      },
+      {
+        "grapheme": "ch",
+        "word": "chip"
+      },
+      {
+        "grapheme": "v",
+        "word": "van"
+      },
+      {
+        "grapheme": "w",
+        "word": "web"
+      },
+      {
+        "grapheme": "y",
+        "word": "yum"
+      }
+    ],
+    "rhymes": [
+      {
+        "target": {
+          "word": "chip"
+        },
+        "options": [
+          {
+            "word": "zip",
+            "right": true
+          },
+          {
+            "word": "chick",
+            "right": false
+          },
+          {
+            "word": "hat",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "zap"
+        },
+        "options": [
+          {
+            "word": "map",
+            "right": true
+          },
+          {
+            "word": "zip",
+            "right": false
+          },
+          {
+            "word": "box",
+            "right": false
+          }
+        ]
+      },
+      {
+        "target": {
+          "word": "chick"
+        },
+        "options": [
+          {
+            "word": "kick",
+            "right": true
+          },
+          {
+            "word": "chip",
+            "right": false
+          },
+          {
+            "word": "van",
+            "right": false
+          }
+        ]
+      }
+    ],
+    "stretchNote": "Only if the main game was easy. Stop at the first wobble; a stretch that becomes a struggle teaches the wrong lesson. We never go on to next week's sounds early: school's order matters.",
+    "sEndings": true
+  },
+  "maths": {
+    "topic": "Circles and triangles, and where things are",
+    "vocab": [
+      "circle",
+      "triangle",
+      "round",
+      "straight",
+      "side",
+      "corner",
+      "on",
+      "under",
+      "next to",
+      "in"
+    ],
+    "stems": [
+      "\"Is it round, or does it have straight sides?\"",
+      "\"How many corners can you find?\"",
+      "\"Where is teddy? On, under, next to or in?\""
+    ],
+    "source": "From the 13 November school update: circles and triangles, spotting shapes around us, and describing position. Home practice runs a week behind school for maths.",
+    "everyday": [
+      "<b>Meals:</b> a round plate, a sandwich cut into triangles. Which is which?",
+      "<b>Out and about:</b> spot a circle (a wheel, a clock) and a triangle (a road sign, a roof).",
+      "<b>Tidy up:</b> put the teddy on the bed, the book under the chair, the cup next to the plate.",
+      "<b>Maps:</b> school is looking at maps. Draw your street together: a circle for a tree, a triangle for a roof."
+    ],
+    "days": {
+      "1": {
+        "title": "Circles",
+        "short": "circle",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Find three round things at home: a plate, a coin, a lid.",
+            "say": "Round all the way. No corners. That's a circle."
+          },
+          {
+            "do": "Trace round a cup on paper to make a circle."
+          },
+          {
+            "do": "Your child finds one more circle in the room."
+          }
+        ],
+        "check": {
+          "say": "Which one is a circle?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is a circle?",
+              "options": [
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ],
+                [
+                  "square"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a circle?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "rectangle"
+                ],
+                [
+                  "triangle"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which one is round, like a circle?",
+              "options": [
+                [
+                  "star"
+                ],
+                [
+                  "box"
+                ],
+                [
+                  "sun"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: no corners",
+          "say": "Which shape has no corners?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which shape has no corners?",
+              "options": [
+                [
+                  "square"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ]
+              ],
+              "correct": 2,
+              "hint": "A corner is where two sides meet. Can you find one on the circle?"
+            },
+            {
+              "kind": "which",
+              "say": "Which one is not a circle?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: one more, one less, up to 10",
+          "say": "One more or one less?",
+          "paper": "make a number track on the stairs, 1 to 10. Stand on 6: one step up? one step down?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "What is one more than 6?",
+              "options": [
+                [
+                  "7"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "8"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "6",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "hint": "Six, then count on one."
+            },
+            {
+              "kind": "which",
+              "say": "Which number and one more makes 9?",
+              "options": [
+                [
+                  "7"
+                ],
+                [
+                  "8"
+                ],
+                [
+                  "10"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "?",
+                "+",
+                "1",
+                "=",
+                "9"
+              ],
+              "hint": "One less than 9: count back one."
+            },
+            {
+              "kind": "which",
+              "say": "Four and four more. How many altogether?",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "7"
+                ],
+                [
+                  "9"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "4",
+                "+",
+                "4",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Four fingers on each hand."
+            }
+          ]
+        }
+      },
+      "2": {
+        "title": "Triangles",
+        "short": "triangle",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Make a triangle with three straws, spoons or pencils.",
+            "say": "One, two, three sides. Three corners."
+          },
+          {
+            "do": "Cut a slice of toast into triangles."
+          },
+          {
+            "do": "Your child makes a triangle for you to count the sides."
+          }
+        ],
+        "check": {
+          "say": "Which one is a triangle?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "square"
+                ],
+                [
+                  "rectangle"
+                ],
+                [
+                  "triangle"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ],
+                [
+                  "square"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "rectangle"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: sides and corners",
+          "say": "Count with your finger.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "How many sides does a triangle have?",
+              "options": [
+                [
+                  "2"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "triangle"
+              ],
+              "hint": "Count the sides with your finger."
+            },
+            {
+              "kind": "which",
+              "say": "How many corners does a triangle have?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "1"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "triangle"
+              ],
+              "hint": "Touch each corner as you count."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: one more, one less, up to 10",
+          "say": "One more or one less?",
+          "paper": "ten raisins in a line. Cover the last one: how many now? Add one back: how many?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "What is one more than 8?",
+              "options": [
+                [
+                  "10"
+                ],
+                [
+                  "9"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "8",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "hint": "Eight, then count on one."
+            },
+            {
+              "kind": "which",
+              "say": "Which number and one more makes 7?",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "?",
+                "+",
+                "1",
+                "=",
+                "7"
+              ],
+              "hint": "One less than 7: count back one."
+            },
+            {
+              "kind": "which",
+              "say": "Three and three more. How many altogether?",
+              "options": [
+                [
+                  "5"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "3",
+                "+",
+                "3",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Three fingers on each hand."
+            }
+          ]
+        }
+      },
+      "3": {
+        "title": "Circle or triangle?",
+        "short": "sort",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "Mix up some round things and some triangles (toast, a sign drawn on paper). Sort them into two piles."
+          },
+          {
+            "do": "Hold one up.",
+            "say": "Circle or triangle? How do you know?"
+          },
+          {
+            "do": "Your child sorts one for you, and you get it wrong on purpose."
+          }
+        ],
+        "check": {
+          "say": "Which one is a circle?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is a circle?",
+              "options": [
+                [
+                  "triangle"
+                ],
+                [
+                  "square"
+                ],
+                [
+                  "circle"
+                ]
+              ],
+              "correct": 2
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ],
+                [
+                  "rectangle"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which shape has three sides?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "square"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Count the sides with your finger."
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: shapes with four sides",
+          "say": "Which is the odd one out?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which shape has four sides?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "square"
+                ],
+                [
+                  "triangle"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Count the sides with your finger."
+            },
+            {
+              "kind": "which",
+              "say": "Which shape is not a triangle or a circle?",
+              "options": [
+                [
+                  "rectangle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "circle"
+                ]
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: one more, one less, up to 10",
+          "say": "One more or one less?",
+          "paper": "count to 10 on the stairs, then back down to 0.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "What is one more than 9?",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "10"
+                ],
+                [
+                  "11"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "9",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "hint": "Nine, then count on one: all your fingers."
+            },
+            {
+              "kind": "which",
+              "say": "Which number and one more makes 10?",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "8"
+                ],
+                [
+                  "11"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "?",
+                "+",
+                "1",
+                "=",
+                "10"
+              ],
+              "hint": "One less than 10: put one finger down."
+            },
+            {
+              "kind": "which",
+              "say": "Five and five more. How many altogether?",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "10"
+                ],
+                [
+                  "11"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "5",
+                "+",
+                "5",
+                "=",
+                "?"
+              ],
+              "hint": "A double. All your fingers."
+            }
+          ]
+        }
+      },
+      "4": {
+        "title": "Where is it?",
+        "short": "where",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "A teddy and a box. Put teddy on the box, then under it, next to it, in it.",
+            "say": "Where is teddy now?"
+          },
+          {
+            "do": "Your child hides teddy and tells you where: on, under, next to or in."
+          },
+          {
+            "do": "Draw a map of your room or street together: a circle for a rug or a tree, a triangle for a roof."
+          }
+        ],
+        "check": {
+          "say": "Listen carefully.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is round, like a circle?",
+              "options": [
+                [
+                  "sun"
+                ],
+                [
+                  "star"
+                ],
+                [
+                  "box"
+                ]
+              ],
+              "correct": 0
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "square"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a circle?",
+              "options": [
+                [
+                  "rectangle"
+                ],
+                [
+                  "square"
+                ],
+                [
+                  "circle"
+                ]
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: corners",
+          "say": "How many corners?",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "How many corners does a square have?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "square"
+              ],
+              "hint": "Touch each corner as you count."
+            },
+            {
+              "kind": "which",
+              "say": "Which has more corners, a triangle or a square?",
+              "options": [
+                [
+                  "triangle"
+                ],
+                [
+                  "square"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Count the corners on each."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: one more, one less, up to 10",
+          "say": "One more or one less?",
+          "paper": "roll a dice: say one more and one less than the number.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "What is one less than 6?",
+              "options": [
+                [
+                  "7"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Six, then count back one."
+            },
+            {
+              "kind": "which",
+              "say": "What is one more than 7?",
+              "options": [
+                [
+                  "8"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "9"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "7",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "hint": "Seven, then count on one."
+            },
+            {
+              "kind": "which",
+              "say": "Two and two more. How many altogether?",
+              "options": [
+                [
+                  "3"
+                ],
+                [
+                  "5"
+                ],
+                [
+                  "4"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "2",
+                "+",
+                "2",
+                "=",
+                "?"
+              ],
+              "hint": "A double. Two fingers on each hand."
+            }
+          ]
+        }
+      },
+      "5": {
+        "title": "Shapes, mixed",
+        "short": "mix",
+        "minutes": 5,
+        "steps": [
+          {
+            "do": "A shape hunt round the house: one circle, one triangle, one shape with four sides."
+          },
+          {
+            "do": "Put each one somewhere and say where.",
+            "say": "The plate is on the table."
+          },
+          {
+            "do": "Your child asks you a where question."
+          }
+        ],
+        "check": {
+          "say": "Listen carefully.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "Which one is a triangle?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ],
+                [
+                  "rectangle"
+                ]
+              ],
+              "correct": 1
+            },
+            {
+              "kind": "which",
+              "say": "Which shape has no corners?",
+              "options": [
+                [
+                  "circle"
+                ],
+                [
+                  "square"
+                ],
+                [
+                  "triangle"
+                ]
+              ],
+              "correct": 0,
+              "hint": "Look for the round one."
+            },
+            {
+              "kind": "which",
+              "say": "Which one is a circle?",
+              "options": [
+                [
+                  "square"
+                ],
+                [
+                  "circle"
+                ],
+                [
+                  "triangle"
+                ]
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        "stretch": {
+          "label": "Stretch: sides and corners",
+          "say": "Count with your finger.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "How many sides does a triangle have?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "2"
+                ]
+              ],
+              "correct": 1,
+              "pattern": [
+                "triangle"
+              ],
+              "hint": "Count the sides with your finger."
+            },
+            {
+              "kind": "which",
+              "say": "How many sides does a square have?",
+              "options": [
+                [
+                  "4"
+                ],
+                [
+                  "3"
+                ],
+                [
+                  "5"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "square"
+              ],
+              "hint": "Count the sides with your finger."
+            }
+          ]
+        },
+        "challenge": {
+          "label": "Challenge: one more, one less, up to 10",
+          "say": "One more or one less?",
+          "paper": "your child says a number up to 9; you say one more. Then swap.",
+          "questions": [
+            {
+              "kind": "which",
+              "say": "What is one less than 10?",
+              "options": [
+                [
+                  "11"
+                ],
+                [
+                  "9"
+                ],
+                [
+                  "8"
+                ]
+              ],
+              "correct": 1,
+              "hint": "Ten fingers, put one down."
+            },
+            {
+              "kind": "which",
+              "say": "What is one more than 5?",
+              "options": [
+                [
+                  "6"
+                ],
+                [
+                  "4"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 0,
+              "pattern": [
+                "5",
+                "+",
+                "1",
+                "=",
+                "?"
+              ],
+              "hint": "Five, then count on one."
+            },
+            {
+              "kind": "which",
+              "say": "Which number and one more makes 8?",
+              "options": [
+                [
+                  "9"
+                ],
+                [
+                  "6"
+                ],
+                [
+                  "7"
+                ]
+              ],
+              "correct": 2,
+              "pattern": [
+                "?",
+                "+",
+                "1",
+                "=",
+                "8"
+              ],
+              "hint": "One less than 8: count back one."
+            }
+          ]
+        }
+      }
+    },
+    "weekend": "No maths session. If it comes up on its own, a round plate or a triangle sandwich, say the shape and leave it there."
+  },
+  "school": {
+    "lastWeek": [
+      "<b>Phonics:</b> v, w, x, y and the tricky words and, has, his and her.",
+      "<b>English:</b> Oliver's Vegetables (Vivian French): remembering the vegetables in the story, writing soup lists with bullet points, and making vegetable soup in class. The children chopped and tasted it.",
+      "<b>Maths:</b> circles and triangles: making and comparing them, spotting them around us, and describing where things are.",
+      "<b>Understanding the World:</b> Diwali and the story of Rama and Sita, and Remembrance Day (decorating poppies)."
+    ],
+    "thisWeekPhonics": "z, qu, words ending in s, and ch (named as next week's sounds in the 13 November update; school wrote q, and Little Wandle writes it qu)",
+    "asks": [
+      {
+        "text": "Read the knowledge organiser again: Understanding the World is now about maps. At home, draw a map of your local area together.",
+        "since": "13 November"
+      },
+      {
+        "text": "Check the Show and Tell rota outside the classrooms. This term's theme is Superheroes: something about an inspiring family member, or pictures of special people.",
+        "since": "6 November"
+      },
+      {
+        "text": "Add to the Daffodil competition on Arbor.",
+        "since": "6 November"
+      },
+      {
+        "text": "Outdoor PE times have changed: check the timetable outside the classrooms.",
+        "since": "6 November"
+      }
+    ],
+    "standing": [
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. Wednesday has no new letter: it is school's words ending in s (one hat, two hats)."
+    ],
+    "term": {
+      "theme": "Superheroes, people who help us",
+      "question": "Who in our community keeps us safe and healthy?",
+      "stem": "I think… because…",
+      "word": "paramedic",
+      "meaning": "a person trained to give emergency care to people who are hurt or ill.",
+      "answer": "Firefighters, paramedics, doctors, nurses, dentists, police, teachers and the lollipop person.",
+      "home": "Feel your pulse sitting still, then again after jumping for a minute.",
+      "coming": "Understanding the World has changed to maps: draw a map of your local area together.",
+      "source": "Autumn 2 knowledge organiser"
+    }
+  },
+  "journey": [
+    {
+      "week": "Week 1",
+      "graphemes": "s a t p",
+      "state": "done"
+    },
+    {
+      "week": "Week 2",
+      "graphemes": "i n m d",
+      "state": "done"
+    },
+    {
+      "week": "Week 3",
+      "graphemes": "g o c k",
+      "state": "done",
+      "tricky": "is"
+    },
+    {
+      "week": "Week 4",
+      "graphemes": "ck e u r",
+      "state": "done",
+      "tricky": "I"
+    },
+    {
+      "week": "Week 5",
+      "graphemes": "h b f l",
+      "state": "done",
+      "tricky": "the"
+    },
+    {
+      "week": "Autumn 2 week 1",
+      "graphemes": "ff ll ss j",
+      "state": "done",
+      "tricky": "put, pull, full, as"
+    },
+    {
+      "week": "Autumn 2 week 2",
+      "graphemes": "v w x y",
+      "state": "done",
+      "tricky": "and, has, his, her"
+    },
+    {
+      "week": "Autumn 2 week 3",
+      "graphemes": "z qu ch, words ending in s",
+      "state": "now"
+    },
+    {
+      "week": "Autumn 2 week 4",
+      "graphemes": "sh th ng nk (expected)",
+      "state": "next"
+    }
+  ],
+  "share": ""
+}

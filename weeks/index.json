@@ -1,5 +1,5 @@
 {
-  "current": "2026-11-09",
+  "current": "2026-11-16",
   "break": {
     "from": "2026-10-17",
     "to": "2026-11-01",
@@ -7,6 +7,19 @@
     "back": "2026-11-02"
   },
   "weeks": [
+    {
+      "weekOf": "2026-11-16",
+      "label": "Week of 16 November",
+      "file": "2026-11-16.json",
+      "focus": [
+        "z",
+        "qu",
+        "ch"
+      ],
+      "tricky": null,
+      "maths": "circles and triangles, and where things are (home practice)",
+      "status": "expected"
+    },
     {
       "weekOf": "2026-11-09",
       "label": "Week of 9 November",
@@ -17,9 +30,15 @@
         "x",
         "y"
       ],
-      "tricky": null,
+      "tricky": "and, has, his, her",
       "maths": "one more, one less, making 1, 2 and 3 (home practice)",
-      "status": "expected"
+      "status": "confirmed",
+      "book": {
+        "title": "Oliver's Vegetables",
+        "by": "Vivian French, illustrated by Alison Bartlett",
+        "file": "books/olivers-vegetables.html",
+        "game": "In the soup or not, first sounds from the garden, read and spell words like pot and van, then circles, triangles and one more or less."
+      }
     },
     {
       "weekOf": "2026-11-02",

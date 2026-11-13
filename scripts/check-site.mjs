@@ -61,8 +61,8 @@ for (const w of weeks) {
     if (!d.stretch) warn(`${w.file} day ${n}: no stretch game`);
     if (d.sound && !W.phonics.focus.includes(d.sound) && !W.phonics.taught.includes(d.sound)) err(`${w.file} day ${n}: sound ${d.sound} is not in focus or taught`);
     for (const g of [d.game, d.stretch, d.challenge].filter(Boolean)) {
-      (g.items || []).forEach(i => { if (["hunt"].includes(g.type)) picWords.add(i.word); });
-      (g.words || []).forEach(i => { if (g.type === "blendpick") { picWords.add(i.word); (i.distractors || []).forEach(x => picWords.add(x.word)); } });
+      (g.items || []).forEach(i => { if (["hunt"].includes(g.type)) picWords.add(i.pic || i.word); });
+      (g.words || []).forEach(i => { if (g.type === "blendpick") { picWords.add(i.pic || i.word); (i.distractors || []).forEach(x => picWords.add(x.pic || x.word)); } });
       if (g.type === "caption") (g.items || []).forEach(i => i.options.forEach(o => o.pics.forEach(p => picWords.add(p))));
     }
   }

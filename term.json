@@ -140,6 +140,21 @@
       "g": "y",
       "week": 7,
       "where": "start"
+    },
+    {
+      "g": "z",
+      "week": 8,
+      "where": "start"
+    },
+    {
+      "g": "qu",
+      "week": 8,
+      "where": "start"
+    },
+    {
+      "g": "ch",
+      "week": 8,
+      "where": "start"
     }
   ],
   "words": {
@@ -471,6 +486,36 @@
       "y",
       "e",
       "s"
+    ],
+    "zip": [
+      "z",
+      "i",
+      "p"
+    ],
+    "zap": [
+      "z",
+      "a",
+      "p"
+    ],
+    "quack": [
+      "qu",
+      "a",
+      "ck"
+    ],
+    "quiz": [
+      "qu",
+      "i",
+      "z"
+    ],
+    "chip": [
+      "ch",
+      "i",
+      "p"
+    ],
+    "chick": [
+      "ch",
+      "i",
+      "ck"
     ]
   },
   "blend": {
@@ -1024,6 +1069,46 @@
       "y",
       "e",
       "ll"
+    ],
+    "quit": [
+      "qu",
+      "i",
+      "t"
+    ],
+    "quick": [
+      "qu",
+      "i",
+      "ck"
+    ],
+    "chop": [
+      "ch",
+      "o",
+      "p"
+    ],
+    "chin": [
+      "ch",
+      "i",
+      "n"
+    ],
+    "chat": [
+      "ch",
+      "a",
+      "t"
+    ],
+    "much": [
+      "m",
+      "u",
+      "ch"
+    ],
+    "rich": [
+      "r",
+      "i",
+      "ch"
+    ],
+    "chug": [
+      "ch",
+      "u",
+      "g"
     ]
   },
   "oral": {
@@ -1166,6 +1251,21 @@
       "yoyo",
       "yawn",
       "yum"
+    ],
+    "z": [
+      "zebra",
+      "zip",
+      "zap"
+    ],
+    "qu": [
+      "queen",
+      "quack",
+      "squirrel"
+    ],
+    "ch": [
+      "chick",
+      "cheese",
+      "chair"
     ]
   },
   "tricky": [
@@ -1219,6 +1319,36 @@
         1
       ],
       "note": "The u is the tricky part in many accents, as in pull."
+    },
+    {
+      "word": "and",
+      "trickyLetters": [
+        1,
+        2
+      ],
+      "note": "Each letter says its usual sound, but n and d sit together, which comes later. For now, learn it as a whole word."
+    },
+    {
+      "word": "has",
+      "trickyLetters": [
+        2
+      ],
+      "note": "The s says z, like in is and as."
+    },
+    {
+      "word": "his",
+      "trickyLetters": [
+        2
+      ],
+      "note": "The s says z, like in is and has."
+    },
+    {
+      "word": "her",
+      "trickyLetters": [
+        1,
+        2
+      ],
+      "note": "er is a sound to come."
     }
   ],
   "maths": {

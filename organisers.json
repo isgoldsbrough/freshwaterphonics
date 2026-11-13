@@ -34,8 +34,8 @@
         { "t": "Numbers 1 to 5" },
         { "t": "Counting forwards and backwards" },
         { "t": "Building numbers to 5" },
-        { "t": "One more and one less" },
-        { "t": "Circles and triangles" },
+        { "t": "One more and one less", "done": "2026-11-02" },
+        { "t": "Circles and triangles", "done": "2026-11-09" },
         { "t": "Shapes with 4 sides" },
         { "t": "Writing numbers", "site": "number trace, at the bottom of the maths tab" }
       ],
@@ -45,11 +45,12 @@
         { "a": "Reading and writing", "s": "Phonics (Phase 2), starting to read short phrases and sentences, forming letters, non-fiction books, and acting out and retelling Rama and Sita.", "home": "Share books about people who help us.", "site": "the caption game (phrases) and letter trace" },
         { "a": "Feelings and friendships", "s": "Sharing and taking turns, talking about feelings, respecting differences, anti-bullying. Keeping safe: strangers, roads, online, medicines, fire, keeping clean and brushing teeth.", "home": "Read a picture book about friendship, differences or families." },
         { "a": "Moving", "s": "Using tools for fine motor skills, dance, balance and finding space, and sitting well at a table.", "home": "Feel your pulse sitting still, then again after jumping for a minute." },
-        { "a": "The world around us", "s": "Family trees and generations, special achievements, transport through time. Celebrations: Bonfire Night and fire safety, Remembrance Day, Christmas.", "home": "Look at family photos together and talk about them." },
+        { "a": "The world around us", "s": "Maps: exploring them, finding names and familiar places on them, and thinking about shapes and where things go when making one. Celebrations: Bonfire Night and fire safety, Remembrance Day, Diwali, Christmas.", "home": "Draw a map of your local area together." },
         { "a": "Art, music and play", "s": "Making up stories in pretend play, music and dance, painting to music, collage and group art.", "home": "Role play people who help us: a vet, a firefighter, a shop worker." }
       ],
       "dates": [
         { "d": "2026-11-05", "t": "Bonfire Night and fire safety" },
+        { "d": "2026-11-08", "t": "Diwali" },
         { "d": "2026-11-11", "t": "Remembrance Day" },
         { "d": "2026-12-25", "t": "Christmas" }
       ],

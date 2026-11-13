@@ -42,6 +42,9 @@ function checkPrintWord(word, where) {
   if (!segs) { errors.push(`${where}: "${word}" uses a sound not yet taught`); return; }
   const vowels = segs.filter(s => VOWELS.has(s)).length;
   if (vowels !== 1) { errors.push(`${where}: "${word}" has ${vowels} vowel sounds; Phase 2 print words have one`); return; }
+  // Little Wandle Phase 2 teaches words ending in s (hats, bugs). Once a week sets
+  // phonics.sEndings, a final s may follow a consonant; the rest of the word keeps the rule.
+  if (week.phonics.sEndings && segs.length > 2 && segs[segs.length - 1] === "s" && !VOWELS.has(segs[segs.length - 2])) segs.pop();
   for (let i = 1; i < segs.length; i++) {
     if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) {
       errors.push(`${where}: "${word}" has adjacent consonants (${segs[i - 1]}${segs[i]}); not before Phase 4`);

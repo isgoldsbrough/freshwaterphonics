@@ -104,5 +104,16 @@
   "circle": "local",
   "triangle": "local",
   "square": "local",
-  "rectangle": "local"
+  "rectangle": "local",
+  "zebra": "1F993",
+  "zip": "1F910",
+  "zap": "26A1",
+  "queen": "1FAC5",
+  "quack": "1F986",
+  "quiz": "2753",
+  "squirrel": "1F43F",
+  "chip": "1F35F",
+  "chick": "1F424",
+  "cheese": "1F9C0",
+  "chair": "1FA91"
 }
