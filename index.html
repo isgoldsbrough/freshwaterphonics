@@ -697,7 +697,7 @@
     why.textContent = look ? (saidWord ? `That is ${saidWord}. ${look}` : look) : "";
     if (saidWord) await speak(saidWord);
     await speak(look || PH.bad);
-    if (misses >= 2 && hintSel) (el.closest(".stage") || stage).querySelectorAll(hintSel).forEach(h => { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); });
+    // no pointing at the right answer after wrong goes: she learnt to tap wrong to be shown it (removed 2026-11-13)
   }
   const tileBtn = (w, k, extra = "") => `<button class="tile" data-k="${k}" aria-label="${esc(w)}" ${extra}>${pic(w)}</button>`;
 
@@ -749,7 +749,7 @@
         stage.querySelectorAll("#cur .letter").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
           if (Number(b.dataset.k) === changed) { b.classList.add("changed"); SFX.right(); await speak(cur); i++; if (i < g.words.length) step(); else pm.finish("Every change spotted!", () => { i = 1; misses = 0; step(); }); }
-          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(prev); await speak(cur); if (misses >= 2) { const h = stage.querySelector(`#cur [data-k="${changed}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(prev); await speak(cur); }
         }));
       }
       step();
@@ -786,7 +786,7 @@
           if (x === w.segments[next]) {
             b.classList.add("used"); slots[next].textContent = x; slots[next].classList.add("filled"); next++;
             if (next === w.segments.length) { SFX.right(); await speak(w.word); i++; if (i < g.words.length) word(); else pm.finish("Every word spelt!", () => { i = 0; misses = 0; word(); }); }
-          } else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(w.word); if (misses >= 2) stage.querySelectorAll("#bank .letter").forEach(h => { if (bank[Number(h.dataset.k)] === w.segments[next]) { h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }); }
+          } else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(w.word); }
         }));
       }
       word();
@@ -819,7 +819,7 @@
         stage.querySelectorAll("#cp .tile").forEach(b => b.addEventListener("click", async () => {
           const k = Number(b.dataset.k); SFX.tap();
           if (k === it.correct) { b.classList.add("right"); SFX.right(); await speak(it.text); i++; if (i < g.items.length) item(); else pm.finish("Every caption read!", () => { i = 0; misses = 0; item(); }); }
-          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(it.options[k].say); await speak("Listen again."); await speak(it.text); if (misses >= 2) { const h = stage.querySelector(`#cp [data-k="${it.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(it.options[k].say); await speak("Listen again."); await speak(it.text); }
         }));
       }
       item();
@@ -855,7 +855,7 @@
         stage.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
           if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.challenge ? "Challenge done!" : pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
-          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.hint || (qu.kind === "which" ? LOOK.count : sayQ(qu))); if (misses >= 2) { const h = stage.querySelector(`#po [data-k="${qu.correct}"]`); h.classList.add("hint"); setTimeout(() => h.classList.remove("hint"), 900); } }
+          else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.hint || (qu.kind === "which" ? LOOK.count : sayQ(qu))); }
         }));
       }
       q();

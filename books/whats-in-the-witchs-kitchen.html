@@ -185,7 +185,7 @@
     const wrap = h('div', { class: 'opts' });
     opts.forEach(o => { const b = h('button', { class: 'opt ' + (cls || ''), onclick: () => {
       if (String(o) === String(answer)) { b.classList.add('right'); wrap.querySelectorAll('button').forEach(x => x.disabled = true); right(); }
-      else { b.classList.add('wrong'); b.disabled = true; wrong(); } } }, label(o)); wrap.append(b); });
+      else { b.classList.add('wrong'); setTimeout(() => b.classList.remove('wrong'), 450); wrong(); } } }, label(o)); // wrong options stay tappable, so a wrong go never narrows it to the answer wrap.append(b); });
     return wrap;
   }
 
