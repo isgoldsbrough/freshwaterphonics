@@ -272,6 +272,14 @@
   .popt.right { background: var(--moss-soft); border-color: var(--moss); }
   .popt.wrong { background: var(--plum-soft); border-color: var(--plum); transform: translateY(4px); }
   .popt.hint { animation: breathe 800ms ease-in-out 1; }
+  .ql-card { width: min(100%, 300px); aspect-ratio: 1.6; border-radius: var(--r); background: var(--paper); display: grid; place-items: center; margin: 0 auto; }
+  .ql-card svg { width: 86%; height: 86%; }
+  .ql-card .q { font-family: var(--display); font-size: 3rem; color: var(--apricot); }
+  .ql-nums { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .ql-nums .popt { min-height: 64px; padding: 4px; }
+  .ql-nums .ptile { width: 44px; height: 52px; }
+  .ql-nums .popt:disabled { opacity: 0.4; }
+  .hk { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 16px; }
   .finish { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
   .sticker { width: 140px; height: 140px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 4.6rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 8px var(--paper); animation: stamp 280ms ease-out; }
   @keyframes stamp { from { transform: rotate(-8deg) scale(1.15); opacity: 0; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
@@ -348,6 +356,11 @@
       <h2>Writing numbers</h2>
       <p class="quiet" style="max-width:64ch;">School practises writing numbers this term. Trace 0 to 10 with the arrows, then write them on paper. At home, spot numbers out and about: doors, buses, prices.</p>
       <div id="m-write" style="max-width:420px;margin-top:12px;"></div>
+    </section>
+    <section class="block" id="m-look-block">
+      <h2>Quick look</h2>
+      <p class="quiet" style="max-width:64ch;">Seeing how many without counting (subitising) is part of the Reception number goal, up to 5. Dots show for two seconds, then hide: your child says how many, then taps it. Dice patterns, a five-frame and scattered dots. A minute a day is plenty. Then ask "how did you know?" ("I saw two and two", "it's like a dice").</p>
+      <div id="m-look" style="max-width:420px;margin-top:12px;"></div>
     </section>
   </div>
 
@@ -546,6 +559,25 @@
   }
   const SFX = { tap: () => tone(220, 0.06, "triangle", 0.05), right: () => { tone(659, 0.14, "sine", 0.07); tone(784, 0.18, "sine", 0.07, 0.12); }, finish: () => { tone(110, 0.12, "triangle", 0.1); tone(523, 0.25, "sine", 0.06, 0.08); } };
   const LOOK = { blend: "Say the sounds again, then push them together.", alien: "Say the sounds, then ask: is it a word we know?", rhyme: "Listen to the end of each word.", tricky: "Read the note. Which letters do not say their usual sound?", count: "Count each row, then look again." };
+  const NUMW = ["zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+  const QL = { say: "Look quickly. How many dots?", again: "Not that one. Look again." };
+  // after a right maths answer: talk first (school's maths target is explaining her thinking), then Next
+  function howKnew() {
+    return new Promise(res => {
+      const st = stage, box = document.createElement("div");
+      box.className = "hk"; box.innerHTML = `<p class="why">How did you know?</p><button class="btn" type="button">Next →</button>`;
+      st.appendChild(box);
+      const b = box.querySelector("button"); b.focus();
+      b.addEventListener("click", () => { box.remove(); res(); }, { once: true });
+      speak("How did you know?");
+    });
+  }
+  // six rounds, never the same number twice in a row, layouts mixed
+  function quickLookGame(max = 5) {
+    const lays = ["dice", "frame", "scatter"], rounds = []; let last = 0;
+    for (let k = 0; k < 6; k++) { let n; do { n = 1 + Math.floor(Math.random() * max); } while (n === last); last = n; rounds.push({ n, layout: lays[(k + Math.floor(Math.random() * 3)) % 3] }); }
+    return { type: "quicklook", say: QL.say, max, ms: 2000, rounds };
+  }
   const PH = { bad: "Not that one. Listen again.", again: "Try again.", done: "All done. Well played.", good: "Well done." };
 
   // ---------- week strip, stale banner, half term ----------
@@ -854,11 +886,40 @@
         speak(sayQ(qu));
         stage.querySelectorAll(".popt").forEach(b => b.addEventListener("click", async () => {
           SFX.tap();
-          if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); SFX.right(); await speak(PH.good); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.challenge ? "Challenge done!" : pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
+          if (Number(b.dataset.k) === qu.correct) { b.classList.add("right"); stage.querySelectorAll(".popt").forEach(x => x.disabled = true); SFX.right(); await speak(PH.good); await howKnew(); i++; if (i < g.questions.length) q(); else pm.finish(pm.meta.challenge ? "Challenge done!" : pm.meta.stretch ? "Stretch done!" : "Check done!", () => { i = 0; misses = 0; q(); }); }
           else { misses++; b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); await speak(qu.hint || (qu.kind === "which" ? LOOK.count : sayQ(qu))); }
         }));
       }
       q();
+    },
+    // subitising: dots show for a moment, hide, then how many? (1 to g.max)
+    quicklook(pm, g) {
+      const stage = pm.stage, rounds = g.rounds;
+      let i = 0;
+      const svg = (n, lay, seed) => {
+        if (lay === "frame") return `<svg viewBox="0 0 248 60" aria-hidden="true">${[0, 1, 2, 3, 4].map(k => `<rect x="${3 + 48.5 * k}" y="7" width="45" height="46" rx="6" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>${k < n ? `<circle cx="${25.5 + 48.5 * k}" cy="30" r="14" fill="var(--sky)"/>` : ""}`).join("")}</svg>`;
+        let pts;
+        if (lay === "dice") pts = { 1: [[50, 50]], 2: [[25, 25], [75, 75]], 3: [[25, 25], [50, 50], [75, 75]], 4: [[25, 25], [75, 25], [25, 75], [75, 75]], 5: [[25, 25], [75, 25], [50, 50], [25, 75], [75, 75]] }[n];
+        else { pts = []; let tries = 0; while (pts.length < n && tries++ < 500) { const p = [14 + Math.random() * 72, 14 + Math.random() * 72]; if (pts.every(q => Math.hypot(q[0] - p[0], q[1] - p[1]) > 26)) pts.push(p); } }
+        return `<svg viewBox="0 0 100 100" aria-hidden="true">${pts.map(p => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="10" fill="var(--sky)"/>`).join("")}</svg>`;
+      };
+      function round() {
+        const r = rounds[i];
+        pm.progress(i, rounds.length);
+        pm.draw(`<div class="ql-card" id="ql" aria-live="polite"></div><div class="ql-nums" id="qn">${Array.from({ length: g.max }, (_, k) => `<button class="popt" data-n="${k + 1}" disabled aria-label="${NUMW[k + 1]}"><span class="ptile num">${k + 1}</span></button>`).join("")}</div>`);
+        const card = $("ql"), btns = [...stage.querySelectorAll("#qn .popt")], pic = svg(r.n, r.layout);
+        const hide = () => { card.innerHTML = `<span class="q">?</span>`; card.setAttribute("aria-label", "How many dots were there?"); btns.forEach(b => b.disabled = false); };
+        const show = async () => { btns.forEach(b => b.disabled = true); card.innerHTML = pic; card.setAttribute("aria-label", "dots"); await wait(g.ms); if (stage.contains(card)) hide(); };
+        let busy = false;
+        btns.forEach(b => b.addEventListener("click", async () => {
+          if (busy) return; busy = true; SFX.tap();
+          const n = Number(b.dataset.n);
+          if (n === r.n) { b.classList.add("right"); card.innerHTML = pic; SFX.right(); await speak(NUMW[n] + "."); await howKnew(); i++; if (i < rounds.length) round(); else pm.finish("Every quick look done!", () => { i = 0; round(); }); }
+          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); btns.forEach(x => x.disabled = true); await speak(QL.again); busy = false; show(); }
+        }));
+        wait(500).then(() => { if (stage.contains(card)) show(); });
+      }
+      round();
     },
     memory(pm, g) {
       const stage = pm.stage;
@@ -980,7 +1041,7 @@
     if (g.type === "blend") return g.words.filter(w => w.word in PICS).slice(0, 3).map(w => w.word);
     return [];
   };
-  const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards", blend: "Blend it" };
+  const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards", blend: "Blend it", quicklook: "Quick look" };
   function launcher(game, meta, opts = {}) {
     const id = meta.id;
     const title = (opts.title || TITLES[game.type]); const cap = title.charAt(0).toUpperCase() + title.slice(1);
@@ -1125,6 +1186,7 @@
     { id: "numbers", label: "number trace", game: () => ({ type: "trace", numbers: true, say: "Watch how the number is formed and trace it. Then write it on paper with a pencil.", letters: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] }) }
   ];
   { const nt = launcher(MORE.find(m => m.id === "numbers").game(), { id: "mwrite", sticker: "5" }, { title: "number trace" }); $("m-write").innerHTML = nt.html; nt.wire(); }
+  { const ql = launcher(quickLookGame(), { id: "mlook", sticker: "⚂" }, { title: "Quick look", tag: "Dots for two seconds, then how many? Don't count, just look." }); $("m-look").innerHTML = ql.html; ql.wire(); }
   const moreStage = $("more-stage");
   let morePm = null;
   function inlinePm(game) {
@@ -1271,7 +1333,7 @@
     }
     const d = W.maths.days[day];
     const msteps = [...d.steps, ...(d.stretch || d.challenge ? [pushStep(d, d.challenge ? "Stretch and challenge" : "Stretch")] : [])];
-    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.stretch || d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div>`;
+    s.innerHTML = `<h2>${esc(dayName(day))}: ${esc(d.title.toLowerCase())}</h2><p class="quiet">about ${d.minutes + (d.stretch || d.challenge ? 5 : 0)} minutes · real things first</p><ol>${msteps.map(stepHtml).join("")}</ol><div class="stems"><p class="quiet">Words to use</p>${W.maths.stems.map(x => `<span class="bubble">${esc(x.replace(/^"|"$/g, ""))}</span>`).join("")}</div><div class="stems"><p class="quiet">After each answer, right or wrong</p><span class="bubble">How did you know?</span><p class="quiet" style="max-width:52ch;">Help them say it with this week's words: ${esc(W.maths.vocab.join(", "))}. On the screen, a right answer waits on "Next" so there's time to talk.</p></div>`;
     const first = d.check.questions[0];
     const pattern = (first.pattern || first.options[first.correct]).filter(t => t !== "?").slice(0, 6);
     const hero = `<div class="hero"><div><p class="cue">${esc(W.maths.topic)}</p><div class="prow" style="margin-top:14px;">${pattern.map(t => `<span class="ptile">${pic(t)}</span>`).join("")}</div><p class="quiet" style="margin-top:12px;">${esc(W.maths.vocab.join(" · "))}</p></div></div>`;

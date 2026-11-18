@@ -40,6 +40,10 @@ const add = t => { if (t && t.trim()) lines.add(t.trim()); };
   "Read the note. Which letters do not say their usual sound?",
   "Count each row, then look again.",
   "What sound is this?",
+  "Look quickly. How many dots?",
+  "Not that one. Look again.",
+  "How did you know?",
+  "One.", "Two.", "Three.", "Four.", "Five.",
   "Watch how the letter is formed and trace it. Then write it on paper with a pencil."
 ].forEach(add);
 

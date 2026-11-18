@@ -155,6 +155,7 @@ const visible = el => el && !el.hidden && !el.closest("[hidden]");
     }
     await tab("maths");
     if (!$("launch-mwrite")) E(tag + " maths tab: the Writing numbers card is missing");
+    if (!$("launch-mlook")) E(tag + " maths tab: the Quick look card is missing");
     if (W.phonics.days[1] && !visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading is missing on the maths tab");
     await tab("week");
     if (visible($("daypick-head"))) E(tag + ": the 'Choose a day' heading shows on the week tab");
