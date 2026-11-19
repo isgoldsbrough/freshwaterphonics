@@ -279,6 +279,8 @@
   .ql-nums .popt { min-height: 64px; padding: 4px; }
   .ql-nums .ptile { width: 44px; height: 52px; }
   .ql-nums .popt:disabled { opacity: 0.4; }
+  .ql-again { text-align: center; margin-top: 18px; }
+  .ql-again .btn:disabled { opacity: 0.4; }
   .hk { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 16px; }
   .finish { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
   .sticker { width: 140px; height: 140px; border-radius: 999px; background: var(--apricot); color: #fff; font-family: var(--body); font-size: 4.6rem; display: flex; align-items: center; justify-content: center; transform: rotate(-8deg); box-shadow: 0 0 0 8px var(--paper); animation: stamp 280ms ease-out; }
@@ -708,7 +710,7 @@
       const game = list[gi];
       $("pm-task").textContent = game.say || "";
       $("pm-say").onclick = () => speak(game.say);
-      speak(game.say);
+      pm.said = speak(game.say);
       GAMES[game.type](pm, game);
     }
     closing = () => { if (pm.onClose) pm.onClose(); play.hidden = true; document.body.style.overflow = ""; stage.innerHTML = ""; if (current) { try { current.pause(); } catch (e) {} } renderDay(); };
@@ -906,18 +908,20 @@
       function round() {
         const r = rounds[i];
         pm.progress(i, rounds.length);
-        pm.draw(`<div class="ql-card" id="ql" aria-live="polite"></div><div class="ql-nums" id="qn">${Array.from({ length: g.max }, (_, k) => `<button class="popt" data-n="${k + 1}" disabled aria-label="${NUMW[k + 1]}"><span class="ptile num">${k + 1}</span></button>`).join("")}</div>`);
-        const card = $("ql"), btns = [...stage.querySelectorAll("#qn .popt")], pic = svg(r.n, r.layout);
-        const hide = () => { card.innerHTML = `<span class="q">?</span>`; card.setAttribute("aria-label", "How many dots were there?"); btns.forEach(b => b.disabled = false); };
-        const show = async () => { btns.forEach(b => b.disabled = true); card.innerHTML = pic; card.setAttribute("aria-label", "dots"); await wait(g.ms); if (stage.contains(card)) hide(); };
+        pm.draw(`<div class="ql-card" id="ql" aria-live="polite"></div><div class="ql-nums" id="qn">${Array.from({ length: g.max }, (_, k) => `<button class="popt" data-n="${k + 1}" disabled aria-label="${NUMW[k + 1]}"><span class="ptile num">${k + 1}</span></button>`).join("")}</div><div class="ql-again"><button class="btn secondary" id="qa" disabled>Look again</button></div>`);
+        const card = $("ql"), btns = [...stage.querySelectorAll("#qn .popt")], again = $("qa"), pic = svg(r.n, r.layout);
+        const hide = () => { card.innerHTML = `<span class="q">?</span>`; card.setAttribute("aria-label", "How many dots were there?"); btns.forEach(b => b.disabled = false); again.disabled = false; };
+        const show = async () => { btns.forEach(b => b.disabled = true); again.disabled = true; card.innerHTML = pic; card.setAttribute("aria-label", "dots"); await wait(g.ms); if (stage.contains(card)) hide(); };
         let busy = false;
         btns.forEach(b => b.addEventListener("click", async () => {
           if (busy) return; busy = true; SFX.tap();
           const n = Number(b.dataset.n);
-          if (n === r.n) { b.classList.add("right"); card.innerHTML = pic; SFX.right(); await speak(NUMW[n] + "."); await howKnew(); i++; if (i < rounds.length) round(); else pm.finish("Every quick look done!", () => { i = 0; round(); }); }
-          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); btns.forEach(x => x.disabled = true); await speak(QL.again); busy = false; show(); }
+          if (n === r.n) { b.classList.add("right"); again.disabled = true; card.innerHTML = pic; SFX.right(); await speak(NUMW[n] + "."); await howKnew(); i++; if (i < rounds.length) round(); else pm.finish("Every quick look done!", () => { i = 0; pm.said = null; round(); }); }
+          else { b.classList.add("wrong"); setTimeout(() => b.classList.remove("wrong"), 450); btns.forEach(x => x.disabled = true); again.disabled = true; await speak(QL.again); busy = false; if (stage.contains(card)) show(); }
         }));
-        wait(500).then(() => { if (stage.contains(card)) show(); });
+        again.addEventListener("click", () => { if (!busy) { SFX.tap(); show(); } });
+        // the first dots wait for the spoken instruction to finish, so "look quickly" comes before the look
+        Promise.all([wait(500), pm.said]).then(() => { if (stage.contains(card)) show(); });
       }
       round();
     },
