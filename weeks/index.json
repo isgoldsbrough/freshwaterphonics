@@ -1,5 +1,5 @@
 {
-  "current": "2026-11-16",
+  "current": "2026-11-23",
   "break": {
     "from": "2026-10-17",
     "to": "2026-11-01",
@@ -8,17 +8,44 @@
   },
   "weeks": [
     {
+      "weekOf": "2026-11-23",
+      "label": "Week of 23 November",
+      "file": "2026-11-23.json",
+      "focus": [
+        "sh",
+        "th",
+        "ng",
+        "nk"
+      ],
+      "tricky": null,
+      "maths": "the numbers 4 and 5 (home practice)",
+      "status": "expected",
+      "book": {
+        "title": "Super Milly and the Super School Day",
+        "by": "Stephanie Clarkson, illustrated by Gwen Millward",
+        "file": "books/super-milly-and-the-super-school-day.html",
+        "game": "Real-life superheroes, first sounds, read and spell words like zap and hug, then quick looks at 4 and 5 and fair sharing."
+      }
+    },
+    {
       "weekOf": "2026-11-16",
       "label": "Week of 16 November",
       "file": "2026-11-16.json",
       "focus": [
         "z",
+        "zz",
         "qu",
         "ch"
       ],
-      "tricky": null,
+      "tricky": "go, no, to, into",
       "maths": "circles and triangles, and where things are (home practice)",
-      "status": "expected"
+      "status": "confirmed",
+      "book": {
+        "title": "Super Milly and the Super School Day",
+        "by": "Stephanie Clarkson, illustrated by Gwen Millward",
+        "file": "books/super-milly-and-the-super-school-day.html",
+        "game": "Real-life superheroes, first sounds, read and spell words like zap and hug, then quick looks at 4 and 5 and fair sharing."
+      }
     },
     {
       "weekOf": "2026-11-09",

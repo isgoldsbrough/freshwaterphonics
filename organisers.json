@@ -31,7 +31,7 @@
         { "title": "The Jolly Postman", "by": "Janet and Allan Ahlberg", "url": "https://www.amazon.co.uk/s?k=The+Jolly+Postman+Janet+Allan+Ahlberg&i=stripbooks" }
       ],
       "maths": [
-        { "t": "Numbers 1 to 5" },
+        { "t": "Numbers 1 to 5", "done": "2026-11-16" },
         { "t": "Counting forwards and backwards" },
         { "t": "Building numbers to 5" },
         { "t": "One more and one less", "done": "2026-11-02" },
@@ -52,6 +52,7 @@
         { "d": "2026-11-05", "t": "Bonfire Night and fire safety" },
         { "d": "2026-11-08", "t": "Diwali" },
         { "d": "2026-11-11", "t": "Remembrance Day" },
+        { "d": "2026-11-25", "t": "Superhero Day: costumes welcome, nothing to buy" },
         { "d": "2026-12-25", "t": "Christmas" }
       ],
       "comingBook": "Rama and Sita, for acting out and retelling"

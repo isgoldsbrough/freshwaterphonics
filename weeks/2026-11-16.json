@@ -1,13 +1,14 @@
 {
   "weekOf": "2026-11-16",
-  "status": "expected",
+  "status": "confirmed",
   "label": "Week of 16 November",
   "className": "Reception · Little Wandle Phase 2",
-  "updated": "2026-11-13",
+  "updated": "2026-11-20",
   "nextUpdateExpected": "2026-11-20",
   "phonics": {
     "focus": [
       "z",
+      "zz",
       "qu",
       "ch"
     ],
@@ -71,6 +72,34 @@
           2
         ],
         "note": "er is a sound to come."
+      },
+      {
+        "word": "go",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The o says oh."
+      },
+      {
+        "word": "no",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The o says oh, like in go."
+      },
+      {
+        "word": "to",
+        "trickyLetters": [
+          1
+        ],
+        "note": "The o says oo."
+      },
+      {
+        "word": "into",
+        "trickyLetters": [
+          3
+        ],
+        "note": "in, then to. The last o says oo, like in to."
       },
       {
         "word": "as",
@@ -2014,7 +2043,7 @@
       "<b>Maths:</b> circles and triangles: making and comparing them, spotting them around us, and describing where things are.",
       "<b>Understanding the World:</b> Diwali and the story of Rama and Sita, and Remembrance Day (decorating poppies)."
     ],
-    "thisWeekPhonics": "z, qu, words ending in s, and ch (named as next week's sounds in the 13 November update; school wrote q, and Little Wandle writes it qu)",
+    "thisWeekPhonics": "z, zz, qu and ch, words ending in s, and the tricky words go, no, to and into (confirmed in the 20 November update)",
     "asks": [
       {
         "text": "Read the knowledge organiser again: Understanding the World is now about maps. At home, draw a map of your local area together.",
@@ -2034,7 +2063,7 @@
       }
     ],
     "standing": [
-      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. Wednesday has no new letter: it is school's words ending in s (one hat, two hats)."
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. Wednesday has no new letter: it is school's words ending in s (one hat, two hats). School also taught zz (buzz, fizz) and the tricky words go, no, to and into this week: the week of 23 November catches them up."
     ],
     "term": {
       "theme": "Superheroes, people who help us",
@@ -2091,8 +2120,9 @@
     },
     {
       "week": "Autumn 2 week 3",
-      "graphemes": "z qu ch, words ending in s",
-      "state": "now"
+      "graphemes": "z zz qu ch, words ending in s",
+      "state": "now",
+      "tricky": "go, no, to, into"
     },
     {
       "week": "Autumn 2 week 4",

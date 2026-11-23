@@ -147,6 +147,11 @@
       "where": "start"
     },
     {
+      "g": "zz",
+      "week": 8,
+      "where": "end"
+    },
+    {
       "g": "qu",
       "week": 8,
       "where": "start"
@@ -155,6 +160,26 @@
       "g": "ch",
       "week": 8,
       "where": "start"
+    },
+    {
+      "g": "sh",
+      "week": 9,
+      "where": "start"
+    },
+    {
+      "g": "th",
+      "week": 9,
+      "where": "start"
+    },
+    {
+      "g": "ng",
+      "week": 9,
+      "where": "end"
+    },
+    {
+      "g": "nk",
+      "week": 9,
+      "where": "end"
     }
   ],
   "words": {
@@ -516,6 +541,111 @@
       "ch",
       "i",
       "ck"
+    ],
+    "buzz": [
+      "b",
+      "u",
+      "zz"
+    ],
+    "fizz": [
+      "f",
+      "i",
+      "zz"
+    ],
+    "jazz": [
+      "j",
+      "a",
+      "zz"
+    ],
+    "ship": [
+      "sh",
+      "i",
+      "p"
+    ],
+    "shop": [
+      "sh",
+      "o",
+      "p"
+    ],
+    "shell": [
+      "sh",
+      "e",
+      "ll"
+    ],
+    "fish": [
+      "f",
+      "i",
+      "sh"
+    ],
+    "dish": [
+      "d",
+      "i",
+      "sh"
+    ],
+    "cash": [
+      "c",
+      "a",
+      "sh"
+    ],
+    "bath": [
+      "b",
+      "a",
+      "th"
+    ],
+    "ring": [
+      "r",
+      "i",
+      "ng"
+    ],
+    "king": [
+      "k",
+      "i",
+      "ng"
+    ],
+    "wing": [
+      "w",
+      "i",
+      "ng"
+    ],
+    "song": [
+      "s",
+      "o",
+      "ng"
+    ],
+    "bang": [
+      "b",
+      "a",
+      "ng"
+    ],
+    "pink": [
+      "p",
+      "i",
+      "nk"
+    ],
+    "wink": [
+      "w",
+      "i",
+      "nk"
+    ],
+    "bank": [
+      "b",
+      "a",
+      "nk"
+    ],
+    "link": [
+      "l",
+      "i",
+      "nk"
+    ],
+    "think": [
+      "th",
+      "i",
+      "nk"
+    ],
+    "thank": [
+      "th",
+      "a",
+      "nk"
     ]
   },
   "blend": {
@@ -1109,6 +1239,160 @@
       "ch",
       "u",
       "g"
+    ],
+    "fuzz": [
+      "f",
+      "u",
+      "zz"
+    ],
+    "shed": [
+      "sh",
+      "e",
+      "d"
+    ],
+    "shut": [
+      "sh",
+      "u",
+      "t"
+    ],
+    "shin": [
+      "sh",
+      "i",
+      "n"
+    ],
+    "wish": [
+      "w",
+      "i",
+      "sh"
+    ],
+    "rush": [
+      "r",
+      "u",
+      "sh"
+    ],
+    "mash": [
+      "m",
+      "a",
+      "sh"
+    ],
+    "hush": [
+      "h",
+      "u",
+      "sh"
+    ],
+    "thin": [
+      "th",
+      "i",
+      "n"
+    ],
+    "thick": [
+      "th",
+      "i",
+      "ck"
+    ],
+    "thud": [
+      "th",
+      "u",
+      "d"
+    ],
+    "moth": [
+      "m",
+      "o",
+      "th"
+    ],
+    "with": [
+      "w",
+      "i",
+      "th"
+    ],
+    "path": [
+      "p",
+      "a",
+      "th"
+    ],
+    "that": [
+      "th",
+      "a",
+      "t"
+    ],
+    "this": [
+      "th",
+      "i",
+      "s"
+    ],
+    "them": [
+      "th",
+      "e",
+      "m"
+    ],
+    "then": [
+      "th",
+      "e",
+      "n"
+    ],
+    "sing": [
+      "s",
+      "i",
+      "ng"
+    ],
+    "long": [
+      "l",
+      "o",
+      "ng"
+    ],
+    "hang": [
+      "h",
+      "a",
+      "ng"
+    ],
+    "rang": [
+      "r",
+      "a",
+      "ng"
+    ],
+    "sung": [
+      "s",
+      "u",
+      "ng"
+    ],
+    "hung": [
+      "h",
+      "u",
+      "ng"
+    ],
+    "sink": [
+      "s",
+      "i",
+      "nk"
+    ],
+    "tank": [
+      "t",
+      "a",
+      "nk"
+    ],
+    "junk": [
+      "j",
+      "u",
+      "nk"
+    ],
+    "bunk": [
+      "b",
+      "u",
+      "nk"
+    ],
+    "honk": [
+      "h",
+      "o",
+      "nk"
+    ],
+    "ink": [
+      "i",
+      "nk"
+    ],
+    "sank": [
+      "s",
+      "a",
+      "nk"
     ]
   },
   "oral": {
@@ -1266,6 +1550,31 @@
       "chick",
       "cheese",
       "chair"
+    ],
+    "zz": [
+      "buzz",
+      "fizz",
+      "puzzle"
+    ],
+    "sh": [
+      "ship",
+      "sheep",
+      "shell"
+    ],
+    "th": [
+      "thumb",
+      "three",
+      "bath"
+    ],
+    "ng": [
+      "ring",
+      "king",
+      "wing"
+    ],
+    "nk": [
+      "pink",
+      "wink",
+      "bank"
     ]
   },
   "tricky": [
@@ -1349,6 +1658,34 @@
         2
       ],
       "note": "er is a sound to come."
+    },
+    {
+      "word": "go",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The o says oh."
+    },
+    {
+      "word": "no",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The o says oh, like in go."
+    },
+    {
+      "word": "to",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The o says oo."
+    },
+    {
+      "word": "into",
+      "trickyLetters": [
+        3
+      ],
+      "note": "in, then to. The last o says oo, like in to."
     }
   ],
   "maths": {
@@ -1358,6 +1695,7 @@
       "patterns",
       "the numbers 1, 2 and 3",
       "one more and one less, making 1, 2 and 3",
+      "the numbers 4 and 5",
       "circles, triangles and shapes with 4 sides (ready for when school starts them)"
     ],
     "questions": [
