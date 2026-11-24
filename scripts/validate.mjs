@@ -112,6 +112,12 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       if (it.options.length < 3 || it.correct == null || it.correct >= it.options.length) errors.push(`${where}: "${it.text}" needs 3 options and a correct index`);
       it.options.forEach(o => { if (!o.pics || !o.say) errors.push(`${where}: "${it.text}" option needs pics and say`); (o.pics || []).forEach(pw => needPic(pw, where)); });
     }
+  } else if (s.type === "yesno") {
+    for (const it of s.items) {
+      if (typeof it.yes !== "boolean" || !/\?$/.test(it.text)) errors.push(`${where}: "${it.text}" needs yes true/false and must end with ?`);
+      it.text.replace(/\?$/, "").split(/\s+/).forEach(wd => { if (!trickySet.has(wd)) checkPrintWord(wd, `${where} "${it.text}"`); });
+    }
+    if (s.items.filter(i => i.yes).length < 2 || s.items.filter(i => !i.yes).length < 2) errors.push(`${where}: needs at least 2 yes and 2 no`);
   } else if (s.type === "mark") {
     s.words.forEach(wd => checkPrintWord(wd, where));
     if (s.words.length < 6) errors.push(`${where}: fewer than 6 words`);
@@ -151,6 +157,23 @@ for (const n of ["1", "2", "3", "4", "5"]) {
       it.text.split(/\s+/).forEach(wd => { if (!trickySet.has(wd)) checkChallengeWord(wd, `${where} "${it.text}"`); });
       if (it.options.length < 3 || it.correct == null || it.correct >= it.options.length) errors.push(`${where}: "${it.text}" needs 3 options and a correct index`);
       it.options.forEach(o => { if (!o.pics || !o.say) errors.push(`${where}: "${it.text}" option needs pics and say`); (o.pics || []).forEach(pw => needPic(pw, where)); });
+    }
+  } else if (s.type === "yesno") {
+    for (const it of s.items) {
+      if (typeof it.yes !== "boolean" || !/\?$/.test(it.text)) errors.push(`${where}: "${it.text}" needs yes true/false and must end with ?`);
+      const words = it.text.replace(/\?$/, "").split(/\s+/);
+      if (words.length > 8) errors.push(`${where}: "${it.text}" is over 8 words; keep questions short`);
+      words.forEach(wd => { if (!trickySet.has(wd)) checkChallengeWord(wd, `${where} "${it.text}"`); });
+    }
+    if (s.items.filter(i => i.yes).length < 2 || s.items.filter(i => !i.yes).length < 2) errors.push(`${where}: needs at least 2 yes and 2 no`);
+  } else if (s.type === "blendpick") {
+    // longer words with a picture each: she taps the sounds, says the word, picks its picture
+    for (const w of s.words) {
+      checkChallengeWord(w.word, where);
+      if (w.segments.join("") !== w.word) errors.push(`${where}: segments for "${w.word}" do not spell it`);
+      w.segments.forEach(x => { if (!taught.has(x)) errors.push(`${where}: segment "${x}" in "${w.word}" not taught`); });
+      if (!w.distractors || w.distractors.length < 2) errors.push(`${where}: "${w.word}" needs 2 distractors`);
+      needPic(w.pic || w.word, where); (w.distractors || []).forEach(d => needPic(d.pic || d.word, where));
     }
   } else if (s.type === "mark") {
     s.words.forEach(wd => wd.split(/\s+/).forEach(x => { if (!trickySet.has(x)) checkChallengeWord(x, where); }));

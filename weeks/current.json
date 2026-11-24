@@ -286,19 +286,96 @@
           ]
         },
         "challenge": {
-          "type": "mark",
-          "label": "Challenge: read longer words",
-          "say": "Four or five sounds in each word. Your child reads it aloud; you tap the tick or the cross.",
-          "paper": "say shelf; your child says every sound, then writes it.",
+          "type": "blendpick",
+          "label": "Challenge: longer words, with a picture",
+          "say": "Four sounds in each word. Tap each tile, say the sounds, say the word. Then tap the picture.",
+          "paper": "say frog; your child says every sound, then writes it.",
           "words": [
-            "shelf",
-            "fresh",
-            "brush",
-            "crash",
-            "shrug",
-            "chimp",
-            "flash",
-            "splash"
+            {
+              "word": "brush",
+              "segments": [
+                "b",
+                "r",
+                "u",
+                "sh"
+              ],
+              "distractors": [
+                {
+                  "word": "bath"
+                },
+                {
+                  "word": "bin"
+                }
+              ]
+            },
+            {
+              "word": "frog",
+              "segments": [
+                "f",
+                "r",
+                "o",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "fox"
+                },
+                {
+                  "word": "flag"
+                }
+              ]
+            },
+            {
+              "word": "crab",
+              "segments": [
+                "c",
+                "r",
+                "a",
+                "b"
+              ],
+              "distractors": [
+                {
+                  "word": "cab"
+                },
+                {
+                  "word": "cat"
+                }
+              ]
+            },
+            {
+              "word": "flag",
+              "segments": [
+                "f",
+                "l",
+                "a",
+                "g"
+              ],
+              "distractors": [
+                {
+                  "word": "fan"
+                },
+                {
+                  "word": "frog"
+                }
+              ]
+            },
+            {
+              "word": "hand",
+              "segments": [
+                "h",
+                "a",
+                "n",
+                "d"
+              ],
+              "distractors": [
+                {
+                  "word": "hat"
+                },
+                {
+                  "word": "hen"
+                }
+              ]
+            }
           ]
         }
       },
@@ -389,19 +466,35 @@
           ]
         },
         "challenge": {
-          "type": "mark",
-          "label": "Challenge: two-part words",
-          "say": "Read one part, then the other, then push them together: bath, tub, bathtub. You tap the tick or the cross.",
-          "paper": "write bathtub as two parts, bath then tub.",
-          "words": [
-            "bathtub",
-            "chicken",
-            "shellfish",
-            "goldfish",
-            "finish",
-            "vanish",
-            "within",
-            "zigzag"
+          "type": "yesno",
+          "label": "Challenge: yes or no?",
+          "say": "Read the question. Is it yes or no?",
+          "paper": "write can a hen quack? on paper. Your child reads it and tells you yes or no. Then make up a silly one together.",
+          "items": [
+            {
+              "text": "is a ship big?",
+              "yes": true
+            },
+            {
+              "text": "can a fish hop?",
+              "yes": false
+            },
+            {
+              "text": "can a duck quack?",
+              "yes": true
+            },
+            {
+              "text": "is the sun wet?",
+              "yes": false
+            },
+            {
+              "text": "can a dog dig?",
+              "yes": true
+            },
+            {
+              "text": "has a cat got six legs?",
+              "yes": false
+            }
           ]
         }
       },
@@ -497,259 +590,69 @@
                   "word": "sock"
                 }
               ]
-            },
-            {
-              "word": "bang",
-              "segments": [
-                "b",
-                "a",
-                "ng"
-              ],
-              "distractors": [
-                {
-                  "word": "bag"
-                },
-                {
-                  "word": "zap"
-                }
-              ]
             }
           ]
         },
         "stretch": {
-          "type": "caption",
-          "label": "Stretch: read it, find it",
-          "say": "Read the words. Then tap the picture that matches.",
+          "type": "yesno",
+          "label": "Stretch: yes or no?",
+          "say": "Read the question. Is it yes or no?",
           "items": [
             {
-              "text": "a king and a ring",
-              "options": [
-                {
-                  "pics": [
-                    "queen",
-                    "ring"
-                  ],
-                  "say": "a queen and a ring"
-                },
-                {
-                  "pics": [
-                    "king",
-                    "ring"
-                  ],
-                  "say": "a king and a ring"
-                },
-                {
-                  "pics": [
-                    "king",
-                    "bell"
-                  ],
-                  "say": "a king and a bell"
-                }
-              ],
-              "correct": 1
+              "text": "can a king sing?",
+              "yes": true
             },
             {
-              "text": "fish in a dish",
-              "options": [
-                {
-                  "pics": [
-                    "fish",
-                    "dish"
-                  ],
-                  "say": "fish in a dish"
-                },
-                {
-                  "pics": [
-                    "fish",
-                    "box"
-                  ],
-                  "say": "fish in a box"
-                },
-                {
-                  "pics": [
-                    "chick",
-                    "dish"
-                  ],
-                  "say": "a chick in a dish"
-                }
-              ],
-              "correct": 0
+              "text": "can a fish sing a song?",
+              "yes": false
             },
             {
-              "text": "a chick sings a song",
-              "options": [
-                {
-                  "pics": [
-                    "duck",
-                    "song"
-                  ],
-                  "say": "a duck and a song"
-                },
-                {
-                  "pics": [
-                    "chick",
-                    "bed"
-                  ],
-                  "say": "a chick in a bed"
-                },
-                {
-                  "pics": [
-                    "chick",
-                    "song"
-                  ],
-                  "say": "a chick and a song"
-                }
-              ],
-              "correct": 2
+              "text": "can a bell ring?",
+              "yes": true
             },
             {
-              "text": "go to the shop",
-              "options": [
-                {
-                  "pics": [
-                    "ship"
-                  ],
-                  "say": "a ship"
-                },
-                {
-                  "pics": [
-                    "shop"
-                  ],
-                  "say": "a shop"
-                },
-                {
-                  "pics": [
-                    "bath"
-                  ],
-                  "say": "a bath"
-                }
-              ],
-              "correct": 1
+              "text": "has a chick got wings?",
+              "yes": true
+            },
+            {
+              "text": "has a dog got wings?",
+              "yes": false
+            },
+            {
+              "text": "is a king a hen?",
+              "yes": false
             }
           ]
         },
         "challenge": {
-          "type": "caption",
-          "label": "Challenge: read a long sentence",
-          "say": "Read every word of the sentence, then tap the picture that matches.",
-          "paper": "you say the king has a long song to sing; your child writes it, one word at a time.",
+          "type": "yesno",
+          "label": "Challenge: yes or no, longer questions",
+          "say": "Read the whole question. Is it yes or no?",
+          "paper": "read and do: write hop to the bed on paper. Your child reads it, then does it. Then try tap the big box.",
           "items": [
             {
-              "text": "the king and his dog go to the shop in a van",
-              "options": [
-                {
-                  "pics": [
-                    "king",
-                    "dog",
-                    "shop"
-                  ],
-                  "say": "a king, a dog and a shop"
-                },
-                {
-                  "pics": [
-                    "queen",
-                    "dog",
-                    "shop"
-                  ],
-                  "say": "a queen, a dog and a shop"
-                },
-                {
-                  "pics": [
-                    "king",
-                    "dog",
-                    "ship"
-                  ],
-                  "say": "a king, a dog and a ship"
-                }
-              ],
-              "correct": 0
+              "text": "can a fish swim in a bath?",
+              "yes": true
             },
             {
-              "text": "the fish and the chips go into a dish on the mat",
-              "options": [
-                {
-                  "pics": [
-                    "fish",
-                    "chip",
-                    "box"
-                  ],
-                  "say": "fish, chips and a box"
-                },
-                {
-                  "pics": [
-                    "fish",
-                    "chip",
-                    "dish"
-                  ],
-                  "say": "fish, chips and a dish"
-                },
-                {
-                  "pics": [
-                    "duck",
-                    "chip",
-                    "dish"
-                  ],
-                  "say": "a duck, chips and a dish"
-                }
-              ],
-              "correct": 1
+              "text": "can a dog sing a long song?",
+              "yes": false
             },
             {
-              "text": "a chick sings a long song as the sun sets on the hill",
-              "options": [
-                {
-                  "pics": [
-                    "duck",
-                    "song",
-                    "sun"
-                  ],
-                  "say": "a duck, a song and the sun"
-                },
-                {
-                  "pics": [
-                    "chick",
-                    "song",
-                    "fog"
-                  ],
-                  "say": "a chick, a song and fog"
-                },
-                {
-                  "pics": [
-                    "chick",
-                    "song",
-                    "sun"
-                  ],
-                  "say": "a chick, a song and the sun"
-                }
-              ],
-              "correct": 2
+              "text": "has a king got a ring?",
+              "yes": true
             },
             {
-              "text": "her ring fell off and went into the bath with a splash",
-              "options": [
-                {
-                  "pics": [
-                    "ring",
-                    "bath"
-                  ],
-                  "say": "a ring and a bath"
-                },
-                {
-                  "pics": [
-                    "ring",
-                    "box"
-                  ],
-                  "say": "a ring and a box"
-                },
-                {
-                  "pics": [
-                    "sock",
-                    "bath"
-                  ],
-                  "say": "a sock and a bath"
-                }
-              ],
-              "correct": 0
+              "text": "can a van fit in a cup?",
+              "yes": false
+            },
+            {
+              "text": "can a frog jump into a pond?",
+              "yes": true
+            },
+            {
+              "text": "is a chick as big as a ship?",
+              "yes": false
             }
           ]
         }
@@ -795,7 +698,7 @@
                   "word": "pin"
                 },
                 {
-                  "word": "pig"
+                  "word": "pan"
                 }
               ]
             },
@@ -816,38 +719,6 @@
               ]
             },
             {
-              "word": "bank",
-              "segments": [
-                "b",
-                "a",
-                "nk"
-              ],
-              "distractors": [
-                {
-                  "word": "shop"
-                },
-                {
-                  "word": "house"
-                }
-              ]
-            },
-            {
-              "word": "link",
-              "segments": [
-                "l",
-                "i",
-                "nk"
-              ],
-              "distractors": [
-                {
-                  "word": "lock"
-                },
-                {
-                  "word": "ring"
-                }
-              ]
-            },
-            {
               "word": "think",
               "segments": [
                 "th",
@@ -856,10 +727,42 @@
               ],
               "distractors": [
                 {
-                  "word": "sad"
+                  "word": "yawn"
                 },
                 {
-                  "word": "wink"
+                  "word": "hug"
+                }
+              ]
+            },
+            {
+              "word": "ring",
+              "segments": [
+                "r",
+                "i",
+                "ng"
+              ],
+              "distractors": [
+                {
+                  "word": "king"
+                },
+                {
+                  "word": "wing"
+                }
+              ]
+            },
+            {
+              "word": "king",
+              "segments": [
+                "k",
+                "i",
+                "ng"
+              ],
+              "distractors": [
+                {
+                  "word": "queen"
+                },
+                {
+                  "word": "kid"
                 }
               ]
             }
@@ -1015,12 +918,12 @@
         },
         "challenge": {
           "type": "alien",
-          "label": "Challenge: real or alien, longer words",
+          "label": "Challenge: real or alien, four sounds",
           "say": "Sound out every letter, then push them together. Is it a real word or an alien word?",
-          "paper": "you say go to the shop and get a ring; your child writes the sentence.",
+          "paper": "you say go to the shop; your child writes the sentence.",
           "items": [
             {
-              "word": "shrimp",
+              "word": "chimp",
               "real": true
             },
             {
@@ -1044,7 +947,7 @@
               "real": false
             },
             {
-              "word": "strong",
+              "word": "swing",
               "real": true
             },
             {

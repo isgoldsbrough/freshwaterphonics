@@ -66,8 +66,10 @@ for (const d of Object.values(p.days)) for (const s of [d.stretch, d.challenge])
   if (s.type === "alien") s.items.forEach(i => add(i.word));
   if (s.type === "caption") s.items.forEach(i => { add(i.text); i.options.forEach(o => add(o.say)); });
   if (s.type === "mark") s.words.forEach(add);
+  if (s.type === "yesno") s.items.forEach(i => add(i.text));
+  if (s.type === "blendpick") s.words.forEach(w => { add(w.word); w.distractors.forEach(x => add(x.word)); });
 }
-["Real word.", "Alien word.", "Listen again."].forEach(add);
+["Real word.", "Alien word.", "Listen again.", "Yes.", "No.", "Read it again, one word at a time."].forEach(add);
 (p.memory || []).forEach(m => add(m.word));
 (p.rhymes || []).forEach(r => { add(r.target.word); r.options.forEach(o => add(o.word)); });
 p.tricky.forEach(t => add(t.word));

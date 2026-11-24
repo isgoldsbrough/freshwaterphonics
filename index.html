@@ -560,7 +560,7 @@
     } catch (e) {}
   }
   const SFX = { tap: () => tone(220, 0.06, "triangle", 0.05), right: () => { tone(659, 0.14, "sine", 0.07); tone(784, 0.18, "sine", 0.07, 0.12); }, finish: () => { tone(110, 0.12, "triangle", 0.1); tone(523, 0.25, "sine", 0.06, 0.08); } };
-  const LOOK = { blend: "Say the sounds again, then push them together.", alien: "Say the sounds, then ask: is it a word we know?", rhyme: "Listen to the end of each word.", tricky: "Read the note. Which letters do not say their usual sound?", count: "Count each row, then look again." };
+  const LOOK = { blend: "Say the sounds again, then push them together.", alien: "Say the sounds, then ask: is it a word we know?", rhyme: "Listen to the end of each word.", yesno: "Read it again, one word at a time.", tricky: "Read the note. Which letters do not say their usual sound?", count: "Count each row, then look again." };
   const NUMW = ["zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
   const QL = { say: "Look quickly. How many dots?", again: "Not that one. Look again." };
   // after a right maths answer: talk first (school's maths target is explaining her thinking), then Next
@@ -842,6 +842,24 @@
       }
       item();
     },
+    yesno(pm, g) {
+      // a short question she reads and answers: no pictures to work out (added 2026-11-24)
+      const stage = pm.stage;
+      const items = shuffle(g.items);
+      let i = 0, misses = 0;
+      function item() {
+        const it = items[i];
+        pm.progress(i, items.length);
+        pm.draw(`<div class="caption">${esc(it.text)}</div><div class="tiles two"><button class="tile" data-yes="true" aria-label="yes"><span class="word" style="color:var(--moss);">yes</span></button><button class="tile" data-yes="false" aria-label="no"><span class="word" style="color:var(--plum);">no</span></button></div><div class="pm-actions"><button class="btn secondary" id="hear">🔊 Hear it</button></div>`);
+        $("hear").addEventListener("click", () => speak(it.text));
+        stage.querySelectorAll(".tile").forEach(b => b.addEventListener("click", async () => {
+          SFX.tap();
+          if ((b.dataset.yes === "true") === it.yes) { b.classList.add("right"); SFX.right(); await speak(it.yes ? "Yes." : "No."); i++; if (i < items.length) item(); else pm.finish("Every question read!", () => { i = 0; misses = 0; item(); }); }
+          else { misses++; await wrong(b, null, misses, null, LOOK.yesno); }
+        }));
+      }
+      item();
+    },
     caption(pm, g) {
       const stage = pm.stage;
       let i = 0, misses = 0;
@@ -1045,7 +1063,7 @@
     if (g.type === "blend") return g.words.filter(w => w.word in PICS).slice(0, 3).map(w => w.word);
     return [];
   };
-  const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards", blend: "Blend it", quicklook: "Quick look" };
+  const TITLES = { hunt: "Find the sounds", blendpick: "Blend and pick", ladder: "Which letter changed?", tricky: "Spot the tricky part", segment: "Spell it with sounds", alien: "Real or alien?", caption: "Read a caption", yesno: "Yes or no?", mark: "You mark the reading", maths: "Quick check", memory: "Memory match", rhymes: "Rhyme picker", review: "Review cards", blend: "Blend it", quicklook: "Quick look" };
   function launcher(game, meta, opts = {}) {
     const id = meta.id;
     const title = (opts.title || TITLES[game.type]); const cap = title.charAt(0).toUpperCase() + title.slice(1);
