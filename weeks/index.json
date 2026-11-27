@@ -1,5 +1,5 @@
 {
-  "current": "2026-11-23",
+  "current": "2026-11-30",
   "break": {
     "from": "2026-10-17",
     "to": "2026-11-01",
@@ -7,6 +7,20 @@
     "back": "2026-11-02"
   },
   "weeks": [
+    {
+      "weekOf": "2026-11-30",
+      "label": "Week of 30 November",
+      "file": "2026-11-30.json",
+      "focus": [
+        "sh",
+        "th",
+        "ng",
+        "nk"
+      ],
+      "tricky": null,
+      "maths": "one more and one less, up to 5 (home practice)",
+      "status": "expected"
+    },
     {
       "weekOf": "2026-11-23",
       "label": "Week of 23 November",
@@ -17,9 +31,9 @@
         "ng",
         "nk"
       ],
-      "tricky": null,
+      "tricky": "she, push, he, of",
       "maths": "the numbers 4 and 5 (home practice)",
-      "status": "expected",
+      "status": "confirmed",
       "book": {
         "title": "Super Milly and the Super School Day",
         "by": "Stephanie Clarkson, illustrated by Gwen Millward",

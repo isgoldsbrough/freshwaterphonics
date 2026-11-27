@@ -1,10 +1,9 @@
 {
   "weekOf": "2026-11-23",
-  "status": "expected",
-  "expectedFrom": "littlewandle",
+  "status": "confirmed",
   "label": "Week of 23 November",
   "className": "Reception · Little Wandle Phase 2",
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "nextUpdateExpected": "2026-11-27",
   "phonics": {
     "focus": [
@@ -81,32 +80,28 @@
         "trickyLetters": [
           2
         ],
-        "note": "The e says ee.",
-        "expected": true
+        "note": "The e says ee."
       },
       {
         "word": "he",
         "trickyLetters": [
           1
         ],
-        "note": "The e says ee, like in she.",
-        "expected": true
+        "note": "The e says ee, like in she."
       },
       {
         "word": "of",
         "trickyLetters": [
           1
         ],
-        "note": "The f says v.",
-        "expected": true
+        "note": "The f says v."
       },
       {
         "word": "push",
         "trickyLetters": [
           1
         ],
-        "note": "The u is the tricky part in many accents, as in put.",
-        "expected": true
+        "note": "The u is the tricky part in many accents, as in put."
       },
       {
         "word": "and",
@@ -200,7 +195,7 @@
           {
             "label": "Newest sound",
             "min": 3,
-            "do": "sh, the next sound in Little Wandle's order (school hasn't said this week's sounds yet). Say it short and pure, the way the Little Wandle video does. Two letters, one sound. Then zz, which school taught last week: show it, say it, read buzz and fizz.",
+            "do": "sh, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, one sound. Then zz, which school taught last week: show it, say it, read buzz and fizz.",
             "say": "sh, ship. sh, shop."
           },
           {
@@ -388,7 +383,7 @@
           {
             "label": "Newest sound",
             "min": 3,
-            "do": "th, the next sound in Little Wandle's order (school hasn't said this week's sounds yet). Say it short and pure, the way the Little Wandle video does. Two letters, one sound.",
+            "do": "th, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, one sound.",
             "say": "th, thumb. th, thin."
           },
           {
@@ -507,7 +502,7 @@
           {
             "label": "Newest sound",
             "min": 3,
-            "do": "ng, the next sound in Little Wandle's order (school hasn't said this week's sounds yet). Say it short and pure, the way the Little Wandle video does. Two letters, one sound. It comes at the end of a word.",
+            "do": "ng, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, one sound. It comes at the end of a word.",
             "say": "ng, ring. ng, king."
           },
           {
@@ -666,7 +661,7 @@
           {
             "label": "Newest sound",
             "min": 3,
-            "do": "nk, the next sound in Little Wandle's order (school hasn't said this week's sounds yet). Say it short and pure, the way the Little Wandle video does. Two letters, taught together. They come at the end of a word.",
+            "do": "nk, the sound school is teaching this week. Say it short and pure, the way the Little Wandle video does. Two letters, taught together. They come at the end of a word.",
             "say": "nk, pink. nk, wink."
           },
           {
@@ -872,7 +867,7 @@
           {
             "label": "Every new sound",
             "min": 2,
-            "do": "This week's sounds on the review cards: sh, th, ng, nk, and zz from last week. Then the tricky words go, no, to and into, which school taught last week: show the word, say it, spot the tricky part, say it again. Then she, he, of and push, the next tricky words in Little Wandle's order (school hasn't named this week's yet).",
+            "do": "This week's sounds on the review cards: sh, th, ng, nk, and zz from last week. Then the tricky words go, no, to and into, which school taught last week: show the word, say it, spot the tricky part, say it again. Then she, he, of and push, this week's tricky words.",
             "say": "In go and no, the o says oh."
           },
           {
@@ -2202,7 +2197,7 @@
       "<b>Maths:</b> finding the numbers 4 and 5, spotting them without counting and showing them in different ways. The children are practising explaining how they can see the numbers.",
       "<b>Understanding the World:</b> maps, starting with pirate maps: looking for and naming key features. Aerial maps of the school come next. Also what makes us different and special."
     ],
-    "thisWeekPhonics": "sh, th, ng and nk (school hasn't said yet: these are next in Little Wandle's order)",
+    "thisWeekPhonics": "sh, th, ng and nk, with the tricky words she, he, of and push (confirmed by school on 27 November)",
     "asks": [
       {
         "text": "Superhero Day is Wednesday 25 November: children can wear a superhero costume. School asks you not to buy anything: they can make a badge or mask in school, or wear one of school's dressing-up costumes.",
@@ -2230,7 +2225,7 @@
       }
     ],
     "standing": [
-      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. School also taught zz last week (buzz, fizz): Monday catches it up. Friday has last week's tricky words go, no, to and into, then she, he, of and push, which are next in Little Wandle's order and not yet confirmed by school."
+      "<b>At home:</b> about 15 minutes of phonics and 10 of maths, including the stretch and challenge. School also taught zz the week before (buzz, fizz): Monday catches it up. Friday has the tricky words go, no, to and into, then she, he, of and push."
     ],
     "term": {
       "theme": "Superheroes, people who help us",
@@ -2293,8 +2288,9 @@
     },
     {
       "week": "Autumn 2 week 4",
-      "graphemes": "sh th ng nk (expected)",
-      "state": "now"
+      "graphemes": "sh th ng nk",
+      "state": "now",
+      "tricky": "she, push, he, of"
     }
   ],
   "share": ""

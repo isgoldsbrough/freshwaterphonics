@@ -1595,11 +1595,9 @@
     {
       "word": "the",
       "trickyLetters": [
-        0,
-        1,
         2
       ],
-      "note": "th is a sound to come, and the e says a quick uh."
+      "note": "The e says a quick uh."
     },
     {
       "word": "as",
@@ -1686,6 +1684,34 @@
         3
       ],
       "note": "in, then to. The last o says oo, like in to."
+    },
+    {
+      "word": "she",
+      "trickyLetters": [
+        2
+      ],
+      "note": "The e says ee."
+    },
+    {
+      "word": "push",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The u is the tricky part in many accents, as in put."
+    },
+    {
+      "word": "he",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The e says ee, like in she."
+    },
+    {
+      "word": "of",
+      "trickyLetters": [
+        1
+      ],
+      "note": "The f says v."
     }
   ],
   "maths": {
@@ -1696,6 +1722,7 @@
       "the numbers 1, 2 and 3",
       "one more and one less, making 1, 2 and 3",
       "the numbers 4 and 5",
+      "one more and one less, up to 5",
       "circles, triangles and shapes with 4 sides (ready for when school starts them)"
     ],
     "questions": [
