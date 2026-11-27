@@ -26,7 +26,11 @@ A weekly phonics and maths page for one Reception class, run by a parent. Unoffi
 - `pictures/` and `pictures.json`: OpenMoji pictures, one per word; `scripts/build-pictures.mjs` fetches any new ones.
 - `sample/`: the approved look-and-feel sample, kept for reference.
 - `scripts/validate.mjs`: refuses any printed word that uses a sound not yet taught.
-- `scripts/build-audio.mjs`: renders the clips.
+- `scripts/build-audio.mjs`: renders the clips. A bare letter in a spoken line is read as letter names ("start with Q, U"), so hunt prompts are rendered from a key word instead ("start with the same sound as queen"); the words on screen don't change. The key word is the first in `term.json`'s `oral` list with the sound in that place. After changing a key word, run it with `--respeak`.
+- Words ending in s in Blend it: `term.json` has a `plurals` list (ships, rings, bags). They are only used when a day names them in its own `"blend"` list and the week has `sEndings`, so the automatic pick and earlier weeks never show them. Add a plural there when a week needs one; its stem must be in `words` or `blend`.
+- School asks: an ask stays in `school.asks` for three weeks from its `since` date. If a later update repeats it, move `since` on. The site check warns about older ones on the current week.
+- Pure sounds: `audio/sounds/` holds one recorded clip per sound, made with `../sound-check/` (`python3 -I ../sound-check/server.py`). Blend it and the blend-and-pick tiles play them when touched. A sound with no clip is silent and the child says it. c, k and ck share one clip, and ff, ll, ss, zz use f, l, s, z.
+- `scripts/build-audio.mjs --prune` removes clips no week uses any more.
 - `scripts/confirm-week.mjs`: when an update confirms an "expected" week, flips it to confirmed everywhere (week file, `weeks/index.json`, journey, `term.json`, `current.json`) and lists what school taught that the page didn't cover. Tricky words marked `"expected": true` in a week file are Little Wandle's next ones, not yet named by school; the script keeps the ones school names and drops the rest.
 - `scripts/check-site.mjs`: the whole-site check, run before every push (`--live` after it). It checks the data and opens every week, day, tab and game in headless Chrome. See `../.claude/skills/site-check/SKILL.md`.
 

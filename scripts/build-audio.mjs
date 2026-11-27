@@ -8,7 +8,8 @@ import { readFileSync, existsSync, mkdirSync, writeFileSync, unlinkSync, readdir
 import { execFileSync } from "node:child_process";
 
 const VOICE = "Daniel";
-const files = process.argv.length > 2 ? process.argv.slice(2) : readdirSync("weeks").filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map(f => "weeks/" + f);
+const fileArgs = process.argv.slice(2).filter(a => !a.startsWith("--"));
+const files = fileArgs.length ? fileArgs : readdirSync("weeks").filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map(f => "weeks/" + f);
 mkdirSync("audio", { recursive: true });
 
 // Text -> filename slug, same function as in the page.
@@ -97,12 +98,32 @@ try {
   const term = JSON.parse(readFileSync("term.json", "utf8"));
   Object.keys(term.words).forEach(add);
   Object.keys(term.blend || {}).forEach(add);
+  Object.keys(term.plurals || {}).forEach(add);
   Object.values(term.oral).flat().forEach(add);
   term.graphemes.forEach(({ g, where }) => add(where === "start" ? `Tap the things that start with ${g}.` : where === "end" ? `Tap the things that end with ${g}.` : `Tap the things with ${g} in the middle.`));
   term.tricky.forEach(t => add(t.word));
   term.maths.questions.forEach(q => { if (q.say) add(q.say); else { const spoken = q.pattern.map(tileName).join(", "); add(`${spoken}. ${q.kind === "next" ? "What comes next?" : q.kind === "missing" ? "Which piece is missing?" : "Which row is the same?"}`); } });
   ["Ten minutes. Say every sound, find some, blend some, spot the tricky part.", "Say the sound. Find it. Blend it.", "A few from the whole term: more or fewer, which matches, what comes next.", "Nice work. Next game."].forEach(add);
 } catch (e) { if (e.code !== "ENOENT") throw e; }
+
+// A bare letter in a spoken line ("start with qu") is read out as letter names (Q, U), not as its sound.
+// So those clips are rendered from a key word instead: "start with the same sound as queen". The words on
+// screen stay as they are. The key word is the first one in term.json's oral list with the sound in that place.
+let ORAL = {};
+try { ORAL = JSON.parse(readFileSync("term.json", "utf8")).oral; } catch (e) {}
+const spokenAs = text => {
+  const m = text.match(/^Tap the things (that start with|that end with|with) ([a-z]{1,3})( in the middle)?\.$/);
+  if (!m) return text;
+  const g = m[2], list = ORAL[g] || [];
+  if (m[1] === "that start with") { const w = list.find(w => w.startsWith(g)); return w ? `Tap the things that start with the same sound as ${w}.` : text; }
+  if (m[1] === "that end with") { const w = list.find(w => w.endsWith(g)); return w ? `Tap the things that end with the same sound as ${w}.` : text; }
+  const w = list.find(w => !w.startsWith(g) && !w.endsWith(g) && w.includes(g));
+  return w ? `Tap the things with the same middle sound as ${w}.` : text;
+};
+if (process.argv.includes("--respeak")) for (const text of lines) { const f = `audio/${slug(text)}.m4a`; if (spokenAs(text) !== text && existsSync(f)) unlinkSync(f); }
+
+// Letter trace and number trace: the spoken cue for each one, from the STROKES table in the page
+try { for (const m of readFileSync("index.html", "utf8").matchAll(/cue: "([^"]+)"/g)) add(m[1]); } catch (e) { if (e.code !== "ENOENT") throw e; }
 
 let made = 0, kept = 0;
 const manifest = {};
@@ -112,10 +133,16 @@ for (const text of lines) {
   manifest[text] = name;
   if (existsSync(out)) { kept++; continue; }
   const aiff = `audio/${name}.aiff`;
-  execFileSync("say", ["-v", VOICE, "-r", "150", "-o", aiff, text]);
+  execFileSync("say", ["-v", VOICE, "-r", "150", "-o", aiff, spokenAs(text)]);
   execFileSync("afconvert", ["-f", "m4af", "-d", "aac", "-b", "40000", aiff, out]);
   unlinkSync(aiff);
   made++;
 }
 writeFileSync("audio/manifest.json", JSON.stringify(manifest, null, 1));
+// --prune: remove clips no line uses any more (only when every week file was read)
+if (process.argv.includes("--prune") && !fileArgs.length) {
+  const used = new Set(Object.values(manifest)); let gone = 0;
+  for (const f of readdirSync("audio")) if (f.endsWith(".m4a") && !used.has(f.slice(0, -4))) { unlinkSync("audio/" + f); gone++; }
+  console.log(`audio: ${gone} unused clips removed`);
+}
 console.log(`audio: ${made} rendered, ${kept} already present, ${lines.size} total`);

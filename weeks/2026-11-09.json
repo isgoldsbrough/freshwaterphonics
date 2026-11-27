@@ -363,7 +363,7 @@
         ],
         "game": {
           "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "say": "Tap each tile and say its sound. Say the word. Then tap the picture.",
           "words": [
             {
               "word": "box",

@@ -261,6 +261,18 @@ try {
     for (let i = 1; i < segs.length; i++) if (!VOWELS.has(segs[i]) && !VOWELS.has(segs[i - 1])) termErrors.push(`term ${key}: "${w}" has adjacent consonants`);
     if (needPic && !(w in PICS)) termErrors.push(`term words: no picture for "${w}"`);
   }
+  // plurals: words ending in s for a day's own Blend it list, from the week school teaches s endings
+  for (const [w, segs] of Object.entries(term.plurals || {})) {
+    if (blocked(w)) termErrors.push(`term plurals: "${w}" is on the blocklist`);
+    if (segs.join("") !== w) termErrors.push(`term plurals: "${w}" segments do not spell it`);
+    if (segs[segs.length - 1] !== "s") termErrors.push(`term plurals: "${w}" does not end in s`);
+    const stem = w.slice(0, -1);
+    if (!(stem in term.words) && !(stem in (term.blend || {}))) termErrors.push(`term plurals: "${stem}" is not in words or blend`);
+  }
+  for (const [n, d] of Object.entries(days)) for (const w of d.blend || []) {
+    const ok = w in term.words || w in (term.blend || {}) || (week.phonics.sEndings && w in (term.plurals || {}));
+    if (!ok) termErrors.push(`${file} phonics day ${n} blend: "${w}" is not in term.json words, blend${week.phonics.sEndings ? " or plurals" : " (plurals need sEndings)"}`);
+  }
   for (const [g, list] of Object.entries(term.oral)) {
     if (!all.has(g)) termErrors.push(`term oral: unknown grapheme "${g}"`);
     if (list.length < 3) termErrors.push(`term oral: "${g}" needs 3 words`);

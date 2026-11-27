@@ -508,7 +508,7 @@
   let SOUNDS = {};
   try { SOUNDS = await (await fetch("audio/sounds/sounds.json", { cache: "no-cache" })).json(); } catch (e) {}
   function playSound(g) {
-    const s = SOUNDS[{ c: "k", ck: "k" }[g] || g];
+    const s = SOUNDS[{ c: "k", ck: "k", ff: "f", ll: "l", ss: "s", zz: "z" }[g] || g];
     if (muted || !s) return;
     if (current) { try { current.pause(); } catch (e) {} }
     current = new Audio("audio/sounds/" + s.file); current.play().catch(() => {});
@@ -762,7 +762,7 @@
         pm.draw(`<div class="letters" id="lt">${w.segments.map((s, k) => `<button class="letter" data-k="${k}" aria-label="sound ${k + 1}">?</button>`).join("")}</div><div class="word sky" id="bw">&nbsp;</div><div class="tiles" id="pick" hidden>${opts.map((o, k) => tileBtn(o.pic || o.word, k, `data-r="${o.right}"`)).join("")}</div>`);
         stage.querySelectorAll("#lt .letter").forEach(b => b.addEventListener("click", () => {
           const k = Number(b.dataset.k); if (revealed[k]) return; SFX.tap();
-          revealed[k] = true; b.textContent = w.segments[k]; b.classList.add("revealed"); b.setAttribute("aria-label", w.segments[k]);
+          revealed[k] = true; b.textContent = w.segments[k]; b.classList.add("revealed"); playSound(w.segments[k]); b.setAttribute("aria-label", w.segments[k]);
           if (revealed.every(Boolean)) { $("bw").textContent = w.word; $("pick").hidden = false; speak("Say the word, then tap the picture."); }
         }));
         stage.querySelectorAll("#pick .tile").forEach(t => t.addEventListener("click", async () => {
@@ -1082,7 +1082,8 @@
   }
   function blendGame(day) {
     const d = W.phonics.days[day], bank = { ...TERM.words, ...(TERM.blend || {}) };
-    if (d.blend) return { type: "blend", say: BLEND_IT, words: d.blend.map(w => ({ word: w, segments: bank[w] })) };
+    // a day's own list may also use words ending in s (ships), kept apart in term.json "plurals" so earlier weeks never pick them
+    if (d.blend) { const own = { ...bank, ...(W.phonics.sEndings ? TERM.plurals || {} : {}) }; return { type: "blend", say: BLEND_IT, words: d.blend.filter(w => own[w]).map(w => ({ word: w, segments: own[w] })) }; }
     const order = [...W.phonics.taught, ...W.phonics.focus];
     const want = d.sound ? [d.sound] : (d.review || (W.phonics.focus.length ? W.phonics.focus : order));
     const allowed = new Set(d.sound ? order.slice(0, order.indexOf(d.sound) + 1) : order);
@@ -1100,7 +1101,7 @@
 
   // ---------- sessions built from the whole term (half term, past weeks) ----------
   const huntSay = g => { const w = TERM.graphemes.find(x => x.g === g).where; return w === "start" ? `Tap the things that start with ${g}.` : w === "end" ? `Tap the things that end with ${g}.` : `Tap the things with ${g} in the middle.`; };
-  const BLEND_SAY = "Tap each tile to hear a sound. Say the word. Then tap the picture.";
+  const BLEND_SAY = "Tap each tile and say its sound. Say the word. Then tap the picture.";
   function blendFrom(entries) {
     const others = Object.keys(TERM.words);
     return { type: "blendpick", say: BLEND_SAY, words: entries.map(([w, s]) => ({ word: w, segments: s, distractors: shuffle(others.filter(o => o !== w)).slice(0, 2).map(o => ({ word: o })) })) };

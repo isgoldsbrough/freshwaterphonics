@@ -2125,5 +2125,127 @@
         "hint": "A corner is where two sides meet. Can you find one on the circle?"
       }
     ]
+  },
+  "plurals": {
+    "ships": [
+      "sh",
+      "i",
+      "p",
+      "s"
+    ],
+    "shops": [
+      "sh",
+      "o",
+      "p",
+      "s"
+    ],
+    "shells": [
+      "sh",
+      "e",
+      "ll",
+      "s"
+    ],
+    "moths": [
+      "m",
+      "o",
+      "th",
+      "s"
+    ],
+    "baths": [
+      "b",
+      "a",
+      "th",
+      "s"
+    ],
+    "rings": [
+      "r",
+      "i",
+      "ng",
+      "s"
+    ],
+    "songs": [
+      "s",
+      "o",
+      "ng",
+      "s"
+    ],
+    "kings": [
+      "k",
+      "i",
+      "ng",
+      "s"
+    ],
+    "wings": [
+      "w",
+      "i",
+      "ng",
+      "s"
+    ],
+    "winks": [
+      "w",
+      "i",
+      "nk",
+      "s"
+    ],
+    "sinks": [
+      "s",
+      "i",
+      "nk",
+      "s"
+    ],
+    "bags": [
+      "b",
+      "a",
+      "g",
+      "s"
+    ],
+    "chicks": [
+      "ch",
+      "i",
+      "ck",
+      "s"
+    ],
+    "ducks": [
+      "d",
+      "u",
+      "ck",
+      "s"
+    ],
+    "socks": [
+      "s",
+      "o",
+      "ck",
+      "s"
+    ],
+    "hats": [
+      "h",
+      "a",
+      "t",
+      "s"
+    ],
+    "bugs": [
+      "b",
+      "u",
+      "g",
+      "s"
+    ],
+    "pens": [
+      "p",
+      "e",
+      "n",
+      "s"
+    ],
+    "dogs": [
+      "d",
+      "o",
+      "g",
+      "s"
+    ],
+    "cups": [
+      "c",
+      "u",
+      "p",
+      "s"
+    ]
   }
 }

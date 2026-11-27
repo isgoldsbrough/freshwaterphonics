@@ -218,6 +218,13 @@
         "sound": "sh",
         "title": "sh again, with s on the end",
         "minutes": 10,
+        "blend": [
+          "ship",
+          "ships",
+          "shop",
+          "shops",
+          "shells"
+        ],
         "steps": [
           {
             "label": "Newest sound",
@@ -228,7 +235,7 @@
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without. Then robot-talk sh, i, p, s together.",
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, some with an s on the end, then the same words without.",
             "say": "sh, i, p, s. What word?"
           },
           {
@@ -240,7 +247,7 @@
         ],
         "game": {
           "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "say": "Tap each tile and say its sound. Say the word. Then tap the picture.",
           "words": [
             {
               "word": "ships",
@@ -472,6 +479,13 @@
         "sound": "th",
         "title": "th again, with s on the end",
         "minutes": 10,
+        "blend": [
+          "moth",
+          "moths",
+          "bath",
+          "baths",
+          "thin"
+        ],
         "steps": [
           {
             "label": "Newest sound",
@@ -482,7 +496,7 @@
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without. Then robot-talk m, o, th, s together.",
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, some with an s on the end, then the same words without.",
             "say": "m, o, th, s. What word?"
           },
           {
@@ -591,6 +605,13 @@
         "sound": "ng",
         "title": "ng again, with s on the end",
         "minutes": 10,
+        "blend": [
+          "ring",
+          "rings",
+          "song",
+          "songs",
+          "kings"
+        ],
         "steps": [
           {
             "label": "Newest sound",
@@ -601,7 +622,7 @@
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without. Then robot-talk r, i, ng, s together.",
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, some with an s on the end, then the same words without.",
             "say": "r, i, ng, s. What word?"
           },
           {
@@ -613,7 +634,7 @@
         ],
         "game": {
           "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "say": "Tap each tile and say its sound. Say the word. Then tap the picture.",
           "words": [
             {
               "word": "rings",
@@ -776,6 +797,13 @@
         "sound": "nk",
         "title": "nk again, with s on the end",
         "minutes": 10,
+        "blend": [
+          "wink",
+          "winks",
+          "sink",
+          "sinks",
+          "pink"
+        ],
         "steps": [
           {
             "label": "Newest sound",
@@ -786,7 +814,7 @@
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without. Then robot-talk s, i, nk, s together.",
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, some with an s on the end, then the same words without.",
             "say": "s, i, nk, s. What word?"
           },
           {
@@ -798,7 +826,7 @@
         ],
         "game": {
           "type": "blendpick",
-          "say": "Tap each tile to hear a sound. Say the word. Then tap the picture.",
+          "say": "Tap each tile and say its sound. Say the word. Then tap the picture.",
           "words": [
             {
               "word": "wink",
@@ -994,6 +1022,13 @@
         "sound": null,
         "title": "Tricky words and s on the end",
         "minutes": 10,
+        "blend": [
+          "ships",
+          "moths",
+          "rings",
+          "sinks",
+          "bags"
+        ],
         "steps": [
           {
             "label": "Every new sound",
@@ -1004,7 +1039,7 @@
           {
             "label": "Blend",
             "min": 3,
-            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, then the same words without.",
+            "do": "Robot talk first, with no letters, then Blend it: five words with dots and lines, some with an s on the end, then the same words without.",
             "say": "sh, o, p. What word?"
           },
           {
@@ -2382,18 +2417,6 @@
       {
         "text": "Look at the phonics practice sheet attached to the update (sh, th, ng, nk; she, he, of, go, no).",
         "since": "27 November"
-      },
-      {
-        "text": "Check the Show and Tell rota outside the classrooms. This term's theme is Superheroes: something about an inspiring family member, or pictures of special people.",
-        "since": "6 November"
-      },
-      {
-        "text": "Add to the Daffodil competition on Arbor.",
-        "since": "6 November"
-      },
-      {
-        "text": "Outdoor PE times have changed: check the timetable outside the classrooms.",
-        "since": "6 November"
       }
     ],
     "standing": [

@@ -48,6 +48,16 @@ if (cur && cur.status === "review" && !(cur.focus || []).length)
 if (cur && cur.file && readFileSync(join(SITE, "weeks/current.json"), "utf8") !== readFileSync(join(SITE, "weeks", cur.file), "utf8"))
   err(`weeks/current.json is not an exact copy of weeks/${cur.file}`);
 
+// school asks drop off the page three weeks after their date, unless a later update repeats them
+if (cur && cur.file) {
+  const CW = json("weeks/" + cur.file), upd = new Date(CW.updated);
+  for (const a of (CW.school && CW.school.asks) || []) {
+    let d = new Date(`${a.since} ${upd.getFullYear()}`);
+    if (d > upd) d = new Date(`${a.since} ${upd.getFullYear() - 1}`);
+    if (!isNaN(d) && (upd - d) / 864e5 >= 21) warn(`${cur.file}: the ask "${a.text.slice(0, 50)}…" dates from ${a.since}, three weeks or more before this update. Drop it unless school repeated it`);
+  }
+}
+
 const picWords = new Set();
 const isWord = x => typeof x === "string" && /^[a-z][a-z-]*$/.test(x);
 for (const w of weeks) {
